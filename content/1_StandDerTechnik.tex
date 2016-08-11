@@ -1,0 +1,22 @@
+\chapter{Stand der Technik}\label{ch:standDerTechnik}
+\section{Starrk\"orperbewegung}\label{sec:starrkoerperbewegung}
+Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner Position in Bezug zu einem inertialen Koordinatensystem $\KOS{I}$ zu jedem Zeitpunkt $\acs{t}$ eindeutig beschrieben. Das inertiale Koordinatensystem $\KOS{I}\in \R^{3}$ habe die Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align*}
+\skalar{\vect{e}_i}{\vect{e}_j}&=
+\begin{cases} 
+1, \text{ f\"ur } i=j \\
+0, \text{ f\"ur } i\neq j \end{cases} 
+\intertext{und weiterhin}
+\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3
+\end{align*}
+Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem (siehe beispielsweise \cite[S. 80]{Papula2014}). \newline
+Die Position des Punktes $p$ sei durch das Tripel $\left( x, y, z \right) \in \R^{3}$ gegeben. Die Trajektorie von $p$ kann dann durch die parametrisierte Bahn $p\of{t}=\left(x\of{t}, y\of{t}, z\of{t}\right) \in \R^{3} $ beschrieben werden. Da nicht die Bewegung von einzelnen Punkten, sondern die Bewegung eines Starrk\"orpers beschrieben werden soll, wird der Begriff Starrk\"orper definiert.
+
+\begin{defn}[Starrk\"orper] Ein Starrk\"orper ist dadurch gekennzeichnet, dass die Distanz zweier beliebiger Punkte $p, q$ unabh\"angig von der Bewegung des K\"orpers, immer konstant bleibt. Die anf\"angliche Position des Punktes $p$ sei beschrieben durch $p\of{0}$. Die Position nach einer beliebigen Zeit $\acs{t}$ (und einer beliebigen Bewegung) sei beschrieben durch $p\of{t}$. Die Nomenklatur gilt f\"ur den Punkt $q$ analog. F\"ur einen Starrk\"orper wird dann gefordert: \begin{align*}
+\norm{p\of{t} - q\of{t}}&=\norm{p\of{0}-q\of{0}} = \text{konstant}
+\end{align*}
+\end{defn}
+
+  \subsection{Koordinatensysteme}
+	
+
+
