@@ -1,0 +1,68 @@
+
+
+\input{latex_base/general/preambel/preambel-commands}
+
+\usepackage{etex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+% hat nur mit .avi Datein funktioniert, nicht mit .mp4, extrem schlechtes Rendering
+%\usepackage{multimedia} 
+\usepackage{media9}
+\usepackage{animate}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{eurosym}
+
+\tolerance=1000
+ 
+\usetheme[section,navigation,pagenum,ddc]{tud}
+\useinnertheme[shadow=true]{rounded}
+%\usetheme{Boadilla}
+%\usecolortheme{tud}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Math Packages
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/required/amslatex/math/amsldoc.pdf
+% Amsmath - Mathematik Basispaket
+% fuer pst-pdf displaymath Modus vor pst-pdf benoetigt.
+\usepackage{amsmath} %
+
+\usepackage{units}
+
+%%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/mh/doc/mathtools.pdf
+\usepackage[fixamsmath,disallowspaces]{mathtools}
+
+%%% Doc: http://www.ctan.org/info?id=fixmath
+\usepackage{fixmath}
+
+%%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/onlyamsmath/onlyamsmath.dvi
+% Warnt bei Benutzung von Befehlen die mit amsmath inkompatibel sind.
+\usepackage[
+	all,
+	warning
+]{onlyamsmath}
+
+\usepackage{bm}
+
+\bibliographystyle{ieeetr}
+
+\AtBeginDocument{\renewcommand*{\partname}{Theme}}
+
+\setbeamerfont{description item}{series=\bfseries}
+\setbeamertemplate{date/place in footline}[default][J. Wurm]
+\setbeamertemplate{page number in footline}[frame][total]
+\setlength{\tudbeamerfooterplacewidth}{0.3\linewidth}%
+\setlength{\tudbeamerfooterpagenumwidth}{5em}%
+\makeatletter
+\setlength{\tudbeamerfootertitlewidth}{\paperwidth-\beamer@leftmargin-\beamer@rightmargin-\tudbeamerfooterplacewidth-\tudbeamerfooterpagenumwidth}%
+
+\makeatother

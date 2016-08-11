@@ -1,0 +1,372 @@
+% % redefine \textmu to other mu commands usefull inside text
+% \renewcommand{\textmu}{$\upmu$}
+
+% automatische Eintraege von Literaturverwaltungssoftware braucht \mathplus als Befehl
+\providecommand\mathplus{+}
+
+
+% Defintionen, Theoreme
+\newtheorem{defn}{Definition}
+\newtheorem{satz}{Satz}
+\newtheorem{hsatz}{Hilfssatz}
+
+\newtheoremstyle{style1} 
+   {}                   %Space above 
+   {}                   %Space below 
+   {}                      %Body font: original {\normalfont} 
+   {}                      %Indent amount (empty = no indent, 
+                           %\parindent = para indent) 
+   {\normalfont\itshape}  %Thm head font original {\normalfont\bfseries} 
+   {.}                     %Punctuation after thm head original : 
+   { }              %Space after thm head: " " = normal interword 
+                           %space; \newline = linebreak 
+   {}%\textbf{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}                     
+                                        %Thm head spec (can be left empty, meaning 
+                           %`normal') original {\underline{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}} 
+		
+\newtheoremstyle{style2} 
+   {3pt}                   %Space above 
+   {3pt}                   %Space below 
+   {}                      %Body font: original {\normalfont} 
+   {}                      %Indent amount (empty = no indent, 
+                           %\parindent = para indent) 
+   {\normalfont\bfseries}  %Thm head font original {\normalfont\bfseries} 
+   {}                     %Punctuation after thm head original : 
+   {\newline}              %Space after thm head: " " = normal interword 
+                           %space; \newline = linebreak 
+   {\textbf{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}                     
+                                        %Thm head spec (can be left empty, meaning 
+                           %`normal') original {\underline{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}} 
+
+\declaretheorem[name={Beispiel},style=style1,qed=$\lozenge$,numberwithin=chapter]{exmp}
+\declaretheorem[name={Gegenbeispiel},style=style1,qed=$\lozenge$,numberwithin=chapter]{gegenexmp}
+\declaretheorem[name={Übungsaufgabe},style=style2,numberwithin=chapter]{uea}
+\declaretheorem[name={Bemerkung},style=style1,qed=$\blacklozenge$,numberwithin=chapter]{rem}
+
+% Vektor
+\newcommand{\vect}[1]{\bm{#1}}
+%\newcommand{\vect}[1]{\boldsymbol #1}
+\newcommand{\skalar}[2]{\langle \vect{#1},\vect{#2}\rangle}
+
+% Caption with defined width
+\newcommand{\wcaption}[2]{%
+   \begin{minipage}{#1}%
+   \caption{#2}%
+   \end{minipage}%
+}
+
+\newcommand*{\rechterWinkel}[3]{% #1 = point, #2 = start angle, #3 = radius
+   \draw[shift={(#2:#3)}] (#1) arc[start angle=#2, delta angle=90, radius = #3];
+   \fill[shift={(#2+45:#3/2)}] (#1) circle[radius=1.25\pgflinewidth];
+}
+
+\newcommand{\figureref}[1]{(Abbildung \ref{#1})}%
+\newcommand{\eqnref}[1]{(\ref{#1})}%
+
+% Command for margin text with usefull style
+%\newcommand{\marginlabel}[1]{\mbox{}\marginline{\hspace{0pt}\footnotesize\sffamily #1}}%
+\newcommand{\marginlabel}[1]{\marginnote{#1}}%
+
+%\newcommand{\comment}[1]{\marginnote{#1}}%
+
+% Enable space for figures that extent into the margin (right and/or leftside)
+% Can be used inside a figure
+% Note: sidecap defines a similar environment 'wide' !
+\newenvironment{widespace}[2]{%
+   \begin{list}{}{%
+      \setlength{\topsep}{0pt}%
+      \setlength{\leftmargin}{#1}%
+      \setlength{\rightmargin}{#2}%
+      \setlength{\listparindent}{\parindent}%
+      \setlength{\itemindent}{\parskip}%
+   }%
+   \item[]%
+}%
+{%
+   \end{list}%
+}%
+
+\newlength{\marginwidth}
+\setlength{\marginwidth}{\marginparwidth}
+\addtolength{\marginwidth}{\marginparsep}
+
+%% Beispiel:
+% \begin{figure}
+% \begin{widespace}{-\marginwidth}{0pt}
+%  \subfloat[Bergzebrastute]
+%  {\includegraphics[width=0.45\linewidth]{../Bilder/Eingewoehnung2.jpg}}
+%  \hspace*{1em}
+%  \subfloat[Morro Moco]
+%  {\includegraphics[width=0.45\linewidth]{../Bilder/bergzebra2.jpg}}
+% \end{widespace}
+% \end{figure}
+
+
+% quantum optics - Latex Commands: Math **********************************
+% ------------------------------------------------------------------------
+% by: Matthias Pospiech
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% --| Math |-------------------------------------------------------
+
+% -- Replacements --
+\newcommand{\comp}{\ast}
+%\renewcommand{\dagger}{+}
+
+% -- Footnode --
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+% -- new commands --
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
+%\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\DeclareRobustCommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\Trace}[1]{\ensuremath{\Tr\{\,#1\,\}}} % Trace /Spur
+\providecommand{\KOS}[1]{\ensuremath{\mathit{#1}}} %Darstellung fuer Koordinatensysteme
+\providecommand{\of}[1]{\ensuremath{\left(#1 \right)}} %parametrischer Zusammenhang einer Groesse
+%
+
+% -- differentials --
+\renewcommand{\d}{\partial\mspace{2mu}} % partial diff
+\newcommand{\td}{\,\mathrm{d}}	% total diff
+\newcommand{\ddt}[1]{\frac{\td #1}{\td t}}
+
+% -- Abbrevitations --
+\renewcommand{\Re}{\text{Re}}			% Real value
+\renewcommand{\Im}{\text{Im}}			% Real value
+\newcommand{\complex}{\mathbb{C}} % Complex
+\newcommand{\real}{\mathbb{R}}    % Real
+%\newcommand{\R}{\real}						% Real
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\D}{\mathcal{D}}
+%
+\newcommand{\Ham}{\mathcal{H}}    % Hamilton
+\newcommand{\Prob}{\mathscr{P}}    
+\newcommand{\unity}{\mathds{1}}   % 1-Vektor
+\newcommand{\Fou}{\mathscr{F}}
+%
+
+\newcommand\gammab{\gamma_\bot}
+\newcommand\gammap{\gamma_\parallel}
+\newcommand\gammai{\gamma_\text{int}}
+\newcommand\gammae{\gamma_\text{ext}}
+
+% -- New Operators --
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\grad}{grad}
+%\DeclareMathOperator{\div}{div}
+\renewcommand{\div}{\text{div}\,}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\Rang}{Rang}
+\DeclareMathOperator{\Spur}{Spur}
+\DeclareMathOperator{\Inter}{int}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\galois}{GF}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Image}{im}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+
+\newcommand{\vlaplace}[1][]{\mbox{\setlength{\unitlength}{0.1em}%
+                            \begin{picture}(10,20)%
+                              \put(3,2){\circle{4}}%
+                              \put(3,4){\line(0,1){12}}%
+                              \put(3,18){\circle*{4}}%
+                              \put(10,7){#1}
+                            \end{picture}%
+                           }%
+                     }%
+
+\newcommand{\vLaplace}[1][]{\mbox{\setlength{\unitlength}{0.1em}%
+                            \begin{picture}(10,20)%
+                              \put(3,2){\circle*{4}}%
+                              \put(3,4){\line(0,1){12}}%
+                              \put(3,18){\circle{4}}%
+                              \put(10,7){#1}
+                            \end{picture}%
+                           }%
+                     }%
+
+% -- new symbols --
+%\newcommand{\laplace}{\Delta}
+\newcommand{\dalembert}{\Box}
+
+% -- new arrows --
+\renewcommand{\leadsto}{\Longrightarrow}
+\newcommand{\leftrightleadsto}{\Longleftrightarrow}
+
+
+% -- Text subscripts--
+\newcommand{\rel}{_\text{rel}}
+%\newcommand{\st}{\text{st}}
+%
+
+% -- other --
+\newcommand{\com}[2]{\underbrace{#1}_{\textrm{\scriptsize #2}}}
+\newcommand{\with}[1]{\stackrel{\ref{#1}}{\Longrightarrow}}
+%\newcommand{\unit}[1]{\,\textrm{#1}}
+
+%\newcommand{\variance}[1]{\delta \mean{#1}^2}
+\newcommand{\variance}[1]{(\Delta{#1})^2}
+%\newcommand{\variance}[1]{\delta #1^2}
+
+%Signum Funktion
+\DeclareMathOperator\sgn{sgn}
+% -- Physics --------------------------------
+\newcommand\op[1]{{\hat{\mathrm{#1}}}}  % Operator
+
+\newcommand\expect[1]{\ensuremath{\left\langle{#1}\right\rangle}} %
+%
+\newcommand{\mean}[1]{\ensuremath{\overline{#1}}} % mean value
+%
+\newcommand{\state}[1]{\ensuremath{\ket{#1}}}
+%
+\newcommand\commutator[2]{\ensuremath{\mathinner{%
+    \mathopen[\,#1,#2\,\mathclose]}}}
+\newcommand{\Commutator}[2]{\ensuremath{\left[\,#1,#2\,\right]}}
+\newcommand{\bigcommutator}[2]{\ensuremath{\bigl[\,#1,#2\,\bigr]}}
+\newcommand{\Bigcommutator}[2]{\ensuremath{\Bigl[\,#1,#2\,\Bigr]}}
+%
+\newcommand\poisson[2]{\mathinner{%
+    \mathopen\{#1,#2\mathclose\}}}
+%
+
+% -- Layout --------------------------------
+
+\newcommand*{\dashfill}{\leavevmode\cleaders\hbox{-}\hfill\kern0pt}
+
+\newcommand*{\midhrulefill}{
+\leavevmode
+\cleaders\hbox to 1ex{\raisebox{.5ex}{\rule{1ex}{.4pt}}}\hfill\kern0pt
+}
+
+% -- Doppeltes Unterstreichen -------------
+\newcommand\uli[2][]{
+ \underline{#2\vphantom{#1}}
+}
+
+\newcommand\ulalign[2]{\uli[#2]{#1}&\uli[#1]{\;=#2}}
+\newcommand\dulalign[2]{\underline{\uli[#2]{#1}}&\underline{\uli[#1]{\;=#2}}}
+
+
+% -- SI-Einheiten -------------------------
+\newcommand{\acrounit}[1]{
+\acroextra{\makebox[18mm][l]{\si{#1}}}
+}
+
+% -- Leerseite
+\newcommand\leerseite{\newpage\thispagestyle{empty}\hspace{1cm}\newpage}
+
+% -- Anhangsinhaltsverzeichnis ------------
+\makeatletter
+% Die folgende Anweisung wird vermutlich irgendwann in scrlfile.sty eingebaut.
+% Bis dahin ist es notwendig, sie selbst zu definieren, damit man innerhalb
+% von \BeforeClosingMainAux \addtocontents verwenden kann:
+\providecommand{\protected@immediate@write}[3]{%
+  \begingroup
+    \let\thepage\relax
+    #2%
+    \let\protect\@unexpandable@protect
+    \edef\reserved@a{\immediate\write#1{#3}}%
+    \reserved@a
+  \endgroup
+  \if@nobreak\ifvmode\nobreak\fi\fi
+}
+ 
+% Die folgende Umgebung wird verwendet, um innerhalb der toc-Datei einzelne
+% Bereiche ein- und ausschalten zu können. In die toc-Datei wird die Umgebung
+% dabei jeweils als \begin{tocconditional}{BEREICH}...\end{tocconditional}
+% eingefügt.
+\newenvironment*{tocconditional}[1]{%
+  \expandafter\ifx\csname if@toccond@#1\expandafter\endcsname
+                  \csname iftrue\endcsname
+  \else
+    \value{tocdepth}=-10000\relax
+  \fi
+  \typeout{tocdepth in `#1': \the\c@tocdepth}%
+}{%
+}
+ 
+% Gleich nach dem Öffnen der toc-Datei beginnen wir den Haupt-Bereich "main":
+\AtBeginDocument{%
+  \addtocontents{toc}{\string\begin{tocconditional}{main}}
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author}
+  }
+}
+% Und der letzte Bereich endet am Ende der toc-Datei.
+\BeforeClosingMainAux{%
+  \begingroup
+    \let\protected@write\protected@immediate@write
+    \addtocontents{toc}{\string\end{tocconditional}}%
+  \endgroup
+}
+ 
+% Hier können nun neue Bereiche definiert ...
+\newcommand*{\newtocconditional}[2][false]{%
+  \expandafter\newif\csname if@toccond@#2\endcsname
+  \csname @toccond@#2#1\endcsname
+}
+% Und ein- oder ausgeschaltet werden:
+\newcommand*{\settocconditional}[2]{%
+  \csname @toccond@#1#2\endcsname
+}
+ 
+% Neben dem Hauptbereich ...
+\newtocconditional[true]{main}
+% definieren wir noch einen Bereich für den Anhang.
+\newtocconditional{appendix}
+ 
+% Mit dem Anhang geben wir einerseits das Anhangsverzeichnis aus,
+% andererseits beenden wir den aktuellen Bereich in der toc-Datei und beginnen
+% den neuen Bereich "appendix". Damit im Haupt-Inhaltsverzeichnis ein Eintrag
+% für das Anhangsverzeichnis erscheint, verwenden wir \addchap und zwar noch
+% bevor der letzte Bereich geschlossen wird. Wenn wir es ganz sicher machen
+% wollten, müssten wir die auskommentierten Zeilen noch aktivieren. So
+% verlassen wir uns einfach darauf, dass vor dem appendix-Bereich der
+% main-Bereich lag.
+\g@addto@macro\appendix{%
+%  \addtocontents{toc}{\string\end{tocconditional}^^J
+%    \string\begin{tocconditional}{main}}%
+  \addchap{Anhang}%
+  \addtocontents{toc}{\string\end{tocconditional}
+    \string\begin{tocconditional}{appendix}}%
+  \appendixtableofcontents
+}
+ 
+% Jetzt definieren wir das Anhangsverzeichnis selbst als Alias für die
+% toc-Datei. Dabei wird aber der Hauptbereich "main" deaktiviert und der
+% Anhangsbereich "appendix" aktiviert.
+\newcommand*{\appendixtableofcontents}{%
+  \showtoc[{ %
+    \aliastoc{\tocstyleTOC}{toc}%
+    \settocconditional{main}{false}%
+    \settocconditional{appendix}{true}%
+  }]{toc}%
+}
+ 
+% Auch wenn man einen Anhang normalerweise nicht beenden kann, so ist es
+% ggf. erwünscht, dass Literaturverzeichnis, Index etc. zwar nach den Kapiteln
+% des Anhangs kommen, aber dem Hauptverzeichnis zugeordnet werden sollen. Also
+% benötigen wir eine Anweisung, um in der toc-Datei den aktuellen Bereich zu
+% beenden und wieder einen Hauptbereich einzuschalten:
+\newcommand*{\postappendix}{%
+  \addtocontents{toc}{\string\end{tocconditional}^^J%
+      \string\begin{tocconditional}{main}}%
+  \clearpage
+}
+ 
+\makeatother
