@@ -44,9 +44,12 @@
 \declaretheorem[name={Bemerkung},style=style1,qed=$\blacklozenge$,numberwithin=chapter]{rem}
 
 % Vektor
-\newcommand{\vect}[1]{\bm{#1}}
+\DeclareRobustCommand{\vect}[1]{\overrightarrow{#1}}   %Vektor
+\DeclareRobustCommand{\matr}[1]{\bm{#1}} %Matrix
 %\newcommand{\vect}[1]{\boldsymbol #1}
-\newcommand{\skalar}[2]{\langle #1,#2 \rangle}
+\newcommand{\skalar}[2]{\langle #1,#2 \rangle} %Skalarprodukt
+\newcommand{\transp}[1]{#1^{\text{T}}}
+\DeclareRobustCommand{\inv}[1]{\ensuremath{#1^{-1}}}
 
 % Caption with defined width
 \newcommand{\wcaption}[2]{%
@@ -61,7 +64,7 @@
 }
 
 \newcommand{\figureref}[1]{(Abbildung \ref{#1})}%
-\newcommand{\eqnref}[1]{(\ref{#1})}%
+\newcommand{\eqnref}[1]{Gleichung (\ref{#1})}%
 
 % Command for margin text with usefull style
 %\newcommand{\marginlabel}[1]{\mbox{}\marginline{\hspace{0pt}\footnotesize\sffamily #1}}%
@@ -140,10 +143,12 @@
 %\newcommand{\R}{\real}						% Real
 %\newcommand{\N}{\mathbb{N}}
 %\newcommand{\Z}{\mathbb{Z}}
-\renewcommand{\L}{\mathcal{L}}
-\newcommand{\N}{\mathcal{N}}
-\newcommand{\R}{\mathcal{R}}
-\newcommand{\D}{\mathcal{D}}
+\DeclareRobustCommand{\set}[1]{\mathcal{#1}} %Darstellung von Mengen
+\renewcommand{\L}{\set{L}}
+\newcommand{\N}{\set{N}}
+\newcommand{\R}{\set{R}}
+\newcommand{\D}{\set{D}}
+
 %
 \newcommand{\Ham}{\mathcal{H}}    % Hamilton
 \newcommand{\Prob}{\mathscr{P}}    

@@ -1,14 +1,14 @@
 \chapter{Stand der Technik}\label{ch:SdT}
 \section{Mathematische Grundlagen}\label{sec:SdT_mathGrundl}
   \subsection{Koordinatensysteme}\label{ssec:SdT_mathGrundl_kos}
-  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align*}
+  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
 \skalar{\vect{e}_i}{\vect{e}_j}&=
-\begin{cases} 
+\begin{cases}
 1, \text{ f\"ur } i=j \\
-0, \text{ f\"ur } i\neq j \end{cases} 
-\intertext{und weiterhin}
-\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3
-\end{align*}
+0, \text{ f\"ur } i\neq j \end{cases} \label{gl:kosEvSenkr}
+\intertext{und weiterhin} 
+\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3 \label{gl:kosEvRechtssys}
+\end{align}
 Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem (siehe beispielsweise \cite[S. 80]{Papula2014}). Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen, dass alle verwendeten Koordinatensysteme diese Eigenschaften erf\"ullen.  
   \subsection{Punkte und Vektoren}\label{ssec:SdT_mathGrundl_punkteVektoren}
   Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{ssec:SdT_mathGrundl_kos} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
@@ -124,6 +124,28 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 	  \end{itemize}
 \end{itemize}  
 
+  \subsection{Gruppen \cite[S. 13]{Bosch2014}}
+  Unter einer \textit{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus
+$\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
+  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
+sind:
+\begin{itemize}
+\item Die Verkn\"upfung ist assoziativ, d. h. es gilt \begin{align}
+(a \cdot b) \cdot c &= a \cdot (b \cdot c) \quad \forall { } a, b, c \in \set{G}. \label{gl:gruppenDef1}
+\end{align}
+\item Es existiert ein neutrales Element $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
+e \cdot a = a \cdot e = a \quad \forall { } a \in \set{G}. \label{gl:gruppenDef2}
+\end{align}
+\item Zu jedem $a \in \set{G}$ gibt es ein inverses Element, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
+a \cdot  b = b \cdot  a = e. \label{gl:gruppenDef3}
+\end{align} Dabei ist $e$ das nach \eqnref{gl:gruppenDef2} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$.
+\item Die Gruppe hei\ss{}t kommutativ oder abelsch, falls die Verkn\"upfung kommutativ
+ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
+a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
+\end{align}
+\end{itemize}
+  \end{defn}
+  
 \section{Starrk\"orperbewegung}\label{sec:starrkoerperbewegung}
 Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner Position in Bezug zu einem inertialen Koordinatensystem $\KOS{I}$ zu jedem Zeitpunkt $\acs{t}$ eindeutig beschrieben. Die Position des Punktes $p$ sei durch das Tripel $\left( x, y, z \right) \in \R^{3}$ gegeben. Die Trajektorie von $p$ kann dann durch die parametrisierte Bahn $p\of{t}=\left(x\of{t}, y\of{t}, z\of{t}\right) \in \R^{3} $ beschrieben werden. Da nicht die Bewegung von einzelnen Punkten, sondern die Bewegung eines Starrk\"orpers beschrieben werden soll, soll zun\"achst der Begriff Starrk\"orper definiert werden.
 
@@ -138,12 +160,28 @@ Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer
 \item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}} \text{ f\"ur alle Vektoren } \vect{v},\vect{w}\in R^{3}$.
 \end{enumerate}
 \end{defn}
+
 \begin{rem} Man kann mit Hilfe der Polarisationsformel zeigen, dass das Skalarprodukt durch die Abbildungsvorschrift $g$ f\"ur einen Starrk\"orper erhalten bleibt \cite{RichardM.Murray1994}: \begin{align*}
 \skalar{\vect{v}}{\vect{w}}&= \skalar{g\of{\vect{v}}}{g\of{\vect{w}}}.
 \end{align*}
+Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach wieder in ein orthonormales Rechtssystem transformiert.
 \end{rem}
 Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in \ref{ssec:SdT_mathGrundl_kos} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem hat seinen Ursprung in einem beliebigen Punkt $p$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{v}_1, \vect{v}_2, \vect{v}_3$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{v}_1}, g\of{\vect{v}_2}, g\of{\vect{v}_3}$ die Orientierung von $\KOS{K}$ und $g\of{p}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. 
-  \subsection{Rotationsmatrizen}  
+  \subsection{Rotationsmatrizen}
+  Gegeben sei ein Koordinatensystem $\KOS{K}$, welches um eine Achse $w$ relativ zu einem inertialen Koordinatensystem $\KOS{I}$ gedreht wurde. Die Achsen von $\KOS{K}$ relativ zu $\KOS{I}$ seien gegeben durch die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Die drei Spaltenvektoren werden horizontal zu einer Matrix \begin{align}
+  \matr{R}&=\begin{bmatrix}
+  \vect{u} & \vect{w} & \vect{v}
+  \end{bmatrix} \label{gl:rotMatrDef}
+  \end{align}
+  zusammengefasst. Die Matrix $\matr{R}$ wird als Rotationsmatrix bezeichnet. 
+    \subsubsection{Eigenschaften von Rotationsmatrizen}
+    Die Spalten der Rotationsmatrix $\matr{R}\in \R^{3\times 3}$ seien die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Da diese ein Koordinatensystem aufspannen haben sie die in \eqnref{gl:kosEvSenkr} und \eqnref{gl:kosEvRechtssys} definierten Eigenschaften. Aus \eqnref{gl:kosEvSenkr} folgt f\"ur die Matrix $\matr{R}$ \begin{align}
+    \matr{R}\transp{\matr{R}} &= \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
+    \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kosEvSenkr}}
+    \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1 \label{gl:rotMatrDet}
+\end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{RichardM.Murray1994}. Allgemein wird definiert: \begin{align}
+\set{SO}\of{n} = \left \lbrace \matr{R}\in \R^{n\times n}: \matr{R}\transp{\matr{R}}=\matr{I}, \det{\matr{R}}=+1 \right \rbrace. \label{gl:mengeSoDef}
+\end{align}
   \subsection{Koordinatensysteme}
 	
 
