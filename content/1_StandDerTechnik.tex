@@ -1,7 +1,7 @@
 \chapter{Stand der Technik}\label{ch:SdT}
 \section{Mathematische Grundlagen}\label{sec:SdT_mathGrundl}
   \subsection{Koordinatensysteme}\label{ssec:SdT_mathGrundl_kos}
-  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
+  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in \R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
 \skalar{\vect{e}_i}{\vect{e}_j}&=
 \begin{cases}
 1, \text{ f\"ur } i=j \\
@@ -18,15 +18,15 @@ Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem
   \begin{align*}
   \abs{\vect{a}}:= \norm{\vect{a}}
   \end{align*}
-Eine Vektor kann frei im Raum verschoben werden, so lange seine Richtung und sein Betrag konstant bleiben. Man spricht daher auch von freien Vektoren. F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die Angabe von Anfangspunkt $p$ und Endpunkt $q$
+Eine Vektor kann frei im Raum verschoben werden, so lange seine Richtung und sein Betrag konstant bleiben. Man spricht daher auch von freien Vektoren. F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die Angabe von Anfangspunkt $q$ und Endpunkt $p$
 \begin{align*}
-\vect{a}&= q - p = \vect{qp}.
+\vect{a}&=  p - q = \vect{qp}.
 \end{align*}
 Da Vektoren frei verschiebbar sind, ist die Wahl der Anfangs- und Endpunkte jedoch nicht eindeutig. Es gibt daher andere Punkte $r, s$, f\"ur die gilt:
 \begin{align*}
-\vect{a}&= q - p = r - s 
+\vect{a}&= p - q = r - s 
 \intertext{mit}
-q&\neq r \text{ und } p\neq s
+p&\neq r \text{ und } q\neq s
 \end{align*}
 Eine weitere Darstellung ist die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$, welche durch Projektion auf die Basisvektoren von $\KOS{I}$ gegeben ist:
 \begin{align*}
@@ -96,7 +96,7 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
     \cos{\varphi}&= \frac{\skalar{\vect{a}}{\vect{b}}}{\abs{\vect{a}}\abs{\vect{b}}} &\abs{\vect{a}}&\neq 0, \abs{\vect{b}}\neq 0
     \end{align*}
 	  \end{rem}
-	  \begin{rem}[Richtungskosinus] Ein Vektor $\vect{a}$ bildet mit den drei Koordinatenachsen der Reihe nach die Winkel $\alpha, \beta, \gamma$, die als \textit{Richtungswinkel} bezeichnet werden. Der Kosinus der jeweiligen Winkel wird als Richtungskosinus bezeichnet. \begin{align*}
+	  \begin{rem}[Richtungskosinus] Ein Vektor $\vect{a}$ bildet mit den drei Koordinatenachsen seines Bezugssystems der Reihe nach die Winkel $\alpha, \beta, \gamma$, die als \textit{Richtungswinkel} bezeichnet werden. Der Kosinus der jeweiligen Winkel wird als Richtungskosinus bezeichnet. \begin{align*}
 	  \cos{\alpha}&=\frac{ \skalar{\vect{a}}{\vect{e}_1}}{\abs{\vect{a}}\abs{\vect{e}_1}}=\frac{a_x}{a} &\cos{\beta}&=\frac{ \skalar{\vect{a}}{\vect{e}_2}}{\abs{\vect{a}}\abs{\vect{e}_2}}=\frac{a_y}{a} &\cos{\gamma}&=\frac{ \skalar{\vect{a}}{\vect{e}_3}}{\abs{\vect{a}}\abs{\vect{e}_3}}=\frac{a_z}{a}
 	  \end{align*}
 	  Die Richtungswinkel sind jedoch nicht voneinander unabh\"angig, sondern \"uber die Beziehung \begin{align*}
@@ -106,9 +106,9 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 	  \end{rem}
 	
 	\item das \textbf{Vektorprodukt} (auch Kreuzprodukt) $\vect{a}\times \vect{b}$ hat als Ergebnis einen Vektor, der senkrecht auf $\vect{a}$ und $\vect{b}$ steht und dessen L\"ange gleich dem Produkt der Betr\"age von $\vect{a}, \vect{b}$ und dem Sinus des durch die Vektoren eingeschlossenen Winkels $\varphi$ ist. \begin{align*}
-	\vect{a}\times \vect{b}&= \begin{pmatrix}
+	\vect{a}\times \vect{b}&= \left( \abs{\vect{a}}\abs{\vect{b}} \sin\of{\vartheta}\right) \vect{n} =  \begin{pmatrix}
 	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix}
-	\end{align*}
+	\end{align*}, wobei $\vect{n}$ derjenige zu $\vect{a}$ und $\vect{b}$ senkrechte Einheitsvektor ist, der diese zu einem Rechtssystem erg\"anzt. \hfill \newline
 	Es gelten die Rechenregeln:
 	  \begin{itemize}
 	  \item Distributivgesetz: \begin{align*}
@@ -168,7 +168,7 @@ a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
   Analog zur Transformation eines Punktes kann auch ein Vektor $\vect{v}_b=q_b - p_b$, welcher im System $\KOS{B}$ definiert wurde, in das System $\KOS{I}$ transformiert werden: \begin{align*}
   \vect{v}_i &= \matr{R}_{ib} \vect{v}_b = \matr{R}_{ib} q_b - \matr{R}_{ib} p_b = q_i - p_i.
   \end{align*}
-  Weiterhin k\"onnen Transformationen aneinandergereiht werden. Beschreibt die Transformationsmatrix $\matr{R}_{bc}$ die Verdrehung von $\KOS{C}$ relativ zu $\KOS{B}$, so erh\"alt man die Transformationsmatrix vom $\KOS{C}$ nach $\KOS{I}$ durch eine Kombination der Transformationen vom System $\KOS{C}$ in das System $\KOS{B}$ mit der Transformation vom System $\KOS{B}$ in das System $\KOS{I}$. Die Kombination erfolgt dabei durch linksseitige Matrixmultiplikation der jeweiligen Transformationsmatrizen in der angegebenen Reihenfolge. \begin{align*}
+  Weiterhin k\"onnen Transformationen aneinandergereiht werden. Beschreibt die Transformationsmatrix $\matr{R}_{bc}$ die Verdrehung von $\KOS{C}$ relativ zu $\KOS{B}$, so erh\"alt man die Transformationsmatrix von $\KOS{C}$ nach $\KOS{I}$ durch eine Kombination der Transformation vom System $\KOS{C}$ in das System $\KOS{B}$ mit der Transformation vom System $\KOS{B}$ in das System $\KOS{I}$. Die Kombination erfolgt dabei durch linksseitige Matrixmultiplikation der jeweiligen Transformationsmatrizen in der angegebenen Reihenfolge. \begin{align*}
   \matr{R}_{ic}&= \matr{R}_{ib} \matr{R}_{bc}
   \end{align*}
   \paragraph*{Rotation und Translation}
@@ -183,8 +183,8 @@ Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner
 Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer \"Uberlagerung dieser Bewegungen bestehen. Wird ein K\"orper durch eine Teilmenge $O \in \R^{3}$ beschrieben, so kann seine Bewegung als eine kontinuierliche Zuordnung $g\of{t}: O \to R^{3}$ beschrieben werden. Die kontinuierliche Zuordnungsvorschrift $g\of{t}$ beschreibt, wie sich die einzelnen Punkte des K\"orpers relativ zu einem inertialen, festen Koordinatensystem mit Voranschreiten der Zeit $\acs{t}$ bewegen. Die Zuordnungsvorschrift $g$ darf dabei die Distanz zwischen Punkten des K\"orpers und die Orientierung von Vektoren, welche Punkte des K\"orpers verbinden, nicht ver\"andern. Damit ergibt sich die Definition einer Abbildung von Starrk\"orpern: 
 
 \begin{defn}[Abbildung eines Starrk\"orpers] \cite{RichardM.Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau denn, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
-\item Distanzen bleiben unver\"andert: $\norm{g\of{p}- g\of{q}}=\norm{p-q} \text{ f\"ur alle Punkte } p,q \in R^{3}$
-\item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}} \text{ f\"ur alle Vektoren } \vect{v},\vect{w}\in R^{3}$.
+\item Distanzen bleiben unver\"andert: $\norm{g\of{p}- g\of{q}}=\norm{p-q} \text{ f\"ur alle Punkte } p, q \in \R^{3}$
+\item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}} \text{ f\"ur alle Vektoren } \vect{v}, \vect{w} \in \R^{3}$.
 \end{enumerate}
 \end{defn}
 
@@ -195,15 +195,21 @@ Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach w
 \end{rem}
 Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in \ref{ssec:SdT_mathGrundl_kos} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem hat seinen Ursprung in einem beliebigen Punkt $p$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{v}_1, \vect{v}_2, \vect{v}_3$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{v}_1}, g\of{\vect{v}_2}, g\of{\vect{v}_3}$ die Orientierung von $\KOS{K}$ und $g\of{p}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. 
   \subsection{Rotationsmatrizen}\label{ssec:SdT_rotmatr}
-  Gegeben sei ein Koordinatensystem $\KOS{K}$, welches um eine Achse $w$ relativ zu einem inertialen Koordinatensystem $\KOS{I}$ gedreht wurde. Die Achsen von $\KOS{K}$ relativ zu $\KOS{I}$ seien gegeben durch die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Die drei Spaltenvektoren werden horizontal zu einer Matrix \begin{align}
+  Gegeben sei ein Koordinatensystem $\KOS{K}$, welches um eine Achse $l$ relativ zu einem inertialen Koordinatensystem $\KOS{I}$ gedreht wurde. Die Orientierung dieser Drehachse sei durch einen Vektor $\vect{l}$ mit Einheitsl\"ange beschrieben. Die Achsen von $\KOS{K}$ relativ zu $\KOS{I}$ seien gegeben durch die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Die drei Spaltenvektoren werden horizontal zu einer Matrix \begin{align}
   \matr{R}&=\begin{bmatrix}
   \vect{u} & \vect{w} & \vect{v}
-  \end{bmatrix} \label{gl:rotMatrDef}
+  \end{bmatrix} = \begin{pmatrix}
+  u_x & w_x & v_x \\ u_y & w_y & v_y \\ u_z & w_z & v_z
+  \end{pmatrix} \label{gl:rotMatrDef}
   \end{align}
   zusammengefasst. Die Matrix $\matr{R}$ wird als Rotationsmatrix bezeichnet. 
     \subsubsection{Eigenschaften von Rotationsmatrizen}
     Die Spalten der Rotationsmatrix $\matr{R}\in \R^{3\times 3}$ seien die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Da diese ein Koordinatensystem aufspannen haben sie die in \eqnref{gl:kosEvSenkr} und \eqnref{gl:kosEvRechtssys} definierten Eigenschaften. Aus \eqnref{gl:kosEvSenkr} folgt f\"ur die Matrix $\matr{R}$ \begin{align}
-    \matr{R}\transp{\matr{R}} &= \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
+    \matr{R}\transp{\matr{R}} &= \begin{pmatrix}
+    \vect{u} & \vect{w}& \vect{v} 
+\end{pmatrix} \begin{pmatrix}
+\vect{u}\\ \vect{w}\\ \vect{v}  
+\end{pmatrix}     \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
     \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kosEvSenkr}}
     \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1 \label{gl:rotMatrDet}
 \end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{RichardM.Murray1994}. Allgemein wird definiert: \begin{align}
@@ -221,9 +227,9 @@ Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aum
 \item Die Einheitsmatrix ist das neutrale Element \begin{align}
 \matr{I} \matr{R} = \matr{R} \matr{I} = \matr{R} \quad \forall { } \matr{R} \in \set{SO}\of{3} \label{gl:mengeSoGruppenNeutrElem}
 \intertext{mit} 
-\matr{I}&=\begin{bmatrix}
+\matr{I}&=\begin{pmatrix}
 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1
-\end{bmatrix} \nonumber
+\end{pmatrix} \nonumber
 \end{align}
 \item Aus \eqnref{gl:rotMatrTransp} folgt, dass $\transp{\matr{R}}\in \set{SO}\of{3}$ das inverse Element von $\matr{R} \in \set{SO}\of{3}$ ist.
 \end{itemize}
