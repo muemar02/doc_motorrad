@@ -1,15 +1,29 @@
 \chapter{Stand der Technik}\label{ch:SdT}
 \section{Mathematische Grundlagen}\label{sec:SdT_mathGrundl}
-  \subsection{Koordinatensysteme}\label{ssec:SdT_mathGrundl_kos}
-  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in \R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
-\skalar{\vect{e}_i}{\vect{e}_j}&=
-\begin{cases}
-1, \text{ f\"ur } i=j \\
-0, \text{ f\"ur } i\neq j \end{cases} \label{gl:kosEvSenkr}
-\intertext{und weiterhin} 
-\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3 \label{gl:kosEvRechtssys}
+  \subsection{Mengen}\label{ssec:SdT_mathGrundl_mengen}
+  \subsection{Gruppen \cite[S. 13]{Bosch2014}}\label{ssec:SdT_mathGrundl_gruppen}
+  Unter einer \textit{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
+  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
+sind:
+\begin{itemize}
+\item Die Verkn\"upfung ist assoziativ, d. h. es gilt \begin{align}
+(a \cdot b) \cdot c &= a \cdot (b \cdot c) \quad \forall { } a, b, c \in \set{G}. \label{gl:gruppenDef1}
 \end{align}
-Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem (siehe beispielsweise \cite[S. 80]{Papula2014}). Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen, dass alle verwendeten Koordinatensysteme diese Eigenschaften erf\"ullen.  
+\item Es existiert ein neutrales Element $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
+e \cdot a = a \cdot e = a \quad \forall { } a \in \set{G}. \label{gl:gruppenDef2}
+\end{align}
+\item Zu jedem $a \in \set{G}$ gibt es ein inverses Element, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
+a \cdot  b = b \cdot  a = e. \label{gl:gruppenDef3}
+\end{align} Dabei ist $e$ das nach \eqnref{gl:gruppenDef2} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$.
+\item Die Gruppe hei\ss{}t kommutativ oder abelsch, falls die Verkn\"upfung kommutativ
+ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
+a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
+\end{align}
+\end{itemize}
+  \end{defn}  
+  
+  \subsection{Vektorr\"aume}\label{ssec:SdT_mathGrundl_vektorr}
+  
   \subsection{Punkte und Vektoren}\label{ssec:SdT_mathGrundl_punkteVektoren}
   Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{ssec:SdT_mathGrundl_kos} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
   p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
@@ -133,26 +147,22 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 \end{align}	   
 \end{itemize}  
 
-  \subsection{Gruppen \cite[S. 13]{Bosch2014}}\label{ssec:SdT_mathGrundl_gruppen}
-  Unter einer \textit{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
-  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
-sind:
-\begin{itemize}
-\item Die Verkn\"upfung ist assoziativ, d. h. es gilt \begin{align}
-(a \cdot b) \cdot c &= a \cdot (b \cdot c) \quad \forall { } a, b, c \in \set{G}. \label{gl:gruppenDef1}
+  \subsection{Koordinatensysteme}\label{ssec:SdT_mathGrundl_kos}
+  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in \R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
+\skalar{\vect{e}_i}{\vect{e}_j}&=
+\begin{cases}
+1, \text{ f\"ur } i=j \\
+0, \text{ f\"ur } i\neq j \end{cases} \label{gl:kosEvSenkr}
+\intertext{und weiterhin} 
+\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3 \label{gl:kosEvRechtssys}
 \end{align}
-\item Es existiert ein neutrales Element $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
-e \cdot a = a \cdot e = a \quad \forall { } a \in \set{G}. \label{gl:gruppenDef2}
-\end{align}
-\item Zu jedem $a \in \set{G}$ gibt es ein inverses Element, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
-a \cdot  b = b \cdot  a = e. \label{gl:gruppenDef3}
-\end{align} Dabei ist $e$ das nach \eqnref{gl:gruppenDef2} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$.
-\item Die Gruppe hei\ss{}t kommutativ oder abelsch, falls die Verkn\"upfung kommutativ
-ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
-a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
-\end{align}
-\end{itemize}
-  \end{defn}
+Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem (siehe beispielsweise \cite[S. 80]{Papula2014}). Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen, dass alle verwendeten Koordinatensysteme diese Eigenschaften erf\"ullen.  
+  
+  \subsection{Nat\"urliche Koordinaten}
+  engl. natural coordinates wie ist der richtige deutsche Begriff?
+  
+  \subsection{Homogene Koordinatensysteme}
+  
   
   \subsection{Koordinatentransformation} \label{ssec:SdT_mathGrundl_transf} 
   Gegeben seien ein inertiales Koordinatensystem $\KOS{I}$ und zwei, um eine beliebige Achse in Relation zu $\KOS{I}$ gedrehte, Koordinatensysteme $\KOS{B},\KOS{C}$. 
@@ -182,13 +192,13 @@ Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner
 \end{defn}
 Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer \"Uberlagerung dieser Bewegungen bestehen. Wird ein K\"orper durch eine Teilmenge $O \in \R^{3}$ beschrieben, so kann seine Bewegung als eine kontinuierliche Zuordnung $g\of{t}: O \to R^{3}$ beschrieben werden. Die kontinuierliche Zuordnungsvorschrift $g\of{t}$ beschreibt, wie sich die einzelnen Punkte des K\"orpers relativ zu einem inertialen, festen Koordinatensystem mit Voranschreiten der Zeit $\acs{t}$ bewegen. Die Zuordnungsvorschrift $g$ darf dabei die Distanz zwischen Punkten des K\"orpers und die Orientierung von Vektoren, welche Punkte des K\"orpers verbinden, nicht ver\"andern. Damit ergibt sich die Definition einer Abbildung von Starrk\"orpern: 
 
-\begin{defn}[Abbildung eines Starrk\"orpers] \cite{RichardM.Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau denn, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
+\begin{defn}[Abbildung eines Starrk\"orpers] \cite{Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau denn, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
 \item Distanzen bleiben unver\"andert: $\norm{g\of{p}- g\of{q}}=\norm{p-q} \text{ f\"ur alle Punkte } p, q \in \R^{3}$
 \item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}} \text{ f\"ur alle Vektoren } \vect{v}, \vect{w} \in \R^{3}$.
 \end{enumerate}
 \end{defn}
 
-\begin{rem} Man kann mit Hilfe der Polarisationsformel zeigen, dass das Skalarprodukt durch die Abbildungsvorschrift $g$ f\"ur einen Starrk\"orper erhalten bleibt \cite{RichardM.Murray1994}: \begin{align*}
+\begin{rem} Man kann mit Hilfe der Polarisationsformel zeigen, dass das Skalarprodukt durch die Abbildungsvorschrift $g$ f\"ur einen Starrk\"orper erhalten bleibt \cite{Murray1994}: \begin{align*}
 \skalar{\vect{v}}{\vect{w}}&= \skalar{g\of{\vect{v}}}{g\of{\vect{w}}}.
 \end{align*}
 Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach wieder in ein orthonormales Rechtssystem transformiert.
@@ -212,7 +222,7 @@ Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aum
 \end{pmatrix}     \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
     \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kosEvSenkr}}
     \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1 \label{gl:rotMatrDet}
-\end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{RichardM.Murray1994}. Allgemein wird definiert: \begin{align}
+\end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{Murray1994}. Allgemein wird definiert: \begin{align}
 \set{SO}\of{n} = \left \lbrace \matr{R}\in \R^{n\times n}: \matr{R}\transp{\matr{R}}=\matr{I}, \det{\matr{R}}=+1 \right \rbrace. \label{gl:mengeSoDef}
 \end{align} Die Menge $\set{SO}\of{3}\subset \R^{3\times 3}$ bildet mit der Abbildungsvorschrift \textit{Matrixmultiplikation} eine Gruppe entsprechend den im Abschnitt \ref{ssec:SdT_mathGrundl_gruppen} geforderten Regeln. Die geforderten Eigenschaften werden wie folgt erf\"ullt:
 \begin{itemize}
@@ -235,7 +245,3 @@ Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aum
 \end{itemize}
 \begin{rem} Die Lage eines Starrk\"orpers, welcher sich frei im Raum drehen kann, kann zu jedem Zeitpunkt durch eine eindeutige Rotationsmatrix $\matr{R}\in \set{SO}\of{3}$ beschrieben werden. Die Menge der Rotationsmatrizen $\set{SO}\of{3}$ wird daher als der Konfigurationsraum des Systems bezeichnet. Eine Trajektorie des Systems wird durch die Kurve $\matr{R}\of{t} \in \set{SO}\of{3}$ f\"ur $t\in [0,T]$ abgebildet. Weiterhin dient die Matrix $\matr{R}$ zur Transformation von Punkten von einem k\"orperfesten, um eine beliebige Achse gedrehten, Koordinatensystem in ein Inertialsystem. Diese Funktion ist in Abschnitt \ref{ssec:SdT_mathGrundl_transf} genauer dargelegt.
 \end{rem}
-  \subsection{Koordinatensysteme}
-	
-
-
