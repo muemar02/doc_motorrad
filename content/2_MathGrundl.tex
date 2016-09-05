@@ -1,0 +1,173 @@
+\chapter{Mathematische Grundlagen}\label{ch:mathGrundl}
+\section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
+    Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung eines einzelnen Modells losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
+    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt\ref{sec:mathGrundl_mengen}). Darauf aufbauend werden Gruppen (siehe \ref{sec:mathGrundl_gruppen}) und K\"orper (siehe \ref{sec:mathGrundl_koerper} definiert. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Der dreidimensionale Raum l\"asst sich dann mit Hilfe geeigneter Basisvektoren als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems darstellen. F\"ur Vektoren und Matrizen werden bestimmte Rechenregeln (insbesondere Addition und Multiplikation) definiert und deren Handhabung in speziellen Koordinatensystemen beschrieben. \newline
+    
+    Zur Beschreibung des dreidimensionalen Raumes stellen wir uns eine Ebene E vor, welche beliebig in dem uns umgebenden Raum liegt. Jetzt w\"ahlen wir einen beliebigen Punkt dieser Ebene aus, und bezeichnen diesen als Nullpunkt $O$ eines Koordinatensystems. Anschlie\ss{}end legen wir Drei Koordinatenachsen $X, Y, \text{und }Z$ mit Hilfe von Geraden fest. Alle Drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Weiterhin sollen keine zwei Geraden parallel zueinander sein. Zus\"atzlich sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. Au\ss{}erdem definieren wird auf jeder Achse einen speziellen Punkt: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt hat vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man nennt diesen Abstand \textit{Einheitsl\"ange}. \newline
+    Wir definieren einen Vektor $\vect{e}_{x}$, welcher vom Ursprung auf den Punkt $I_{x}$ zeigt und zwangsl\"aufig auf der Geraden X liegt. Analog definieren wir die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, nennen wir \textit{Einheitsvektoren}. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der Anderen darzustellen. Damit bilden diese \textit{Einheitsvektoren} die \textit{Basis} f\"ur einen \textit{Vektorraum} $V$ (den dreidimensionalen Raum). \newline
+    Weiterhin definieren wir einen Streckungsfaktor $\alpha \in \R$. Mit Hilfe von $\alpha \cdot I_{x}$ beschreiben wir das Bild des Punktes $I_{x}$, welches sich durch Streckung mit Streckungszentrum im Ursprung $O$, entlang der x-Achse, um den Streckungsfaktor $\alpha$ ergibt. Die Zuordnung $\alpha \to \alpha \cdot I_{x}$ liefert damit eine eindeutige, umkehrbare Zuordnung der reellen Zahlen auf die Punkte der Gerade x. Dabei ist das Bild der Streckung des \textit{Einheitsvektors} $\vect{e}_{x}$ \"aquivalent mit dem Bild der Streckung des Punktes $I_{x}$. Weiterhin definieren wir f\"ur die Achsen Y und Z die Streckungsfaktoren $\beta$ und $\gamma$. \newline
+        
+    Mit Hilfe dieser Festlegungen k\"onnen beliebige Punkte im Raum beschrieben werden. Alle Punkte des Raumes bilden dabei die \textit{Menge} $R^{3}$. Man sagt, dass die Punkte \textit{Elemente} dieser \textit{Menge} sind. Betrachtet man zum Beispiel einen Punkt auf der Ebene E, so kann man dieses \textit{Element} als Tripel von reellen Zahlen interpretieren: $P=\left( x_{1}, y_{1}, z_{1}\right)$. Man nennt dieses Tripel die \textit{Koordinaten} von $P$ (bez\"uglich des gew\"ahlten Koordinatensystems). Der Ursprung des Koordinatensystems hat bez\"uglich des Koordinatensystems, dessen Ursprung er ist, immer die Koordinaten $(0,0,0)$. Den Wert von $x_{1}$ erh\"alt man geometrisch durch Konstruktionen einer Normalen bez\"uglich der x-Achse, welche den Punkt $P$ durchl\"auft. Den Fu\ss{}punkt dieser Normalen kann man durch Streckung des zuvor definierten Punktes $I_{x}$ um den Faktor $\alpha_{P}$ erhalten. Dabei entspricht eben diese reelle Zahl $\alpha_{P}$ dem Wert von $x_{1}$. \newline
+    Die Werte f\"ur $y_{1}$ und $z_{1}$ ergeben sich analog. Die so erhaltene Zuordnung $P \to \left( x_{1}, y_{1}, z_{1}\right)$ bezeichnet man als eine Abbildung. Mit Hilfe dieser Abbildung wird beliebigen Punkten der Ebene E in eindeutiger Weise ein Zahlentripel von reellen Zahlen zugeordnet. Man sagt auch, dass dieses Zahlentripel ein \textit{Element} des \textit{Vektorraumes} $V$ ist, welcher \"uber dem \textit{K\"orper} der reellen Zahlen definiert ist. Da die Achsen des Koordinatensystems durch die \textit{Basis} des \textit{Vektorraumes} beschrieben werden sind die Zahlenwerte des Tripels zwangsl\"aufig abh\"angig von der Wahl der Koordinatensystemursprungs und der \textit{Basisvektoren}. \newline
+    Da dieses Zahlentripel nicht nur ein \textit{Element} einer \textit{Menge}, sondern ein Vektor eines \textit{Vektorraumes} ist, gibt es alternative Schreibweisen f\"ur den Punkt $P$. Die \"ublichste Alternative ist die Darstellung als Spaltenvektor $\vect{v} \in \R^{3}$. Dabei erh\"alt man $\vect{v}$ durch Subtraktion der Koordinaten des Punktes $P$ von den Koordinaten des gew\"ahlten Koordinatenursprungs. Beziehen sich alle Angaben auf das gleiche System, so entsprechen die Komponenten von $\vect{v}$ genau Koordinaten von $P$ und die Darstellung als Spaltenvektor lautet: $\vect{v}=\begin{pmatrix} x_{1} \\ y_{1} \\ z_{1} \end{pmatrix}$. Man kann $\vect{v}$ auch als \textit{Linearkombination} der \textit{Basis} des \textit{Vektorraumes} $V$ darstellen: \begin{align*}
+    \vect{v}&= x_{1} \vect{e}_{x} + y_{1} \vect{e}_{y} + z_{1} \vect{e}_{z} = \alpha_{P} \vect{e}_{x} + \beta_{P} \vect{e}_{y} + \gamma_{P} \vect{e}_{z}
+\end{align*}      
+
+  \begin{rem} Die Beschr\"ankung auf die Betrachtung von Rechtssystemen ist als einf\"uhrendes Beispiel besonders gut geeignet, da alle in dieser Arbeit verwendeten Koordinatensysteme die damit verbundenen Eigenschaften erf\"ullen sollen. Wollte man auch nicht orthogonale Koordinatensystem betrachten, so f\"uhrt dies zwangsl\"aufig auf die Betrachtung von kovarianten und kontravarianten Basen und die Tensorrechnung. Eine gut lesbare Einf\"uhrung in dieses Thema ist \cite{Roethlisberger2007} zu entnehmen. Eine ausf\"uhrliche Behandlung der Thematik ist in \cite{Jaenich2005} enthalten. 
+  \end{rem}
+  
+   
+  \section{Mengen}\label{sec:mathGrundl_mengen}
+  \section{K\"orper}\label{sec:mathGrundl_koerper}
+  K\"orper sind Zahlsysteme mit gewissen Axiomen f\"ur die Addition und Multiplikation, welche auf den Axiomen von Gruppen aufbauen. \newline
+  
+  Text...
+  
+  \section{Gruppen}\label{sec:mathGrundl_gruppen}
+  Unter einer \textit{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
+  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
+sind:
+\begin{itemize}
+\item Die Verkn\"upfung ist assoziativ, d. h. es gilt \begin{align}
+(a \cdot b) \cdot c &= a \cdot (b \cdot c) \quad \forall { } a, b, c \in \set{G}. \label{gl:gruppenDef1}
+\end{align}
+\item Es existiert ein neutrales Element $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
+e \cdot a = a \cdot e = a \quad \forall { } a \in \set{G}. \label{gl:gruppenDef2}
+\end{align}
+\item Zu jedem $a \in \set{G}$ gibt es ein inverses Element, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
+a \cdot  b = b \cdot  a = e. \label{gl:gruppenDef3}
+\end{align} Dabei ist $e$ das nach \eqnref{gl:gruppenDef2} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$.
+\item Die Gruppe hei\ss{}t kommutativ oder abelsch, falls die Verkn\"upfung kommutativ
+ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
+a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
+\end{align}
+\end{itemize}
+  \end{defn}  
+  
+  \section{Vektorr\"aume}\label{sec:mathGrundl_vektorraeume}
+  Vektorr\"aume enthalten als fundamentale Struktur zwei Rechenoperationen: die Addition zweier Vektoren und die Multiplikation mit einem Skalar (einem Element des K\"orpers, \"uber dem der Vektorraum definiert ist). Addition und Multiplikation gen\"ugen den so genannten Vektorraumaxiomen, welche bez\"uglich der Addition auf den Gruppenaxiomen aufbauen. \newline
+  
+  Text....
+  
+  \section{Punkte und Vektoren}\label{sec:mathGrundl_punkteVektoren}
+  Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{sec:kos_rechtssys} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
+  p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
+  \end{align*} Die Position von $p$ ist damit relativ zu $\KOS{I}$ eindeutig beschrieben. \newline
+  Ein Vektor $\vect{a}\in \R^{3}$ hat im Gegensatz zum Punkt eine \textit{Richtung} und einen \textit{Betrag} beziehungsweise eine L\"ange. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
+  \begin{align*}
+  \abs{\vect{a}}:= \norm{\vect{a}}
+  \end{align*}
+Eine Vektor kann frei im Raum verschoben werden, so lange seine Richtung und sein Betrag konstant bleiben. Man spricht daher auch von freien Vektoren. F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die Angabe von Anfangspunkt $q$ und Endpunkt $p$
+\begin{align*}
+\vect{a}&=  p - q = \vect{qp}.
+\end{align*}
+Da Vektoren frei verschiebbar sind, ist die Wahl der Anfangs- und Endpunkte jedoch nicht eindeutig. Es gibt daher andere Punkte $r, s$, f\"ur die gilt:
+\begin{align*}
+\vect{a}&= p - q = r - s 
+\intertext{mit}
+p&\neq r \text{ und } q\neq s
+\end{align*}
+Eine weitere Darstellung ist die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$, welche durch Projektion auf die Basisvektoren von $\KOS{I}$ gegeben ist:
+\begin{align*}
+\vect{a}&=  \vect{a}_x + \vect{a}_y + \vect{a}_z =  x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 = 
+\begin{pmatrix} x \\ y \\ z 
+\end{pmatrix} 
+\intertext{damit ergibt sich der Betrag eines Vektor zu}
+\abs{\vect{a}}&= \sqrt{x^2 + y^2 + z^2} = a
+\end{align*}  
+
+Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}$ (nach \cite{Papula2014}):
+
+\begin{itemize}
+	\item Vektoren sind \textit{gleich}, wenn sie in Richtung und Betrag \"ubereinstimmen \begin{align*}
+	\vect{a}=\vect{b} &\Leftrightarrow \abs{a}=\abs{b} \wedge \vect{a} \uparrow \uparrow \vect{b}
+	\end{align*}
+	
+	\item \textbf{Addition}/ Subtraktion von Vektoren erfolgt durch Addition/ Subtaktion der Komponenten
+	\begin{align*}
+	\vect{a}\pm\vect{b}&=\begin{pmatrix} x \\ y \\ z \end{pmatrix} \pm \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} x\pm x' \\ y\pm y' \\ z\pm z' \end{pmatrix} 
+	\end{align*}
+	Es gelten die Rechenregeln:
+	  \begin{itemize}
+	  \item Kommutativgesetz: \begin{align*}
+	  \vect{a}\pm\vect{b} &= \pm\vect{b} + \vect{a}
+	  \end{align*}
+	  \item Assoziativgesetz: \begin{align*}
+	  \vect{a}+ \left( \vect{b}+\vect{c} \right) &= \left( \vect{a}+\vect{b} \right) + \vect{c}
+	  \end{align*}
+	  \end{itemize}
+	  
+	\item Multiplikation mit einem Skalar $\lambda, \mu \in \R$ erfolgt durch Multiplikation aller Komponenten mit dem Skalar \begin{align*}
+	\lambda\cdot \vect{a}&= \begin{pmatrix} \lambda\cdot x \\ \lambda\cdot y \\ \lambda\cdot z \end{pmatrix}
+	\end{align*}
+	Es gelten die Rechenregeln:
+	  \begin{itemize}
+	  \item Distributivgesetz: \begin{align*}
+	  \lambda \left( \vect{a}+\vect{b}\right) &= \lambda\vect{a} + \lambda\vect{b}
+	  \end{align*}
+	  \item weitere Regeln: \begin{align*}
+	  \left(\lambda + \mu \right) \vect{a}&= \lambda\vect{a} + \mu\vect{a} \\
+	  \left(\lambda \mu \right) \vect{a}&= \lambda \left( \mu  \vect{a} \right) =  \mu \left(\lambda  \vect{a} \right)\\ 
+	  \abs{\lambda \vect{a}}&= \abs{\lambda}\abs{\vect{a}}
+	  \end{align*}
+	  \end{itemize}
+	
+	\item Das \textbf{Skalarprodukt} \acs{skalarProd} zweier Vektoren ist das Produkt der Betr\"age und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$ \begin{align*}
+	\skalar{\vect{a}}{\vect{b}}&= \abs{a}\abs{b}\cos{\varphi} = \left( x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3\right) \left( x' \vect{e}_1 + y' \vect{e}_2 + z' \vect{e}_3 \right)
+	\end{align*}
+	Es gelten die Rechenregeln:
+	  \begin{itemize}
+	  \item Kommutativgesetz: \begin{align*}
+	  \skalar{\vect{a}}{\vect{b}} &= \skalar{\vect{b}}{\vect{a}}
+	  \end{align*}
+	  \item Distributivgesetz: \begin{align*}
+	  \skalar{\vect{a}}{\vect{b}+\vect{c}} &= \skalar{\vect{a}}{\vect{b}} + \skalar{\vect{a}}{\vect{c}}
+	  \end{align*}
+	  \item weitere Regeln: \begin{align*}
+	  \lambda \skalar{\vect{a}}{\vect{b}} &= \skalar{\lambda \vect{a}}{\vect{b}} = \skalar{ \vect{a}}{\lambda\vect{b}}
+	  \end{align*}
+	  \end{itemize}
+	  \begin{rem}[Orthogonale Vektoren] Verschwindet das Skalarprodukt zweier von Null verschiedenen Vektoren, so stehen diese senkrecht aufeinander. \begin{align*}
+	  \skalar{\vect{a}}{\vect{b}}&=0 \Leftrightarrow \vect{a} \perp  \vect{b}
+    \end{align*}	   
+    \end{rem}
+    \begin{rem}[Winkel zwischen Vektoren] Der Kosinus des Winkels zwischen zwei Vektoren ergibt sich aus dem Quotienten vom Skalarprodukt der beiden Vektoren und dem Produkt der Betr\"age der Vektoren. \begin{align*}
+    \cos{\varphi}&= \frac{\skalar{\vect{a}}{\vect{b}}}{\abs{\vect{a}}\abs{\vect{b}}} &\abs{\vect{a}}&\neq 0, \abs{\vect{b}}\neq 0
+    \end{align*}
+	  \end{rem}
+	  \begin{rem}[Richtungskosinus] Ein Vektor $\vect{a}$ bildet mit den drei Koordinatenachsen seines Bezugssystems der Reihe nach die Winkel $\alpha, \beta, \gamma$, die als \textit{Richtungswinkel} bezeichnet werden. Der Kosinus der jeweiligen Winkel wird als Richtungskosinus bezeichnet. \begin{align*}
+	  \cos{\alpha}&=\frac{ \skalar{\vect{a}}{\vect{e}_1}}{\abs{\vect{a}}\abs{\vect{e}_1}}=\frac{a_x}{a} &\cos{\beta}&=\frac{ \skalar{\vect{a}}{\vect{e}_2}}{\abs{\vect{a}}\abs{\vect{e}_2}}=\frac{a_y}{a} &\cos{\gamma}&=\frac{ \skalar{\vect{a}}{\vect{e}_3}}{\abs{\vect{a}}\abs{\vect{e}_3}}=\frac{a_z}{a}
+	  \end{align*}
+	  Die Richtungswinkel sind jedoch nicht voneinander unabh\"angig, sondern \"uber die Beziehung \begin{align*}
+	  \cos{\alpha}^2 + \cos{\beta}^2 + \cos{\gamma}^2 = 1
+	  \end{align*}
+	  miteinander verkn\"upft.
+	  \end{rem}
+	
+	\item das \textbf{Vektorprodukt} (auch Kreuzprodukt) $\vect{a}\times \vect{b}$ hat als Ergebnis einen Vektor, der senkrecht auf $\vect{a}$ und $\vect{b}$ steht und dessen L\"ange gleich dem Produkt der Betr\"age von $\vect{a}, \vect{b}$ und dem Sinus des durch die Vektoren eingeschlossenen Winkels $\varphi$ ist. \begin{align*}
+	\vect{a}\times \vect{b}&= \left( \abs{\vect{a}}\abs{\vect{b}} \sin\of{\vartheta}\right) \vect{n} =  \begin{pmatrix}
+	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix}
+	\end{align*}, wobei $\vect{n}$ derjenige zu $\vect{a}$ und $\vect{b}$ senkrechte Einheitsvektor ist, der diese zu einem Rechtssystem erg\"anzt. \hfill \newline
+	Es gelten die Rechenregeln:
+	  \begin{itemize}
+	  \item Distributivgesetz: \begin{align*}
+	  \vect{a}\times \left( \vect{b} + \vect{c}\right) &= \vect{a}\times \vect{b} + \vect{a} \times \vect{c} \\
+	  \left( \vect{a}+  \vect{b}\right) \times \vect{c} &= \vect{a}\times \vect{c} + \vect{b} \times \vect{c}
+	  \end{align*}
+	  \item Anti-Kommutativgesetz: \begin{align*}
+	  \vect{a}\times  \vect{b}&= - \left(\vect{b}\times  \vect{a} \right) 
+	  \end{align*}
+	  \item weitere Regeln: \begin{align*}
+	  \lambda \left( \vect{a}\times \vect{b} \right) &= \left( \lambda \vect{a}\right) \times \vect{b} = \vect{a}\times \left( \lambda \vect{b}\right)
+	  \end{align*}
+	  \end{itemize}
+	  Da das Kreuzprodukt mit dem Vektor $\vect{a}$ eine lineare Abbildung ist, kann $\vect{b} \to \vect{a} \times \vect{b}$ mit Hilfe einer Matrix dargestellt werden: \begin{align}
+	  \hat{\matr{a}} &= \begin{pmatrix}
+	  0 & -z & y \\ z & 0 & -x \\ -y & x & 0
+	  \end{pmatrix} \label{gl:SdT_mathGrundl_punkteVektoren_kreuzProdMatrix}\\
+	  \vect{a}\times \vect{b} &= \hat{\matr{a}} \vect{b} = \begin{pmatrix}
+	  0 & -z & y \\ z & 0 & -x \\ -y & x & 0
+	  \end{pmatrix} \cdot \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix}
+	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix} \label{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp}
+\end{align}	   
+\end{itemize}  

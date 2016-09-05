@@ -1,0 +1,98 @@
+\chapter{Grundlagen der Mechanik}\label{ch:mech}
+\section{Starrk\"orperbewegung}\label{sec:mech_starrkoerperbewegung}
+Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner Position in Bezug zu einem inertialen Koordinatensystem $\KOS{I}$ zu jedem Zeitpunkt $\acs{t}$ eindeutig beschrieben. Die Position des Punktes $p$ sei durch das Tripel $\left( x, y, z \right) \in \R^{3}$ gegeben. Die Trajektorie von $p$ kann dann durch die parametrisierte Bahn $p\of{t}=\left(x\of{t}, y\of{t}, z\of{t}\right) \in \R^{3} $ beschrieben werden. Da nicht die Bewegung von einzelnen Punkten, sondern die Bewegung eines Starrk\"orpers beschrieben werden soll, soll zun\"achst der Begriff Starrk\"orper definiert werden.
+
+\begin{defn}[Starrk\"orper] Ein Starrk\"orper ist dadurch gekennzeichnet, dass die Distanz zweier beliebiger Punkte $p, q$, welche auf dem K\"orper liegen, unabh\"angig von der Bewegung des K\"orpers, immer konstant bleibt. Die anf\"angliche Position des Punktes $p$ sei beschrieben durch $p\of{0}$. Die Position nach einer beliebigen Zeit $\acs{t}$ (und einer beliebigen Bewegung) sei beschrieben durch $p\of{t}$. Die Nomenklatur gelte f\"ur den Punkt $q$ analog. F\"ur einen Starrk\"orper wird gefordert: \begin{align*}
+\norm{p\of{t} - q\of{t}}&=\norm{p\of{0}-q\of{0}} = \text{konstant}
+\end{align*}
+\end{defn}
+Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer \"Uberlagerung dieser Bewegungen bestehen. Wird ein K\"orper durch eine Teilmenge $O \in \R^{3}$ beschrieben, so kann seine Bewegung als eine kontinuierliche Zuordnung $g\of{t}: O \to R^{3}$ beschrieben werden. Die kontinuierliche Zuordnungsvorschrift $g\of{t}$ beschreibt, wie sich die einzelnen Punkte des K\"orpers relativ zu einem inertialen, festen Koordinatensystem mit Voranschreiten der Zeit $\acs{t}$ bewegen. Die Zuordnungsvorschrift $g$ darf dabei die Distanz zwischen Punkten des K\"orpers und die Orientierung von Vektoren, welche Punkte des K\"orpers verbinden, nicht ver\"andern. Damit ergibt sich die Definition einer Abbildung von Starrk\"orpern: 
+
+\begin{defn}[Abbildung eines Starrk\"orpers] \cite{Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau denn, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
+\item Distanzen bleiben unver\"andert: $\norm{g\of{p}- g\of{q}}=\norm{p-q} \text{ f\"ur alle Punkte } p, q \in \R^{3}$
+\item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}} \text{ f\"ur alle Vektoren } \vect{v}, \vect{w} \in \R^{3}$.
+\end{enumerate}
+\end{defn}
+
+\begin{rem} Man kann mit Hilfe der Polarisationsformel zeigen, dass das Skalarprodukt durch die Abbildungsvorschrift $g$ f\"ur einen Starrk\"orper erhalten bleibt \cite{Murray1994}: \begin{align*}
+\skalar{\vect{v}}{\vect{w}}&= \skalar{g\of{\vect{v}}}{g\of{\vect{w}}}.
+\end{align*}
+Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach wieder in ein orthonormales Rechtssystem transformiert.
+\end{rem}
+Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in \ref{sec:kos_rechtssys} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem hat seinen Ursprung in einem beliebigen Punkt $p$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{v}_1, \vect{v}_2, \vect{v}_3$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{v}_1}, g\of{\vect{v}_2}, g\of{\vect{v}_3}$ die Orientierung von $\KOS{K}$ und $g\of{p}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. 
+
+\section{Lagrange Gleichung 2. Art}\label{sec:mech_lag2}
+Ein System mit $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $ und $m$ Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$, dessen Kinetische Energie $T$ und potentielle Energie $V$ durch $L=T-V$ beschrieben werden kann, l\"asst sich nach \cite[S. 124]{Jalon1994} charakterisieren durch:
+\begin{align}
+\int_{t_{1}}^{t_{2}}\left[ \delta\transp{\vect{q}} \left(  \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} \right) \right] \td t &=0 \label{gl:lagrange2ArtDefAllg} 
+\end{align} 
+Dabei gelten die Dimensionen
+\begin{align*} 
+\delta \vect{q}&\in\R^{n} &L&\in \R &\vect{q}&\in R^{n} &\matr{\Phi}&\in R^{m \times n} &\vect{\lambda}&\in R^{m} &\vect{Q}&\in R^{n}
+\end{align*}
+Der Vergleich mit der \"ublichen Form der Gleichung von Lagrange (2. Art) \eqnref{gl:lagrange2ArtDefMin} macht einige Unterschiede deutlich. \begin{align}
+\ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} &=0 \label{gl:lagrange2ArtDefMin} 
+\intertext{mit}
+\vect{q}&\in R^{n-m} \nonumber
+\end{align}
+Die generalisierten Koordinaten m\"ussen mit Hilfe der Zwangsbedingungen auf einen Satz von Minimalkoordinaten reduziert werden. Diese Minimalkoordinaten m\"ussen voneinander unabh\"angig sein. 
+  \subsection{Kinetische Energie}\label{ssec:mech_lag2_kinEn}
+  Die kinetische Energie $K$ eines Starrk\"orpers wird durch die Geschwindigkeit eines beliebigen Punktes $\vect{A}$, welcher ein Element des K\"orpers ist, und seiner Massenverteilung nach \eqnref{gl:kinEnergieAllgDef} beschrieben. \begin{align}
+  K&=\frac{1}{2} \int_{m} \dot{\vect{A}}^{2} \td m \label{gl:kinEnergieAllgDef}
+  \end{align} Der Punkt $\vect{A}$ kann in den Koordinaten des k\"orperfesten Koordinatensystems mit Ursprung $\vect{P}$ durch den Vektor $\transp{\of{x, y, z, 1}}$ und die Transformationsmatrix $\matr{T}$ beschrieben werden. Die kinetische Energie l\"asst sich dann entsprechend umformen. \begin{align*}
+  K&=\frac{1}{2}\int_{m} \of{x, y, z, 1} \transp{\dot{\matr{T}}} \dot{\matr{T}} \transp{\of{x, y, ,z, 1}} \\
+  &= \frac{1}{2}\int_{m} \of{x, y, z, 1} \begin{bmatrix}
+  \dot{\vect{u}}^{2} & \skalar{{\dot{\vect{u}}}}{\dot{\vect{w}}} & \skalar{{\dot{\vect{u}}}}{\dot{\vect{v}}} & \skalar{{\dot{\vect{u}}}}{\dot{\vect{P}}} \\
+   \skalar{{\dot{\vect{w}}}}{\dot{\vect{u}}} & \dot{\vect{w}}^{2} & \skalar{{\dot{\vect{w}}}}{\dot{\vect{v}}} & \skalar{{\dot{\vect{w}}}}{\dot{\vect{P}}} \\
+   \skalar{{\dot{\vect{v}}}}{\dot{\vect{u}}} & \skalar{{\dot{\vect{v}}}}{\dot{\vect{w}}} & \dot{\vect{v}}^{2} & \skalar{{\dot{\vect{v}}}}{\dot{\vect{P}}} \\
+   \skalar{{\dot{\vect{P}}}}{\dot{\vect{u}}} & \skalar{{\dot{\vect{P}}}}{\dot{\vect{w}}} & \skalar{{\dot{\vect{P}}}}{\dot{\vect{v}}} & \dot{\vect{P}}^{2} 
+\end{bmatrix}   \transp{\of{x, y, z, 1}} \\
+&= \frac{1}{2} \dot{\vect{P}}^{2} \int_{m} \td m + 
+\frac{1}{2} \dot{\vect{u}}^{2} \int_{m} x^{2} \td m + 
+\frac{1}{2} \dot{\vect{w}}^{2} \int_{m} y^{2} \td m + 
+\frac{1}{2} \dot{\vect{v}}^{2} \int_{m} z^{2} \td m  \\
+&+\skalar{{\dot{\vect{u}}}}{\dot{\vect{w}}} \int_{m} x y \td m +
+\skalar{{\dot{\vect{u}}}}{\dot{\vect{v}}} \int_{m} x z \td m +
+\skalar{{\dot{\vect{w}}}}{\dot{\vect{v}}} \int_{m} y z \td m \\
+&+\skalar{{\dot{\vect{u}}}}{\dot{\vect{P}}} \int_{m} x \td m +
+\skalar{{\dot{\vect{v}}}}{\dot{\vect{P}}} \int_{m} z \td m +
+\skalar{{\dot{\vect{w}}}}{\dot{\vect{P}}} \int_{m} y \td m 
+\intertext{und unter der Annahme, dass $\vect{P}$ der Schwerpunkt des K\"orpers ist folgt mit Hilfe des Tr\"agheitstensors}
+K&=\frac{1}{2}m  \dot{\vect{P}}^{2} \\
+&+ \frac{1}{4} I_{x} \left( -\dot{\vect{u}}^{2} + \dot{\vect{w}}^{2} + \dot{\vect{v}}^{2} \right) \\
+&+ \frac{1}{4} I_{y} \left( \dot{\vect{u}}^{2} - \dot{\vect{w}}^{2} + \dot{\vect{v}}^{2} \right) \\
+&+ \frac{1}{4} I_{z} \left( \dot{\vect{u}}^{2} + \dot{\vect{w}}^{2} - \dot{\vect{v}}^{2} \right) \\
+&+ C_{xz} \skalar{{\dot{\vect{u}}}}{\dot{\vect{v}}} + C_{xy} \skalar{{\dot{\vect{u}}}}{\dot{\vect{w}}} + C_{yz} \skalar{{\dot{\vect{w}}}}{\dot{\vect{v}}}
+  \end{align*}
+  
+  \subsection{Prinzip der virtuellen Arbeit}\label{ssec:mech_lag2_virtArbeit}
+  Eine virtuelle Verschiebung ist eine infinitesimale, rein virtuelle \"Anderung des Zustands eines Systems, ohne das die Zeit dabei voran schreitet. Die Zustands\"anderung muss dabei mit den Zwangsbedingungen vertr\"aglich sein. Wenn ein System durch generalisierte Koordinaten $\vect{q}$ beschrieben wird, dann wird die virtuelle Verschiebung durch $\delta \vect{q}$ notiert. Virtuelle Verschiebungen verhalten sich genau so wie andere infinitesimale Variationen einer Gr\"o\ss{}e. Damit sind virtuelle Verschiebungen \"ahnlich dem Differentialoperator, aber nur mit Bezug auf die abh\"angigen Variablen und nicht auf die Zeit. Das Beispiel \ref{ex:virtuelleVerschiebung} soll dies verdeutlichen. \newline
+  Bei der Arbeit mit virtuellen Verschiebungen gelten die gleichen Gesetze wie bei Anwendung des Differentialoperators bez\"uglich Summen, Produkten und Verkettungen. Au\ss{}erdem kann der Variationsoperator virtuelle Verschiebung mit dem Differential- und Integraloperator vertauscht werden.  
+  
+  \begin{exmp}[Virtuelle Verschiebungen]\label{ex:virtuelleVerschiebung} Gegeben sei eine Funktion $\phi\of{\vect{q},t}\in \R$, welche von $n$ generalisierten Koordinaten $\vect{q}=\transp{\begin{bmatrix}
+  q_{1} & q_{2} & \dots & q_{n} \end{bmatrix}}$ und au\ss{}erdem explizit von der Zeit $t$ abh\"angt. Die virtuelle Verschiebung dieser Funktion berechnet sich nach folgendem Schema: \begin{align*}
+  \delta \phi\of{\vect{q},t}&= \phi_{\vect{q}} \delta \vect{q} = \begin{bmatrix}
+  \frac{\d }{\d q_{1}}\phi\of{\vect{q},t} & \frac{\d}{\d q_{2}}\phi\of{\vect{q},t} & \dots & \frac{\d}{\d q_{n}}\phi\of{\vect{q},t}
+\end{bmatrix} \begin{bmatrix}
+\delta q_{1} \\
+\delta q_{2} \\ 
+\vdots \\
+\delta q_{n}
+\end{bmatrix}
+  \end{align*}
+  \end{exmp}    
+  
+  \paragraph*{} Die virtuelle Arbeit ist definiert als die Summe aller an einem System angreifenden Kr\"afte, welche einer virtuellen Verschiebung ausgesetzt sind. In einem System mit $n$ generalisierten Koordinaten an welchem $k$ Kr\"afte angreifen, wird die virtuelle Arbeit durch \eqnref{gl:virtArbeitDef} beschrieben. \begin{align}
+  \delta W &= \sum_{1}^{k} Q_{k} \delta \vect{q}_{k} \label{gl:virtArbeitDef} \\
+  &= \transp{\begin{bmatrix}
+  \frac{\d Q_{1}}{\d q_{1}} + \frac{\d Q_{2}}{\d q_{1}} + \dots + \frac{\d Q_{k}}{\d q_{1}}\\
+  \frac{\d Q_{1}}{\d q_{2}} + \frac{\d Q_{2}}{\d q_{2}} + \dots + \frac{\d Q_{k}}{\d q_{2}}\\
+  \vdots \\
+  \frac{\d Q_{1}}{\d q_{n}} + \frac{\d Q_{2}}{\d q_{n}} + \dots + \frac{\d Q_{k}}{\d q_{n}}\\
+\end{bmatrix}} \begin{bmatrix}
+\delta q_{1} \\
+\delta q_{2} \\ 
+\vdots \\
+\delta q_{n}
+\end{bmatrix}   \nonumber
+  \end{align}
