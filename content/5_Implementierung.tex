@@ -1,0 +1,16 @@
+\chapter{Implementierung}\label{ch:implement}
+
+\section{Notwendige Suchbefehle zum Ersetzen der Differentiation}
+Suche nach: \begin{lstlisting}
+diff\(diff\(([a-z]+__\d+\(t\),) t\), t\)
+\end{lstlisting} 
+
+ersetzen durch: 
+\begin{lstlisting} 
+diff\($1 t, 2\)
+\end{lstlisting} 
+
+Ergebnis entspricht der Matlab Vorgabe fuer mehrfache Ableitung: 
+\begin{lstlisting}
+diff(expr, var, int)
+\end{lstlisting}
