@@ -53,28 +53,42 @@ a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
   Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{sec:kos_rechtssys} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
   p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
   \end{align*} Die Position von $p$ ist damit relativ zu $\KOS{I}$ eindeutig beschrieben. \newline
-  Ein Vektor $\vect{a}\in \R^{3}$ hat im Gegensatz zum Punkt eine \textit{Richtung} und einen \textit{Betrag} beziehungsweise eine L\"ange. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
+    \subsection{Vektoren}
+  Unter einem Vektor $\vect{a}\in \R^{3}$ versteht man einen Pfeil, welcher durch seine \textit{Richtung} und seinen \textit{Betrag} beziehungsweise seine L\"ange eindeutig charakterisiert wird. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Die folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
   \begin{align*}
-  \abs{\vect{a}}:= \norm{\vect{a}}
+  \abs{\vect{a}} \equiv a := \norm{\vect{a}}
+  \intertext{F\"ur einen Vektor $\vect{a}$ gilt immer:}
+  \abs{\vect{a}} &\geq 0
   \end{align*}
-Eine Vektor kann frei im Raum verschoben werden, so lange seine Richtung und sein Betrag konstant bleiben. Man spricht daher auch von freien Vektoren. F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die Angabe von Anfangspunkt $q$ und Endpunkt $p$
+  Beschreibt ein Vektor die Auspr\"agung einer physikalischen Gr\"o\ss{}e, so geh\"ort zu deren vollst\"andiger Beschreibung zus\"atzlich zu Betrag und Richtung noch die Angabe einer Ma\ss{}einheit. Ein typisches Beispiel ist der Betrag einer Kraft $\vect{F}: \abs{\vect{F}}= 100 \cdot N$ \newline
+Bei der Arbeit mit Vektoren wird zwischen verschiedenen Typen unterschieden \cite[S. 26]{Riessinger2007j}:
+\begin{itemize}
+\item \textit{Freie Vektoren}\footnote{\textit{freie Vektoren} werden auch als \textit{Richtungsvektoren} bezeichnet} k\"onnen beliebig im Raum verschoben werden, so lange Richtung und Betrag konstant bleiben. Damit sind parallele Verschiebungen und Verschiebungen entlang der Wirkungslinie m\"oglich. Dieser Typ von Vektoren wird in der Regel gemeint, wenn man von Vektoren spricht. Ein typisches Beispiel sind die Einheitsvektoren $\vect{e}$, mit denen die Koordinatenachsen eines Koordinatensystems beschrieben werden.
+\item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie abgetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
+\end{itemize}
+Da die Notation von Punkten im Sinne eines Ortsvektors und die Notation von Richtungsvektoren identisch ist, kommt es leicht zu Verwechslungen. Erschwerend kommt hinzu, dass die Konzepte von Punkt und Vektor in der Literatur h\"aufig nicht gesondert betrachtet werden. Es ist damit die Aufgabe des Lesers sich klar zu machen, ob mit $\vect{a}$ ein Richtungsvektor oder ein Punkt gemeint ist. Verwendet man zur Darstellung Homogene Koordinaten (siehe \ref{sec:kos_homKoord}) so ist die Unterscheidung von Punkten und Vektoren offensichtlich. \newline
+F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die bereits verwendete Angabe von Anfangspunkt $q$ und Endpunkt $p$
 \begin{align*}
-\vect{a}&=  p - q = \vect{qp}.
+\vect{a}&=  p - q \equiv \vect{qp}.
 \end{align*}
-Da Vektoren frei verschiebbar sind, ist die Wahl der Anfangs- und Endpunkte jedoch nicht eindeutig. Es gibt daher andere Punkte $r, s$, f\"ur die gilt:
+Bei \textit{freien Vektoren} ist die Wahl der Anfangs- und Endpunkte jedoch nicht eindeutig. Es gibt also Punkte $r, s$, f\"ur die gilt:
 \begin{align*}
 \vect{a}&= p - q = r - s 
 \intertext{mit}
 p&\neq r \text{ und } q\neq s
 \end{align*}
-Eine weitere Darstellung ist die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$, welche durch Projektion auf die Basisvektoren von $\KOS{I}$ gegeben ist:
+F\"ur einen \textit{gebundenen Vektor} gibt es keine solche Punkte $r, s$. Durch die Angabe eines Bezugspunktes, die Richtung und den Betrag des Vektors ist auch der Endpunkt eindeutig bestimmt. \newline
+Eine weitere Darstellung f\"ur Vektoren ist die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$, welche durch Projektion auf die Basisvektoren von $\KOS{I}$ gegeben ist. 
 \begin{align*}
-\vect{a}&=  \vect{a}_x + \vect{a}_y + \vect{a}_z =  x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 = 
+\vect{\tensor*[_I]{a}{}}&=  \vect{\tensor*[_I]{a}{_x}} + \vect{\tensor*[_I]{a}{_y}}+ \vect{\tensor*[_I]{a}{_z}} =  x \vect{\tensor*[_I]{e}{_1}} + y \vect{\tensor*[_I]{e}{_2}}+ z \vect{\tensor*[_I]{e}{_3}} = 
 \begin{pmatrix} x \\ y \\ z 
 \end{pmatrix} 
 \intertext{damit ergibt sich der Betrag eines Vektor zu}
-\abs{\vect{a}}&= \sqrt{x^2 + y^2 + z^2} = a
-\end{align*}  
+\abs{\vect{\tensor*[_I]{a}{}}}&= \sqrt{x^2 + y^2 + z^2} \\
+&=\sqrt{\skalar{\vect{a}}{\vect{a}}}
+\intertext{Wenn bekannt ist, dass mit $\vect{a}$ ein Vektor gemeint ist, so notiert man den Betrag des Vektors in Kurzform mit $a$.}
+\end{align*}
+Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koordinaten} oder auch \textit{Eintr\"age} des Vektors $\vect{\tensor*[_I]{a}{}}$. Der linksseitige Index $I$ kennzeichnet das verwendete Bezugssystem. Ist das Bezugssystem eindeutig, so wird dieser Index weggelassen.\newline
 
 Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}$ (nach \cite{Papula2014}):
 
@@ -147,7 +161,7 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 	\item das \textbf{Vektorprodukt} (auch Kreuzprodukt) $\vect{a}\times \vect{b}$ hat als Ergebnis einen Vektor, der senkrecht auf $\vect{a}$ und $\vect{b}$ steht und dessen L\"ange gleich dem Produkt der Betr\"age von $\vect{a}, \vect{b}$ und dem Sinus des durch die Vektoren eingeschlossenen Winkels $\varphi$ ist. \begin{align*}
 	\vect{a}\times \vect{b}&= \left( \abs{\vect{a}}\abs{\vect{b}} \sin\of{\vartheta}\right) \vect{n} =  \begin{pmatrix}
 	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix}
-	\end{align*}, wobei $\vect{n}$ derjenige zu $\vect{a}$ und $\vect{b}$ senkrechte Einheitsvektor ist, der diese zu einem Rechtssystem erg\"anzt. \hfill \newline
+	\end{align*} Dabei ist $\vect{n}$ derjenige zu $\vect{a}$ und $\vect{b}$ senkrechte Einheitsvektor, der diese zu einem Rechtssystem erg\"anzt. \hfill \newline
 	Es gelten die Rechenregeln:
 	  \begin{itemize}
 	  \item Distributivgesetz: \begin{align*}

@@ -14,3 +14,32 @@ Ergebnis entspricht der Matlab Vorgabe fuer mehrfache Ableitung:
 \begin{lstlisting}
 diff(expr, var, int)
 \end{lstlisting}
+
+Maple verwendet f\"ur die Signum-Funktion den Betrag in der Form
+\begin{lstlisting}
+\abs(1,expr)
+\end{lstlisting}
+In Matlab muss dieser Ausdruck also wie folgt ersetzt werden:
+\begin{lstlisting}
+\sign(expr)
+\end{lstlisting}
+
+\section{Stabilisierung nach Baumgarte}
+Untersuchungen zu der Wahl der Parameter finden sich unter anderem in:
+, \cite{Flores2011}-> gute D\"ampfung f\"ur gleiche Parameter,\cite{Neto2003}$\alpha, \beta$ h\"aufig gleich 5 gew\"ahlt.
+
+\section{\"Ubersichtswerke zur L\"osung von DAEs}
+\cite{Haug1991}, \cite{ErnstHairer2010}
+
+\section{Alternative Stabilisierungsverfahren}
+\cite{Park1988},\cite{Cline2003}
+
+\section{Fortran}
+Notwendige Schritte:
+\begin{enumerate}
+\item fortran-compiler installieren (z. B. gfortran, welcher in cygwin64 enthalten ist)
+\item die Path-Variable von Windoof updaten
+\item Windows-Konsole \"offnen
+\item im Make-File sicherstellen, dass der compiler \glqq gfortran\grqq ausgew\"ahlt ist
+\item Make-File starten: \$make -f <makefileName>
+\end{enumerate}

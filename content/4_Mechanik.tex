@@ -3,7 +3,7 @@
 Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner Position in Bezug zu einem inertialen Koordinatensystem $\KOS{I}$ zu jedem Zeitpunkt $\acs{t}$ eindeutig beschrieben. Die Position des Punktes $p$ sei durch das Tripel $\left( x, y, z \right) \in \R^{3}$ gegeben. Die Trajektorie von $p$ kann dann durch die parametrisierte Bahn $p\of{t}=\left(x\of{t}, y\of{t}, z\of{t}\right) \in \R^{3} $ beschrieben werden. Da nicht die Bewegung von einzelnen Punkten, sondern die Bewegung eines Starrk\"orpers beschrieben werden soll, soll zun\"achst der Begriff Starrk\"orper definiert werden.
 
 \begin{defn}[Starrk\"orper] Ein Starrk\"orper ist dadurch gekennzeichnet, dass die Distanz zweier beliebiger Punkte $p, q$, welche auf dem K\"orper liegen, unabh\"angig von der Bewegung des K\"orpers, immer konstant bleibt. Die anf\"angliche Position des Punktes $p$ sei beschrieben durch $p\of{0}$. Die Position nach einer beliebigen Zeit $\acs{t}$ (und einer beliebigen Bewegung) sei beschrieben durch $p\of{t}$. Die Nomenklatur gelte f\"ur den Punkt $q$ analog. F\"ur einen Starrk\"orper wird gefordert: \begin{align*}
-\norm{p\of{t} - q\of{t}}&=\norm{p\of{0}-q\of{0}} = \text{konstant}
+\norm{q\of{t} - p\of{t}}&=\norm{p\of{0}-q\of{0}} = \text{konstant}
 \end{align*}
 \end{defn}
 Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer \"Uberlagerung dieser Bewegungen bestehen. Wird ein K\"orper durch eine Teilmenge $O \in \R^{3}$ beschrieben, so kann seine Bewegung als eine kontinuierliche Zuordnung $g\of{t}: O \to R^{3}$ beschrieben werden. Die kontinuierliche Zuordnungsvorschrift $g\of{t}$ beschreibt, wie sich die einzelnen Punkte des K\"orpers relativ zu einem inertialen, festen Koordinatensystem mit Voranschreiten der Zeit $\acs{t}$ bewegen. Die Zuordnungsvorschrift $g$ darf dabei die Distanz zwischen Punkten des K\"orpers und die Orientierung von Vektoren, welche Punkte des K\"orpers verbinden, nicht ver\"andern. Damit ergibt sich die Definition einer Abbildung von Starrk\"orpern: 
@@ -19,8 +19,195 @@ Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer
 \end{align*}
 Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach wieder in ein orthonormales Rechtssystem transformiert.
 \end{rem}
-Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in \ref{sec:kos_rechtssys} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem hat seinen Ursprung in einem beliebigen Punkt $p$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{v}_1, \vect{v}_2, \vect{v}_3$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{v}_1}, g\of{\vect{v}_2}, g\of{\vect{v}_3}$ die Orientierung von $\KOS{K}$ und $g\of{p}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. 
+Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in \ref{sec:kos_rechtssys} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem hat seinen Ursprung in einem beliebigen Punkt $p$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{v}_1, \vect{v}_2, \vect{v}_3$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{v}_1}, g\of{\vect{v}_2}, g\of{\vect{v}_3}$ die Orientierung von $\KOS{K}$ und $g\of{p}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. \newline
+Beschreibt man die Orientierung eines Starrk\"orpers mit Hilfe eines Ortsvektors $\vect{p}$, welcher auf den Ursprung des k\"orperfesten Koordinatensystem zeigt, einem Ortsvektor $\vect{q}$, welcher auf einen beliebigen Punkt des K\"orpers zeigt und dem Richtungsvektor $\vect{s}$, welcher die Punkte $p$ und $q$ verbindet, dann l\"asst sich die Bewegung wie folgt beschreiben: \begin{align*}
+\tensor*[_I]{\vect{q}\of{t}}{}&=\tensor*[_I]{\vect{p}\of{t}}{} + \tensor*[_I]{\vect{s}\of{t}}{}\\
+\ddt{}\left(\tensor*[_I]{\vect{q}\of{t}}{}\right)&=\ddt{}\left(\tensor*[_I]{\vect{p}\of{t}}{}\right) + \ddt{}\left(\tensor*[_I]{\vect{s}\of{t}}{}\right)
+\intertext{mit}
+\norm{q\of{t} - p\of{t}} &\equiv \abs{\tensor*[_I]{\vect{s}\of{t}}{}} = konstant 
+\intertext{folgt}
+\ddt{}\left(\abs{\tensor*[_I]{\vect{s}\of{t}}{}}\right) &=0 
+\intertext{Anwendung der Kettenregel liefert (siehe Bspw. \cite[S.20]{Mathiak2015}) }
+\ddt{}\left( \sqrt{ \skalar{\tensor*[_I]{\vect{s}\of{t}}{}}{\tensor*[_I]{\vect{s}\of{t}}{}} } \right)&= 0\\
+2 \tensor*[_I]{\vect{s}\of{t}}{} \tensor*[_I]{\dot{\vect{s}}\of{t}}{}&= 0\\
+\implies \tensor*[_I]{\vect{s}\of{t}}{} &\perp \tensor*[_I]{\dot{\vect{s}}\of{t}}{}
+\end{align*}
+Da der Geschwindigkeitsvektor $\tensor*[_I]{\dot{\vect{s}}\of{t}}{}$ senkrecht auf $\tensor*[_I]{\vect{s}\of{t}}{}$ stehen soll ist es sinnvoll einen Vektor $\vect{\omega}\of{t}$ wie folgt einzuf\"uhren: \begin{align*}
+\tensor*[_I]{\dot{\vect{s}}\of{t}}{} &= \tensor*[_I]{\vect{\omega}\of{t}}{} \times \tensor*[_I]{\vect{s}\of{t}}{}
+\end{align*}
+Damit berechnet sich die Geschwindigkeit eines beliebigen Punktes des K\"orpers zu: \begin{align}
+\ddt{}\left(\tensor*[_I]{\vect{q}\of{t}}{}\right)&= \tensor*[_I]{\dot{\vect{q}}\of{t}}{} =\tensor*[_I]{\dot{\vect{p}}\of{t}}{}  + \tensor*[_I]{\vect{\omega}\of{t}}{} \times \tensor*[_I]{\vect{s}\of{t}}{} \label{gl:starrKAllgGeschw}
+\end{align}
+Da die Berechnung der Summe und des Kreuzproduktes sehr unhandlich ist soll eine Ausdruck f\"ur die Geschwindigkeit in homogenen Koordinaten gefunden werden. Die Herleitung lautet wie folgt: \begin{align*}
+\intertext{Die Vektorgleichung soll auch in homogenen Koordinaten gelten:}
+%
+\tensor*[_I^H]{\vect{q}\of{t}}{}&=\tensor*[_I^H]{\vect{p}\of{t}}{} + \tensor*[_I^H]{\vect{s}\of{t}}{} \\
+%
+\intertext{Ausf\"uhrliche Schreibweise unter der Beachtung, dass $\vect{s}\of{t}$ ein Richtungsvektor ist}
+%
+\begin{pmatrix}
+\tensor*[_I]{\vect{q}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\vect{p}\of{t}}{} \\1
+\end{pmatrix} + 
+\begin{pmatrix}
+\tensor*[_I]{\vect{s}\of{t}}{} \\0
+\end{pmatrix} 
+%
+\intertext{Transformation von $\vect{s}\of{t}$ in k\"orperfeste Koordinaten}
+%
+\begin{pmatrix}
+\tensor*[_I]{\vect{q}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\vect{p}\of{t}}{} \\1
+\end{pmatrix} + \com{\begin{pmatrix}
+\matr{R} & \vect{Q} \\ \vect{0} & 1
+\end{pmatrix}}{$\equiv T$}
+\begin{pmatrix}
+\tensor*[_K]{\vect{s}\of{t}}{} \\0
+\end{pmatrix}
+%
+\intertext{Zeitableitung}
+%
+\ddt{}\begin{pmatrix}
+\tensor*[_I]{\vect{q}\of{t}}{} \\1
+\end{pmatrix}&= \ddt{}\begin{pmatrix}
+\tensor*[_I]{\vect{p}\of{t}}{} \\1
+\end{pmatrix} + \ddt{} \left( \begin{pmatrix}
+\matr{R} & \vect{Q} \\ \vect{0} & 1
+\end{pmatrix}
+\begin{pmatrix}
+\tensor*[_K]{\vect{s}\of{t}}{} \\0
+\end{pmatrix} \right)
+%
+\intertext{Beachtung der Kettenregel und Differentiationsregel f\"ur homogene Matrizen}
+%
+\begin{pmatrix}
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\dot{\vect{p}}\of{t}}{} \\1
+\end{pmatrix} +  \left(\begin{pmatrix}
+\dot{\matr{R}} & \dot{\vect{Q}} \\ \vect{0} & 1
+\end{pmatrix}
+\begin{pmatrix}
+\tensor*[_K]{\vect{s}\of{t}}{} \\0
+\end{pmatrix} \right) + \left( \begin{pmatrix}
+\matr{R} & \vect{Q} \\ \vect{0} & 1
+\end{pmatrix}
+\begin{pmatrix}
+\tensor*[_K]{\dot{\vect{s}}\of{t}}{} \\0
+\end{pmatrix} \right) 
+%
+\intertext{lokales $\vect{s}\of{t}$ ist zeitlich konstant}
+%
+\begin{pmatrix}
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\dot{\vect{p}}\of{t}}{} \\1
+\end{pmatrix} +  \com{\begin{pmatrix}
+\dot{\matr{R}} & \dot{\vect{Q}} \\ \vect{0} & 1
+\end{pmatrix}}{$\dot{\matr{T}}$}
+\begin{pmatrix}
+\tensor*[_K]{\vect{s}}{} \\0
+\end{pmatrix} 
+%
+\intertext{R\"ucktransformation von $\vect{s}\of{t}$ in globale Koordinaten $\KOS{I}$}
+%
+\begin{pmatrix}
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\dot{\vect{p}}\of{t}}{} \\1
+\end{pmatrix} +  \com{\begin{pmatrix}
+\dot{\matr{R}} & \dot{\vect{Q}} \\ \vect{0} & 1
+\end{pmatrix}}{$\dot{\matr{T}}$} \com{\begin{pmatrix}
+\matr{R} & \vect{Q} \\ \vect{0} & 1
+\end{pmatrix}^{T}}{$\transp{\matr{T}}$}
+\begin{pmatrix}
+\tensor*[_I]{\vect{s}\of{t}}{} \\0
+\end{pmatrix}\\
+%
+\begin{pmatrix}
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} \\1
+\end{pmatrix}&= \begin{pmatrix}
+\tensor*[_I]{\dot{\vect{p}}\of{t}}{} \\1
+\end{pmatrix} +  \begin{pmatrix}
+\dot{\matr{R}} & \dot{\vect{Q}} \\ \vect{0} & 1
+\end{pmatrix} \begin{pmatrix}
+\transp{\matr{R}} & -\transp{\matr{R}}\vect{Q} \\ \vect{0} & 1
+\end{pmatrix}
+\begin{pmatrix}
+\tensor*[_I]{\vect{s}\of{t}}{} \\0
+\end{pmatrix}
+%
+\intertext{R\"ucktransformation in kartesische Koordinaten}
+%
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} &=\tensor*[_I]{\dot{\vect{p}}\of{t}}{}  + \com{\dot{\matr{R}} \transp{\matr{R}}}{$:=\matr{\Omega}$} \tensor*[_I]{\vect{s}\of{t}}{}
+%
+\intertext{Vergleich mit \eqnref{gl:starrKAllgGeschw} unter Beachtung der Ersetzung des Kreuzproduktes durch eine Matrix nach \eqnref{gl:SdT_mathGrundl_punkteVektoren_kreuzProdMatrix} beweist die \"Aquivalenz dieser alternativen Herleitung}
+\tensor*[_I]{\dot{\vect{q}}\of{t}}{} &=\tensor*[_I]{\dot{\vect{p}}\of{t}}{}  + \matr{\Omega} \tensor*[_I]{\vect{s}\of{t}}{} 
+\end{align*}
+Kompakte Form in homogenen Koordinaten: \begin{align*}
+\tensor*[_I^H]{\dot{\vect{q}}\of{t}}{}&=\tensor*[_I^H]{\dot{\vect{p}}\of{t}}{} + \dot{\matr{T}} \transp{\matr{T}}\tensor*[_I^H]{\vect{s}\of{t}}{}
+\end{align*}
 
+\subsection{Vektor der Winkelgeschwindigkeit}
+\begin{align*}
+\matr{\Omega}&= \dot{\matr{R}} \transp{\matr{R}} \\
+&= \begin{pmatrix}
+{ \dot{r}_{11}}&{ \dot{r}_{12}}&{ \dot{r}_{13}}\\
+ { \dot{r}_{21}}&{ \dot{r}_{22}}&{ \dot{r}_{23}}\\
+ { \dot{r}_{31}}&{ \dot{r}_{32}}&{ \dot{r}_{33}}
+\end{pmatrix} \begin{pmatrix}
+ { r_{11}}&{ r_{12}}&{ r_{13}}\\
+ { r_{21}}&{ r_{22}}&{ r_{23}}\\
+ { r_{31}}&{ r_{32}}&{ r_{33}}
+\end{pmatrix}^{T} \\
+&= \begin{pmatrix}
+\dot{r}_{11}\,r_{11}+\dot{r}_{12}\,r_{12}+\dot{r}_{13}\,r_{13}&\dot{r}_{11}\,r_{21}+\dot{r}_{12}\,r_{22}+\dot{r}_{13}\,r_{23}&\dot{r}_{11}\,r_{31}+\dot{r}_{12}\,r_{32}+\dot{r}_{13}\,r_{33}\\
+\dot{r}_{21}\,r_{11}+\dot{r}_{22}\,r_{12}+\dot{r}_{23}\,r_{13}&\dot{r}_{21}\,r_{21}+\dot{r}_{22}\,r_{22}+\dot{r}_{23}\,r_{23}&\dot{r}_{21}\,r_{31}+\dot{r}_{22}\,r_{32}+\dot{r}_{23}\,r_{33}\\
+\dot{r}_{31}\,r_{11}+\dot{r}_{32}\,r_{12}+\dot{r}_{33}\,r_{13}&\dot{r}_{31}\,r_{21}+\dot{r}_{32}\,r_{22}+\dot{r}_{33}\,r_{23}&\dot{r}_{31}\,r_{31}+\dot{r}_{32}\,r_{32}+\dot{r}_{33}\,r_{33}
+\end{pmatrix} \\
+&= \begin{pmatrix}
+0 & -\omega_3 & \omega_2\\
+\omega_3 & 0 & -\omega_1\\
+-\omega_2 & \omega_1 & 0
+\end{pmatrix} \\
+\vect{\omega}&= \begin{pmatrix}
+\omega_1 \\ \omega_2 \\ \omega_3
+\end{pmatrix}\\
+&= \begin{pmatrix}
+\dot{r}_{31}\,r_{21}+\dot{r}_{32}\,r_{22}+\dot{r}_{33}\,r_{23} \\
+\dot{r}_{11}\,r_{31}+\dot{r}_{12}\,r_{32}+\dot{r}_{13}\,r_{33} \\
+\dot{r}_{21}\,r_{11}+\dot{r}_{22}\,r_{12}+\dot{r}_{23}\,r_{13}
+\end{pmatrix} \\
+&= \begin{pmatrix}
+\skalar{\dot{v}}{w}\\
+\skalar{\dot{u}}{v}\\
+\skalar{\dot{w}}{u}
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+\intertext{Drall}
+\matr{L}_{P}&=\begin{pmatrix}
+A \omega_{x}  -F \omega_{y}  -E \omega_{z} \\
+-F \omega_{x}  +B \omega_{y}  -D \omega_{z} \\
+-E \omega_{x}  -D \omega_{y}  +C \omega_{z}
+\end{pmatrix} \\
+\intertext{Tr\"agheitstensor}
+\matr{L}_{P}&=\matr{J}_{P} \vect{\omega} \\
+\matr{J}_{P}&=\begin{pmatrix}
+A  & -F  & -E  \\
+-F  & B  & -D  \\
+-E  & -D  & C 
+\end{pmatrix} \\
+\frac{1}{2} \vect{\omega}\matr{L}_{P} &= \frac{1}{2}( \dots \\
+ &\quad \omega_{x} ( A\omega_{x}-E\omega_{z}- F\omega_{y} ) + \dots \\
+ &\quad \omega_{y} ( B\omega_{y}-  D \omega_{z}-F\omega_{x} ) + \dots \\
+ &\quad \omega_{z} ( C\omega_{ z}-  D \omega_{y}-E\omega_{x} ))
+\intertext{Einsetzen der Terme f\"ur Komponenten der Winkelgeschw.}
+ &=\frac{1}{2}\left( A(\dot{v}^2)(w^2) + B(\dot{u}^2)(v^2)+C(\dot{w}^2)(u^2)\right)+ \dots \\
+ &\quad \frac{1}{2}\left( -D\dot{u}\dot{w}\com{u v}{=0}  -E\dot{v}\dot{w}\com{u w}{=0} - F\dot{u}\dot{v}\com{v w}{=0} \right)
+\end{align*}
 \section{Lagrange Gleichung 2. Art}\label{sec:mech_lag2}
 Ein System mit $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $ und $m$ Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$, dessen Kinetische Energie $T$ und potentielle Energie $V$ durch $L=T-V$ beschrieben werden kann, l\"asst sich nach \cite[S. 124]{Jalon1994} charakterisieren durch:
 \begin{align}
@@ -66,12 +253,13 @@ K&=\frac{1}{2}m  \dot{\vect{P}}^{2} \\
   \end{align*}
   
   \subsection{Prinzip der virtuellen Arbeit}\label{ssec:mech_lag2_virtArbeit}
-  Eine virtuelle Verschiebung ist eine infinitesimale, rein virtuelle \"Anderung des Zustands eines Systems, ohne das die Zeit dabei voran schreitet. Die Zustands\"anderung muss dabei mit den Zwangsbedingungen vertr\"aglich sein. Wenn ein System durch generalisierte Koordinaten $\vect{q}$ beschrieben wird, dann wird die virtuelle Verschiebung durch $\delta \vect{q}$ notiert. Virtuelle Verschiebungen verhalten sich genau so wie andere infinitesimale Variationen einer Gr\"o\ss{}e. Damit sind virtuelle Verschiebungen \"ahnlich dem Differentialoperator, aber nur mit Bezug auf die abh\"angigen Variablen und nicht auf die Zeit. Das Beispiel \ref{ex:virtuelleVerschiebung} soll dies verdeutlichen. \newline
+  Eine virtuelle Verschiebung ist eine infinitesimale, rein virtuelle \"Anderung des Zustands eines Systems, ohne das die Zeit dabei voran schreitet. Die Zustands\"anderung muss dabei mit den Zwangsbedingungen vertr\"aglich sein. Zur Darstellung einer virtuellen Bewegung wird meist das Symbol $\delta$ voran gestellt. \newline
+   Wenn ein System durch generalisierte Koordinaten $\vect{q}$ beschrieben wird, dann wird die virtuelle Verschiebung dieses Systems durch $\delta \vect{q}$ notiert. Virtuelle Verschiebungen verhalten sich genau so wie andere, infinitesimale Variationen einer Gr\"o\ss{}e. Damit sind virtuelle Verschiebungen \"ahnlich dem Differentialoperator, wobei die Besonderheit, dass die Zeit als konstante Gr\"o\ss{}e angenommen wird, zu beachten ist. Das Beispiel \ref{ex:virtuelleVerschiebung} soll dies verdeutlichen. \newline
   Bei der Arbeit mit virtuellen Verschiebungen gelten die gleichen Gesetze wie bei Anwendung des Differentialoperators bez\"uglich Summen, Produkten und Verkettungen. Au\ss{}erdem kann der Variationsoperator virtuelle Verschiebung mit dem Differential- und Integraloperator vertauscht werden.  
   
   \begin{exmp}[Virtuelle Verschiebungen]\label{ex:virtuelleVerschiebung} Gegeben sei eine Funktion $\phi\of{\vect{q},t}\in \R$, welche von $n$ generalisierten Koordinaten $\vect{q}=\transp{\begin{bmatrix}
-  q_{1} & q_{2} & \dots & q_{n} \end{bmatrix}}$ und au\ss{}erdem explizit von der Zeit $t$ abh\"angt. Die virtuelle Verschiebung dieser Funktion berechnet sich nach folgendem Schema: \begin{align*}
-  \delta \phi\of{\vect{q},t}&= \phi_{\vect{q}} \delta \vect{q} = \begin{bmatrix}
+  q_{1} & q_{2} & \dots & q_{n} \end{bmatrix}}$ und au\ss{}erdem explizit von der Zeit $t$ abh\"angt. Diese Funktion k\"onnte Beispielsweise die Position eines K\"orpers beschreiben. Die virtuelle Verschiebung dieser Funktion berechnet sich nach folgendem Schema: \begin{align*}
+  \delta \phi\of{\vect{q},t}& = \begin{bmatrix}
   \frac{\d }{\d q_{1}}\phi\of{\vect{q},t} & \frac{\d}{\d q_{2}}\phi\of{\vect{q},t} & \dots & \frac{\d}{\d q_{n}}\phi\of{\vect{q},t}
 \end{bmatrix} \begin{bmatrix}
 \delta q_{1} \\
@@ -79,16 +267,30 @@ K&=\frac{1}{2}m  \dot{\vect{P}}^{2} \\
 \vdots \\
 \delta q_{n}
 \end{bmatrix}
-  \end{align*}
+  \end{align*} Man beachte dabei, dass die generalisierten Koordinaten von der Zeit abh\"angig sein k\"onnen. Da die Zeit bei einer virtuellen Verschiebung als konstant angenommen wird, hat eine solche Zeitabh\"angigkeit keinen Einfluss auf die Berechnung. 
   \end{exmp}    
   
-  \paragraph*{} Die virtuelle Arbeit ist definiert als die Summe aller an einem System angreifenden Kr\"afte, welche einer virtuellen Verschiebung ausgesetzt sind. In einem System mit $n$ generalisierten Koordinaten an welchem $k$ Kr\"afte angreifen, wird die virtuelle Arbeit durch \eqnref{gl:virtArbeitDef} beschrieben. \begin{align}
-  \delta W &= \sum_{1}^{k} Q_{k} \delta \vect{q}_{k} \label{gl:virtArbeitDef} \\
+  \paragraph*{} Die virtuelle Arbeit $\delta W_{i}$ welche durch eine Kraft $\vect{F}_{i}$, die an einem Punkt $\vect{r}_{i}$ angreift, entsteht, ist definiert durch:\begin{align*}
+  \delta W_{i}&=\transp{\vect{F}_{i}} \delta \vect{r}_{i}
+\end{align*}. Die virtuelle Arbeit $\delta W_{k}$, welche durch ein Moment $\vect{M}_{k}$ entsteht, ist definiert durch: \begin{align*}
+\delta W_{k}&=\transp{\vect{M}_{k}} \delta \vect{\varphi}_{k}
+\end{align*}. \newline
+Das System befindet sich dann im Kr\"aftegleichgewicht, wenn die virtuelle Arbeit f\"ur beliebige virtuelle Verschiebungen verschwindet. F\"ur ein System, auf das $n$ Kr\"afte und $m$ Momente wirken, muss bei Gleichgewicht der Kr\"afte daher \eqref{gl:virtWFuM} erf\"ullt sein. \begin{align}
+\delta W &= \sum_{i=1}^{n} \transp{\vect{F}_{i}} \delta \vect{r}_{i} + \sum_{k=1}^{m} \transp{\vect{M}_{k}} \delta \vect{\varphi}_{k} = 0 \label{gl:virtWFuM}
+\end{align}
+
+  Die gesamte virtuelle Arbeit eines Systems kann auch als Summe der generalisierten Kr\"afte des Systems interpretiert werden. \eqnref{gl:virtWgenF} zeigt diesen Zusammenhang. Mit Hilfe der generalisierten Koordinaten $\vect{q}$ l\"asst sich \eqnref{gl:virtWgenF} derart umformen, dass man den zur L\"osung von \eqref{gl:lagrange2ArtDefAllg} ben\"otigten Ausdruck f\"ur $Q_{ex}$ erh\"alt. 
+  
+  \begin{align}
+  \delta W &= \sum_{i=1}^{k} Q_{i} \delta \vect{r}_{i} \label{gl:virtWgenF} \\
+  \end{align}
+
+ In einem System mit $n$ generalisierten Koordinaten an welchem $k$ Kr\"afte angreifen, wird die virtuelle Arbeit durch \eqnref{gl:virtWgenF} beschrieben. \begin{align}
   &= \transp{\begin{bmatrix}
-  \frac{\d Q_{1}}{\d q_{1}} + \frac{\d Q_{2}}{\d q_{1}} + \dots + \frac{\d Q_{k}}{\d q_{1}}\\
-  \frac{\d Q_{1}}{\d q_{2}} + \frac{\d Q_{2}}{\d q_{2}} + \dots + \frac{\d Q_{k}}{\d q_{2}}\\
+  \frac{\d W_{1}}{\d q_{1}} + \frac{\d W_{2}}{\d q_{1}} + \dots + \frac{\d W_{k}}{\d q_{1}}\\
+  \frac{\d W_{1}}{\d q_{2}} + \frac{\d W_{2}}{\d q_{2}} + \dots + \frac{\d W_{k}}{\d q_{2}}\\
   \vdots \\
-  \frac{\d Q_{1}}{\d q_{n}} + \frac{\d Q_{2}}{\d q_{n}} + \dots + \frac{\d Q_{k}}{\d q_{n}}\\
+  \frac{\d W_{1}}{\d q_{n}} + \frac{\d W_{2}}{\d q_{n}} + \dots + \frac{\d W_{k}}{\d q_{n}}\\
 \end{bmatrix}} \begin{bmatrix}
 \delta q_{1} \\
 \delta q_{2} \\ 
@@ -96,3 +298,33 @@ K&=\frac{1}{2}m  \dot{\vect{P}}^{2} \\
 \delta q_{n}
 \end{bmatrix}   \nonumber
   \end{align}
+Betrachtet man einen Punkt $P_{l}$ in einem lokalen, k\"orperfesten Koordinatensystem, so l\"asst sich dieser Punkt beschreiben durch \begin{align*}
+P&=\begin{bmatrix}
+x_{l}\of{t} \\ y_{1}\of{t}\\ z_{1}\of{t} \\ 1
+\end{bmatrix} \\
+\matr{T}&= \begin{bmatrix}
+  \matr{R} & \vect{q}\\ 
+  \vect{0} & 1
+  \end{bmatrix} = \begin{bmatrix}
+  u_{x}\of{t} & w_{x}\of{t} & v_{x}\of{t} & q_{1}\of{t} \\
+  u_{y}\of{t} & w_{y}\of{t} & v_{y}\of{t} & q_{2}\of{t} \\
+  u_{z}\of{t} & w_{z}\of{t} & v_{z}\of{t} & q_{3}\of{t} \\
+  0&0&0&1
+  \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+\intertext{Allgemeine Punktbeschreibung}
+\vect{r}^{g}&=  \vect{r}_{0}^{g} +  \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+\intertext{Virtuelle Verschiebung = virtuelle Translation und virt. Rotation}
+\delta \vect{r}^{g}&= \delta \vect{r}_{0}^{g} + \delta \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+\intertext{Kreuzprodukt durch Matrixprodukt ersetzen}
+&= \delta \vect{r}_{0}^{g} + \delta \matr{\Theta} \cdot \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+\intertext{Formulierug mit Rotationsmatrix und lokalem Vektor}
+&= \delta \vect{r}_{0}^{g} + \delta \left(\matr{R} \vect{z}^{l} \right)\\
+\intertext{Lokaler Vektor ist konstant, daher hat Operator $\delta$ keinen Einfluss}
+&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \vect{z}^{l} \\
+\intertext{\"Ubergang zu globalem Vektor mit $\inv{\matr{R}}=\transp{\matr{R}}$}
+&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \transp{\matr{R}} \vect{z}^{g}\\
+\intertext{Hier steht Text}
+\end{align*}

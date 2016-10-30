@@ -61,7 +61,7 @@
 
 \begin{document}
 % Deckblatt
-\input{content/0_titel}
+%\input{content/0_titel}
 \cleardoublepage
 \frontmatter
 \cleardoublepage
@@ -69,16 +69,16 @@
 \tableofcontents
 \cleardoublepage
 % Abkuerzungsverzeichnis
-\input{content/0_1_abkuerzungsverzeichnis}
+%\input{content/0_1_abkuerzungsverzeichnis}
 \cleardoublepage
 % Verzeichnis der Formelzeichen
-\input{content/0_2_formelverzeichnis}
+%\input{content/0_2_formelverzeichnis}
 \cleardoublepage
 % Verzeichnis der verwendeten Indizes
-\input{content/0_3_indizes}
+%\input{content/0_3_indizes}
 \cleardoublepage
 % Verzeichnis der verwendeten Symbole
-\input{content/0_4_symbole}
+%\input{content/0_4_symbole}
 \cleardoublepage
 % Abbildungs- und Tabellenverzeichnis
 \listoffigures
@@ -88,32 +88,32 @@
 
 % Hauptteil
 \mainmatter
-\input{content/1_StandDerTechnik}
+%\input{content/1_StandDerTechnik}
 \input{content/2_MathGrundl}
 \input{content/3_Kos}
 \input{content/4_Mechanik}
-\input{content/5_Implementierung}
-
-% Anhang (Bibliographie darf im deutschen nicht in den Anhang!)
-%\bibliography{bib/quellen}
-
-\nocite{*}%alle Elemente im Literaturverzeichnis werden aufgelistet, auch die nicht-zitierten
-\printbibliography[title={Literaturverzeichnis}]
-\pagenumbering{Roman} %neue Seitenzahlen
-\stepcounter{chapter}
-\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}{Literaturverzeichnis}}
-\cleardoublepage
-
-% Anhang
-\backmatter
-\appendix
-\input{content/10_anhang}
-
-\IfDefined{printindex}{\printindex}
-\IfDefined{printnomenclature}{\printnomenclature}
-\cleardoublepage
-\leerseite{}
-\cleardoublepage
+%\input{content/5_Implementierung}
+%
+%% Anhang (Bibliographie darf im deutschen nicht in den Anhang!)
+%%\bibliography{bib/quellen}
+%
+%\nocite{*}%alle Elemente im Literaturverzeichnis werden aufgelistet, auch die nicht-zitierten
+%\printbibliography[title={Literaturverzeichnis}]
+%\pagenumbering{Roman} %neue Seitenzahlen
+%\stepcounter{chapter}
+%\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}{Literaturverzeichnis}}
+%\cleardoublepage
+%
+%% Anhang
+%\backmatter
+%\appendix
+%\input{content/10_anhang}
+%
+%\IfDefined{printindex}{\printindex}
+%\IfDefined{printnomenclature}{\printnomenclature}
+%\cleardoublepage
+%\leerseite{}
+%\cleardoublepage
 
 
 \end{document}
