@@ -1,30 +1,139 @@
 \chapter{Mathematische Grundlagen}\label{ch:mathGrundl}
 \section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
     Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung eines einzelnen Modells losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
-    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt\ref{sec:mathGrundl_mengen}). Darauf aufbauend werden Gruppen (siehe \ref{sec:mathGrundl_gruppen}) und K\"orper (siehe \ref{sec:mathGrundl_koerper} definiert. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Der dreidimensionale Raum l\"asst sich dann mit Hilfe geeigneter Basisvektoren als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems darstellen. F\"ur Vektoren und Matrizen werden bestimmte Rechenregeln (insbesondere Addition und Multiplikation) definiert und deren Handhabung in speziellen Koordinatensystemen beschrieben. \newline
+    Als einf\"uhrendes Beispiel wird ein Modell des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \newline
+    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen und im Abschnitt \ref{sec:mathGrundl_koerper} K\"orper definiert. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet}  l\"asst sich dann mit Hilfe einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems darstellen. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind ebenso \cite{Bosch2014} entnommen. \newline
+    Um die Position eines K\"orpers im Raum beschreiben zu k\"onnen werden fernerhin f\"ur Vektoren und Matrizen unter anderem die Rechenregeln Addition und Multiplikation nach \cite{Papula2014} definiert. Im Kapitel \ref{ch:kos} werden die so eingef\"uhrten Gesetze verwendet um die Handhabung von Koordinatensystemen im Detail zu beschreiben. \newline
     
-    Zur Beschreibung des dreidimensionalen Raumes stellen wir uns eine Ebene E vor, welche beliebig in dem uns umgebenden Raum liegt. Jetzt w\"ahlen wir einen beliebigen Punkt dieser Ebene aus, und bezeichnen diesen als Nullpunkt $O$ eines Koordinatensystems. Anschlie\ss{}end legen wir Drei Koordinatenachsen $X, Y, \text{und }Z$ mit Hilfe von Geraden fest. Alle Drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Weiterhin sollen keine zwei Geraden parallel zueinander sein. Zus\"atzlich sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. Au\ss{}erdem definieren wird auf jeder Achse einen speziellen Punkt: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt hat vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man nennt diesen Abstand \textit{Einheitsl\"ange}. \newline
-    Wir definieren einen Vektor $\vect{e}_{x}$, welcher vom Ursprung auf den Punkt $I_{x}$ zeigt und zwangsl\"aufig auf der Geraden X liegt. Analog definieren wir die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, nennen wir \textit{Einheitsvektoren}. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der Anderen darzustellen. Damit bilden diese \textit{Einheitsvektoren} die \textit{Basis} f\"ur einen \textit{Vektorraum} $V$ (den dreidimensionalen Raum). \newline
-    Weiterhin definieren wir einen Streckungsfaktor $\alpha \in \R$. Mit Hilfe von $\alpha \cdot I_{x}$ beschreiben wir das Bild des Punktes $I_{x}$, welches sich durch Streckung mit Streckungszentrum im Ursprung $O$, entlang der x-Achse, um den Streckungsfaktor $\alpha$ ergibt. Die Zuordnung $\alpha \to \alpha \cdot I_{x}$ liefert damit eine eindeutige, umkehrbare Zuordnung der reellen Zahlen auf die Punkte der Gerade x. Dabei ist das Bild der Streckung des \textit{Einheitsvektors} $\vect{e}_{x}$ \"aquivalent mit dem Bild der Streckung des Punktes $I_{x}$. Weiterhin definieren wir f\"ur die Achsen Y und Z die Streckungsfaktoren $\beta$ und $\gamma$. \newline
+    
+    Zur Beschreibung des dreidimensionalen Raumes sei eine Ebene E gegeben, welche beliebig im Anschauungsraum liegt. Weiterhin sei ein beliebiger Punkt dieser Ebene gegeben, welcher als Nullpunkt $O$ eines Koordinatensystems dienen soll. Zus\"atzlich seien Drei Geraden $X, Y, \text{und }Z$ gegeben, welche als Koordinatenachsen dienen. Alle Drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Au\ss{}erdem sollen keine zwei Geraden parallel zueinander sein. Ferner sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. \"Uberdies sei auf jeder Gerade ein spezieller Punkt definiert: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt habe vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man bezeichnet diesen Abstand als \textit{Einheitsl\"ange}. \newline
+    Hinzukommen wird ein Vektor $\vect{e}_{x}$ definiert, welcher vom Ursprung aus auf den Punkt $I_{x}$ zeigt und damit zwangsl\"aufig auf der Geraden X liegt. Analog werden die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$ definiert. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, werden \textit{Einheitsvektoren} genannt. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der Anderen darzustellen. Damit bilden diese \textit{Einheitsvektoren} die \textit{Basis} f\"ur einen \textit{Vektorraum} $V$. Da die \textit{Einheitsvektoren} jeweils Drei Komponenten besitzen ist der \textit{Vektorraum} gleich dem dreidimensionalen Raum. \newline
+    Weiterhin sei ein Streckungsfaktor $\alpha \in \R$ definiert. Mit Hilfe von $\alpha \cdot I_{x}$ sei das Bild des Punktes $I_{x}$ beschrieben, welches sich durch Streckung mit Streckungszentrum im Ursprung $O$, entlang der x-Achse, um den Streckungsfaktor $\alpha$ ergibt. Die Zuordnung $\alpha \to \alpha \cdot I_{x}$ liefert damit eine eindeutige, umkehrbare Zuordnung der reellen Zahlen auf die Punkte der Geraden X. Dabei ist das Bild der Streckung des \textit{Einheitsvektors} $\vect{e}_{x}$ \"aquivalent mit dem Bild der Streckung des Punktes $I_{x}$. Zus\"atlich seien f\"ur die Achsen Y und Z die Streckungsfaktoren $\beta$ und $\gamma$ nach dem gleichen Schema definiert. \newline
         
     Mit Hilfe dieser Festlegungen k\"onnen beliebige Punkte im Raum beschrieben werden. Alle Punkte des Raumes bilden dabei die \textit{Menge} $R^{3}$. Man sagt, dass die Punkte \textit{Elemente} dieser \textit{Menge} sind. Betrachtet man zum Beispiel einen Punkt auf der Ebene E, so kann man dieses \textit{Element} als Tripel von reellen Zahlen interpretieren: $P=\left( x_{1}, y_{1}, z_{1}\right)$. Man nennt dieses Tripel die \textit{Koordinaten} von $P$ (bez\"uglich des gew\"ahlten Koordinatensystems). Der Ursprung des Koordinatensystems hat bez\"uglich des Koordinatensystems, dessen Ursprung er ist, immer die Koordinaten $(0,0,0)$. Den Wert von $x_{1}$ erh\"alt man geometrisch durch Konstruktionen einer Normalen bez\"uglich der x-Achse, welche den Punkt $P$ durchl\"auft. Den Fu\ss{}punkt dieser Normalen kann man durch Streckung des zuvor definierten Punktes $I_{x}$ um den Faktor $\alpha_{P}$ erhalten. Dabei entspricht eben diese reelle Zahl $\alpha_{P}$ dem Wert von $x_{1}$. \newline
     Die Werte f\"ur $y_{1}$ und $z_{1}$ ergeben sich analog. Die so erhaltene Zuordnung $P \to \left( x_{1}, y_{1}, z_{1}\right)$ bezeichnet man als eine Abbildung. Mit Hilfe dieser Abbildung wird beliebigen Punkten der Ebene E in eindeutiger Weise ein Zahlentripel von reellen Zahlen zugeordnet. Man sagt auch, dass dieses Zahlentripel ein \textit{Element} des \textit{Vektorraumes} $V$ ist, welcher \"uber dem \textit{K\"orper} der reellen Zahlen definiert ist. Da die Achsen des Koordinatensystems durch die \textit{Basis} des \textit{Vektorraumes} beschrieben werden sind die Zahlenwerte des Tripels zwangsl\"aufig abh\"angig von der Wahl der Koordinatensystemursprungs und der \textit{Basisvektoren}. \newline
-    Da dieses Zahlentripel nicht nur ein \textit{Element} einer \textit{Menge}, sondern ein Vektor eines \textit{Vektorraumes} ist, gibt es alternative Schreibweisen f\"ur den Punkt $P$. Die \"ublichste Alternative ist die Darstellung als Spaltenvektor $\vect{v} \in \R^{3}$. Dabei erh\"alt man $\vect{v}$ durch Subtraktion der Koordinaten des Punktes $P$ von den Koordinaten des gew\"ahlten Koordinatenursprungs. Beziehen sich alle Angaben auf das gleiche System, so entsprechen die Komponenten von $\vect{v}$ genau Koordinaten von $P$ und die Darstellung als Spaltenvektor lautet: $\vect{v}=\begin{pmatrix} x_{1} \\ y_{1} \\ z_{1} \end{pmatrix}$. Man kann $\vect{v}$ auch als \textit{Linearkombination} der \textit{Basis} des \textit{Vektorraumes} $V$ darstellen: \begin{align*}
+    Da dieses Zahlentripel nicht nur ein \textit{Element} einer \textit{Menge}, sondern insbesondere ein Vektor eines \textit{Vektorraumes} ist, gibt es alternative Schreibweisen f\"ur den Punkt $P$. Die \"ublichste Alternative ist die Darstellung als Spaltenvektor $\vect{v} \in \R^{3}$. Dabei erh\"alt man $\vect{v}$ durch Subtraktion der Koordinaten des Punktes $P$ von den Koordinaten des gew\"ahlten Koordinatenursprungs. Beziehen sich alle Angaben auf das gleiche System, so entsprechen die Komponenten von $\vect{v}$ genau den Koordinaten von $P$ und die Darstellung als Spaltenvektor lautet: $\vect{v}=\begin{pmatrix} x_{1} \\ y_{1} \\ z_{1} \end{pmatrix}$. Man kann $\vect{v}$ auch als \textit{Linearkombination} der \textit{Basis} des \textit{Vektorraumes} $V$ darstellen: \begin{align*}
     \vect{v}&= x_{1} \vect{e}_{x} + y_{1} \vect{e}_{y} + z_{1} \vect{e}_{z} = \alpha_{P} \vect{e}_{x} + \beta_{P} \vect{e}_{y} + \gamma_{P} \vect{e}_{z}
 \end{align*}      
 
-  \begin{rem} Die Beschr\"ankung auf die Betrachtung von Rechtssystemen ist als einf\"uhrendes Beispiel besonders gut geeignet, da alle in dieser Arbeit verwendeten Koordinatensysteme die damit verbundenen Eigenschaften erf\"ullen sollen. Wollte man auch nicht orthogonale Koordinatensystem betrachten, so f\"uhrt dies zwangsl\"aufig auf die Betrachtung von kovarianten und kontravarianten Basen und die Tensorrechnung. Eine gut lesbare Einf\"uhrung in dieses Thema ist \cite{Roethlisberger2007} zu entnehmen. Eine ausf\"uhrliche Behandlung der Thematik ist in \cite{Jaenich2005} enthalten. 
+  \begin{rem} Die Beschr\"ankung auf die Betrachtung von Rechtssystemen ist als einf\"uhrendes Beispiel besonders gut geeignet, da alle in dieser Arbeit verwendeten Koordinatensysteme die damit verbundenen Eigenschaften erf\"ullen sollen. Wollte man auch nicht orthogonale Koordinatensystem betrachten, so f\"uhrt dies zwangsl\"aufig auf die Betrachtung von kovarianten und kontravarianten Basen und die Tensorrechnung. Eine Einf\"uhrung in dieses Thema ist \cite{Roethlisberger2007} zu entnehmen. Eine ausf\"uhrliche Behandlung der Thematik ist in \cite{Jaenich2005} enthalten. 
   \end{rem}
   
    
   \section{Mengen}\label{sec:mathGrundl_mengen}
-  \section{K\"orper}\label{sec:mathGrundl_koerper}
-  K\"orper sind Zahlsysteme mit gewissen Axiomen f\"ur die Addition und Multiplikation, welche auf den Axiomen von Gruppen aufbauen. \newline
+\begin{defn}[Mengen; nach G. Cantor] Eine Menge ist eine Zusammenfassung von bestimmten, wohlunterschiedenen Objekten unserer Anschauung oder unseres Denkens zu einem Ganzen. Die Objekte hei\ss{}en Elemente der Menge \cite{Cantor1895}. \newline
+Ist $\set{M}$ eine Menge und $x$ ein Objekt, so notiert man $x \in \set{M}$, wenn die Menge $\set{M}$ das Objekt $x$ enth\"alt und $x \notin \set{M}$, wenn dies nicht der Fall ist. \newline
+Enth\"alt die Menge $\set{M}$ keine Elemente, so nennt man dies die \textbf{leere Menge}\footnote{jede Menge besitzt die leere Menge als Teilmenge} $\lbrace  \rbrace$ beziehungsweise $\emptyset$.
+\end{defn}
+Mengen k\"onnen durch Aufz\"ahlung aller Elemente oder durch die Angabe von Eigenschaften, welche die Elemente erf\"ullen sollen, definiert werden. Ein Beispiel f\"ur verschiedene Mengendefinitionen ist im Beispiel \ref{ex:mathGrundl_mengen} zu finden. \newline  
+Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf eine axiomatische Begr\"undung. Im Rahmen dieser Arbeit ist diese Definition jedoch ausreichend. Ein pr\"azise Definition von Mengen erfordert erheblichen Aufwand und ist beispielsweise in \cite{Asser1975} enthalten. \newline
+  Die folgenden Mengen sind von besonderer Bedeutung: \begin{itemize}
+  \item die nat\"urlichen Zahlen $\set{N}=\lbrace 0, 1, 2, \dots \rbrace$
+  \item die ganzen Zahlen $\set{Z}=\lbrace 0, \pm 1, \pm 2, \dots \rbrace$
+  \item die rationalen Zahlen $\set{Q}=\lbrace \left. \frac{p}{q} \right| q,p \in \set{Z}, q \neq 0 \rbrace$
+  \item die reellen Zahlen $\set{R}$ als Menge aller, unter Umst\"anden nicht abbrechenden, Dezimalbr\"uche \cite[S. 12]{MatthiasPlaue2009}
+  \end{itemize}
+
+\begin{exmp}[Mengendefinitionen]\label{ex:mathGrundl_mengen} \begin{align*}
+\set{M}_{1}&= \lbrace 1,2,5,8,10 \rbrace \\
+\set{M}_{2}&= \lbrace x | x \text{ ist eine ganze Zahl und ungerade} \rbrace
+\end{align*}
+\end{exmp}  
   
-  Text...
+  Die Reihenfolge der Elemente einer Menge ist ohne Bedeutung. Daher gilt $\set{M}_{1}= \lbrace 1,4,8 \rbrace = \lbrace 4,8,1 \rbrace $. Enth\"alt eine Menge ein Element mehrfach, so ist diese Multiplizit\"at ohne Bedeutung, daher gilt $\set{M}_{1}= \lbrace 1,3,5 \rbrace = \lbrace 1,3,5,3,5 \rbrace$. Zur Handhabung von Mengen gibt es eine Reihe von Axiomen, auf welche im Folgenden eingegangen wird. 
+
+\subsection{Teilmengen} Es sei $\set{X}$ eine Menge und $P\of{x}$ eine Aussage. Die G\"ultigkeit der Aussage (wahr oder falsch) sei f\"ur alle Elemente $x$ \"uberpr\"ufbar. Man nennt dann \begin{align}
+\set{Y}&= \lbrace \left. x\in \set{X}\right| P\of{x} \text{ ist wahr} \rbrace \label{gl:mathGrundl_mengen_teilmenge}
+\end{align} eine \textbf{Teilmenge} von $\set{X}$ und notiert $\set{Y} \subset \set{X}$. \newline
+ Die Mengen $\set{X}$ und $\set{Y}$ hei\ss{}en \textit{gleich}, wenn jedes Element von $\set{X}$ auch in $\set{Y}$ enthalten ist und umgekehrt: $\set{X}=\set{Y} \Leftrightarrow \forall x \left( x \in \set{X} \Leftrightarrow x \in \set{Y} \right)$. \newline
+  Gilt $\set{Y} \subset \set{X} \wedge \set{Y} \neq \set{X}$, so nennt man $\set{Y}$ eine \textit{echte Teilmenge} von $\set{X}$ und notiert $\set{Y} \subsetneq \set{X}$. \newline
+  Die Gesamtheit aller Teilmengen einer Menge $\set{X}$ bildet die sogenannte \textbf{Potenzmenge} $\set{P}\of{\set{X}} = \lbrace \set{U}| \set{U} \subset \set{X} \rbrace $.  
+
+\begin{rem}[Notation f\"ur Teilmengen] In der Literatur ist die Kennzeichnung einer echten Teilmenge im Gegensatz zu einer Teilmenge nicht einheitlich. Es gibt folgende Notationen: \begin{itemize}
+\item Teilmenge: $\subset$, echte Teilmenge: $\subsetneq$
+\item Teilmenge: $\subseteq$, echte Teilmenge: $\subset$
+\end{itemize}
+\end{rem}
+
+  \subsection{Vereinigung und Durchschnitt}
+  Sei $\set{X}$ eine Menge und $\set{I}$ eine Indexmenge, das hei\ss{}t die Elemente von $\set{I}$ sollen als Indizes dienen. Ist f\"ur jedes $i \in \set{I}$ eine Teilmenge $\set{X}_{i} \subset \set{X}$ gegeben, so nennt man  \begin{align}
+  \underset{{i\in\set{I}}}{\bigcup} \set{X}_{i} &:= \lbrace \left. x \in \set{X} \right| \text{ es existiert ein } i \in \set{I} \text{ mit } x\in \set{X}_{i}\rbrace \label{gl:mathGrundl_mengen_vereinigung}
+  \end{align}
+  die \textbf{Vereinigung} der Mengen $\set{X}_{i}, i \in \set{I}$. In der so entstehenden Teilmenge von $\set{X}$ sind also all jene $x$ enthalten, die in wenigstens einer der vereinten  Teilmengen $\set{X}_{i}$ enthalten sind. \newline
+  Der \textbf{Durchschnitt}\footnote{den \textit{Durchschnitt} von Mengen bezeichnet man auch kurz als \textit{Schnitt}} der Mengen wird mit 
+  \begin{align}
+  \underset{{i\in\set{I}}}{\bigcap} \set{X}_{i} &:= \lbrace \left. x \in \set{X} \right| x\in \set{X}_{i} \quad \forall  i \in \set{I} \rbrace \label{gl:mathGrundl_mengen_durchschnitt}
+  \end{align}
+  beschrieben. In der durch den Durchschnitt gebildeten Teilmenge von $\set{X}$ sind also diejenigen Elemente $x$ der Menge $\set{X}$ enthalten, welche in allen Teilmengen $\set{X}_{i}$ enthalten sind, von denen der Durchschnitt gebildet wurde. \newline
+  F\"ur die Verkn\"upfung von zwei Mengen schreibt man insbesondere: \begin{align*}
+  \set{X}_{1} \cup \set{X}_{2} &= \lbrace \left. x \right| x \in \set{X}_{1} \lor x \in \set{X}_{2} \rbrace
+  \end{align*}
+  f\"ur die Vereinigung und \begin{align*}
+  \set{X}_{1} \cap \set{X}_{2} &= \lbrace \left. x \right| x \in \set{X}_{1} \land x \in \set{X}_{2} \rbrace
+  \end{align*}
+  f\"ur den Durchschnitt. \newline
+  Ist der Durchschnitt zweier Mengen leer, gilt also \begin{align}
+  \set{X}_{1} \cap \set{X}_{2} = \emptyset \label{gl:mathGrundl_mengen_disjunkt}
+\end{align} dann bezeichnet man die Mengen als \textbf{disjunkt}.
+
+  \subsection{Differenz von Mengen} Sind $\set{X}_{1}$ und $\set{X}_{2}$ Teilmengen einer Menge $\set{X}$, so hei\ss{}t \begin{align}
+  \set{X}_{1} - \set{X}_{2} &:= \lbrace \left.x \in \set{X}_{1}\right| x \notin \set{X}_{2} \rbrace \label{gl:mathGrundl_mengen_differenz}
+  \end{align}
+  die \textbf{Differenz} von $\set{X}_{1}$ und $\set{X}_{2}$. Auch dies ist eine Teilmenge von $\set{X}$, sogar von $\set{X}_{1}$.
   
-  \section{Gruppen}\label{sec:mathGrundl_gruppen}
-  Unter einer \textit{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
+  
+  \subsection{Kartesisches Produkt}
+   Es seien $\set{X}_{1}, \dots, \set{X}_{n}$ Mengen. Dann hei\ss{}t \begin{align}
+  \underset{i=1}{\overset{n}{\prod}}&= \lbrace \left.\left( x_{1}, \dots, x_{n} \right)\right| x_{1} \in \set{X}_{1}, \dots, x_{n} \in \set{X}_{n}  \rbrace \label{gl:mathGrundl_mengen_kartProd}
+  \end{align}
+  das \textbf{kartesische Produkt} der Mengen $\set{X}_{1}, \dots, \set{X}_{n}$. Eine gleichbedeutenden Notation lautet $\set{X}_{1} \times \dots \times \set{X}_{n}$. Die Elemente $\left( x_{1}, \dots, x_{n} \right)$ werden als \textbf{n-Tupel} mit Komponenten $x_{i} \in \set{X}_{i}, i=1, \dots, n$, bezeichnet. \newline
+  Zwei n-Tupel $\left( x_{1}, \dots, x_{n} \right), \left( x'_{1}, \dots, x'_{n} \right)$ gelten genau dann als gleich, wenn $x_{i}=x'_{i}$ f\"ur $i=1, \dots, n$ erf\"ullt ist. \newline
+  Das 2-Tupel $(3,5)$ beschreibt beispielsweise einen Punkt auf einer Zahlenebene. \newline  
+  Ein 3-Tupel bezeichnet man als \textit{Tripel}. 
+
+  \subsection{M\"achtigkeit}
+   Sei $\set{X}$ eine Menge, dann bezeichnet man mit \begin{align}
+  \abs{\set{X}} \label{gl:mathGrundl_mengen_maechtigkeit}
+  \end{align} die \textbf{M\"achtigkeit} der Menge und meint damit die Anzahl der Elemente, welche in $\set{X}$ enthalten sind. Es gilt \begin{align*}
+  \abs{\set{X}} &:= \begin{cases}n, \text{ falls $\set{X}$ endlich ist und $n$ Elemente enth\"alt} \\ \infty, \text{ falls $\set{X}$ nicht endlich ist.} \end{cases}
+\end{align*}   
+
+  \subsection{Rechengesetze f\"ur Mengen} Kommutativit\"at usw. 
+  siehe \cite[S.14]{MatthiasPlaue2009}
+  
+  \section{Abbildung}\label{sec:mathGrundl_abbildung}
+  \begin{defn}[Abbildung] Eine Abbildung $f: \set{X} \longrightarrow \set{Y}$ zwischen zwei Mengen $\set{X}$ und $\set{Y}$ ist eine Vorschrift, welche jedem $x \in \set{X}$ ein wohlbestimmtes Element $y \in \set{Y}$ zuordnet, welches mit $f\of{x}$ bezeichnet mit. Man schreibt auch $x \longmapsto f\of{x}$. Man bezeichnet $\set{X}$ als den Definitionsbereich und $\set{Y}$ als den Bild- oder Wertebereich\footnote{der Bildbereich wird auch Zielmenge genannt} der Abbildung $f$.
+  \end{defn}
+  \subsection{Komposition von Abbildungen}
+  Gegeben seien zwei Abbildung $f: \set{X} \longrightarrow \set{Y}$ und $g: \set{Y} \longrightarrow \set{Z}$ zwischen Mengen. Dann kann man die Abbildungen komponieren: \begin{align}
+  g \circ f &: \set{X} \longrightarrow \set{Z}, &x&\longmapsto g\of{f\of{x}}. \label{gl:mathGrundl_abbildung_komposition}
+  \end{align}
+  Alternative Bezeichnungen f\"ur eine Komposition lauten \textit{Hintereinanderausf\"uhrung} und \textit{Verkettung}.
+  
+  \begin{exmp}[Ort als Bild der Zeit] Ordnet man jedem Zeitpunkt $t$ den Ort beziehungsweise die Position des Schwerpunkts eines K\"orpers zu, so entspricht dies einer Abbildung $f: t \longmapsto f\of{t}$ Der Definitionsbereich sei beispielsweise gegeben durch beliebige, positive, reelle Zahlen und der Wertebereich durch beliebige, reelle Zahlen. Der K\"orper kann sich dann frei im Anschauungsraum bewegen und seine Position ist mit Hilfe der Abbildung $f\of{t}$ eindeutig beschrieben. 
+  \end{exmp}
+  
+  \begin{rem}[Umkehrbarkeit einer Abbildung] In der Definition einer Abbildung wird gefordert, dass jedem $x \in \set{X}$ ein eindeutiges Bild $y \in \set{Y}$ zuordnet wird. Die Umkehrung, dass jedem $y \in \set{Y}$ ein eindeutiges Urbild $x \in \set{X}$ zugeordnet werden kann, kann daraus nicht geschlussfolgert werden.
+  \end{rem}
+  
+  Seien $\set{M}\subset \set{X}, \set{N}\subset \set{Y}$ und $f: \set{X}\longrightarrow\set{Y}$ eine Abbildung, so nennt man: \begin{align}
+  f\of{\set{M}}&:= \lbrace \left.y\in\set{Y}\right| \text{ es existiert ein } x\in\set{M} \text{ mit } y=f\of{x} \rbrace \label{gl:mathGrundl_abbildung_bild}
+  \end{align} das \textbf{Bild}(-menge) von $\set{M}$ unter der Abbildung $f$ und \begin{align}
+  f^{-1}\of{\set{N}}&:= \lbrace \left.x\in\set{X}\right| f\of{x}\in \set{N} \rbrace \label{gl:mathGrundl_abbildung_urbild}
+  \end{align} das \textbf{Urbild}(-menge) von $\set{N}$ unter der Abbildung $f$. \newline
+  Weiterhin bezeichnet man $f$ als 
+  \begin{itemize}
+  \item \textbf{injektiv}, falls f\"ur $x_{1},x_{2}\in \set{X}$ gilt: $f\of{x_{1}}=f\of{x_{2}}\implies x_{1}=x_{2}$, das hei\ss{}t, dass verschiedene Elemente des Definitionsbereichs auf verschiedene Elemente des Wertebereichs abgebildet werden beziehungsweise dass das Urbild $f^{-1}\of{y}$ eines jeden $y\in\set{Y}$ entweder leer ist, oder aus genau einem $x\in\set{X}$ besteht
+  \item \textbf{surjektiv}, falls gilt: $\forall y \in \set{Y} \exists x \in\set{X}: f\of{x}=y$  , das hei\ss{}t jedes Element des Wertebereichs wird durch Abbildung mindestens eines Elements aus dem Definitionsbereich erreicht
+  \item \textbf{bijektiv}, falls $f$ injektiv und surjektiv ist. F\"ur bijektive Abbildungen $f$ l\"asst sich die \textbf{Umkehrabbildung} $g: \set{Y}\longrightarrow \set{X}, g:=f^{-1}$ bilden, welche jedem Element der Bildmenge ein Element aus dem Definitionsbereich zuordnet. 
+  \end{itemize}
+  
+  \subsection{Eigenschaften von Abbildungen}
+  siehe \cite{Modler2011d} 
+    
+  
+   \section{Gruppen}\label{sec:mathGrundl_gruppen}
+  Unter einer \textbf{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
   \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
 sind:
 \begin{itemize}
@@ -43,6 +152,12 @@ a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
 \end{align}
 \end{itemize}
   \end{defn}  
+  \section{K\"orper}\label{sec:mathGrundl_koerper}
+  K\"orper sind Zahlsysteme mit gewissen Axiomen f\"ur die Addition und Multiplikation, welche auf den Axiomen von Gruppen aufbauen. \newline
+  
+  Text...
+  
+ 
   
   \section{Vektorr\"aume}\label{sec:mathGrundl_vektorraeume}
   Vektorr\"aume enthalten als fundamentale Struktur zwei Rechenoperationen: die Addition zweier Vektoren und die Multiplikation mit einem Skalar (einem Element des K\"orpers, \"uber dem der Vektorraum definiert ist). Addition und Multiplikation gen\"ugen den so genannten Vektorraumaxiomen, welche bez\"uglich der Addition auf den Gruppenaxiomen aufbauen. \newline
