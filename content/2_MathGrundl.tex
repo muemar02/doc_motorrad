@@ -2,7 +2,8 @@
 \section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
     Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung eines einzelnen Modells losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
     Als einf\"uhrendes Beispiel wird ein Modell des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \newline
-    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen und im Abschnitt \ref{sec:mathGrundl_koerper} K\"orper definiert. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet}  l\"asst sich dann mit Hilfe einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems darstellen. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind ebenso \cite{Bosch2014} entnommen. \newline
+    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen als Mengen mit einer inneren Abbildung  definiert. Im Abschnitt \ref{sec:mathGrundl_koerper} werden die Eigenschaften von Gruppen weiter eingeschr\"ankt, was auf den Begriff des K\"orper f\"uhrt. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Wegen ihrer hohen Relevanz f\"ur diese Arbeit werden im Abschnitt \ref{sec:mathGrundl_punkteVektoren} die Rechenregeln von Vektoren und Matrizen eingef\"uhrt. Au\ss{}erdem wird der Unterschied zwischen Punkten und Vektoren aufgef\"uhrt. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind \cite{Bosch2014}, \cite{MatthiasPlaue2009} und \cite{Modler2011d} entnommen. Die Eigenschaften von Vektoren sind \cite{Papula2014} entnommen. \newline
+    Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet}  wird auf Basis der so eingef\"uhrten Begriffe mit Hilfe  einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems im Kapitel \ref{ch:kos} eingef\"urht.   \newline
     Um die Position eines K\"orpers im Raum beschreiben zu k\"onnen werden fernerhin f\"ur Vektoren und Matrizen unter anderem die Rechenregeln Addition und Multiplikation nach \cite{Papula2014} definiert. Im Kapitel \ref{ch:kos} werden die so eingef\"uhrten Gesetze verwendet um die Handhabung von Koordinatensystemen im Detail zu beschreiben. \newline
     
     
@@ -124,45 +125,124 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   Weiterhin bezeichnet man $f$ als 
   \begin{itemize}
   \item \textbf{injektiv}, falls f\"ur $x_{1},x_{2}\in \set{X}$ gilt: $f\of{x_{1}}=f\of{x_{2}}\implies x_{1}=x_{2}$, das hei\ss{}t, dass verschiedene Elemente des Definitionsbereichs auf verschiedene Elemente des Wertebereichs abgebildet werden beziehungsweise dass das Urbild $f^{-1}\of{y}$ eines jeden $y\in\set{Y}$ entweder leer ist, oder aus genau einem $x\in\set{X}$ besteht
-  \item \textbf{surjektiv}, falls gilt: $\forall y \in \set{Y} \exists x \in\set{X}: f\of{x}=y$  , das hei\ss{}t jedes Element des Wertebereichs wird durch Abbildung mindestens eines Elements aus dem Definitionsbereich erreicht
+  \item \textbf{surjektiv}, falls gilt: $\forall y \in \set{Y} \quad \exists x \in\set{X}: f\of{x}=y$  , das hei\ss{}t jedes Element des Wertebereichs wird durch Abbildung mindestens eines Elements aus dem Definitionsbereich erreicht
   \item \textbf{bijektiv}, falls $f$ injektiv und surjektiv ist. F\"ur bijektive Abbildungen $f$ l\"asst sich die \textbf{Umkehrabbildung} $g: \set{Y}\longrightarrow \set{X}, g:=f^{-1}$ bilden, welche jedem Element der Bildmenge ein Element aus dem Definitionsbereich zuordnet. 
   \end{itemize}
   
   \subsection{Eigenschaften von Abbildungen}
-  siehe \cite{Modler2011d} 
+  siehe \cite{Modler2011d}, insbesondere f\"ur \textit{Kompositionen} \cite[S. 37]{MatthiasPlaue2009}
     
   
    \section{Gruppen}\label{sec:mathGrundl_gruppen}
-  Unter einer \textbf{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. 
-  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\set{G} \times \set{G} \to \set{G}, (a, b) \to a \cdot b$, hei\ss{}t eine Gruppe, wenn die folgenden Eigenschaften erf\"ullt
+  Unter einer \textbf{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. \newline
+  Ist die Verkn\"upfung kommutativ, gilt also $f\of{a,b}=f\of{b,a}$ f\"ur alle $a,b \in \set{M}$, so wird die Verkn\"upfung $f$ durch $a+b$ notiert. 
+  
+  \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\circ: \set{G} \times \set{G} \longrightarrow \set{G},$ \hfill \newline  $(a, b) \longmapsto a \circ b$, hei\ss{}t eine Gruppe $\of{\set{G}, \circ}$, wenn die folgenden Eigenschaften erf\"ullt
 sind:
 \begin{itemize}
-\item Die Verkn\"upfung ist assoziativ, d. h. es gilt \begin{align}
-(a \cdot b) \cdot c &= a \cdot (b \cdot c) \quad \forall { } a, b, c \in \set{G}. \label{gl:gruppenDef1}
+\item Die Verkn\"upfung $\circ$ ist assoziativ, d. h. es gilt \begin{align}
+(a \circ b) \circ c &= a \circ (b \circ c) \quad \forall { } a, b, c \in \set{G}. \label{gl:mathGrundl_gruppen_assoziativ}
 \end{align}
-\item Es existiert ein neutrales Element $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
-e \cdot a = a \cdot e = a \quad \forall { } a \in \set{G}. \label{gl:gruppenDef2}
-\end{align}
-\item Zu jedem $a \in \set{G}$ gibt es ein inverses Element, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
-a \cdot  b = b \cdot  a = e. \label{gl:gruppenDef3}
-\end{align} Dabei ist $e$ das nach \eqnref{gl:gruppenDef2} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$.
-\item Die Gruppe hei\ss{}t kommutativ oder abelsch, falls die Verkn\"upfung kommutativ
-ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
-a \cdot b = b \cdot a \quad \forall { } a, b \in \set{G}. \label{gl:gruppenDef4}
+\item Es existiert ein \textbf{neutrales Element} $e$ in $\set{G}$, das hei\ss{}t ein Element $e \in \set{G}$ mit \begin{align}
+e \circ a = a \circ e = a \quad \forall { } a \in \set{G}. \label{gl:mathGrundl_gruppen_neutrElem}
+\end{align} Das neutrale Element einer Gruppe ist offensichtlich zugleich links-neutral und rechts-neutral.
+\item Zu jedem $a \in \set{G}$ gibt es ein \textbf{inverses Element}, das hei\ss{}t ein Element $b \in \set{G}$ mit \begin{align}
+a \circ  b = b \circ  a = e. \label{gl:mathGrundl_gruppen_invElemt}
+\end{align} Dabei ist $e$ das nach \eqnref{gl:mathGrundl_gruppen_neutrElem} existierende (eindeutig bestimmte) neutrale Element von $\set{G}$. Das inverse Element $b$ einer Gruppe ist links-invers und recht-invers.
+\item Die Gruppe $\of{\set{G}, \circ}$ hei\ss{}t kommutativ oder \textbf{abelsch}, falls die Verkn\"upfung kommutativ ist, das hei\ss{}t falls zus\"atzlich gilt: \begin{align}
+a \circ b = b \circ a \quad \forall { } a, b \in \set{G}. \label{gl:mathGrundl_gruppen_kommutativ}
 \end{align}
 \end{itemize}
   \end{defn}  
+  \begin{exmp}[Beispiele f\"ur Gruppen]\hfill \newline
+  \begin{itemize}
+  \item Die Menge $\set{Z}$ mit der Verkn\"upfung Addition \glqq $+$\grqq { }
+  \item Die Menge $\set{R}$ mit der Verkn\"upfung Addition \glqq $+$\grqq { } und $\set{R}^{\ast}:=\set{R}-\lbrace 0 \rbrace $ mit der Multiplikation \glqq$\cdot$\grqq { }
+  \end{itemize}
+  
+\end{exmp}    
+  
+  \begin{rem}[multiplikative Verkn\"upfungen] Ist die Verkn\"upfung einer Gruppe in multiplikativer Schreibweise gegeben, so wird \begin{itemize}
+  \item das neutrale Element $e$ als \textbf{Einselement} bezeichnet und als 1 notiert
+  \item das inverse Element $b$ zu $a$ als $a^{-1}$ notiert
+  \item das Verkn\"upfungszeichen \glqq$\cdot$\grqq { }meist weggelassen
+  \item f\"ur endliche Elemente $a_{1}, \dots, a_{n}\in\set{G}$ das Produkt der Elemente als \hfill \newline $\underset{i=1}{\overset{n}{\prod}}a_{i}:=a_{1} \cdot \dots \cdot a_{n}$ definiert, wobei $\underset{i=1}{\overset{0}{\prod}}a_{i}:= 1$ gilt.
+  \end{itemize}
+\end{rem}    
+
+\begin{rem}[additive Verkn\"upfungen] Ist die Verkn\"upfung einer Gruppe kommutativ, so verwendet man die additive Schreibweise und \begin{itemize}
+  \item bezeichnet das neutrale Element $e$ als \textbf{Nullelement} und schreibt 0
+  \item notiert das inverse Element $b$ zu $a$ als $-a$
+  \item definiert f\"ur endliche Elemente $a_{1}, \dots, a_{n}\in\set{G}$ die Summe der Elemente als \hfill \newline $\underset{i=1}{\overset{n}{\sum}}a_{i}:=a_{1} + \dots + a_{n}$, wobei $\underset{i=1}{\overset{0}{\sum}}a_{i}:= 0$ gilt.
+  \end{itemize}
+\end{rem} 
+  
   \section{K\"orper}\label{sec:mathGrundl_koerper}
   K\"orper sind Zahlsysteme mit gewissen Axiomen f\"ur die Addition und Multiplikation, welche auf den Axiomen von Gruppen aufbauen. \newline
+  \begin{defn}[K\"orper]\label{def:mathGrundl_koerper} Ein K\"orper ist eine Menge $\set{K}$ mit zwei inneren Verkn\"upfungen, geschrieben als Addition und Multiplikation, so dass folgende Bedingungen erf\"ullt sind: \begin{enumerate}
+  \item $\set{K}$ ist eine abelsche Gruppe bez\"uglich der Addition, das hei\ss{}t die Addition ist assoziativ nach \eqnref{gl:mathGrundl_gruppen_assoziativ}, hat ein neutrales Element 0 nach \eqnref{gl:mathGrundl_gruppen_neutrElem} und ein inverse Element $-a\in \set{K}$ nach \eqnref{gl:mathGrundl_gruppen_invElemt} zu $a\in\set{K}$ und sie ist kommutativ nach \eqnref{gl:mathGrundl_gruppen_kommutativ}
+  \item $\set{K}^{\ast}=K\backslash \lbrace 0 \rbrace$ ist eine abelsche Gruppe bez\"uglich der Multiplikation, das hei\ss{}t die Multiplikation ist assoziativ nach \eqnref{gl:mathGrundl_gruppen_assoziativ}, hat das neutrale Element 1 nach \eqnref{gl:mathGrundl_gruppen_neutrElem} und das inverse Element $a^{-1}$ nach \eqnref{gl:mathGrundl_gruppen_invElemt} f\"ur $a, a^{-1} \in \set{K}$ und sie ist kommutativ nach \eqnref{gl:mathGrundl_gruppen_kommutativ}
+  \item Es gelten die Distributivgesetze: \begin{align*}
+  a \cdot \left( b + c \right) &= a \cdot b + a \cdot c \\
+  \left( a + b \right) \cdot c &= a\cdot c + b \cdot c 
+  \end{align*} f\"ur $a,b,c \in \set{K}$
+  \end{enumerate}
+  Wird ein K\"orper mit den zugeh\"origen Verkn\"upfungen angegeben, so kann man $\set{K}$ als Tripel $\left(\set{K}, +, \cdot \right) $ notieren.
+  \end{defn}
+  \begin{rem}[Abgeschlossenheit] Entsprechend der Definition \ref{def:mathGrundl_koerper} f\"ur einen K\"orper $\set{K}$ bilden die Rechenoperationen Addition und Multiplikation Elemente des K\"orpers auf Elemente des K\"orpers ab. Da $\set{K}$ nie verlassen wird spricht man in diesem Zusammenhang von der \textbf{Abgeschlossenheit} des K\"orpers $\set{K}$.
+\end{rem} 
+\begin{rem}[K\"orper und Gruppen] Ist $\set{K}$ ein K\"orper mit den Verkn\"upfungen Addition und Multiplikation, dann sind $\left(\set{K}, + \right)$ und $\left(\set{K} - \lbrace 0 \rbrace, \cdot \right)$ Gruppen. \newline
+Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit Matrizenmultiplikation bildet die \textit{allgemeine lineare Gruppe}.
+\end{rem}
+   
+ \begin{exmp}[K\"orper] H\"aufig verwendete K\"orper sind \begin{itemize}
+ \item die Menge der rationalen Zahlen $\set{Q}$ mit den Verkn\"upfungen Addition und Multiplikation
+ \item  die Menge der reellen Zahlen $\set{R}$ mit den Verkn\"upfungen Addition und Multiplikation
+ \item die Menge $\set{R}\times \set{R}:= \lbrace \left.(x, y)\right| x,y \in \set{R} \rbrace$ der Paare (2-Tupel) reeller Zahlen mit den Verkn\"upfungen Addition und Multiplikation. Mit den Verkn\"upfungen \begin{align*}
+ \left( x_{1}, y_{1}\right)+ \left( x_{2}, y_{2}\right)&= \left( x_{1}+x_{2}, y_{1}+y_{2}\right)\\
+ \left( x_{1}, y_{1}\right) \cdot \left( x_{2}, y_{2}\right)&= \left( x_{1}x_{2}-y_{1}y_{2}, x_{1}y_{2}+x_{2}y_{1}\right)\\
+ \end{align*} und den neutralen Elementen der Addition: $(0,0)$ und Multiplikation: $(1,0)$ bildet diese Menge einen K\"orper. Jedes Zahlenpaar $\left(x, y \right)$ kann als Linearkombination dargestellt werden: \begin{align*}
+ \left(x, y \right) &= x \cdot \left( 1,0 \right) + y \cdot \left( 0, 1 \right).
+\end{align*} F\"uhrt man folgende Schreibweisen ein: \begin{itemize}
+\item $\left( 1,0 \right): 1$
+\item $\left( 0,1 \right): i$ und bezeichnet $i$ als imagin\"are Einheit,
+\end{itemize} so erh\"alt man die Darstellung $\left(x, y \right) \equiv x + i y$. Die so erhaltenen, reellen Zahlenpaare bezeichnet man als die \textbf{komplexen Zahlen}, welche in \textit{algebraischer Normalform} vorliegen. Der K\"orper der komplexen Zahlen lautet damit $\left(\set{C},+,\cdot \right)$.
+ \end{itemize}
+ Die Menge der nat\"urlichen Zahlen $\set{N}$ bildet mit der Addition \textit{keinen} K\"orper, denn es gibt beispielsweise kein inverses Element bez\"uglich der Addition f\"ur das Element $5$. F\"ur das zu erwartende, inverse Element $-5$ gilt offensichtlich $-5\notin \set{N}$. \newline
+ Die Menge der ganzen Zahlen $\set{Z}$ bildet mit der Addition zwar eine abelsche Gruppe aber keinen K\"orper, denn f\"ur das Element $8$ gibt es kein inverses Element $b$ bez\"uglich der Multiplikation, f\"ur welches $b\in\set{Z}$ gilt.   
+ \end{exmp}
   
-  Text...
-  
- 
+  \subsection{Weitere Eigenschaften und Begriffe}
+  insbesondere Homomorphismen f\"ur Gruppen und K\"orper \cite[S. 86, 87, 89, 93]{Modler2011d} \hfill \newline
+  Kern und Bild eines Homomorphismus \cite[S. 86, 93!]{Modler2011d}
   
   \section{Vektorr\"aume}\label{sec:mathGrundl_vektorraeume}
-  Vektorr\"aume enthalten als fundamentale Struktur zwei Rechenoperationen: die Addition zweier Vektoren und die Multiplikation mit einem Skalar (einem Element des K\"orpers, \"uber dem der Vektorraum definiert ist). Addition und Multiplikation gen\"ugen den so genannten Vektorraumaxiomen, welche bez\"uglich der Addition auf den Gruppenaxiomen aufbauen. \newline
+  Ein Vektorraum ist durch eine abelsche Gruppe mit der inneren Verkn\"upfung Addition $\left(\set{V}, +\right)$ (Abschnitt \ref{sec:mathGrundl_gruppen}), einen K\"orper $\set{K}$ (Abschnitt \ref{sec:mathGrundl_koerper}) mit Skalaren als Elementen, eine \"au\ss{}ere Multiplikation, welche Elemente von $\set{K}$ mit denen von $\set{V}$ verkn\"upft und auf $\set{V}$ abbildet, und vier Vertr\"aglichkeitsgesetzen - den so genannten Vektorraumaxiomen -  gegeben. Der K\"orper $\set{K}$ entspricht h\"aufig den reellen Zahlen $\set{R}$ oder den komplexen Zahlen $\set{C}$. 
+  \begin{defn}[$\set{K}-$Vektorraum] Es sei $\set{K}$ ein K\"orper, $\left(\set{V}, +\right)$ eine abelsche Gruppe und \begin{align}
+  \cdot : & \set{K}\times \set{V} \longrightarrow V, &\left( \lambda, \vect{x}\right) &\longmapsto \lambda \cdot \vect{x}
+  \end{align}
+  eine Abbildung. Ferner seien die Vektoren $\vect{x},\vect{y},\vect{z}\in \set{V}$ und die Skalare $\lambda, \mu \in \set{K}$ gegeben. Man nennt $\set{V}$ einen Vektorraum \"uber dem K\"orper $\set{K}$ oder kurz einen $\set{K}-$Vektorraum genau dann, wenn die folgenden Eigenschaften erf\"ullt sind: \begin{align}
+  \intertext{Assoziativit\"at der Multiplikation mit Skalaren} 
+  \left( \lambda \mu \right)\cdot \vect{x}&= \lambda \cdot \left( \mu \cdot \vect{x} \right)\label{gl:mathGrundl_vektorraeume_assoz}\\
+  \intertext{Distributivit\"at}   
+  \lambda \cdot \left( \vect{x}+\vect{y} \right)&=\lambda \cdot \vect{x} + \lambda \cdot \vect{y} \label{gl:mathGrundl_vektorraeume_distr1} \\
+  \intertext{und} 
+  \left( \lambda + \mu \right) \cdot \vect{x} &= \lambda \cdot \vect{x}+ \mu \cdot \vect{x} \label{gl:mathGrundl_vektorraeume_distr2}  \\
+  \intertext{F\"ur die Multiplikation gibt es ein neutrales 1-Element}
+  1\cdot \vect{x}&= \vect{x} \label{gl:mathGrundl_vektorraeume_neutrElem}  
+  \end{align}
+  \end{defn}
+  Die Vektorraumaxiome nach \eqnref{gl:mathGrundl_vektorraeume_assoz}, \eqnref{gl:mathGrundl_vektorraeume_distr1}, \eqnref{gl:mathGrundl_vektorraeume_distr2} und \eqnref{gl:mathGrundl_vektorraeume_neutrElem} beschreiben eine Vertr\"aglichkeit der zwei Verkn\"upfungen Addition und Multiplikation des $\set{K}-$Vektorraums. \hfill \newline 
+    Die Elemente eines Vektorraumes werden als \textbf{Vektoren} bezeichnet. Vektoren werden allein durch ihre Eigenschaften definiert. Typische Beispiele f\"ur Vektoren sind Elemente der  Vektorr\"aume $\set{R}^{2}$ und $\set{R}^{3}$, aber auch Funktionen k\"onnen Vektoren sein. Ein Vektor ist also nicht zwangsl\"aufig ein Pfeil mit L\"ange und Richtung. \hfill \newline
+  Das neutrale Element der Addition der abelschen Gruppe $\set{V}$ wird als Nullvektor bezeichnet und mit $\vect{0}$ gekennzeichnet. Ist aus dem Kontext erkennbar, dass es sich um einen Nullvektor handelt, so wird die besondere Notation als Vektor h\"aufig weggelassen und man schreibt $0$ f\"ur den Nullvektor. 
+ \begin{rem}[unendliche Vektorr\"aume] F\"ur jeden K\"orper $\set{K}$ und jede nat\"urliche Zahl $n$ ist die Menge \begin{align*}
+ \set{V}&=\set{K}^{n} = \left\lbrace \left.\begin{pmatrix}
+ v_{1} \\ \vdots \\ v_{n}
+\end{pmatrix} \right| v_{1}, \dots, v_{n} \in \set{K}  \right\rbrace
+ \end{align*} mit komponentenweiser Addition und Multiplikation mit Skalaren aus $\set{K}$ ein $\set{K}-$Vektorraum. Insbesondere werden somit f\"ur den K\"orper der reellen Zahlen $\set{R}$ der reelle Vektorraum $\set{R}^{n}$ und f\"ur den K\"orper der komplexen Zahlen $\set{C}$ der komplexe Vektorraum $\set{C}^{n}$ definiert. 
+ \end{rem}
   
-  Text....
+  
   
   \section{Punkte und Vektoren}\label{sec:mathGrundl_punkteVektoren}
   Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{sec:kos_rechtssys} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
@@ -265,7 +345,8 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
     \end{align*}
 	  \end{rem}
 	  \begin{rem}[Richtungskosinus] Ein Vektor $\vect{a}$ bildet mit den drei Koordinatenachsen seines Bezugssystems der Reihe nach die Winkel $\alpha, \beta, \gamma$, die als \textit{Richtungswinkel} bezeichnet werden. Der Kosinus der jeweiligen Winkel wird als Richtungskosinus bezeichnet. \begin{align*}
-	  \cos{\alpha}&=\frac{ \skalar{\vect{a}}{\vect{e}_1}}{\abs{\vect{a}}\abs{\vect{e}_1}}=\frac{a_x}{a} &\cos{\beta}&=\frac{ \skalar{\vect{a}}{\vect{e}_2}}{\abs{\vect{a}}\abs{\vect{e}_2}}=\frac{a_y}{a} &\cos{\gamma}&=\frac{ \skalar{\vect{a}}{\vect{e}_3}}{\abs{\vect{a}}\abs{\vect{e}_3}}=\frac{a_z}{a}
+	  \cos{\alpha}&=\frac{ \skalar{\vect{a}}{\vect{e}_1}}{\abs{\vect{a}}\abs{\vect{e}_1}}=\frac{a_x}{a} &\cos{\beta}&=\frac{ \skalar{\vect{a}}{\vect{e}_2}}{\abs{\vect{a}}\abs{\vect{e}_2}}=\frac{a_y}{a} \\
+	  \cos{\gamma}&=\frac{ \skalar{\vect{a}}{\vect{e}_3}}{\abs{\vect{a}}\abs{\vect{e}_3}}=\frac{a_z}{a}
 	  \end{align*}
 	  Die Richtungswinkel sind jedoch nicht voneinander unabh\"angig, sondern \"uber die Beziehung \begin{align*}
 	  \cos{\alpha}^2 + \cos{\beta}^2 + \cos{\gamma}^2 = 1
