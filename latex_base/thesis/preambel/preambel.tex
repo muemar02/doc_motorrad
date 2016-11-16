@@ -883,14 +883,14 @@
 \setlength{\belowdisplayshortskip}{5pt}} 
 
 \IfPackageLoaded{framed}{%
-   \IfPackageLoaded{marginnote}{%
-������\begingroup
-         \g@addto@macro\framed{%
-���������   \let\marginnoteleftadjust\FrameSep
-������������   \let\marginnoterightadjust\FrameSep
-         }
+  \IfPackageLoaded{marginnote}{%
+    \begingroup
+      \g@addto@macro\framed{%
+        \let\marginnoteleftadjust\FrameSep
+          \let\marginnoterightadjust\FrameSep
+        }
       \makeatother
-� }
+    }
 }
 \makeatother
 
@@ -999,7 +999,7 @@
    %hcentering,   % sets auto-centering horizontally and is equivalent to hmarginratio=1:1
    %vcentering,   % sets auto-centering vertically and is equivalent to vmarginratio=1:1
    %centering,    % sets auto-centering and is equivalent to marginratio=1:1
-   twoside,       % switches on twoside mode with left and right margins swapped on verso pages.
+   %twoside,       % switches on twoside mode with left and right margins swapped on verso pages.
    %asymmetric,   % implements a twosided layout in which margins are not swapped on alternate pages
                   % and in which the marginal notes stay always on the same side.
    %bindingoffset=5mm,  % removes a specified space for binding

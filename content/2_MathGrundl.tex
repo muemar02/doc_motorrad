@@ -1,19 +1,19 @@
 \chapter{Mathematische Grundlagen}\label{ch:mathGrundl}
 \section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
-    Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung eines einzelnen Modells losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
-    Als einf\"uhrendes Beispiel wird ein Modell des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \newline
+    Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung einer solchen Grundstruktur losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
+    Als einf\"uhrendes Beispiel wird eine geeignete Beschreibung des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \newline
     Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen als Mengen mit einer inneren Abbildung  definiert. Im Abschnitt \ref{sec:mathGrundl_koerper} werden die Eigenschaften von Gruppen weiter eingeschr\"ankt, was auf den Begriff des K\"orper f\"uhrt. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Wegen ihrer hohen Relevanz f\"ur diese Arbeit werden im Abschnitt \ref{sec:mathGrundl_punkteVektoren} die Rechenregeln von Vektoren und Matrizen eingef\"uhrt. Au\ss{}erdem wird der Unterschied zwischen Punkten und Vektoren aufgef\"uhrt. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind \cite{Bosch2014}, \cite{MatthiasPlaue2009} und \cite{Modler2011d} entnommen. Die Eigenschaften von Vektoren sind \cite{Papula2014} entnommen. \newline
-    Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet}  wird auf Basis der so eingef\"uhrten Begriffe mit Hilfe  einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems im Kapitel \ref{ch:kos} eingef\"urht.   \newline
+    Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet} wird auf Basis der so eingef\"uhrten Begriffe mit Hilfe einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems im Kapitel \ref{ch:kos} eingef\"uhrt.   \newline
     Um die Position eines K\"orpers im Raum beschreiben zu k\"onnen werden fernerhin f\"ur Vektoren und Matrizen unter anderem die Rechenregeln Addition und Multiplikation nach \cite{Papula2014} definiert. Im Kapitel \ref{ch:kos} werden die so eingef\"uhrten Gesetze verwendet um die Handhabung von Koordinatensystemen im Detail zu beschreiben. \newline
     
     
-    Zur Beschreibung des dreidimensionalen Raumes sei eine Ebene E gegeben, welche beliebig im Anschauungsraum liegt. Weiterhin sei ein beliebiger Punkt dieser Ebene gegeben, welcher als Nullpunkt $O$ eines Koordinatensystems dienen soll. Zus\"atzlich seien Drei Geraden $X, Y, \text{und }Z$ gegeben, welche als Koordinatenachsen dienen. Alle Drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Au\ss{}erdem sollen keine zwei Geraden parallel zueinander sein. Ferner sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. \"Uberdies sei auf jeder Gerade ein spezieller Punkt definiert: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt habe vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man bezeichnet diesen Abstand als \textit{Einheitsl\"ange}. \newline
-    Hinzukommen wird ein Vektor $\vect{e}_{x}$ definiert, welcher vom Ursprung aus auf den Punkt $I_{x}$ zeigt und damit zwangsl\"aufig auf der Geraden X liegt. Analog werden die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$ definiert. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, werden \textit{Einheitsvektoren} genannt. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der Anderen darzustellen. Damit bilden diese \textit{Einheitsvektoren} die \textit{Basis} f\"ur einen \textit{Vektorraum} $V$. Da die \textit{Einheitsvektoren} jeweils Drei Komponenten besitzen ist der \textit{Vektorraum} gleich dem dreidimensionalen Raum. \newline
+    Zur Beschreibung des dreidimensionalen Raumes sei eine Ebene E gegeben, welche beliebig im Anschauungsraum liegt. Weiterhin sei ein beliebiger Punkt dieser Ebene gegeben, welcher als Nullpunkt $O$ eines Koordinatensystems dienen soll. Zus\"atzlich seien drei Geraden $X, Y, \text{und }Z$ gegeben, welche als Koordinatenachsen dienen. Alle drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Au\ss{}erdem sollen keine zwei Geraden parallel zueinander sein. Ferner sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. \"Uberdies sei auf jeder Gerade ein spezieller Punkt definiert: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt habe vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man bezeichnet diesen Abstand als \textit{Einheitsl\"ange}. \newline
+    Hinzukommend wird ein Vektor $\vect{e}_{x}$ definiert, welcher vom Ursprung aus auf den Punkt $I_{x}$ zeigt und damit zwangsl\"aufig auf der Geraden X liegt. Analog werden die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$ definiert. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, werden \textit{Einheitsvektoren} genannt. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der Anderen darzustellen. Damit bilden diese \textit{Einheitsvektoren} eine \textit{Basis} f\"ur einen \textit{Vektorraum} $V$. Da die \textit{Einheitsvektoren} genau drei unabh\"angige Vektoren sind ist der von ihnen aufgespannten Raum \textit{Vektorraum} gleich dem dreidimensionalen Raum. \newline
     Weiterhin sei ein Streckungsfaktor $\alpha \in \R$ definiert. Mit Hilfe von $\alpha \cdot I_{x}$ sei das Bild des Punktes $I_{x}$ beschrieben, welches sich durch Streckung mit Streckungszentrum im Ursprung $O$, entlang der x-Achse, um den Streckungsfaktor $\alpha$ ergibt. Die Zuordnung $\alpha \to \alpha \cdot I_{x}$ liefert damit eine eindeutige, umkehrbare Zuordnung der reellen Zahlen auf die Punkte der Geraden X. Dabei ist das Bild der Streckung des \textit{Einheitsvektors} $\vect{e}_{x}$ \"aquivalent mit dem Bild der Streckung des Punktes $I_{x}$. Zus\"atlich seien f\"ur die Achsen Y und Z die Streckungsfaktoren $\beta$ und $\gamma$ nach dem gleichen Schema definiert. \newline
         
-    Mit Hilfe dieser Festlegungen k\"onnen beliebige Punkte im Raum beschrieben werden. Alle Punkte des Raumes bilden dabei die \textit{Menge} $R^{3}$. Man sagt, dass die Punkte \textit{Elemente} dieser \textit{Menge} sind. Betrachtet man zum Beispiel einen Punkt auf der Ebene E, so kann man dieses \textit{Element} als Tripel von reellen Zahlen interpretieren: $P=\left( x_{1}, y_{1}, z_{1}\right)$. Man nennt dieses Tripel die \textit{Koordinaten} von $P$ (bez\"uglich des gew\"ahlten Koordinatensystems). Der Ursprung des Koordinatensystems hat bez\"uglich des Koordinatensystems, dessen Ursprung er ist, immer die Koordinaten $(0,0,0)$. Den Wert von $x_{1}$ erh\"alt man geometrisch durch Konstruktionen einer Normalen bez\"uglich der x-Achse, welche den Punkt $P$ durchl\"auft. Den Fu\ss{}punkt dieser Normalen kann man durch Streckung des zuvor definierten Punktes $I_{x}$ um den Faktor $\alpha_{P}$ erhalten. Dabei entspricht eben diese reelle Zahl $\alpha_{P}$ dem Wert von $x_{1}$. \newline
-    Die Werte f\"ur $y_{1}$ und $z_{1}$ ergeben sich analog. Die so erhaltene Zuordnung $P \to \left( x_{1}, y_{1}, z_{1}\right)$ bezeichnet man als eine Abbildung. Mit Hilfe dieser Abbildung wird beliebigen Punkten der Ebene E in eindeutiger Weise ein Zahlentripel von reellen Zahlen zugeordnet. Man sagt auch, dass dieses Zahlentripel ein \textit{Element} des \textit{Vektorraumes} $V$ ist, welcher \"uber dem \textit{K\"orper} der reellen Zahlen definiert ist. Da die Achsen des Koordinatensystems durch die \textit{Basis} des \textit{Vektorraumes} beschrieben werden sind die Zahlenwerte des Tripels zwangsl\"aufig abh\"angig von der Wahl der Koordinatensystemursprungs und der \textit{Basisvektoren}. \newline
-    Da dieses Zahlentripel nicht nur ein \textit{Element} einer \textit{Menge}, sondern insbesondere ein Vektor eines \textit{Vektorraumes} ist, gibt es alternative Schreibweisen f\"ur den Punkt $P$. Die \"ublichste Alternative ist die Darstellung als Spaltenvektor $\vect{v} \in \R^{3}$. Dabei erh\"alt man $\vect{v}$ durch Subtraktion der Koordinaten des Punktes $P$ von den Koordinaten des gew\"ahlten Koordinatenursprungs. Beziehen sich alle Angaben auf das gleiche System, so entsprechen die Komponenten von $\vect{v}$ genau den Koordinaten von $P$ und die Darstellung als Spaltenvektor lautet: $\vect{v}=\begin{pmatrix} x_{1} \\ y_{1} \\ z_{1} \end{pmatrix}$. Man kann $\vect{v}$ auch als \textit{Linearkombination} der \textit{Basis} des \textit{Vektorraumes} $V$ darstellen: \begin{align*}
+    Mit Hilfe dieser Festlegungen k\"onnen beliebige Punkte im Raum beschrieben werden. Alle Punkte des Raumes bilden dabei die \textit{Menge} $R^{3}$. Man sagt, dass die Punkte \textit{Elemente} dieser \textit{Menge} sind. Betrachtet man zum Beispiel einen Punkt auf der Ebene E, so kann man dieses \textit{Element} als Tripel von reellen Zahlen interpretieren: $P=\left( x_{1}, y_{1}, z_{1}\right)$. Man nennt dieses Tripel die \textit{Koordinaten} von $P$ (bez\"uglich des gew\"ahlten Koordinatensystems). Der Ursprung des Koordinatensystems hat bez\"uglich des Koordinatensystems, dessen Ursprung er ist, immer die Koordinaten $(0,0,0)$. Den Wert von $x_{1}$ erh\"alt man geometrisch durch Konstruktion einer Normalen bez\"uglich der x-Achse, welche den Punkt $P$ durchl\"auft. Den Fu\ss{}punkt dieser Normalen kann man durch Streckung des zuvor definierten Punktes $I_{x}$ um den Faktor $\alpha_{P}$ erhalten. Dabei entspricht eben diese reelle Zahl $\alpha_{P}$ dem Wert von $x_{1}$. \newline
+    Die Werte f\"ur $y_{1}$ und $z_{1}$ ergeben sich analog. Die so erhaltene Zuordnung $P \to \left( x_{1}, y_{1}, z_{1}\right)$ bezeichnet man als eine Abbildung. Mit Hilfe dieser Abbildung wird beliebigen Punkten der Ebene E in eindeutiger Weise ein Zahlentripel von reellen Zahlen zugeordnet. Man sagt auch, dass dieses Zahlentripel ein \textit{Element} des \textit{Vektorraumes} $V$ ist, welcher \"uber dem \textit{K\"orper} der reellen Zahlen definiert ist. Aufgrund dessen, dass die Achsen des Koordinatensystems durch die \textit{Basis} des \textit{Vektorraumes} beschrieben werden, sind die Zahlenwerte des Tripels zwangsl\"aufig abh\"angig von der Wahl des Koordinatensystemursprungs und der \textit{Basisvektoren}. \newline
+    Da dieses Zahlentripel nicht nur ein \textit{Element} einer \textit{Menge}, sondern insbesondere ein Vektor eines \textit{Vektorraumes} ist, gibt es alternative Schreibweisen f\"ur den Punkt $P$. Die \"Ublichste ist die Darstellung als Spaltenvektor $\vect{v} \in \R^{3}$. Dabei erh\"alt man $\vect{v}$ durch Subtraktion der Koordinaten des Punktes $P$ von den Koordinaten des gew\"ahlten Koordinatenursprungs. Beziehen sich alle Angaben auf das gleiche System, so entsprechen die Komponenten von $\vect{v}$ genau den Koordinaten von $P$ und die Darstellung als Spaltenvektor lautet: $\vect{v}=\begin{pmatrix} x_{1} \\ y_{1} \\ z_{1} \end{pmatrix}$. Man kann $\vect{v}$ auch als \textit{Linearkombination} der \textit{Basis} des \textit{Vektorraumes} $V$ darstellen: \begin{align*}
     \vect{v}&= x_{1} \vect{e}_{x} + y_{1} \vect{e}_{y} + z_{1} \vect{e}_{z} = \alpha_{P} \vect{e}_{x} + \beta_{P} \vect{e}_{y} + \gamma_{P} \vect{e}_{z}
 \end{align*}      
 
@@ -26,7 +26,7 @@
 Ist $\set{M}$ eine Menge und $x$ ein Objekt, so notiert man $x \in \set{M}$, wenn die Menge $\set{M}$ das Objekt $x$ enth\"alt und $x \notin \set{M}$, wenn dies nicht der Fall ist. \newline
 Enth\"alt die Menge $\set{M}$ keine Elemente, so nennt man dies die \textbf{leere Menge}\footnote{jede Menge besitzt die leere Menge als Teilmenge} $\lbrace  \rbrace$ beziehungsweise $\emptyset$.
 \end{defn}
-Mengen k\"onnen durch Aufz\"ahlung aller Elemente oder durch die Angabe von Eigenschaften, welche die Elemente erf\"ullen sollen, definiert werden. Ein Beispiel f\"ur verschiedene Mengendefinitionen ist im Beispiel \ref{ex:mathGrundl_mengen} zu finden. \newline  
+Mengen k\"onnen durch Aufz\"ahlung aller Elemente oder durch die Angabe von Eigenschaften, welche die Elemente erf\"ullen sollen, definiert werden. In Beispiel \ref{ex:mathGrundl_mengen} sind verschiedene Mengendefinition zu finden. \newline  
 Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf eine axiomatische Begr\"undung. Im Rahmen dieser Arbeit ist diese Definition jedoch ausreichend. Ein pr\"azise Definition von Mengen erfordert erheblichen Aufwand und ist beispielsweise in \cite{Asser1975} enthalten. \newline
   Die folgenden Mengen sind von besonderer Bedeutung: \begin{itemize}
   \item die nat\"urlichen Zahlen $\set{N}=\lbrace 0, 1, 2, \dots \rbrace$
@@ -47,7 +47,7 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
 \set{Y}&= \lbrace \left. x\in \set{X}\right| P\of{x} \text{ ist wahr} \rbrace \label{gl:mathGrundl_mengen_teilmenge}
 \end{align} eine \textbf{Teilmenge} von $\set{X}$ und notiert $\set{Y} \subset \set{X}$. \newline
  Die Mengen $\set{X}$ und $\set{Y}$ hei\ss{}en \textit{gleich}, wenn jedes Element von $\set{X}$ auch in $\set{Y}$ enthalten ist und umgekehrt: $\set{X}=\set{Y} \Leftrightarrow \forall x \left( x \in \set{X} \Leftrightarrow x \in \set{Y} \right)$. \newline
-  Gilt $\set{Y} \subset \set{X} \wedge \set{Y} \neq \set{X}$, so nennt man $\set{Y}$ eine \textit{echte Teilmenge} von $\set{X}$ und notiert $\set{Y} \subsetneq \set{X}$. \newline
+  Gilt $\set{Y} \subset \set{X} \land \set{Y} \neq \set{X}$, so nennt man $\set{Y}$ eine \textit{echte Teilmenge} von $\set{X}$ und notiert $\set{Y} \subsetneq \set{X}$ \footnote{Mit dem Symbol $\land$ ist das logische Und - die \textit{Konjunktion} -  und mit dem Symbol $\lor$ ist das logische Oder - die \textit{Disjunktion} - gemeint. F\"ur Erkl\"arungen zu diesen logischen Operatoren siehe \cite[S. 28]{Arens2013}}. \newline
   Die Gesamtheit aller Teilmengen einer Menge $\set{X}$ bildet die sogenannte \textbf{Potenzmenge} $\set{P}\of{\set{X}} = \lbrace \set{U}| \set{U} \subset \set{X} \rbrace $.  
 
 \begin{rem}[Notation f\"ur Teilmengen] In der Literatur ist die Kennzeichnung einer echten Teilmenge im Gegensatz zu einer Teilmenge nicht einheitlich. Es gibt folgende Notationen: \begin{itemize}
@@ -80,7 +80,7 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   \subsection{Differenz von Mengen} Sind $\set{X}_{1}$ und $\set{X}_{2}$ Teilmengen einer Menge $\set{X}$, so hei\ss{}t \begin{align}
   \set{X}_{1} - \set{X}_{2} &:= \lbrace \left.x \in \set{X}_{1}\right| x \notin \set{X}_{2} \rbrace \label{gl:mathGrundl_mengen_differenz}
   \end{align}
-  die \textbf{Differenz} von $\set{X}_{1}$ und $\set{X}_{2}$. Auch dies ist eine Teilmenge von $\set{X}$, sogar von $\set{X}_{1}$.
+  die \textbf{Differenz} von $\set{X}_{1}$ und $\set{X}_{2}$. Auch dies ist eine Teilmenge von $\set{X}$ und sogar von $\set{X}_{1}$.
   
   
   \subsection{Kartesisches Produkt}
@@ -89,8 +89,8 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   \end{align}
   das \textbf{kartesische Produkt} der Mengen $\set{X}_{1}, \dots, \set{X}_{n}$. Eine gleichbedeutenden Notation lautet $\set{X}_{1} \times \dots \times \set{X}_{n}$. Die Elemente $\left( x_{1}, \dots, x_{n} \right)$ werden als \textbf{n-Tupel} mit Komponenten $x_{i} \in \set{X}_{i}, i=1, \dots, n$, bezeichnet. \newline
   Zwei n-Tupel $\left( x_{1}, \dots, x_{n} \right), \left( x'_{1}, \dots, x'_{n} \right)$ gelten genau dann als gleich, wenn $x_{i}=x'_{i}$ f\"ur $i=1, \dots, n$ erf\"ullt ist. \newline
-  Das 2-Tupel $(3,5)$ beschreibt beispielsweise einen Punkt auf einer Zahlenebene. \newline  
-  Ein 3-Tupel bezeichnet man als \textit{Tripel}. 
+  Das 2-Tupel $(3, 5)$ beschreibt einen Punkt auf einer Zahlenebene. Ein 2-Tupel bezeichnet man als \textit{Paar}. \newline  
+  Ein 3-Tupel bezeichnet man als \textit{Tripel}. Ein Beispiel f\"ur ein Tripel ist der K\"orper $\left( \set{R}, +, \cdot \right)$, welcher durch die Menge der reellen Zahlen $\set{R}$ mit den Verkn\"upfungen Addition und Multiplikation gebildet wird. 
 
   \subsection{M\"achtigkeit}
    Sei $\set{X}$ eine Menge, dann bezeichnet man mit \begin{align}
@@ -103,10 +103,11 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   siehe \cite[S.14]{MatthiasPlaue2009}
   
   \section{Abbildung}\label{sec:mathGrundl_abbildung}
-  \begin{defn}[Abbildung] Eine Abbildung $f: \set{X} \longrightarrow \set{Y}$ zwischen zwei Mengen $\set{X}$ und $\set{Y}$ ist eine Vorschrift, welche jedem $x \in \set{X}$ ein wohlbestimmtes Element $y \in \set{Y}$ zuordnet, welches mit $f\of{x}$ bezeichnet mit. Man schreibt auch $x \longmapsto f\of{x}$. Man bezeichnet $\set{X}$ als den Definitionsbereich und $\set{Y}$ als den Bild- oder Wertebereich\footnote{der Bildbereich wird auch Zielmenge genannt} der Abbildung $f$.
+  \begin{defn}[Abbildung] Eine Abbildung $f: \set{X} \longrightarrow \set{Y}$ zwischen zwei Mengen $\set{X}$ und $\set{Y}$ ist eine Vorschrift, welche jedem $x \in \set{X}$ ein wohlbestimmtes Element $y \in \set{Y}$ zuordnet, welches mit $f\of{x}$ bezeichnet mit. Man schreibt auch \hfill \newline
+   $x \longmapsto f\of{x}$. Man bezeichnet $\set{X}$ als den Definitionsbereich und $\set{Y}$ als den Bild- oder Wertebereich\footnote{der Bildbereich wird auch Zielmenge genannt} der Abbildung $f$.
   \end{defn}
   \subsection{Komposition von Abbildungen}
-  Gegeben seien zwei Abbildung $f: \set{X} \longrightarrow \set{Y}$ und $g: \set{Y} \longrightarrow \set{Z}$ zwischen Mengen. Dann kann man die Abbildungen komponieren: \begin{align}
+  Gegeben seien zwei Abbildungen $f: \set{X} \longrightarrow \set{Y}$ und $g: \set{Y} \longrightarrow \set{Z}$ zwischen Mengen. Dann kann man die Abbildungen komponieren: \begin{align}
   g \circ f &: \set{X} \longrightarrow \set{Z}, &x&\longmapsto g\of{f\of{x}}. \label{gl:mathGrundl_abbildung_komposition}
   \end{align}
   Alternative Bezeichnungen f\"ur eine Komposition lauten \textit{Hintereinanderausf\"uhrung} und \textit{Verkettung}.
@@ -119,9 +120,9 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   
   Seien $\set{M}\subset \set{X}, \set{N}\subset \set{Y}$ und $f: \set{X}\longrightarrow\set{Y}$ eine Abbildung, so nennt man: \begin{align}
   f\of{\set{M}}&:= \lbrace \left.y\in\set{Y}\right| \text{ es existiert ein } x\in\set{M} \text{ mit } y=f\of{x} \rbrace \label{gl:mathGrundl_abbildung_bild}
-  \end{align} das \textbf{Bild}(-menge) von $\set{M}$ unter der Abbildung $f$ und \begin{align}
+  \end{align} \textbf{Bild}(-menge) von $\set{M}$ unter der Abbildung $f$ und \begin{align}
   f^{-1}\of{\set{N}}&:= \lbrace \left.x\in\set{X}\right| f\of{x}\in \set{N} \rbrace \label{gl:mathGrundl_abbildung_urbild}
-  \end{align} das \textbf{Urbild}(-menge) von $\set{N}$ unter der Abbildung $f$. \newline
+  \end{align} \textbf{Urbild}(-menge) von $\set{N}$ unter der Abbildung $f$. \newline
   Weiterhin bezeichnet man $f$ als 
   \begin{itemize}
   \item \textbf{injektiv}, falls f\"ur $x_{1},x_{2}\in \set{X}$ gilt: $f\of{x_{1}}=f\of{x_{2}}\implies x_{1}=x_{2}$, das hei\ss{}t, dass verschiedene Elemente des Definitionsbereichs auf verschiedene Elemente des Wertebereichs abgebildet werden beziehungsweise dass das Urbild $f^{-1}\of{y}$ eines jeden $y\in\set{Y}$ entweder leer ist, oder aus genau einem $x\in\set{X}$ besteht
@@ -134,7 +135,7 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
     
   
    \section{Gruppen}\label{sec:mathGrundl_gruppen}
-  Unter einer \textbf{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. \newline
+  Unter einer \textbf{inneren Verkn\"upfung} auf einer Menge $\set{M}$ versteht man eine Abbildung $f: \set{M} \times \set{M} \to \set{M}$. Sie ordnet jedem Paar $(a, b)$ von Elementen aus $\set{M}$ ein Element $f(a, b) \in \set{M}$ zu. Die innere Verkn\"upfung muss also eine abgeschlossene\footnote{der Begriff \textit{Abgeschlossenheit} wird im Abschnitt \ref{sec:mathGrundl_koerper} genauer erkl\"art} Verkn\"upfung sein. Es wird die Notation $ a \cdot b$ anstelle von $f\of{a,b}$ verwendet, um den verkn\"upfenden Charakter der Abbildung zu verdeutlichen. \newline
   Ist die Verkn\"upfung kommutativ, gilt also $f\of{a,b}=f\of{b,a}$ f\"ur alle $a,b \in \set{M}$, so wird die Verkn\"upfung $f$ durch $a+b$ notiert. 
   
   \begin{defn} Eine Menge $\set{G}$ mit einer inneren Verkn\"upfung $\circ: \set{G} \times \set{G} \longrightarrow \set{G},$ \hfill \newline  $(a, b) \longmapsto a \circ b$, hei\ss{}t eine Gruppe $\of{\set{G}, \circ}$, wenn die folgenden Eigenschaften erf\"ullt
@@ -208,8 +209,8 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
 \item $\left( 0,1 \right): i$ und bezeichnet $i$ als imagin\"are Einheit,
 \end{itemize} so erh\"alt man die Darstellung $\left(x, y \right) \equiv x + i y$. Die so erhaltenen, reellen Zahlenpaare bezeichnet man als die \textbf{komplexen Zahlen}, welche in \textit{algebraischer Normalform} vorliegen. Der K\"orper der komplexen Zahlen lautet damit $\left(\set{C},+,\cdot \right)$.
  \end{itemize}
- Die Menge der nat\"urlichen Zahlen $\set{N}$ bildet mit der Addition \textit{keinen} K\"orper, denn es gibt beispielsweise kein inverses Element bez\"uglich der Addition f\"ur das Element $5$. F\"ur das zu erwartende, inverse Element $-5$ gilt offensichtlich $-5\notin \set{N}$. \newline
- Die Menge der ganzen Zahlen $\set{Z}$ bildet mit der Addition zwar eine abelsche Gruppe aber keinen K\"orper, denn f\"ur das Element $8$ gibt es kein inverses Element $b$ bez\"uglich der Multiplikation, f\"ur welches $b\in\set{Z}$ gilt.   
+ Die Menge der nat\"urlichen Zahlen $\set{N}$ bildet mit der Addition \textit{keinen} K\"orper, denn es gibt kein inverses Element bez\"uglich der Addition. F\"ur das Element $5$ ist beispielsweise das zu erwartende, inverse Element $-5$ offensichtlich $-5\notin \set{N}$. \newline
+ Die Menge der ganzen Zahlen $\set{Z}$ bildet mit der Addition zwar eine abelsche Gruppe aber keinen K\"orper, denn es gibt kein inverses Element bez\"uglich der Multiplikation. Das Element $a=8\in\set{Z}$ hat zum Beispiel kein inverses Element $b=1\cdot a^{-1}$ f\"ur welches $b\in\set{Z}$ gilt.   
  \end{exmp}
   
   \subsection{Weitere Eigenschaften und Begriffe}
@@ -232,7 +233,7 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   1\cdot \vect{x}&= \vect{x} \label{gl:mathGrundl_vektorraeume_neutrElem}  
   \end{align}
   \end{defn}
-  Die Vektorraumaxiome nach \eqnref{gl:mathGrundl_vektorraeume_assoz}, \eqnref{gl:mathGrundl_vektorraeume_distr1}, \eqnref{gl:mathGrundl_vektorraeume_distr2} und \eqnref{gl:mathGrundl_vektorraeume_neutrElem} beschreiben eine Vertr\"aglichkeit der zwei Verkn\"upfungen Addition und Multiplikation des $\set{K}-$Vektorraums. \hfill \newline 
+  Die Vektorraumaxiome nach \eqnref{gl:mathGrundl_vektorraeume_assoz} - \eqnref{gl:mathGrundl_vektorraeume_neutrElem} beschreiben eine Vertr\"aglichkeit der zwei Verkn\"upfungen Addition und Multiplikation des $\set{K}-$Vektorraums. \hfill \newline 
     Die Elemente eines Vektorraumes werden als \textbf{Vektoren} bezeichnet. Vektoren werden allein durch ihre Eigenschaften definiert. Typische Beispiele f\"ur Vektoren sind Elemente der  Vektorr\"aume $\set{R}^{2}$ und $\set{R}^{3}$, aber auch Funktionen k\"onnen Vektoren sein. Ein Vektor ist also nicht zwangsl\"aufig ein Pfeil mit L\"ange und Richtung. \hfill \newline
   Das neutrale Element der Addition der abelschen Gruppe $\set{V}$ wird als Nullvektor bezeichnet und mit $\vect{0}$ gekennzeichnet. Ist aus dem Kontext erkennbar, dass es sich um einen Nullvektor handelt, so wird die besondere Notation als Vektor h\"aufig weggelassen und man schreibt $0$ f\"ur den Nullvektor. 
  \begin{rem}[unendliche Vektorr\"aume] F\"ur jeden K\"orper $\set{K}$ und jede nat\"urliche Zahl $n$ ist die Menge \begin{align*}
@@ -242,61 +243,145 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
  \end{align*} mit komponentenweiser Addition und Multiplikation mit Skalaren aus $\set{K}$ ein $\set{K}-$Vektorraum. Insbesondere werden somit f\"ur den K\"orper der reellen Zahlen $\set{R}$ der reelle Vektorraum $\set{R}^{n}$ und f\"ur den K\"orper der komplexen Zahlen $\set{C}$ der komplexe Vektorraum $\set{C}^{n}$ definiert. 
  \end{rem}
   
+ 
   
-  
-  \section{Punkte und Vektoren}\label{sec:mathGrundl_punkteVektoren}
-  Zur Beschreibung eines Punktes wird ein Koordinatensystem ben\"otigt. Ein Punkt wird eindeutig durch seine \textit{Position} relativ zu diesem Koordinatensystem beschrieben. Als Koordinatensystem wird das Koordinatensystem $\KOS{I}$ aus \ref{sec:kos_rechtssys} verwendet. Die Position eines Punktes $p$ kann dann wie folgt beschrieben werden: \begin{align*}
-  p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
-  \end{align*} Die Position von $p$ ist damit relativ zu $\KOS{I}$ eindeutig beschrieben. \newline
-    \subsection{Vektoren}
-  Unter einem Vektor $\vect{a}\in \R^{3}$ versteht man einen Pfeil, welcher durch seine \textit{Richtung} und seinen \textit{Betrag} beziehungsweise seine L\"ange eindeutig charakterisiert wird. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Die folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
-  \begin{align*}
-  \abs{\vect{a}} \equiv a := \norm{\vect{a}}
-  \intertext{F\"ur einen Vektor $\vect{a}$ gilt immer:}
-  \abs{\vect{a}} &\geq 0
+  \begin{defn}[Untervektorraum] Sei $\set{V}$ ein $\set{K}-$Vektorraum. Eine Teilmenge $\set{U}\subset \set{V}$ hei\ss{}t ein $\set{K}-$Untervektorraum oder \textbf{linearer Unterraum von} $\mathbf{\set{V}}$, wenn gilt: \begin{align}
+  \set{U}&\neq \emptyset \label{gl:mathGrundl_vektorraeume_unterRaum_nichtLeer} \\
+  \vect{a}, \vect{b} \in \set{U}&\implies \vect{a}+ \vect{b} \in \set{U} \label{gl:mathGrundl_vektorraeume_unterRaum_addition} \\
+  \alpha \in \set{K}, \vect{a}\in \set{U} &\implies \alpha \vect{a} \in \set{U} \label{gl:mathGrundl_vektorraeume_unterRaum_skalarMult}
+  \end{align}
+  \end{defn}
+  \begin{rem}[Untervektorraum] Ein Untervektorraum enth\"alt in jedem Fall den Nullvektor. Au\ss{}erdem ist ein Untervektorraum bez\"uglich der Addition und der Multiplikation mit Skalaren abgeschlossen. Ein Untervektorraum von einem Vektorraum ist stets selbst ein Vektorraum.
+  \end{rem}
+
+  \begin{defn}[Linearkombination] Sei $\set{V}$ ein $\set{K}-$Vektorraum. Ein beliebiger Vektor $\vect{v}\in\set{V}$ hei\ss{}t \textbf{Linearkombination} einer Anzahl von Vektoren $\vect{v}_{1},\dots,\vect{v}_{k} \in \set{V}$, falls Skalare $\lambda_{1},\dots,\lambda_{k}\in\set{K}$ derart existieren, dass \begin{align*}
+  \vect{v}&=\sum_{i=1}^{k} \lambda_{i} \vect{v}_{i}
   \end{align*}
-  Beschreibt ein Vektor die Auspr\"agung einer physikalischen Gr\"o\ss{}e, so geh\"ort zu deren vollst\"andiger Beschreibung zus\"atzlich zu Betrag und Richtung noch die Angabe einer Ma\ss{}einheit. Ein typisches Beispiel ist der Betrag einer Kraft $\vect{F}: \abs{\vect{F}}= 100 \cdot N$ \newline
-Bei der Arbeit mit Vektoren wird zwischen verschiedenen Typen unterschieden \cite[S. 26]{Riessinger2007j}:
-\begin{itemize}
-\item \textit{Freie Vektoren}\footnote{\textit{freie Vektoren} werden auch als \textit{Richtungsvektoren} bezeichnet} k\"onnen beliebig im Raum verschoben werden, so lange Richtung und Betrag konstant bleiben. Damit sind parallele Verschiebungen und Verschiebungen entlang der Wirkungslinie m\"oglich. Dieser Typ von Vektoren wird in der Regel gemeint, wenn man von Vektoren spricht. Ein typisches Beispiel sind die Einheitsvektoren $\vect{e}$, mit denen die Koordinatenachsen eines Koordinatensystems beschrieben werden.
-\item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie abgetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
-\end{itemize}
-Da die Notation von Punkten im Sinne eines Ortsvektors und die Notation von Richtungsvektoren identisch ist, kommt es leicht zu Verwechslungen. Erschwerend kommt hinzu, dass die Konzepte von Punkt und Vektor in der Literatur h\"aufig nicht gesondert betrachtet werden. Es ist damit die Aufgabe des Lesers sich klar zu machen, ob mit $\vect{a}$ ein Richtungsvektor oder ein Punkt gemeint ist. Verwendet man zur Darstellung Homogene Koordinaten (siehe \ref{sec:kos_homKoord}) so ist die Unterscheidung von Punkten und Vektoren offensichtlich. \newline
-F\"ur die Darstellung von Vektoren gibt es verschiedene M\"oglichkeiten. Eine Variante ist die bereits verwendete Angabe von Anfangspunkt $q$ und Endpunkt $p$
-\begin{align*}
-\vect{a}&=  p - q \equiv \vect{qp}.
-\end{align*}
-Bei \textit{freien Vektoren} ist die Wahl der Anfangs- und Endpunkte jedoch nicht eindeutig. Es gibt also Punkte $r, s$, f\"ur die gilt:
-\begin{align*}
-\vect{a}&= p - q = r - s 
-\intertext{mit}
-p&\neq r \text{ und } q\neq s
-\end{align*}
-F\"ur einen \textit{gebundenen Vektor} gibt es keine solche Punkte $r, s$. Durch die Angabe eines Bezugspunktes, die Richtung und den Betrag des Vektors ist auch der Endpunkt eindeutig bestimmt. \newline
-Eine weitere Darstellung f\"ur Vektoren ist die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$, welche durch Projektion auf die Basisvektoren von $\KOS{I}$ gegeben ist. 
-\begin{align*}
-\vect{\tensor*[_I]{a}{}}&=  \vect{\tensor*[_I]{a}{_x}} + \vect{\tensor*[_I]{a}{_y}}+ \vect{\tensor*[_I]{a}{_z}} =  x \vect{\tensor*[_I]{e}{_1}} + y \vect{\tensor*[_I]{e}{_2}}+ z \vect{\tensor*[_I]{e}{_3}} = 
-\begin{pmatrix} x \\ y \\ z 
+  erf\"ullt ist. Der Vektor $\vect{v}$ l\"asst sich dann aus den Vektoren $\vect{v}_{1},\dots,\vect{v}_{k}$ mit den \textit{Koeffizienten} $\lambda_{1},\dots,\lambda_{k}$ \textit{linear kombinieren}. Eine \"aquivalente Aussage w\"are, dass der Vektor $\vect{v}$ von den Vektoren $\vect{v}_{1},\dots,\vect{v}_{k}$ \textit{linear abh\"angig} ist. 
+  \end{defn}
+  
+  \begin{defn}[Spann, Lineare H\"ulle] Sei $\set{V}$ ein $\set{K}-$Vektorraum. Die Menge aller m\"oglichen Linearkombinationen einer gegebenen Menge von Vektoren $\vect{v}_{1},\dots,\vect{v}_{k}\in\set{V}$ wird als \textbf{Spann} oder die \textbf{lineare H\"ulle} dieser Vektoren bezeichnet: \begin{align}
+  \Span\left\lbrace \vect{v}_{1},\dots,\vect{v}_{k}\right\rbrace&= \left\lbrace \left. v=\sum_{i=1}^{k} \lambda_{i}\vect{v}_{i}\right| \lambda_{i}\in\set{K} \right\rbrace \label{gl:mathGrundl_vektorraeume_span}
+  \end{align}
+  \end{defn}
+  
+  \begin{defn}[Erzeugendensystem] Eine Anzahl von Vektoren $\vect{v}_{1},\dots,\vect{v}_{k}\in\set{V}$ eines $\set{K}-$Vektorraumes $\set{V}$ hei\ss{}t \textbf{Erzeugendensystem} von $\set{V}$, wenn gilt: \begin{align}
+  \Span\left\lbrace \vect{v}_{1},\dots,\vect{v}_{k}\right\rbrace&= \set{V} \label{gl:mathGrundl_vektorraeume_erzeugSys}
+  \end{align} Es l\"asst sich also jeder Vektor des $\set{K}-$Vektorraumes $\set{V}$ durch Linearkombination eines zugeh\"origen Erzeugendensystems darstellen. Ist die M\"achtigkeit des Erzeugendensystems endlich, so ist $\set{V}$ \textit{endlich erzeugt}. \newline
+  Jedes Erzeugendensystem eines endlichen Vektorraumes $\set{V}$ enth\"alt eine \textbf{Basis}.
+  \end{defn}
+  \begin{rem}[Erzeugendensystem f\"ur $\set{R}^{n}$] Jeder Vektorraum $\set{V}$, der \"uber dem K\"orper der reellen Zahlen $\set{R}$ definiert wird, besitzt ein Erzeugendensystem. \hfill \newline
+  Im $\set{R}-$ Vektorraum $\set{R}^{n}$ bilden die \textit{Einheitsvektoren} $\vect{e}_{1},\dots,\vect{e}_{n}$ ein Erzeugendsystem. Ein Einheitsvektor $\vect{e}_{i}$ hat in der i-ten Zeile eine eins als Eintrag. Alle weiteren Eintr\"age dieses Einheitsvektors sind null. \begin{align*}
+  \vect{e}_{i}&=\begin{pmatrix}
+  0 \\ 
+  \vdots \\ 
+  0 \\ 
+  1 \\ 
+  0 \\
+  \vdots \\
+  0
+  \end{pmatrix} \leftarrow \text{ i-te Zeile }
+  \end{align*}
+  Ein solches Erzeugendensystem wird als \textit{kanonische Basis} bezeichnet.
+  \end{rem}
+  
+  \begin{defn}[Lineare Unabh\"angigkeit] Eine Menge von Vektoren $\lbrace \vect{v}_{1},\dots,\vect{v}_{n} \rbrace$ eines $\set{K}-$Vektorraums $\set{V}$ hei\ss{}t \textbf{linear unabh\"angig}, wenn sich keiner der Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ als Linearkombination der \"Ubrigen darstellen l\"asst. Die Gleichung
+  \begin{align}
+  \sum_{i=1}^{n} \lambda_{i}\vect{v}_{i}&=\vect{0} \label{gl:mathGrundl_vektorraeume_linUnabh}
+  \end{align}
+  mit den Koeffizienten $\lambda_{i}\in\set{K}$ besitzt also nur die triviale L\"osung $\lambda_{1},\dots,\lambda_{n}=0$. Es gilt also \begin{align*}
+  \sum_{i=1}^{n} \lambda_{i}\vect{v}_{i}&=\vect{0} \implies \lambda_{i}=0 \quad \forall i.
+\end{align*}   \hfill \newline
+  Eine nicht linear unabh\"angige Menge hei\ss{}t \textbf{linear abh\"angig}. Bei einer linear abh\"angigen Menge gibt es nicht triviale L\"osungen der \eqnref{gl:mathGrundl_vektorraeume_linUnabh} und damit nicht triviale Darstellungen des Nullvektors. Es existieren also $\lambda$ mit $\lambda\neq 0$, so dass gilt $\vect{v}_{i}=\lambda \vect{v}_{j}$. Die Vektoren $\vect{v}_{i}, \vect{v}_{j}$ sind dann Vielfache voneinander beziehungsweise parallel zueinander.
+\end{defn}   
+  \begin{rem}[Lineare Abh\"angigkeit] Eine linear unabh\"angige Menge ist unverk\"urzbar. Werden Vektoren aus dieser Menge entfernt, so spannt die Menge weniger Raum auf. \hfill \newline
+  Bei einer linear abh\"angigen Menge liegt wenigstens einer der Vektoren in der linearen H\"ulle der Anderen. Er kann daher weggelassen werden, ohne die H\"ulle zu verkleinern. 
+\end{rem}   
+  
+  \begin{defn}[Basis] Ein System von Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ eines $\set{K}-$Vektorraumes $\set{V}$ wird als \textbf{Basis} von $\set{V}$ bezeichnet, wenn gilt: \begin{enumerate}
+  \item Die Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ bilden ein Erzeugendensystem von $\set{V}$, es gilt also $\Span\lbrace \vect{v}_{1},\dots,\vect{v}_{n} \rbrace=\set{V}$.
+  \item Das System $\vect{v}_{1},\dots,\vect{v}_{n}$ ist linear unabh\"angig. Die Basis ist daher unverk\"urbar. 
+\end{enumerate}
+  Die Anzahl der Elemente einer Basis eines Vektorraumes $\set{V}$ wird als \textbf{Dimension} des Vektorraumes bezeichnet: $\dim \set{V}$.
+  \end{defn}
+
+ \subsection{Matrizen}
+  Es seien $m$ und $n$ nat\"urliche Zahlen. Eine $m\times n$ Matrix $\matr{A}$ \"uber dem K\"orper $\set{K}$ ist eine Abbildung \begin{align*}
+  \matr{A}:& \begin{cases} \lbrace 1, \dots, m \rbrace \times \lbrace 1,\dots,n \rbrace \longrightarrow \set{K}, \\
+  \left( i, j\right) \longmapsto a_{ij}.
+  \end{cases}
+  \end{align*}
+  Dabei bezeichnet $i$ den Zeilenindex und $j$ den Spaltenindex. Die K\"orperelemente $a_{ij}\in \set{K}, i=1, \dots, m, j=1, \dots, n$ nennt man \textbf{Komponenten} oder die \textbf{Eintr\"age} der Matrix $\matr{A}$. Eine Matrix $\matr{A}$ kann \"ubersichtlich durch $m$ Zeilen und $n$ Spalten dargestellt werden: \begin{align*}
+  \matr{A}&=\begin{pmatrix}
+  a_{11} & a_{12} & \dots & a_{1n} \\
+  a_{21} & a_{22} & \dots & a_{2n} \\
+  \vdots & \vdots & \dots & \vdots \\
+  a_{m1} & a_{m2} & \dots & a_{mn} \\
+  \end{pmatrix}
+  \end{align*}
+  Eine Matrix, bei der alle Komponenten gleich 0 sind, nennt man \textbf{Nullmatrix}: \begin{align*}
+  \matr{0}&=
+  \begin{pmatrix}
+  0 & \dots & 0 \\ 
+  \vdots & \dots & \vdots \\ 
+  0 & \dots & 0
+  \end{pmatrix} 
+  \end{align*}
+  Eine Matrix, bei der gilt: \begin{align*}
+  a_{ij}&= \begin{cases} 1 \text{ f\"ur } i=j \\
+  0 \text{ f\"ur } i\neq j \end{cases}
+\end{align*} nennt man \textbf{Einheitsmatrix}: \begin{align*}
+\matr{I}&= \begin{pmatrix}
+1 & 0 & \dots & 0\\ 
+0 & 1 & \ddots & \vdots \\ 
+\vdots & \ddots & \ddots & 0 \\ 
+0 & \dots & 0 & 1 
 \end{pmatrix} 
-\intertext{damit ergibt sich der Betrag eines Vektor zu}
-\abs{\vect{\tensor*[_I]{a}{}}}&= \sqrt{x^2 + y^2 + z^2} \\
-&=\sqrt{\skalar{\vect{a}}{\vect{a}}}
-\intertext{Wenn bekannt ist, dass mit $\vect{a}$ ein Vektor gemeint ist, so notiert man den Betrag des Vektors in Kurzform mit $a$.}
 \end{align*}
-Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koordinaten} oder auch \textit{Eintr\"age} des Vektors $\vect{\tensor*[_I]{a}{}}$. Der linksseitige Index $I$ kennzeichnet das verwendete Bezugssystem. Ist das Bezugssystem eindeutig, so wird dieser Index weggelassen.\newline
+  $\set{K}^{m\times n}$ \textbf{ist ein} $\set{K}-$\textbf{Vektorraum}. \hfill \newline
+  Die Menge $\set{K}^{m\times n}$ aller $m\times n$ Matrizen bildet \"uber $\set{K}$ mit komponentenweiser Addition: 
+  \begin{align*}
+  \begin{pmatrix}
+  a_{11} & \dots & a_{1n} \\ 
+  \vdots &  & \vdots \\ 
+  a_{m1} & \dots & a_{mn}
+  \end{pmatrix} +  \begin{pmatrix}
+  b_{11} & \dots & b_{1n} \\ 
+  \vdots &  & \vdots \\ 
+  b_{m1} & \dots & b_{mn}
+  \end{pmatrix} &=  \begin{pmatrix}
+  a_{11}+b_{11} & \dots & a_{1n}+b_{1n} \\ 
+  \vdots &  & \vdots \\ 
+  a_{m1}+b_{m1} & \dots & a_{mn}+b_{mn}
+  \end{pmatrix} 
+  \end{align*} und der Multiplikation mit einem Skalar $\lambda$: \begin{align*}
+  \lambda \cdot  \begin{pmatrix}
+  a_{11} & \dots & a_{1n} \\ 
+  \vdots &  & \vdots \\ 
+  a_{m1} & \dots & a_{mn}
+  \end{pmatrix} &= \begin{pmatrix}
+  \lambda a_{11} & \dots &  \lambda a_{1n} \\ 
+  \vdots &  & \vdots \\ 
+  \lambda a_{m1} & \dots & \lambda a_{mn}
+  \end{pmatrix}
+  \end{align*} einen $\set{K}-$Vektorraum.
 
-Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}$ (nach \cite{Papula2014}):
-
+  \section{Punkte und Vektoren im Anschuungsraum}\label{sec:mathGrundl_punkteVektoren}
+  Der Anschauungsraum ist eine geometrische Idealisierung des uns umgebenden physikalischen Raums. Zur Beschreibung dieses Raums dienen Punkte $p$. Die Position dieser Punkte wird relativ zu einem gew\"ahlten Koordinatensystem $\KOS{I}$ mit Hilfe von Koordinatentripeln beschrieben. Die Koordinatentripel k\"onnen als Elemente des Vektorraumes $\set{R}^{3}$ aufgefasst werden: 
+  \begin{align*}
+  p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
+  \end{align*} Die Position von $p$ ist damit relativ zu $\KOS{I}$ eindeutig beschrieben. Der Ursprung von $\KOS{I}$ wird mit dem Nullvektor $\vect{0}\in\set{R}^{3}$ identifiziert. \hfill \newline
+  Da die Beschreibung des Punktes $p$ als Element des Vektorraumes $\set{R}^{3}$ betrachtet werden soll, ist die gew\"ahlte Beschreibungsform ein Vektor. Da der Vektorraum $\set{R}^{3}$  die im Abschnitt \ref{sec:mathGrundl_vektorraeume} geforderten Eigenschaften haben muss, gelten   bestimmte Rechenregeln f\"ur einen solchen Vektor. Diese Rechenregeln werden um weitere Verkn\"upfungen - das Skalarprodukt und das Kreuzprodukt - erg\"anzt. \hfill \newline
+    Bei geometrischen \"Uberlegungen wird zwischen Positionen, Richtungen und Abst\"anden klar  unterschieden. Diese drei Eigenschaften lassen sich mit Hilfe von Vektoren beschreiben. Die Bedeutung eines Vektors als Element eines Vektorraumes $\set{V}$ \"uber einem K\"orper $\set{K}$ wird daf\"ur jedoch abge\"andert.  
+    
+    \subsection{Vektoren des $\mathbf{\set{R}^{3}}$}
+    Der Anschauungsraum soll durch Elemente des Vektorraums $\set{R}^{3}$ beschrieben werden. Der Vektorraum wird durch eine abelsche Gruppe aus Tripeln ${\left(x, y, z\right)}$ mit ${ x,y,z\in \set{R}}$, einen K\"orper und eine Verkn\"upfung zwischen diesen gebildet. F\"ur die Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} \in \set{R}^{3}$ gelten daher folgende Regeln (nach \cite{Papula2014}):
 \begin{itemize}
-	\item Vektoren sind \textit{gleich}, wenn sie in Richtung und Betrag \"ubereinstimmen \begin{align*}
-	\vect{a}=\vect{b} &\Leftrightarrow \abs{a}=\abs{b} \wedge \vect{a} \uparrow \uparrow \vect{b}
-	\end{align*}
-	
-	\item \textbf{Addition}/ Subtraktion von Vektoren erfolgt durch Addition/ Subtaktion der Komponenten
+	\item Da die Tripel Elemente einer abelschen Gruppe mit der inneren Verkn\"upfung Addition sind (siehe Abschnitt \ref{sec:mathGrundl_gruppen}), werden Vektoren $\vect{a}, \vect{b}$ komponentenweise addiert. Mit Hilfe des inversen Elements der Addition l\"asst sich die  Subtraktion ebenso darstellen und beide Verkn\"upfungen k\"onnen kompakt notiert werden:
 	\begin{align*}
 	\vect{a}\pm\vect{b}&=\begin{pmatrix} x \\ y \\ z \end{pmatrix} \pm \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} x\pm x' \\ y\pm y' \\ z\pm z' \end{pmatrix} 
 	\end{align*}
-	Es gelten die Rechenregeln:
+	Au\ss{}erdem gelten zwangsl\"aufig die Rechenregeln:
 	  \begin{itemize}
 	  \item Kommutativgesetz: \begin{align*}
 	  \vect{a}\pm\vect{b} &= \pm\vect{b} + \vect{a}
@@ -306,7 +391,7 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 	  \end{align*}
 	  \end{itemize}
 	  
-	\item Multiplikation mit einem Skalar $\lambda, \mu \in \R$ erfolgt durch Multiplikation aller Komponenten mit dem Skalar \begin{align*}
+	\item Die Multiplikation von einem Vektor $\vect{a}\in\set{R}^{3}$ mit einem Skalar $\lambda, \mu \in \R$ entspricht der \"au\ss{}eren Verkn\"upfung der abelschen Gruppe mit dem K\"orper. Sie erfolgt durch Multiplikation aller Komponenten des Vektors mit dem Skalar: \begin{align*}
 	\lambda\cdot \vect{a}&= \begin{pmatrix} \lambda\cdot x \\ \lambda\cdot y \\ \lambda\cdot z \end{pmatrix}
 	\end{align*}
 	Es gelten die Rechenregeln:
@@ -320,7 +405,45 @@ Folgende Eigenschaften gelten f\"ur Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\
 	  \abs{\lambda \vect{a}}&= \abs{\lambda}\abs{\vect{a}}
 	  \end{align*}
 	  \end{itemize}
-	
+	  Mit diesen Regeln werden die Vektorraumaxiome aus Abschnitt \ref{sec:mathGrundl_vektorraeume} erf\"ullt.
+  \end{itemize}
+    F\"ur zwei verschiedene Paare von Punkten des Anschauungsraums $(p,q), (r,s)$ kann man solche finden, dass die Differenz der Punkte f\"ur beide Paare gleich ist. Es gilt dann also \begin{align*}
+\vect{a}&= q - p = s - r 
+\intertext{mit}
+p&\neq r \text{ und } q\neq s.
+\end{align*} Man nennt diese Punktpaare \textit{\"aquivalent}. Sie beschreiben die gleiche \textit{Translation}. \hfill \newline
+Die Translation kann man sinnvoll durch einen Pfeil kennzeichnen, welcher durch seine \textit{Richtung} und seinen \textit{Betrag} beziehungsweise seine L\"ange eindeutig charakterisiert wird. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Die folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
+  \begin{align*}
+  \abs{\vect{a}} \equiv a := \norm{\vect{a}}_{2}
+  \intertext{F\"ur einen Vektor $\vect{a}$ gilt immer:}
+  \abs{\vect{a}} &\geq 0
+  \end{align*}  
+  Der durch Differenzbildung erhaltene Pfeil $\vect{a}$ entspricht dem, was man im Sinne der Geometrie meist unter einem (freien) Vektor versteht. Er umfasst \textbf{alle} Pfeile, deren Anfangspunk $p$ und Endpunkt $q$ der Bedingung $\vect{a}=q-p$ gen\"ugen. \hfill \newline
+  W\"ahlt man als Anfangspunkt f\"ur einen Vektor (Pfeil) den Nullvektor, welcher dem gew\"ahlten Koordinatenursprung entspricht, so k\"onnen alle Punkte des Anschauungsraumes mit Pfeilen beschrieben werden. F\"ur die Beschreibung eines Punktes reichen also auch die Angabe eines Abstandes und einer Richtung bezogen auf den Koordinatenursprung. \hfill \newline
+  Punkte und Pfeile werden also beide durch Vektoren beschrieben. Punkte sind dabei im Anschauungsraum fest und Pfeile k\"onnen verschoben werden, so lange sie ihre Richtung und L\"ange beibehalten. H\"aufig bezeichnet man beide geometrischen Gebilde einfach als Vektor, ohne deutlich zu machen, ob das gemeinte Objekt verschiebbar oder fest ist. \hfill \newline  
+  Beschreibt ein Vektor die Auspr\"agung einer physikalischen Gr\"o\ss{}e, so geh\"ort zu deren vollst\"andiger Beschreibung zus\"atzlich zu Betrag und Richtung noch die Angabe einer Ma\ss{}einheit. Ein typisches Beispiel ist der Betrag einer Kraft $\vect{F}: \abs{\vect{F}}= 100 \cdot N$ \newline
+Die Unterscheidung der geometrischen Objekte, welche durch einen Vektor repr\"asentiert werden, kann durch folgende Bezeichnung erfolgen \cite[S. 26]{Riessinger2007j}:
+\begin{itemize}
+\item \textit{Freie Vektoren}\footnote{\textit{freie Vektoren} werden auch als \textit{Richtungsvektoren} bezeichnet} k\"onnen beliebig im Raum verschoben werden, so lange Richtung und Betrag konstant bleiben. Damit sind parallele Verschiebungen und Verschiebungen entlang der Wirkungslinie m\"oglich. Dieser Typ von Vektoren wird in der Regel gemeint, wenn man im Sinne der Geometrie von Vektoren spricht. Ein typisches Beispiel sind die Einheitsvektoren $\vect{e}$, mit denen die Koordinatenachsen eines Koordinatensystems beschrieben werden.
+\item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie abgetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
+\end{itemize}
+Da die Notation von Punkten im Sinne eines Ortsvektors und die Notation von Richtungsvektoren identisch ist, kommt es leicht zu Verwechslungen. Erschwerend kommt hinzu, dass die Konzepte von Punkt und Vektor in der Literatur h\"aufig nicht gesondert betrachtet werden. Es ist damit die Aufgabe des Lesers sich klar zu machen, ob mit $\vect{a}$ ein Richtungsvektor oder ein Punkt gemeint ist. Verwendet man zur Darstellung Homogene Koordinaten (siehe \ref{sec:kos_homKoord}) so ist die Unterscheidung von Punkten und Vektoren eindeutig. \hfill \newline
+Neben der Darstellung eines Vektors als Spaltenvektor und der Darstellung durch Anfangs- und Endpunkt gibt es eine weitere Darstellung: die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$ mit expliziter Angabe der Basisvektoren, auf welche der Vektor projiziert wird.
+\begin{align*}
+\vect{\tensor*[_I]{a}{}}&=  \vect{\tensor*[_I]{a}{_x}} + \vect{\tensor*[_I]{a}{_y}}+ \vect{\tensor*[_I]{a}{_z}} =  x \vect{\tensor*[_I]{e}{_1}} + y \vect{\tensor*[_I]{e}{_2}}+ z \vect{\tensor*[_I]{e}{_3}} = 
+\begin{pmatrix} x \\ y \\ z 
+\end{pmatrix} 
+\intertext{damit ergibt sich der Betrag eines Vektor zu}
+\abs{\vect{\tensor*[_I]{a}{}}}&= \sqrt{x^2 + y^2 + z^2} \\
+&=\sqrt{\skalar{\vect{a}}{\vect{a}}}
+\intertext{Wenn bekannt ist, dass mit $\vect{a}$ ein Vektor gemeint ist, so notiert man den Betrag des Vektors in Kurzform mit $a$.}
+\end{align*}
+Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koordinaten} oder auch \textit{Eintr\"age} des Vektors $\vect{\tensor*[_I]{a}{}}$. Der linksseitige Index $I$ kennzeichnet das verwendete Bezugssystem. Ist das Bezugssystem eindeutig, so wird dieser Index weggelassen.\hfill\newline
+\textbf{Hier steht noch eine kurze Einf\"uhrung zu den weiteren Operationen Skalarprodukt und Kreuzprodukt.}
+\begin{itemize}
+	\item Vektoren sind \textit{gleich}, wenn sie in Richtung und Betrag \"ubereinstimmen     \begin{align*}
+	\vect{a}=\vect{b} &\Leftrightarrow \abs{a}=\abs{b} \land \vect{a} \uparrow \uparrow \vect{b}
+	\end{align*}
 	\item Das \textbf{Skalarprodukt} \acs{skalarProd} zweier Vektoren ist das Produkt der Betr\"age und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$ \begin{align*}
 	\skalar{\vect{a}}{\vect{b}}&= \abs{a}\abs{b}\cos{\varphi} = \left( x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3\right) \left( x' \vect{e}_1 + y' \vect{e}_2 + z' \vect{e}_3 \right)
 	\end{align*}
