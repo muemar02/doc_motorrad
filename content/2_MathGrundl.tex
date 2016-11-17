@@ -1,7 +1,7 @@
 \chapter{Mathematische Grundlagen}\label{ch:mathGrundl}
 \section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
-    Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung einer solchen Grundstruktur losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \newline
-    Als einf\"uhrendes Beispiel wird eine geeignete Beschreibung des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \newline
+    Bei der Analyse von Problemen ist es in der Mathematik  ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des untersuchten Problems von Interesse sind. Dabei kann die gezielte Untersuchung einer solchen Grundstruktur losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \hfill \newline
+    Als einf\"uhrendes Beispiel wird eine geeignete Beschreibung des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \hfill \newline
     Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen als Mengen mit einer inneren Abbildung  definiert. Im Abschnitt \ref{sec:mathGrundl_koerper} werden die Eigenschaften von Gruppen weiter eingeschr\"ankt, was auf den Begriff des K\"orper f\"uhrt. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Wegen ihrer hohen Relevanz f\"ur diese Arbeit werden im Abschnitt \ref{sec:mathGrundl_punkteVektoren} die Rechenregeln von Vektoren und Matrizen eingef\"uhrt. Au\ss{}erdem wird der Unterschied zwischen Punkten und Vektoren aufgef\"uhrt. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind \cite{Bosch2014}, \cite{MatthiasPlaue2009} und \cite{Modler2011d} entnommen. Die Eigenschaften von Vektoren sind \cite{Papula2014} entnommen. \newline
     Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet} wird auf Basis der so eingef\"uhrten Begriffe mit Hilfe einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems im Kapitel \ref{ch:kos} eingef\"uhrt.   \newline
     Um die Position eines K\"orpers im Raum beschreiben zu k\"onnen werden fernerhin f\"ur Vektoren und Matrizen unter anderem die Rechenregeln Addition und Multiplikation nach \cite{Papula2014} definiert. Im Kapitel \ref{ch:kos} werden die so eingef\"uhrten Gesetze verwendet um die Handhabung von Koordinatensystemen im Detail zu beschreiben. \newline
@@ -99,8 +99,8 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   \abs{\set{X}} &:= \begin{cases}n, \text{ falls $\set{X}$ endlich ist und $n$ Elemente enth\"alt} \\ \infty, \text{ falls $\set{X}$ nicht endlich ist.} \end{cases}
 \end{align*}   
 
-  \subsection{Rechengesetze f\"ur Mengen} Kommutativit\"at usw. 
-  siehe \cite[S.14]{MatthiasPlaue2009}
+%  \subsection{Rechengesetze f\"ur Mengen} Kommutativit\"at usw. 
+%  siehe \cite[S.14]{MatthiasPlaue2009}
   
   \section{Abbildung}\label{sec:mathGrundl_abbildung}
   \begin{defn}[Abbildung] Eine Abbildung $f: \set{X} \longrightarrow \set{Y}$ zwischen zwei Mengen $\set{X}$ und $\set{Y}$ ist eine Vorschrift, welche jedem $x \in \set{X}$ ein wohlbestimmtes Element $y \in \set{Y}$ zuordnet, welches mit $f\of{x}$ bezeichnet mit. Man schreibt auch \hfill \newline
@@ -130,8 +130,8 @@ Die angegebene Definition f\"ur Mengen ist zwar anschaulich, verzichtet aber auf
   \item \textbf{bijektiv}, falls $f$ injektiv und surjektiv ist. F\"ur bijektive Abbildungen $f$ l\"asst sich die \textbf{Umkehrabbildung} $g: \set{Y}\longrightarrow \set{X}, g:=f^{-1}$ bilden, welche jedem Element der Bildmenge ein Element aus dem Definitionsbereich zuordnet. 
   \end{itemize}
   
-  \subsection{Eigenschaften von Abbildungen}
-  siehe \cite{Modler2011d}, insbesondere f\"ur \textit{Kompositionen} \cite[S. 37]{MatthiasPlaue2009}
+%  \subsection{Eigenschaften von Abbildungen}
+%  siehe \cite{Modler2011d}, insbesondere f\"ur \textit{Kompositionen} \cite[S. 37]{MatthiasPlaue2009}
     
   
    \section{Gruppen}\label{sec:mathGrundl_gruppen}
@@ -213,9 +213,9 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
  Die Menge der ganzen Zahlen $\set{Z}$ bildet mit der Addition zwar eine abelsche Gruppe aber keinen K\"orper, denn es gibt kein inverses Element bez\"uglich der Multiplikation. Das Element $a=8\in\set{Z}$ hat zum Beispiel kein inverses Element $b=1\cdot a^{-1}$ f\"ur welches $b\in\set{Z}$ gilt.   
  \end{exmp}
   
-  \subsection{Weitere Eigenschaften und Begriffe}
-  insbesondere Homomorphismen f\"ur Gruppen und K\"orper \cite[S. 86, 87, 89, 93]{Modler2011d} \hfill \newline
-  Kern und Bild eines Homomorphismus \cite[S. 86, 93!]{Modler2011d}
+%  \subsection{Weitere Eigenschaften und Begriffe}
+%  insbesondere Homomorphismen f\"ur Gruppen und K\"orper \cite[S. 86, 87, 89, 93]{Modler2011d} \hfill \newline
+%  Kern und Bild eines Homomorphismus \cite[S. 86, 93!]{Modler2011d}
   
   \section{Vektorr\"aume}\label{sec:mathGrundl_vektorraeume}
   Ein Vektorraum ist durch eine abelsche Gruppe mit der inneren Verkn\"upfung Addition $\left(\set{V}, +\right)$ (Abschnitt \ref{sec:mathGrundl_gruppen}), einen K\"orper $\set{K}$ (Abschnitt \ref{sec:mathGrundl_koerper}) mit Skalaren als Elementen, eine \"au\ss{}ere Multiplikation, welche Elemente von $\set{K}$ mit denen von $\set{V}$ verkn\"upft und auf $\set{V}$ abbildet, und vier Vertr\"aglichkeitsgesetzen - den so genannten Vektorraumaxiomen -  gegeben. Der K\"orper $\set{K}$ entspricht h\"aufig den reellen Zahlen $\set{R}$ oder den komplexen Zahlen $\set{C}$. 
@@ -365,23 +365,27 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   \lambda a_{m1} & \dots & \lambda a_{mn}
   \end{pmatrix}
   \end{align*} einen $\set{K}-$Vektorraum.
-
+  \begin{defn}[Matrixprodukt] Es seien eine Matrix $\matr{A}\in\set{K}^{m\times n}$ und $\matr{B}$ eine Matrix mit Spaltenvektoren $\matr{B}=\left( \vect{s}_{1}, \dots, \vect{s}_{r}\right) \in \set{K}^{n \times r}$. Dann ist \begin{align}
+  \matr{A} \matr{B}&= \left(\matr{A} \vect{s}_{1}, \dots, \matr{A}\vect{s}_{r} \right)\in \set{K}^{m\times r} \label{gl:mathGrundl_vektorraeume_matr_prod}
+  \end{align}
+  das \textbf{Matrixprodukt} oder kurz das Produkt von $\matr{A}$ und $\matr{B}$. 
+  \end{defn}
   \section{Punkte und Vektoren im Anschuungsraum}\label{sec:mathGrundl_punkteVektoren}
   Der Anschauungsraum ist eine geometrische Idealisierung des uns umgebenden physikalischen Raums. Zur Beschreibung dieses Raums dienen Punkte $p$. Die Position dieser Punkte wird relativ zu einem gew\"ahlten Koordinatensystem $\KOS{I}$ mit Hilfe von Koordinatentripeln beschrieben. Die Koordinatentripel k\"onnen als Elemente des Vektorraumes $\set{R}^{3}$ aufgefasst werden: 
   \begin{align*}
-  p &=  \left(x | y | z\right)\in \R^{3} = x  \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3 
+  p &=  \left(x | y | z\right)
   \end{align*} Die Position von $p$ ist damit relativ zu $\KOS{I}$ eindeutig beschrieben. Der Ursprung von $\KOS{I}$ wird mit dem Nullvektor $\vect{0}\in\set{R}^{3}$ identifiziert. \hfill \newline
   Da die Beschreibung des Punktes $p$ als Element des Vektorraumes $\set{R}^{3}$ betrachtet werden soll, ist die gew\"ahlte Beschreibungsform ein Vektor. Da der Vektorraum $\set{R}^{3}$  die im Abschnitt \ref{sec:mathGrundl_vektorraeume} geforderten Eigenschaften haben muss, gelten   bestimmte Rechenregeln f\"ur einen solchen Vektor. Diese Rechenregeln werden um weitere Verkn\"upfungen - das Skalarprodukt und das Kreuzprodukt - erg\"anzt. \hfill \newline
     Bei geometrischen \"Uberlegungen wird zwischen Positionen, Richtungen und Abst\"anden klar  unterschieden. Diese drei Eigenschaften lassen sich mit Hilfe von Vektoren beschreiben. Die Bedeutung eines Vektors als Element eines Vektorraumes $\set{V}$ \"uber einem K\"orper $\set{K}$ wird daf\"ur jedoch abge\"andert.  
     
     \subsection{Vektoren des $\mathbf{\set{R}^{3}}$}
-    Der Anschauungsraum soll durch Elemente des Vektorraums $\set{R}^{3}$ beschrieben werden. Der Vektorraum wird durch eine abelsche Gruppe aus Tripeln ${\left(x, y, z\right)}$ mit ${ x,y,z\in \set{R}}$, einen K\"orper und eine Verkn\"upfung zwischen diesen gebildet. F\"ur die Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} \in \set{R}^{3}$ gelten daher folgende Regeln (nach \cite{Papula2014}):
+    Der Anschauungsraum soll durch Elemente des Vektorraums $\set{R}^{3}$ beschrieben werden. Der Vektorraum wird durch eine abelsche Gruppe aus Tripeln ${\left(x, y, z\right)}$ mit ${ x,y,z\in \set{R}}$, einen K\"orper und eine Verkn\"upfung zwischen diesen gebildet. F\"ur die Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}$ und $\vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} \in \set{R}^{3}$ gelten daher folgende Regeln (nach \cite{Papula2014}):
 \begin{itemize}
 	\item Da die Tripel Elemente einer abelschen Gruppe mit der inneren Verkn\"upfung Addition sind (siehe Abschnitt \ref{sec:mathGrundl_gruppen}), werden Vektoren $\vect{a}, \vect{b}$ komponentenweise addiert. Mit Hilfe des inversen Elements der Addition l\"asst sich die  Subtraktion ebenso darstellen und beide Verkn\"upfungen k\"onnen kompakt notiert werden:
 	\begin{align*}
 	\vect{a}\pm\vect{b}&=\begin{pmatrix} x \\ y \\ z \end{pmatrix} \pm \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} x\pm x' \\ y\pm y' \\ z\pm z' \end{pmatrix} 
 	\end{align*}
-	Au\ss{}erdem gelten zwangsl\"aufig die Rechenregeln:
+	Au\ss{}erdem gelten notwendigerweise die Rechenregeln:
 	  \begin{itemize}
 	  \item Kommutativgesetz: \begin{align*}
 	  \vect{a}\pm\vect{b} &= \pm\vect{b} + \vect{a}
@@ -412,22 +416,27 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
 \intertext{mit}
 p&\neq r \text{ und } q\neq s.
 \end{align*} Man nennt diese Punktpaare \textit{\"aquivalent}. Sie beschreiben die gleiche \textit{Translation}. \hfill \newline
-Die Translation kann man sinnvoll durch einen Pfeil kennzeichnen, welcher durch seine \textit{Richtung} und seinen \textit{Betrag} beziehungsweise seine L\"ange eindeutig charakterisiert wird. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Eigenschaften ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Die folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
+Die Translation kann man sinnvoll durch einen Pfeil kennzeichnen, welcher durch seine \textit{Richtung} und seinen \textit{Betrag} beziehungsweise seine L\"ange eindeutig charakterisiert wird. Die Begriffe Betrag und L\"ange werden im Folgenden synonym verwendet. Mit beiden Begriffen ist die euklidische Norm des Vektors $\vect{a}$ gemeint. Die folgende Darstellung wird f\"ur den Betrag eines Vektors $\vect{a}$ verwendet:
   \begin{align*}
   \abs{\vect{a}} \equiv a := \norm{\vect{a}}_{2}
   \intertext{F\"ur einen Vektor $\vect{a}$ gilt immer:}
   \abs{\vect{a}} &\geq 0
-  \end{align*}  
-  Der durch Differenzbildung erhaltene Pfeil $\vect{a}$ entspricht dem, was man im Sinne der Geometrie meist unter einem (freien) Vektor versteht. Er umfasst \textbf{alle} Pfeile, deren Anfangspunk $p$ und Endpunkt $q$ der Bedingung $\vect{a}=q-p$ gen\"ugen. \hfill \newline
-  W\"ahlt man als Anfangspunkt f\"ur einen Vektor (Pfeil) den Nullvektor, welcher dem gew\"ahlten Koordinatenursprung entspricht, so k\"onnen alle Punkte des Anschauungsraumes mit Pfeilen beschrieben werden. F\"ur die Beschreibung eines Punktes reichen also auch die Angabe eines Abstandes und einer Richtung bezogen auf den Koordinatenursprung. \hfill \newline
-  Punkte und Pfeile werden also beide durch Vektoren beschrieben. Punkte sind dabei im Anschauungsraum fest und Pfeile k\"onnen verschoben werden, so lange sie ihre Richtung und L\"ange beibehalten. H\"aufig bezeichnet man beide geometrischen Gebilde einfach als Vektor, ohne deutlich zu machen, ob das gemeinte Objekt verschiebbar oder fest ist. \hfill \newline  
+  \end{align*} 
+  Wenn bekannt ist, dass mit $\vect{a}$ ein Vektor gemeint ist, so notiert man den Betrag des Vektors in Kurzform mit $a$. \hfill \newline
+  Der durch Differenzbildung erhaltene Pfeil $\vect{a}$ entspricht dem, was man im Sinne der Geometrie meist unter einem (freien) Vektor versteht. Er umfasst \textbf{alle} Pfeile, deren Anfangspunkt $p$ und Endpunkt $q$ der Bedingung $\vect{a}=q-p$ gen\"ugen. \hfill \newline
+  Man nennt zwei Vektoren \textit{gleich}, wenn sie in Richtung und Betrag \"ubereinstimmen:
+ \begin{align*}
+	\vect{a}=\vect{b} &\Leftrightarrow \abs{a}=\abs{b} \land \vect{a} \uparrow \uparrow \vect{b}.
+ \end{align*}
+  W\"ahlt man als Anfangspunkt f\"ur einen Vektor-Pfeil den Nullvektor, welcher dem gew\"ahlten Koordinatenursprung entspricht, so k\"onnen alle Punkte des Anschauungsraumes mit Pfeilen beschrieben werden. F\"ur die Beschreibung eines Punktes gen\"ugt daher die Angabe eines Abstandes und einer Richtung bezogen auf den Koordinatenursprung. \hfill \newline
+  Punkte - die Elemente des Anschauungsraums - und Pfeile - die relative Lage von Punkten des Anschauungsraums zueinander -  werden also beide durch Vektoren beschrieben. Punkte sind dabei im Anschauungsraum fest und Pfeile k\"onnen verschoben werden, so lange sie ihre Richtung und L\"ange beibehalten. H\"aufig bezeichnet man beide geometrischen Gebilde einfach als Vektor, ohne deutlich zu machen, ob das gemeinte Objekt verschiebbar oder fest ist. \hfill \newline  
   Beschreibt ein Vektor die Auspr\"agung einer physikalischen Gr\"o\ss{}e, so geh\"ort zu deren vollst\"andiger Beschreibung zus\"atzlich zu Betrag und Richtung noch die Angabe einer Ma\ss{}einheit. Ein typisches Beispiel ist der Betrag einer Kraft $\vect{F}: \abs{\vect{F}}= 100 \cdot N$ \newline
 Die Unterscheidung der geometrischen Objekte, welche durch einen Vektor repr\"asentiert werden, kann durch folgende Bezeichnung erfolgen \cite[S. 26]{Riessinger2007j}:
 \begin{itemize}
 \item \textit{Freie Vektoren}\footnote{\textit{freie Vektoren} werden auch als \textit{Richtungsvektoren} bezeichnet} k\"onnen beliebig im Raum verschoben werden, so lange Richtung und Betrag konstant bleiben. Damit sind parallele Verschiebungen und Verschiebungen entlang der Wirkungslinie m\"oglich. Dieser Typ von Vektoren wird in der Regel gemeint, wenn man im Sinne der Geometrie von Vektoren spricht. Ein typisches Beispiel sind die Einheitsvektoren $\vect{e}$, mit denen die Koordinatenachsen eines Koordinatensystems beschrieben werden.
-\item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie abgetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
+\item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie angetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
 \end{itemize}
-Da die Notation von Punkten im Sinne eines Ortsvektors und die Notation von Richtungsvektoren identisch ist, kommt es leicht zu Verwechslungen. Erschwerend kommt hinzu, dass die Konzepte von Punkt und Vektor in der Literatur h\"aufig nicht gesondert betrachtet werden. Es ist damit die Aufgabe des Lesers sich klar zu machen, ob mit $\vect{a}$ ein Richtungsvektor oder ein Punkt gemeint ist. Verwendet man zur Darstellung Homogene Koordinaten (siehe \ref{sec:kos_homKoord}) so ist die Unterscheidung von Punkten und Vektoren eindeutig. \hfill \newline
+Da die Notation von Punkten im Sinne eines Ortsvektors und die Notation von Richtungsvektoren identisch ist, kommt es leicht zu Verwechslungen. Erschwerend kommt hinzu, dass die Konzepte von Punkt und Vektorpfeil in der Literatur h\"aufig nicht gesondert betrachtet werden. Es ist damit die Aufgabe des Lesers sich klar zu machen, ob mit $\vect{a}$ ein Richtungsvektor oder ein Punkt gemeint ist. Verwendet man zur Darstellung homogene Koordinaten (siehe \ref{sec:kos_homKoord}) so ist die Unterscheidung von Punkten und Vektoren eindeutig. \hfill \newline
 Neben der Darstellung eines Vektors als Spaltenvektor und der Darstellung durch Anfangs- und Endpunkt gibt es eine weitere Darstellung: die Komponentenschreibweise bez\"uglich eines Koordinatensystems $\KOS{I}$ mit expliziter Angabe der Basisvektoren, auf welche der Vektor projiziert wird.
 \begin{align*}
 \vect{\tensor*[_I]{a}{}}&=  \vect{\tensor*[_I]{a}{_x}} + \vect{\tensor*[_I]{a}{_y}}+ \vect{\tensor*[_I]{a}{_z}} =  x \vect{\tensor*[_I]{e}{_1}} + y \vect{\tensor*[_I]{e}{_2}}+ z \vect{\tensor*[_I]{e}{_3}} = 
@@ -436,18 +445,17 @@ Neben der Darstellung eines Vektors als Spaltenvektor und der Darstellung durch 
 \intertext{damit ergibt sich der Betrag eines Vektor zu}
 \abs{\vect{\tensor*[_I]{a}{}}}&= \sqrt{x^2 + y^2 + z^2} \\
 &=\sqrt{\skalar{\vect{a}}{\vect{a}}}
-\intertext{Wenn bekannt ist, dass mit $\vect{a}$ ein Vektor gemeint ist, so notiert man den Betrag des Vektors in Kurzform mit $a$.}
 \end{align*}
 Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koordinaten} oder auch \textit{Eintr\"age} des Vektors $\vect{\tensor*[_I]{a}{}}$. Der linksseitige Index $I$ kennzeichnet das verwendete Bezugssystem. Ist das Bezugssystem eindeutig, so wird dieser Index weggelassen.\hfill\newline
-\textbf{Hier steht noch eine kurze Einf\"uhrung zu den weiteren Operationen Skalarprodukt und Kreuzprodukt.}
+F\"ur die bereits eingef\"uhrten Vektoren $\vect{a}, \vect{b}\in \set{R}^{3}$ werden zus\"atzlich zu den Vektorraumaxiomen die Verkn\"upfungen Skalarprodukt und Kreuzprodukt definiert. Beide Verkn\"upfungen haben interessante geometrische Bedeutungen, auf welche nach Angabe der Rechenregeln im Detail eingegangen wird. Das Skalarprodukt l\"asst sich im Gegensatz zum Kreuzprodukt direkt f\"ur h\"oherdimensionale Vektorr\"aume definieren. 
 \begin{itemize}
-	\item Vektoren sind \textit{gleich}, wenn sie in Richtung und Betrag \"ubereinstimmen     \begin{align*}
-	\vect{a}=\vect{b} &\Leftrightarrow \abs{a}=\abs{b} \land \vect{a} \uparrow \uparrow \vect{b}
-	\end{align*}
 	\item Das \textbf{Skalarprodukt} \acs{skalarProd} zweier Vektoren ist das Produkt der Betr\"age und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$ \begin{align*}
 	\skalar{\vect{a}}{\vect{b}}&= \abs{a}\abs{b}\cos{\varphi} = \left( x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3\right) \left( x' \vect{e}_1 + y' \vect{e}_2 + z' \vect{e}_3 \right)
 	\end{align*}
-	Es gelten die Rechenregeln:
+	Notiert man $\vect{a}, \vect{b}$ als einspaltige Matrizen, so kann man das Skalarprodukt auch mit Hilfe des Matrixprodukts nach \eqnref{gl:mathGrundl_vektorraeume_matr_prod} definieren: \begin{align*}
+	\skalar{\vect{a}}{\vect{b}}&= \transp{\vect{a}} \vect{b}
+	\end{align*}
+	F\"ur das Skalarprodukt gelten die Rechenregeln:
 	  \begin{itemize}
 	  \item Kommutativgesetz: \begin{align*}
 	  \skalar{\vect{a}}{\vect{b}} &= \skalar{\vect{b}}{\vect{a}}
@@ -477,7 +485,7 @@ Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koord
 	  miteinander verkn\"upft.
 	  \end{rem}
 	
-	\item das \textbf{Vektorprodukt} (auch Kreuzprodukt) $\vect{a}\times \vect{b}$ hat als Ergebnis einen Vektor, der senkrecht auf $\vect{a}$ und $\vect{b}$ steht und dessen L\"ange gleich dem Produkt der Betr\"age von $\vect{a}, \vect{b}$ und dem Sinus des durch die Vektoren eingeschlossenen Winkels $\varphi$ ist. \begin{align*}
+	\item Das \textbf{Vektorprodukt} (auch Kreuzprodukt) $\vect{a}\times \vect{b}$ hat als Ergebnis einen Vektor, der senkrecht auf $\vect{a}$ und $\vect{b}$ steht und dessen L\"ange gleich dem Produkt der Betr\"age von $\vect{a}, \vect{b}$ und dem Sinus des durch die Vektoren eingeschlossenen Winkels $\varphi$ ist. \begin{align*}
 	\vect{a}\times \vect{b}&= \left( \abs{\vect{a}}\abs{\vect{b}} \sin\of{\vartheta}\right) \vect{n} =  \begin{pmatrix}
 	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix}
 	\end{align*} Dabei ist $\vect{n}$ derjenige zu $\vect{a}$ und $\vect{b}$ senkrechte Einheitsvektor, der diese zu einem Rechtssystem erg\"anzt. \hfill \newline
