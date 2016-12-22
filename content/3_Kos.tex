@@ -1,22 +1,55 @@
- \chapter{Koordinatensysteme}\label{ch:kos}
+\chapter{Koordinatensysteme}\label{ch:kos}
+Mit Hilfe von Koordinatensystemen kann der Anschauungsraum geeignet beschrieben werden. Im Kapitel \ref{ch:mathGrundl} wurde im Rahmen des Einf\"uhrungsbeispiels bereits eine Darstellung f\"ur Koordinatensysteme entworfen. F\"ur die Entwicklung eines Koordinatensystems werden die Koordinatenachsen ben\"otigt, welche durch geeignete Geraden beschrieben werden. Die Richtung der Geraden wird durch die \textit{Einheitsvektoren} definiert. Die Koordinatenachsen schneiden sich im \textit{Koordinatenursprung}. Durch die Festlegung dieser Elemente kann die Position eines Punktes im Raum als Vektor beschrieben werden. \hfill \newline
+Zur Beschreibung des Anschauungsraums werden genau drei Koordinatenachsen mit drei Einheitsvektoren und einem Ursprungspunkt ben\"otigt. Die drei Einheitsvektoren m\"ussen so gew\"ahlt werden, dass sie einen Vektorraum aufspannen, sie bilden also eine Basis. Die Position eines Raumpunktes kann dann durch einen Ortsvektor beschrieben werden, welcher ein Element eben dieses Vektorraumes ist. Dieser Ortsvektor l\"asst sich als Linearkombination der Basisvektoren darstellen. Seine Darstellung ist daher abh\"angig von der konkreten Basis. \hfill \newline
+Zun\"achst soll ein besonderer Typ von Koordinatensystemen beschrieben werden - die Rechtssysteme. Diese sind ein grundlegendes Mittel um die Bewegung von K\"orpern zu beschreiben. Die Elemente von Rechtssystemen werden als Elemente des $\set{R}^{3}$ aufgefasst und \"ublicherweise mit Hilfe von genau drei Komponenten $\left(x, y, z \right)^{T}$ notiert. Diese Darstellung kann durch eine zus\"atzliche Komponente zu einem 4-Tupel erweitert werden. Die so erhaltenen \textit{homogenen Koordinaten} werden im Abschnitt \ref{sec:kos_homKoord} eingef\"uhrt und es wird auf deren besondere Eigenschaften eingegangen. \hfill \newline
+Da die Festlegung einer Basis f\"ur einen Vektorraum nicht eindeutig ist kann die Darstellung von einem Koordinatensystem nicht eindeutig sein. Die Umrechnung verschiedener Varianten geschieht mit Hilfe von Transformationen, auf welche im Abschnitt \ref{sec:kos_transf} eingegangen wird. Eine besondere Art der Transformation ist die Rotation. Auf diese wird im Abschnitt \ref{sec:kos_rotmatr} im Detail eingegangen. Bei der Beschreibung eines Mehrk\"orpersystems gibt es vielf\"altige Ans\"atze um die Lage einzelner Elemente zu parametrieren. Ein m\"oglicher Ansatz sind nat\"urliche Koordinaten, welche im Abschnitt \ref{sec:kos_natKoord} beschrieben werden. Im letzten Teil des Kapitels werden wichtige Begriffe erkl\"art und es wird auf weitere Konzepte zur Modellbildung verwiesen.
  
- \section{Rechtssystem}\label{sec:kos_rechtssys}
-  Gegeben sei ein euklidisches Koordinatensystem $\KOS{I}\in \R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
+ \section{Kartesische normierte Rechtssysteme}\label{sec:kos_rechtssys}
+  Gegeben sei ein euklidisches Koordinatensystem \footnote{mit dem Begriff euklidisches Koordinatensytem wird ein Koordinatenraum $\set{R}^{3}$ mit Skalarprodukt nach \eqnref{gl:mathGrundl_punkteVektoren_skalarProd} bezeichnet} $\KOS{I}\in \R^{3}$ mit den Basisvektoren $\vect{e}_1,\vect{e}_2,\vect{e}_3$. F\"ur die Basisvektoren gelte: \begin{align}
 \skalar{\vect{e}_i}{\vect{e}_j}&=
 \begin{cases}
 1, \text{ f\"ur } i=j \\
-0, \text{ f\"ur } i\neq j \end{cases} \label{gl:kosEvSenkr}
-\intertext{und weiterhin} 
-\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3 \label{gl:kosEvRechtssys}
+0, \text{ f\"ur } i\neq j \end{cases} \label{gl:kos_orthosys}
 \end{align}
-Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem (siehe beispielsweise \cite[S. 80]{Papula2014}). Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen, dass alle verwendeten Koordinatensysteme diese Eigenschaften erf\"ullen.  
-  
-  \section{Nat\"urliche Koordinaten}\label{sec:kos_natKoord}
-  engl. natural coordinates wie ist der richtige deutsche Begriff?
+Die Basisvektoren von $\KOS{I}$ stehen also paarweise senkrecht aufeinander und bilden somit ein \textit{orthogonales} Koordinatensystem. Ein orthogonales euklidisches Koordinatensystem wird als \textit{Kartesisches Koordinatensystem} bezeichnet. Weiterhin ist die L\"ange jedes Basisvektors gleich eins. Die Basis wird daher als \textit{normiert} bezeichnet und das aufgespannten Koordinatensystem als orthonormiertes System bezeichnet.\hfill \newline
+Gilt au\ss{}erdem \begin{align}
+\vect{e}_1 \times \vect{e}_2 &= \vect{e}_3, \label{gl:kos_rechtssys}
+\end{align}
+so bezeichnet man $\KOS{I}$ als ein rechtsh\"andiges Koordinatensystem oder auch Rechtssystem. Eine anschauliche Interpretation von \eqnref{gl:kos_rechtssys} ist, dass jeder Einheitsvektor aus seinem Vorg\"anger auf k\"urzestem Wege durch Drehung im mathematisch positiven Drehsinn  hervorgeht. Der Vektor $\vect{e}_{1}$ ist in diesem Sinne der Vorg\"anger von $\vect{e}_{2}$, welcher der Vorg\"anger von $\vect{e}_{3}$ ist, und gleichzeitig der Nachfolger vom Einheitsvektor $\vect{e}_{3}$. \hfill \newline
+Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen, dass die Basisvektoren eines Koordinatensystems \eqnref{gl:kos_orthosys} und \eqnref{gl:kos_rechtssys} erf\"ullen.  
+\begin{exmp}[Kartesischen Rechtssystem] Mit Hilfe der in Bemerkung \ref{rem:mathGrundl_vektorraeume_kanBasis} angegeben Bildungsvorschrift l\"asst sich auf einfache Weise eine Basis f\"ur ein kartesisches Rechtssystem angeben: \begin{align*}
+\vect{e}_{1}&=\begin{pmatrix}
+1 \\ 0 \\0
+\end{pmatrix} &\vect{e}_{2}&=\begin{pmatrix}
+0 \\ 1 \\0
+\end{pmatrix} &\vect{e}_{3}&=\begin{pmatrix}
+0 \\ 0 \\1
+\end{pmatrix}
+\end{align*}
+\end{exmp}
   
   \section{Homogene Koordinatensysteme}\label{sec:kos_homKoord}
-  Translation eines Vektors $\vect{v}=\transp{\of{x, y, z}}$ mit einem Vektor $\vect{q}=\transp{\of{a, b, c}}$:\begin{align*}
+  Die Darstellung von Bewegungen mit Hilfe homogener Koordinaten wie sie beispielsweise von D. W. Wloka in \cite[S. 72]{Wloka1992} eingef\"uhrt werden erm\"oglicht eine einheitliche kompakte Darstellung mit Hilfe einer einzigen Transformationsmatrix. Dazu werden die Vektoren des $\set{R}^{3}$, mit denen der Anschuungsraum beschrieben wird, um eine vierte Komponente erweitert. Dieser \textit{Skalierungsfaktor} wird \"ublicherweise null oder eins gesetzt. Andere Skalierungsfaktoren werden bei der Arbeit mit Computergrafiken verwendet. \hfill \newline
+  Transformiert man einen Richtungsvektor, wie er in Abschnitt \ref{ssec:mathGrundl_punkteVektoren_r3} beschrieben wird, so verwendet man die null als Skalierungsfaktor. F\"ur Punkte beziehungsweise Ortsvektoren wird die eins als Skalierungsfaktor benutzt. \hfill \newline
+  \"Ublicherweise notiert man die  Translation eines Vektors $\vect{v}=\transp{\of{x, y, z}}$ mit einem Vektor $\vect{q}=\transp{\of{a, b, c}}$ als\begin{align*}\vect{v}'&= \begin{bmatrix}
+  x \\ y \\ z
+  \end{bmatrix} + \begin{bmatrix}
+  a \\ b\\c
+  \end{bmatrix} = \begin{bmatrix}
+  x+a \\ y+b \\ z+c
+  \end{bmatrix}.
+  \end{align*}. In homogenen Koordinaten ergibt sich die gleiche Rechnung wie folgt: \begin{align*}
   \vect{v}' &=\begin{bmatrix}
+  x \\ y \\ z \\1
+  \end{bmatrix}+ \begin{bmatrix}
+  a \\ b \\ c \\1
+  \end{bmatrix} = \begin{bmatrix}
+  x+a \\ y+b \\ z+c \\ 1
+  \end{bmatrix}.
+  \end{align*}
+  Da die vierte Komponente ein Skalierungsfaktor ist wird sie bei der Addition offensichtlich nicht addiert. \hfill \newline
+  Mit Hilfe dieser erweiterten Darstellung kann die Translation als Matrix-Vektor Multiplikation dargestellt werden. Man erweitert dazu den Vektor der Translation zu einer Matrix und notiert dann \begin{align*}
+  \vect{v}' &= \begin{bmatrix}
   1 & 0 & 0& a\\
   0 & 1 & 0& b\\
   0 & 0 & 1& c\\
@@ -26,38 +59,35 @@ Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem
   \end{bmatrix} = \begin{bmatrix}
   x+a \\ y+b \\ z+c \\ 1
   \end{bmatrix}.
-  \intertext{statt}
-  \vect{v}'&= \begin{bmatrix}
-  x \\ y \\ z
-  \end{bmatrix} + \begin{bmatrix}
-  a \\ b\\c
-  \end{bmatrix} = \begin{bmatrix}
-  x+a \\ y+b \\ z+c
-  \end{bmatrix}.
   \end{align*}
-  Eine Rotationsmatrix $\matr{R}$ erf\"ullt stets die Bedingung: \begin{align*}
-  \matr{R}\transp{\matr{R}}&= E
-  \end{align*} Eine Transformationsmatrix $\matr{T}$, welche sich aus Rotation $\matr{R}$ und Translation $\vect{q}$ zusammensetzt, wird in homogenen Koordinaten beschrieben mit: \begin{align*}
+  
+  Stellt man die Rotation eines K\"orpers mit Hilfe eines Koordinatensystems dar, welches sich mit dem K\"orper mit dreht, so kann die Rotationsmatrix durch die drei Basisvektoren $\vect{u}, \vect{w}, \vect{v}$ dieses Koordinatensystems beschrieben werden. Die Rotationsmatrix $\matr{R}$ schreibt man dann \begin{align*}
+  \matr{R}&=  \begin{pmatrix}
+  u_x & w_x & v_x \\ u_y & w_y & v_y \\ u_z & w_z & v_z
+  \end{pmatrix}.
+  \end{align*} Da die drei Spalten dieser Matrix jeweils die Komponenten von Richtungsvektoren enthalten, werden diese bei der Transformation in homogene Koordinaten um den Skalierungsfaktor null erg\"anzt und man notiert \begin{align*}
+  \matr{R}&=  \begin{pmatrix}
+  u_x & w_x & v_x \\ u_y & w_y & v_y \\ u_z & w_z & v_z \\ 0&0&0
+  \end{pmatrix}.
+  \end{align*}
+  Eine Transformationsmatrix $\matr{T}$, welche die komplette Bewegung eines K\"orpers beinhalten soll, setzt sich aus Rotation $\matr{R}$ und Translation $\vect{q}$ zusammen. Sie wird in homogenen Koordinaten beschrieben mit: \begin{align*}
   \matr{T}&= \begin{bmatrix}
   \matr{R} & \vect{q}\\ 
   \vect{0} & 1
-  \end{bmatrix} = \begin{bmatrix}
-  R_{11} & R_{12} & R_{13} & q_{1} \\
-  R_{21} & R_{22} & R_{23} & q_{2} \\
-  R_{31} & R_{32} & R_{33} & q_{3} \\
-  0&0&0&1
-  \end{bmatrix}
+  \end{bmatrix} = \begin{pmatrix}
+  u_x & w_x & v_x & q_{1}\\ u_y & w_y & v_y& q_{2} \\ u_z & w_z & v_z& q_{3} \\ 0&0&0&1
+  \end{pmatrix}.
   \end{align*}
-  Die Inverse dieser Transformationsmatrix berechnet sich unter Beachtung der Orthogonalit\"atseigenschaft von $\matr{R}$ zu \begin{align*}
+  Die Inverse einer solchen Transformationsmatrix berechnet sich unter Beachtung der Orthogonalit\"atseigenschaft von $\matr{R}$ beziehungsweise \eqnref{rotMatrTransp} zu \begin{align*}
   \inv{\matr{T}}&= \begin{bmatrix}
   \transp{\matr{R}} & - \transp{\matr{R}}\vect{q}\\ 
   \vect{0} & 1
   \end{bmatrix}
-  \end{align*} Betrachtet man hingegen eine Transformationsmatrix im $\R^{3}$, welche eine Rotation beinhaltet, so wird die inverse dieser Transformation nach folgenden Regeln berechnet: \begin{align*}
-  \matr{T}&= \matr{R} \\
-  \inv{T}&=\inv{\matr{R}} = \transp{\matr{R}}
   \end{align*}
   \section{Koordinatentransformation} \label{sec:kos_transf}
+  \subsection{hilfreiche Literatur}
+  \cite[S.10]{Pfeiffer2014}
+  
   Gegeben seien ein inertiales Koordinatensystem $\KOS{I}$ und zwei, um eine beliebige Achse in Relation zu $\KOS{I}$ gedrehte, Koordinatensysteme $\KOS{B},\KOS{C}$. 
   \paragraph*{Rotationen}
   Es sei ein Punkt $q_b= \transp{\left( x_b, y_b, z_b \right) }$ im Koordinatensystem $\KOS{B}$ gegeben. Werden die Koordinatenachsen von $\KOS{B}$ durch die Einheitsvektoren $\vect{e}_{1b}, \vect{e}_{2b}, \vect{e}_{3b}$ im Inertialsystem $\KOS{I}$ beschrieben, so kann der Punkt von $\KOS{B}$ nach $\KOS{I}$ durch eine Transformation \"uberf\"uhrt werden: \begin{align*}
@@ -86,13 +116,13 @@ Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem
   \end{align}
   zusammengefasst. Die Matrix $\matr{R}$ wird als Rotationsmatrix bezeichnet. 
     \subsection{Eigenschaften von Rotationsmatrizen}\label{ssec:kos_rotmatr_eigenschaften}
-    Die Spalten der Rotationsmatrix $\matr{R}\in \R^{3\times 3}$ seien die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Da diese ein Koordinatensystem aufspannen haben sie die in \eqnref{gl:kosEvSenkr} und \eqnref{gl:kosEvRechtssys} definierten Eigenschaften. Aus \eqnref{gl:kosEvSenkr} folgt f\"ur die Matrix $\matr{R}$ \begin{align}
+    Die Spalten der Rotationsmatrix $\matr{R}\in \R^{3\times 3}$ seien die Vektoren $\vect{u}, \vect{w}, \vect{v} \in \R^{3}$. Da diese ein Koordinatensystem aufspannen haben sie die in \eqnref{gl:kos_orthosys} und \eqnref{gl:kos_rechtssys} definierten Eigenschaften. Aus \eqnref{gl:kos_orthosys} folgt f\"ur die Matrix $\matr{R}$ \begin{align}
     \matr{R}\transp{\matr{R}} &= \begin{pmatrix}
     \vect{u} & \vect{w}& \vect{v} 
 \end{pmatrix} \begin{pmatrix}
 \vect{u}\\ \vect{w}\\ \vect{v}  
 \end{pmatrix}     \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
-    \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kosEvSenkr}}
+    \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kos_orthosys}}
     \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1 \label{gl:rotMatrDet}
 \end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{Murray1994}. Allgemein wird definiert: \begin{align}
 \set{SO}\of{n} = \left \lbrace \matr{R}\in \R^{n\times n}: \matr{R}\transp{\matr{R}}=\matr{I}, \det{\matr{R}}=+1 \right \rbrace. \label{gl:mengeSoDef}
@@ -117,3 +147,34 @@ Die Basisvektoren von $\KOS{I}$ beschreiben damit ein orthonormales Rechtssystem
 \end{itemize}
 \begin{rem} Die Lage eines Starrk\"orpers, welcher sich frei im Raum drehen kann, kann zu jedem Zeitpunkt durch eine eindeutige Rotationsmatrix $\matr{R}\in \set{SO}\of{3}$ beschrieben werden. Die Menge der Rotationsmatrizen $\set{SO}\of{3}$ wird daher als der Konfigurationsraum des Systems bezeichnet. Eine Trajektorie des Systems wird durch die Kurve $\matr{R}\of{t} \in \set{SO}\of{3}$ f\"ur $t\in [0,T]$ abgebildet. Weiterhin dient die Matrix $\matr{R}$ zur Transformation von Punkten von einem k\"orperfesten, um eine beliebige Achse gedrehten, Koordinatensystem in ein Inertialsystem. Diese Funktion ist in Abschnitt \ref{sec:kos_transf} genauer dargelegt.
 \end{rem}
+
+\section{Nat\"urliche Koordinaten}\label{sec:kos_natKoord}
+  Der erste Schritt bei der Modellbildung f\"ur ein mechanisches System ist die Festlegung geeigneter Parameter, mit Hilfe derer die kinematischen Gr\"o\ss{}en Position, Geschwindigkeit und Beschleunigung des Systems zu jedem Zeitpunkt beschrieben werden k\"onnen. L\"asst sich ein System in mehrere Subsysteme einteilen, so m\"ussen die Parameter die Kinematik dieser Subsysteme abbilden. Die Wahl der Parameter geschieht mit Hilfe der Vorgabe von Koordinaten. Die Wahl der Koordinaten bietet dabei sehr viele Freiheiten. Die \"Ublichsten Koordinatenarten  sind \textit{relative Koordinaten}, \textbf{Referenzpunktkoordinaten} und \textit{absolute Koordinaten}. Eine besondere Form der absoluten Koordinaten sind die \textit{nat\"urlichen Koordinaten}\footnote{die englischen Bezeichnungen f\"ur nat\"urliche Koordinaten im Sinne dieser Arbeit sind \textit{natural coordinates} und \textit{fully cartesian coordinates}}. \hfill \newline
+  
+In der deutschen Literatur wird in Grundlagenwerken zur Kinematik und Kinetik wie beispielsweise \cite[S. 6]{Mathiak2015} mit dem Begriff \glqq nat\"urlche Koordinaten\grqq { } in der Regel ein k\"orperfestes Koordinatensystem gemeint, welches als \glqq begleitendes Dreibein\grqq { }bezeichnet wird. In Ver\"offentlichungen, welche die Modellierung von Mehrk\"orpersysteme grundlegend behandeln, werden nat\"urliche Koordinaten wenig beachtet (\cite{Bestle2012}, \cite{GeorgRill2014}, \cite{Schramm2010}, \cite{Gattringer2011}, \cite{Schiehlen2014}, \cite{Pfeiffer2014}, \cite{ManfredHusty2012}, \cite{Wloka1992}, \cite{Woernle2011}). Die Definition von k\"orperfesten Koordinatensystemen wird zwar zumeist dargestellt, die konkrete Festlegung der Einheitsvektoren des k\"orperfesten Koordinatensystems erfolgt im Detail jedoch, wenn \"uberhaupt, nur in Form von Rotationsmatrizen unter Zuhilfenahme von Euler-Winkeln, Kardan-Winkeln oder anderen trigonometrischen Funktionen. Die explizite Nutzung aller Elemente der Rotationsmatrix ist eher selten. \hfill \newline
+Im Rahmen dieser Arbeit ist unter nat\"urlichen Koordinaten die von Javier Garc{\'{\i}}a de Jal{\'{o}}n und Eduardo Bayo \cite{Jalon1994} vorgestellte Variante der Parameterfestlegung zu verstehen. Eine \"Ubersicht zum Konzept, der Eignung und der Weiterentwicklung der nat\"urlichen Koordinaten ist \cite{Jalon2007a} zu entnehmen. \hfill \newline
+
+Die Grundidee der Modellierung mit nat\"urlichen Koordinaten besteht in der Festlegung von drei oder mehr Punkten, welche nicht auf einer Linie liegende Elemente des zu beschreibenden K\"orpers sind. Die Position der Punkte wird mit Hilfe absoluter kartesischer Koordinaten in Form von Vektoren abgebildet. Die vorgegeben Ortsvektoren der gew\"ahlten Punkte sind kein Satz unabh\"angiger Koordinaten. Statt dessen bestehen zwischen den Punkten geometrische Beziehungen wie beispielsweise konstante Winkel oder Distanzen, welche als Zwangsbedingungen zwischen den Vektoren beschrieben werden k\"onnen. Die Zwangsbedingungen lassen sich durch diese Wahl von K\"orperpunkten in einfacher Weise durch Verkn\"upfung von Vektoren mit Hilfe des Skalarprodukts ausdr\"ucken. Die so entstehenden Gleichungen sind quadratisch, was eine lineare Jacobi-Matrix zur Folge hat. Eine Variante von nat\"urlichen Koordinaten wird in \cite{Cossalter2002} eingef\"urht, um ein Mehrk\"orpermodell f\"ur ein Motorrad zu erstellen. Auf diese Darstellung wird im Folgenden Eingegangen. \hfill \newline
+
+In einem Mehrk\"orpersystem wird jedem K\"orper $i$ ein eigenes, k\"orperfestes Koordinatensystem zugeordnet. Dieses wird durch einen Ursprung $P_{i}$ und drei Einheitsvektoren $\vect{u}_{i}=\transp{\left(u_{x,i}, u_{y,i}, u_{z,i} \right)}, \vect{w}_{i}=\transp{\left(w_{x,i}, w_{y,i}, w_{z,i} \right)}, \vect{v}_{i}=\transp{\left(v_{x,i}, v_{y,i}, v_{z,i} \right)}$ derart definiert, dass ein orthonormales Koordinatensystem aufgespannt wird. Der Ursprung liegt dabei nicht notwendigerweise im Massenschwerpunkt des K\"orpers. Die Position des Ursprungs wird durch einen Ortsvektor $\vect{q}=\transp{\left(x_{i}, y_{i}, z_{i} \right)}$ definiert, dessen Komponenten durch drei generalisierte Koordinate beschrieben werden. Die Komponenten der Vektoren, welche die Basis des Koordinatensystems bilden, werden ebenso als generalisierte Koordinaten eingef\"uhrt. F\"ur jeden K\"orper werden demnach zw\"olf generalisierte Koordinaten eingef\"uhrt. Mit Hilfe der Basisvektoren l\"asst sich dann eine Rotationsmatrix $\matr{R}_{i}=\begin{bmatrix}
+  u_{x,i} & w_{x,i} & v_{x,i} \\
+  u_{y,i} & w_{y,i} & v_{y,i} \\
+  u_{z,i} & w_{z,i} & v_{z,i} \\
+  \end{bmatrix}$ definieren, welche die Orientierung des K\"orpers im Raum beschreibt. Da die Vektoren $\vect{u}_{i}, \vect{w}_{i}$ und $\vect{v}_{i}$ eine orthonormale Basis bilden sollen sind die zugeordneten generalisierten Koordinaten nicht unabh\"angig voneinander. Statt dessen m\"ussen die Vektoren \eqnref{gl:kos_orthosys} erf\"ullen. Es gilt also \begin{align*}
+  \skalar{\vect{u}_{i}}{\vect{w}_{i}}&=0 &\skalar{\vect{u}_{i}}{\vect{v}_{i}}&=0 &\skalar{\vect{w}_{i}}{\vect{v}_{i}}&=0
+  \intertext{und weiterhin}
+  \skalar{\vect{u}_{i}}{\vect{u}_{i}}-1&=0 &\skalar{\vect{w}_{i}}{\vect{w}_{i}}-1&=0 & \skalar{\vect{v}_{i}}{\vect{v}_{i}}-1&=0
+\end{align*} Die so erzeugten Zwangsbedingungen sind offensichtlich sehr einfach. \hfill \newline
+Die Koordinatensysteme der einzelnen K\"orper werden zweckm\"a\ss{}igerweise so festgelegt, dass m\"oglichst viele Basisvektoren parallel zueinander liegen. Parallele Richtungsvektoren k\"onnen dann gem\"a\ss{} Abschnitt \ref{ssec:mathGrundl_punkteVektoren_r3} gleich gesetzt werden und daher durch identische generalisierte Koordinaten abgebildet werden. Weiterhin sollten geometrische Zwangsbedingungen durch eine geschickte Ausrichtung der Koordinatensysteme zueinander m\"oglichst simpel formuliert werden k\"onnen. Im Kapitel \ref{ch:modell} werden diese Forderungen anhand eines Beispiels ausf\"uhrlich erl\"autert. 
+
+\subsection{Eigenschaften nat\"urlicher Koordinaten}
+  Die von V. Cossalter und R. Lot in \cite{Cossalter2002} eingef\"uhrte Variante der Parameterfestlegung f\"ur ein Mehrk\"orpersystem hat wichtige Eigenschaften f\"ur das Systemmodell zur Folge. \hfill \newline
+  Zum Einen erfolgt die Beschreibung des Systems ausschlie\ss{}lich mit Hilfe eines Satzes redundanter kartesischer Koordinaten. Da diese alle mit direktem Bezug zum Inertialsystem definiert werden ist die Einf\"uhrung zus\"atzlicher Referenzsysteme nicht notwendig. Im Zusammenhang mit der Festlegung der Einheitsvektoren eines jeden k\"orperfesten Koordinatensystems lassen sich geometrische Zwangsbedingungen daher sehr einfach formulieren. Die Jacobi-Matrix ist demzufolge eine lineare oder sogar konstante Funktion der redundanten Koordinaten. Zum Anderen wird der Einfluss von Entwurfsvariablen wie den Abmessungen eines Bauteils direkt angegeben und kann dadurch direkt beim Bauteildesign ber\"ucksichtig werden.  Au\ss{}erdem sind die Rotationsmatrizen, mit denen die Orientierung von K\"orpern beschrieben wird, lineare Funktionen anstelle von trigonometrischen oder anderen nichtlinearen Funktionen.  
+
+\section{Wichtige Begriffe und weitere Konzepte}
+  \subsection{Minimalkoordinaten und verallgemeinerte Koordinaten}
+  Bei der Festlegung von Parametern zur Lagebeschreibung werden die Begriffe \textit{Minimalkoordinaten} und \textit{verallgemeinerte Koordinaten} h\"aufig verwendet. Diese zwei Begriffe werden teilweise synonym verwendet, was nur in einem bestimmten Kontext sinnvoll ist. \hfill \newline
+  Mit Minimalkoordinaten werden Parameter bezeichnet, welche linear unabh\"angig sind und deren Anzahl dem Freiheitsgrad des Systems entsprechen. L\"asst sich ein Mehrk\"orpersystem als offene Kette beziehungsweise in Baumstruktur modellieren, so l\"asst sich die Lage aller Elemente direkt mit den Minimalkoordinaten beschreiben. \cite[S.27 f.]{Bestle2012} Besitzt ein System kinematische Schleifen, so werden zu den Minimalkoordinaten weitere redundante Koordinaten ben\"otigt, um die Lage aller Teilk\"orper beschreiben zu k\"onnen. \cite[S.63]{Schramm2010} Sowohl f\"ur Systeme mit, als auch ohne geschlossene kinematische Schleifen wird der Begriff verallgemeinerte Koordinaten verwendet.  Es wird aber nicht unbedingt deutlich, ob mit verallgemeinerten Koordinaten lediglich die Minimalkoordinaten, oder aber der um redundante Koordinaten erweiterte Parametersatz gemeint ist. \cite[S.133]{Woernle2011} Da in dieser Arbeit mit dem Modellierungsansatz der nat\"urlichen Koordinaten gearbeitet wird und dieser redundante Parameter zur Folge hat (siehe Abschnitt \ref{sec:kos_natKoord}), wird mit verallgemeinerten Koordinaten kein minimaler Satz an Koordinaten gemeint. Statt dessen werden Minimalkoordinaten immer explizit als solche bezeichnet. \hfill \newline
+  
+  Die Begriffe der offenen und geschlossenen kinematischen Kette werden von D. Schramm et al. in \cite[S. 52 ff.]{Schramm2010} erl\"autert. \hfill \newline
+  Als alternativen Ansatz zur Modellparametrierung mit nat\"urlichen Koordinaten werden h\"aufig Relativkoordinaten verwendet. W. Schiehlen et al. geben in \cite{Schiehlen2014} eine Einf\"uhrung in diesen Ansatz. Verwendet man kinematische Ketten zur Modellbeschreibung, so k\"onnen die von R. L. Huston in \cite{Huston1986} eingef\"uhrten Topologie-Matrizen bei der Arbeit mit Relativkoordinaten n\"utzlich sein. Eine weitere Alternative zur Festlegung der Koordinaten ist das Verfahren nach Danavit und Hartenberg, welches von D. W. Wloka in \cite[S. 111 ff.]{Wloka1992} ausf\"uhrlich beschrieben wird.

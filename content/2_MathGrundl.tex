@@ -270,7 +270,7 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   \end{align} Es l\"asst sich also jeder Vektor des $\set{K}-$Vektorraumes $\set{V}$ durch Linearkombination eines zugeh\"origen Erzeugendensystems darstellen. Ist die M\"achtigkeit des Erzeugendensystems endlich, so ist $\set{V}$ \textit{endlich erzeugt}. \newline
   Jedes Erzeugendensystem eines endlichen Vektorraumes $\set{V}$ enth\"alt eine \textbf{Basis}.
   \end{defn}
-  \begin{rem}[Erzeugendensystem f\"ur $\set{R}^{n}$] Jeder Vektorraum $\set{V}$, der \"uber dem K\"orper der reellen Zahlen $\set{R}$ definiert wird, besitzt ein Erzeugendensystem. \hfill \newline
+  \begin{rem}[Erzeugendensystem f\"ur $\set{R}^{n}$]\label{rem:mathGrundl_vektorraeume_kanBasis} Jeder Vektorraum $\set{V}$, der \"uber dem K\"orper der reellen Zahlen $\set{R}$ definiert wird, besitzt ein Erzeugendensystem. \hfill \newline
   Im $\set{R}-$ Vektorraum $\set{R}^{n}$ bilden die \textit{Einheitsvektoren} $\vect{e}_{1},\dots,\vect{e}_{n}$ ein Erzeugendsystem. Ein Einheitsvektor $\vect{e}_{i}$ hat in der i-ten Zeile eine eins als Eintrag. Alle weiteren Eintr\"age dieses Einheitsvektors sind null. \begin{align*}
   \vect{e}_{i}&=\begin{pmatrix}
   0 \\ 
@@ -378,7 +378,7 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   Da die Beschreibung des Punktes $p$ als Element des Vektorraumes $\set{R}^{3}$ betrachtet werden soll, ist die gew\"ahlte Beschreibungsform ein Vektor. Da der Vektorraum $\set{R}^{3}$  die im Abschnitt \ref{sec:mathGrundl_vektorraeume} geforderten Eigenschaften haben muss, gelten   bestimmte Rechenregeln f\"ur einen solchen Vektor. Diese Rechenregeln werden um weitere Verkn\"upfungen - das Skalarprodukt und das Kreuzprodukt - erg\"anzt. \hfill \newline
     Bei geometrischen \"Uberlegungen wird zwischen Positionen, Richtungen und Abst\"anden klar  unterschieden. Diese drei Eigenschaften lassen sich mit Hilfe von Vektoren beschreiben. Die Bedeutung eines Vektors als Element eines Vektorraumes $\set{V}$ \"uber einem K\"orper $\set{K}$ wird daf\"ur jedoch abge\"andert.  
     
-    \subsection{Vektoren des $\mathbf{\set{R}^{3}}$}
+    \subsection{Vektoren des $\mathbf{\set{R}^{3}}$}\label{ssec:mathGrundl_punkteVektoren_r3}
     Der Anschauungsraum soll durch Elemente des Vektorraums $\set{R}^{3}$ beschrieben werden. Der Vektorraum wird durch eine abelsche Gruppe aus Tripeln ${\left(x, y, z\right)}$ mit ${ x,y,z\in \set{R}}$, einen K\"orper und eine Verkn\"upfung zwischen diesen gebildet. F\"ur die Vektoren $\vect{a}=\begin{pmatrix} x \\ y \\ z \end{pmatrix}$ und $\vect{b}=\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} \in \set{R}^{3}$ gelten daher folgende Regeln (nach \cite{Papula2014}):
 \begin{itemize}
 	\item Da die Tripel Elemente einer abelschen Gruppe mit der inneren Verkn\"upfung Addition sind (siehe Abschnitt \ref{sec:mathGrundl_gruppen}), werden Vektoren $\vect{a}, \vect{b}$ komponentenweise addiert. Mit Hilfe des inversen Elements der Addition l\"asst sich die  Subtraktion ebenso darstellen und beide Verkn\"upfungen k\"onnen kompakt notiert werden:
@@ -431,7 +431,7 @@ Die Translation kann man sinnvoll durch einen Pfeil kennzeichnen, welcher durch 
   W\"ahlt man als Anfangspunkt f\"ur einen Vektor-Pfeil den Nullvektor, welcher dem gew\"ahlten Koordinatenursprung entspricht, so k\"onnen alle Punkte des Anschauungsraumes mit Pfeilen beschrieben werden. F\"ur die Beschreibung eines Punktes gen\"ugt daher die Angabe eines Abstandes und einer Richtung bezogen auf den Koordinatenursprung. \hfill \newline
   Punkte - die Elemente des Anschauungsraums - und Pfeile - die relative Lage von Punkten des Anschauungsraums zueinander -  werden also beide durch Vektoren beschrieben. Punkte sind dabei im Anschauungsraum fest und Pfeile k\"onnen verschoben werden, so lange sie ihre Richtung und L\"ange beibehalten. H\"aufig bezeichnet man beide geometrischen Gebilde einfach als Vektor, ohne deutlich zu machen, ob das gemeinte Objekt verschiebbar oder fest ist. \hfill \newline  
   Beschreibt ein Vektor die Auspr\"agung einer physikalischen Gr\"o\ss{}e, so geh\"ort zu deren vollst\"andiger Beschreibung zus\"atzlich zu Betrag und Richtung noch die Angabe einer Ma\ss{}einheit. Ein typisches Beispiel ist der Betrag einer Kraft $\vect{F}: \abs{\vect{F}}= 100 \cdot N$ \newline
-Die Unterscheidung der geometrischen Objekte, welche durch einen Vektor repr\"asentiert werden, kann durch folgende Bezeichnung erfolgen \cite[S. 26]{Riessinger2007j}:
+Die Unterscheidung der geometrischen Objekte, welche durch einen Vektor repr\"asentiert werden, kann durch folgende Bezeichnung erfolgen \cite[S. 26]{Riessinger2007j} oder \cite[S. 68]{Wloka1992}:
 \begin{itemize}
 \item \textit{Freie Vektoren}\footnote{\textit{freie Vektoren} werden auch als \textit{Richtungsvektoren} bezeichnet} k\"onnen beliebig im Raum verschoben werden, so lange Richtung und Betrag konstant bleiben. Damit sind parallele Verschiebungen und Verschiebungen entlang der Wirkungslinie m\"oglich. Dieser Typ von Vektoren wird in der Regel gemeint, wenn man im Sinne der Geometrie von Vektoren spricht. Ein typisches Beispiel sind die Einheitsvektoren $\vect{e}$, mit denen die Koordinatenachsen eines Koordinatensystems beschrieben werden.
 \item \textit{Gebundene Vektoren} beziehen sich auf einen festen Ursprung, von dem aus sie angetragen werden. Ein typisches Beispiel daf\"ur ist der Ortsvektor $\vect{r}$ eines Raumpunktes $R$, welcher von einem spezifischen Koordinatenursprung $O$ aus angetragen wird: $\vect{r}=P-O = \vect{OP}$. In diesem Zusammenhang bezeichnet man den Punkt $R$ h\"aufig als \glqq Punkt R mit dem Ortsvektor $\vect{r}$\grqq { }und notiert wahlweise $P \equiv \vect{r}$.
@@ -449,9 +449,9 @@ Neben der Darstellung eines Vektors als Spaltenvektor und der Darstellung durch 
 Man bezeichnet die Skalare $x, y, z$ als die \textit{Komponenten}, \textit{Koordinaten} oder auch \textit{Eintr\"age} des Vektors $\vect{\tensor*[_I]{a}{}}$. Der linksseitige Index $I$ kennzeichnet das verwendete Bezugssystem. Ist das Bezugssystem eindeutig, so wird dieser Index weggelassen.\hfill\newline
 F\"ur die bereits eingef\"uhrten Vektoren $\vect{a}, \vect{b}\in \set{R}^{3}$ werden zus\"atzlich zu den Vektorraumaxiomen die Verkn\"upfungen Skalarprodukt und Kreuzprodukt definiert. Beide Verkn\"upfungen haben interessante geometrische Bedeutungen, auf welche nach Angabe der Rechenregeln im Detail eingegangen wird. Das Skalarprodukt l\"asst sich im Gegensatz zum Kreuzprodukt direkt f\"ur h\"oherdimensionale Vektorr\"aume definieren. 
 \begin{itemize}
-	\item Das \textbf{Skalarprodukt} \acs{skalarProd} zweier Vektoren ist das Produkt der Betr\"age und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$ \begin{align*}
-	\skalar{\vect{a}}{\vect{b}}&= \abs{a}\abs{b}\cos{\varphi} = \left( x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3\right) \left( x' \vect{e}_1 + y' \vect{e}_2 + z' \vect{e}_3 \right)
-	\end{align*}
+	\item Das \textbf{Skalarprodukt} \acs{skalarProd} zweier Vektoren ist das Produkt der Betr\"age und dem Kosinus des von den Vektoren eingeschlossenen Winkels $\varphi$ \begin{align}
+	\skalar{\vect{a}}{\vect{b}}&= \abs{a}\abs{b}\cos{\varphi} = \left( x \vect{e}_1 + y \vect{e}_2 + z \vect{e}_3\right) \left( x' \vect{e}_1 + y' \vect{e}_2 + z' \vect{e}_3 \right)\label{gl:mathGrundl_punkteVektoren_skalarProd}
+	\end{align}
 	Notiert man $\vect{a}, \vect{b}$ als einspaltige Matrizen, so kann man das Skalarprodukt auch mit Hilfe des Matrixprodukts nach \eqnref{gl:mathGrundl_vektorraeume_matr_prod} definieren: \begin{align*}
 	\skalar{\vect{a}}{\vect{b}}&= \transp{\vect{a}} \vect{b}
 	\end{align*}

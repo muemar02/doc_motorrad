@@ -209,20 +209,43 @@ A  & -F  & -E  \\
  &\quad \frac{1}{2}\left( -D\dot{u}\dot{w}\com{u v}{=0}  -E\dot{v}\dot{w}\com{u w}{=0} - F\dot{u}\dot{v}\com{v w}{=0} \right)
 \end{align*}
 \section{Lagrange Gleichung 2. Art}\label{sec:mech_lag2}
-Ein System mit $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $ und $m$ Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$, dessen Kinetische Energie $T$ und potentielle Energie $V$ durch $L=T-V$ beschrieben werden kann, l\"asst sich nach \cite[S. 124]{Jalon1994} charakterisieren durch:
+\subsection{Erg\"anzungen}
+\cite[S.38]{Bestle2012}, \cite[S.90]{GeorgRill2014}, \cite[S.87]{Schramm2010}, \hfill \newline
+Lagrange sollte man nicht verwenden. Dies bedeutet, dass die direkte Auswertung der Lagrangeschen Gleichungen zweiter Art in ihrer ursprünglichen Form (4.61) auf
+einen unnötigen Rechenaufwand führt. Bei der Aufstellung der Bewegungsgleichungen nach
+dem d’Alembertschen Prinzip kommt man dagegen unmittelbar ans Ziel. Deshalb wird in den
+nächsten Kapiteln nur noch das d’Alembertsche bzw. das Jourdainsche Prinzip herangezogen.
+Diesen beiden Prinzipien liegt aber letztlich die Aufteilung des Raumes, der von den Koordinaten eines freigeschnittenen mechanischen Systems aufgespannt wird, in zwei orthogonale
+Unterräume für die freien bzw. gesperrten Bewegungsrichtungen zugrunde. Diese orthogonalen
+Unterräume sind unter der Voraussetzung idealer Kräfte, wie sie z. B. in gewöhnlichen Mehrkörpersystemen auftreten, voneinander unabhängig, was auf ungekoppelte Bewegungs- und Reaktionsgleichungen führt. \cite[S. 96]{Schiehlen2014}  \hfill \newline
+Alternative Formalismen zur Herleitung der Bewegungsgleichungen \cite[S. 131 ff.]{Schiehlen2014}
+\cite[S.42]{Pfeiffer2014} -> das k\"onnte wirklich noch mal helfen \hfill \newline
+Bewertung verschiedener Verfahren: \cite[S.56]{Pfeiffer2014}, \cite[S.8]{Woernle2011}
+\subsection{Richtiger Inhalt}
+Ein System mit $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $, welche nicht notwendigerweise voneinander unabh\"angig sein m\"ussen, und $m$ Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$, dessen Kinetische Energie $T$ und potentielle Energie $V$ durch $L=T-V$ beschrieben werden kann, l\"asst sich nach \cite[S. 124]{Jalon1994} charakterisieren durch:
 \begin{align}
-\int_{t_{1}}^{t_{2}}\left[ \delta\transp{\vect{q}} \left(  \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} \right) \right] \td t &=0 \label{gl:lagrange2ArtDefAllg} 
+\int_{t_{1}}^{t_{2}}\left[ \com{\delta\transp{\vect{q}}}{$h\of{t}$} \com{\left(  \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} \right)}{$g\of{t}$} \right] \td t &=0 \label{gl:mech_lagrange2ArtDefAllg} 
 \end{align} 
 Dabei gelten die Dimensionen
 \begin{align*} 
-\delta \vect{q}&\in\R^{n} &L&\in \R &\vect{q}&\in R^{n} &\matr{\Phi}&\in R^{m \times n} &\vect{\lambda}&\in R^{m} &\vect{Q}&\in R^{n}
+\delta \vect{q}&\in\R^{n} &L&\in \R &\vect{q}&\in \R^{n} &\matr{\Phi}&\in \R^{m \times n} &\vect{\lambda}&\in \R^{m} &\vect{Q}&\in R^{n}
 \end{align*}
+Mit Hilfe des Fundamentallemmas der Variationsrechnung \cite[S. 107 f.]{Reddy2002} l\"asst sich \eqnref{gl:mech_lagrange2ArtDefAllg} umformen. Das Fundamentallemma der Variationsrechnung kann  wie folgt formuliert werden: \hfill \newline
+Eine integrierbare Funktion $g\of{t}$ entspricht der Nullfunktion auf dem abgeschlossenen Intervall $[a, b]$, wenn die Aussage \begin{align*}
+\int_{a}^{b} g\of{t}\cdot h\of{t} \td t &=0
+\end{align*}
+f\"ur beliebige stetige Funktionen $h\of{t}$ in diesem Intervall erf\"ullt ist. \hfill \newline 
+F\"ur beliebige Variationen des Ortes $h\of{t}=\delta \transp{\vect{q}\of{t}}$ soll  \eqnref{gl:mech_lagrange2ArtDefAllg} erf\"ullt sein und damit ist $g\of{t}$ gleich der Nullfunktion. Die $m$ Langrange-Multiplikatoren $\lambda$ sind also so zu w\"ahlen, dass 
+ \begin{align*}
+  \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} &=0
+\end{align*}
+gilt. Diese Gleichung der Dimension $n$ bildet gemeinsam mit den $m$ Zwangsbedingungen $\vect{\phi}=\vect{0}$ ein System von $\left( n + m\right)$ differential-algebraischen Gleichungen. \hfill \newline
 Der Vergleich mit der \"ublichen Form der Gleichung von Lagrange (2. Art) \eqnref{gl:lagrange2ArtDefMin} macht einige Unterschiede deutlich. \begin{align}
 \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} &=0 \label{gl:lagrange2ArtDefMin} 
 \intertext{mit}
 \vect{q}&\in R^{n-m} \nonumber
 \end{align}
-Die generalisierten Koordinaten m\"ussen mit Hilfe der Zwangsbedingungen auf einen Satz von Minimalkoordinaten reduziert werden. Diese Minimalkoordinaten m\"ussen voneinander unabh\"angig sein. 
+Die $n$ generalisierten Koordinaten $q$ m\"ussen mit Hilfe der $m$ Zwangsbedingungen auf einen Satz von $n-m$ Minimalkoordinaten $q_{min}$ reduziert werden. Diese Minimalkoordinaten sind dann voneinander unabh\"angig sein. 
   \subsection{Kinetische Energie}\label{ssec:mech_lag2_kinEn}
   Die kinetische Energie $K$ eines Starrk\"orpers wird durch die Geschwindigkeit eines beliebigen Punktes $\vect{A}$, welcher ein Element des K\"orpers ist, und seiner Massenverteilung nach \eqnref{gl:kinEnergieAllgDef} beschrieben. \begin{align}
   K&=\frac{1}{2} \int_{m} \dot{\vect{A}}^{2} \td m \label{gl:kinEnergieAllgDef}
@@ -253,6 +276,7 @@ K&=\frac{1}{2}m  \dot{\vect{P}}^{2} \\
   \end{align*}
   
   \subsection{Prinzip der virtuellen Arbeit}\label{ssec:mech_lag2_virtArbeit}
+  siehe auch \cite[S.136]{Woernle2011}
   Eine virtuelle Verschiebung ist eine infinitesimale, rein virtuelle \"Anderung des Zustands eines Systems, ohne das die Zeit dabei voran schreitet. Die Zustands\"anderung muss dabei mit den Zwangsbedingungen vertr\"aglich sein. Zur Darstellung einer virtuellen Bewegung wird meist das Symbol $\delta$ voran gestellt. \newline
    Wenn ein System durch generalisierte Koordinaten $\vect{q}$ beschrieben wird, dann wird die virtuelle Verschiebung dieses Systems durch $\delta \vect{q}$ notiert. Virtuelle Verschiebungen verhalten sich genau so wie andere, infinitesimale Variationen einer Gr\"o\ss{}e. Damit sind virtuelle Verschiebungen \"ahnlich dem Differentialoperator, wobei die Besonderheit, dass die Zeit als konstante Gr\"o\ss{}e angenommen wird, zu beachten ist. Das Beispiel \ref{ex:virtuelleVerschiebung} soll dies verdeutlichen. \newline
   Bei der Arbeit mit virtuellen Verschiebungen gelten die gleichen Gesetze wie bei Anwendung des Differentialoperators bez\"uglich Summen, Produkten und Verkettungen. Au\ss{}erdem kann der Variationsoperator virtuelle Verschiebung mit dem Differential- und Integraloperator vertauscht werden.  
@@ -279,7 +303,7 @@ Das System befindet sich dann im Kr\"aftegleichgewicht, wenn die virtuelle Arbei
 \delta W &= \sum_{i=1}^{n} \transp{\vect{F}_{i}} \delta \vect{r}_{i} + \sum_{k=1}^{m} \transp{\vect{M}_{k}} \delta \vect{\varphi}_{k} = 0 \label{gl:virtWFuM}
 \end{align}
 
-  Die gesamte virtuelle Arbeit eines Systems kann auch als Summe der generalisierten Kr\"afte des Systems interpretiert werden. \eqnref{gl:virtWgenF} zeigt diesen Zusammenhang. Mit Hilfe der generalisierten Koordinaten $\vect{q}$ l\"asst sich \eqnref{gl:virtWgenF} derart umformen, dass man den zur L\"osung von \eqref{gl:lagrange2ArtDefAllg} ben\"otigten Ausdruck f\"ur $Q_{ex}$ erh\"alt. 
+  Die gesamte virtuelle Arbeit eines Systems kann auch als Summe der generalisierten Kr\"afte des Systems interpretiert werden. \eqnref{gl:virtWgenF} zeigt diesen Zusammenhang. Mit Hilfe der generalisierten Koordinaten $\vect{q}$ l\"asst sich \eqnref{gl:virtWgenF} derart umformen, dass man den zur L\"osung von \eqref{gl:mech_lagrange2ArtDefAllg} ben\"otigten Ausdruck f\"ur $Q_{ex}$ erh\"alt. 
   
   \begin{align}
   \delta W &= \sum_{i=1}^{k} Q_{i} \delta \vect{r}_{i} \label{gl:virtWgenF} \\
@@ -328,3 +352,7 @@ x_{l}\of{t} \\ y_{1}\of{t}\\ z_{1}\of{t} \\ 1
 &= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \transp{\matr{R}} \vect{z}^{g}\\
 \intertext{Hier steht Text}
 \end{align*}
+
+\subsection{Bewegung in homog. Koords}
+\cite[S. 160]{Wloka1992}, \cite[S. 237]{Wloka1992} 
+\section{L\"osung der Differentialgleichungen}
