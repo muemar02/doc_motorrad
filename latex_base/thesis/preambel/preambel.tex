@@ -1751,6 +1751,8 @@
 \newcommand{\betreuer}[1]{\g@addto@macro{\@betreuer}{& #1 \\}}
 \newcommand{\geburtsort}[1]{\renewcommand*{\@geburtsort}{#1}}%
 \newcommand{\geburtsdatum}[1]{\renewcommand*{\@geburtsdatum}{#1}}%
+\newcommand{\@matrikelNr}{}%
+\newcommand{\matrikelNr}[1]{\renewcommand*{\@matrikelNr}{#1}}%
 \newcommand*{\maketitleRST}{%
 \deftiteltrue
 \begin{titlepage}
@@ -1788,6 +1790,40 @@
 \vfill
 }%
 
+\newcommand*{\maketitleITVS}{%
+\deftiteltrue
+\begin{titlepage}
+\begin{center}
+    {\usekomafont{title}\LARGE Technische Universität Dresden}\\[2ex]
+    {\usekomafont{title}\large Fakultät Verkehrswissenschaften \glqq Friedrich List\grqq { }}\\[2ex]
+    {\usekomafont{title}\large Institut für Verkehrstelematik}\\[2ex]
+    {\usekomafont{title}\large Professur für Informationstechnik f\"ur Verkehrssysteme}\\
+    \vfill
+    {\usekomafont{title}\LARGE \@subject}\\[1ex]
+    {\usekomafont{title}\large \@title}
+    \ifx\@subtitle\empty\else{\usekomafont{subtitle} \@subtitle}\\\fi
+    \vfill
+    \begin{tabular}{rl}
+        vorgelegt von: & \@author\\
+        Matrikelnummer: & \@matrikelNr\\
+        geboren am: & \@geburtsdatum{} in \@geburtsort{}
+    \end{tabular}
+    \vfill
+    \begin{tabular}{ll}
+        \ifx\@betreuer\empty\else Betreuer: \@betreuer\fi
+        Verantwortlicher Hochschullehrer: & Prof. Dr.-Ing. Oliver Michler\\
+        Tag der Einreichung: & \@date
+    \end{tabular}
+\end{center}
+\end{titlepage}
+\newpage
+\thispagestyle{empty}
+\null\vfill
+\begin{center}
+	Bitte ersetzen Sie diese Seite vor dem Binden mit der Aufgabenstellung.
+\end{center}
+\vfill
+}%
 %------------------------------------------------------------------------
 % Selbstständigkeitserklärung
 \newcommand{\arbeitartikel}{die}
@@ -1805,7 +1841,7 @@
 \thispagestyle{empty}
 \vspace*{4cm}
 \noindent\textbf{\Large Selbstständigkeitserklärung}\\[4ex]
-Hiermit erkläre ich, dass ich \arbeitartikel{} von mir am heutigen Tage \arbeitwoeingereicht{} der Fakultät Elektrotechnik und Informationstechnik \arbeiteingereicht{} \@subject{} zum Thema
+Hiermit erkläre ich, dass ich \arbeitartikel{} von mir am heutigen Tage \arbeitwoeingereicht{} der Fakultät Verkehrswissenschaften \glqq Friedrich List\grqq { } \arbeiteingereicht{} \@subject{} zum Thema
 \begin{center}
 	{\usekomafont{subtitle}\normalsize\@title}
 \end{center}

@@ -45,9 +45,10 @@
 
 % Vektor
 \DeclareRobustCommand{\vect}[1]{\overrightarrow{#1}}   %Vektor
+\DeclareRobustCommand{\vectHomog}[1]{{\overrightarrow{#1}}^{H}}   %Vektor in homog Darstellung
 \DeclareRobustCommand{\matr}[1]{\bm{#1}} %Matrix
 %\newcommand{\vect}[1]{\boldsymbol #1}
-\newcommand{\skalar}[2]{\langle #1,#2 \rangle} %Skalarprodukt
+\newcommand{\skalar}[2]{\left \langle #1,#2 \right \rangle} %Skalarprodukt
 \newcommand{\transp}[1]{#1^{\text{T}}}
 \DeclareRobustCommand{\inv}[1]{\ensuremath{#1^{-1}}}
 

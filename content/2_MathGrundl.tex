@@ -378,6 +378,14 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   \end{align}
   das \textbf{Matrixprodukt} oder kurz das Produkt von $\matr{A}$ und $\matr{B}$. 
   \end{defn}
+  \begin{rem}[Ableitung von Matrizen] Sei $\matr{A}\in\set{K}^{m\times n}$ eine Matrix mit Komponenten $\left( a_{ij}\right)$, welche differenzierbare Funktionen der reellen Variablen $t$ seien. Dann hei\ss{}t die Matrix \begin{align}
+  \frac{\d \matr{A}}{\d t}&= \left( \frac{\d a_{ij}}{\d t}\right)\label{mathGrundl_vektorraeume_matr_diff}
+  \end{align}
+  Ableitung von $\matr{A}$ nach $t$. Die Matrix wird also differenziert, indem jede Komponente einzeln differenziert wird. \hfill \newline
+  Sei weiter eine Matrix $\matr{B}\in \set{K}^{n \times r}$ gegeben, deren Komponenten $\left( b_{ij}\right)$ ebenfalls differenzierbare Funktionen der reellen Variablen $t$ seien. F\"ur die Ableitung des Matrixprodukts gilt dann die Produktregel: \begin{align}
+  \frac{\d \matr{A}\matr{B}}{\d t}&= \frac{\d \matr{A}}{\d t}\matr{B} + \matr{A}\frac{\d \matr{B}}{\d t} \label{gl:mathGrundl_vektorraeume_matr_prodDiff}
+  \end{align}
+  \end{rem}
   \section{Punkte und Vektoren im Anschuungsraum}\label{sec:mathGrundl_punkteVektoren}
   Der Anschauungsraum ist eine geometrische Idealisierung des uns umgebenden physikalischen Raums. Zur Beschreibung dieses Raums dienen Punkte $p$. Die Position dieser Punkte wird relativ zu einem gew\"ahlten Koordinatensystem $\KOS{I}$ mit Hilfe von Koordinatentripeln beschrieben. Die Koordinatentripel k\"onnen als Elemente des Vektorraumes $\set{R}^{3}$ aufgefasst werden: 
   \begin{align*}
@@ -475,7 +483,7 @@ F\"ur die bereits eingef\"uhrten Vektoren $\vect{a}, \vect{b}\in \set{R}^{3}$ we
 	  \lambda \skalar{\vect{a}}{\vect{b}} &= \skalar{\lambda \vect{a}}{\vect{b}} = \skalar{ \vect{a}}{\lambda\vect{b}}
 	  \end{align*}
 	  \end{itemize}
-	  \begin{rem}[Orthogonale Vektoren] Verschwindet das Skalarprodukt zweier von Null verschiedenen Vektoren, so stehen diese senkrecht aufeinander. \begin{align*}
+	  \begin{rem}[Orthogonale Vektoren]\label{rem:mathGrundl_punkteVektoren_skalarProd_ortho} Verschwindet das Skalarprodukt zweier von Null verschiedenen Vektoren, so stehen diese senkrecht aufeinander. \begin{align*}
 	  \skalar{\vect{a}}{\vect{b}}&=0 \Leftrightarrow \vect{a} \perp  \vect{b}
     \end{align*}	   
     \end{rem}
@@ -518,5 +526,10 @@ F\"ur die bereits eingef\"uhrten Vektoren $\vect{a}, \vect{b}\in \set{R}^{3}$ we
 	  0 & -z & y \\ z & 0 & -x \\ -y & x & 0
 	  \end{pmatrix} \cdot \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix}
 	y z' - z y' \\ z x' - x z' \\ x y' - y x' \end{pmatrix} \label{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp}
-\end{align}	   
+	\end{align}
+	Ein Matrix dieser Struktur bezeichnet man als \textit{schiefsymmetrisch}. Sie hat die Eigenschaft, dass \begin{align}
+	\transp{\hat{\matr{a}}}&= - \hat{\matr{a}}\label{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp_transp}
+	\end{align}
+  gilt.
+  %\item Das \textbf{Dyadische Produkt} (auch Tensorprodukt)$\vect{a} \otimes \vect{b}$ 
 \end{itemize}  

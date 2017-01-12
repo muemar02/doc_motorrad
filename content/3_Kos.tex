@@ -31,35 +31,36 @@ Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen,
 \end{exmp}
   
   \section{Koordinatentransformation in homogenen Koordinaten}\label{sec:kos_transfHomog}
-  \subsection{hilfreiche Literatur}
-  \cite[S.10]{Pfeiffer2014}
+ % \subsection{hilfreiche Literatur}
+ % \cite[S.10]{Pfeiffer2014}
   \subsection{Rotationen und deren Darstellung als Matrizen}\label{ssec:kos_transfHomog_rots}
-  \begin{itemize}
-  \item noch ein paar S\"atze, wozu diese Regeln eigentlich gut sind: Regeln stellen die REchnungen und die Darstellbarkeit der K\"orperbewegung sicher
-  \end{itemize}
   \"Andert ein K\"orper seine Orientierung im Raum, so bewegen sich alle Punkte des K\"orpers um eine Drehachse und man bezeichnet diese Bewegung als \textit{Rotation}. Ist die Lage dieser Achse konstant, so bezeichnet man dies als Rotation um eine feste Achse. Verl\"auft die Drehachse durch einen raumfesten Punkt, so handelt es sich um eine Kreiselbewegung. In jedem Fall kann die Drehbewegung durch eine zeitlich ver\"anderliche oder konstante Rotationsmatrix ausgedr\"uckt werden. Zur Formulierung der Rotationsmatrix seien ein k\"orperfestes Koordinatensystem $\KOS{K}$ und ein inertiales Koordinatensystem $\KOS{I}$ gegeben. Die Koordinatensysteme $\KOS{I}$ und $\KOS{K}$ haben weiterhin den gleichen Ursprung. Das System $\KOS{K}$ ist demnach durch Drehung um eine Achse $l$, welche durch den Ursprung verl\"auft, hervorgegangen. Die Orientierung dieser Drehachse sei durch einen Vektor $\vect{l}$ mit Einheitsl\"ange beschrieben. Die Achsen von $\KOS{K}$ relativ zu $\KOS{I}$ seien gegeben durch die Einheitsvektoren $\tensor*[_I]{\vect{u}}{}, \tensor*[_I]{\vect{w}}{}, \tensor*[_I]{\vect{v}}{} \in \R^{3}$. Diese drei Spaltenvektoren werden horizontal zu einer Matrix \begin{align}
   \matr{R}&=\begin{pmatrix}
   \tensor*[_I]{\vect{u}}{}& \tensor*[_I]{\vect{w}}{}& \tensor*[_I]{\vect{v}}{}
   \end{pmatrix} = \begin{pmatrix}
-  \tensor*[_I]{\vect{u}}{_x}& \tensor*[_I]{\vect{w}}{_x}& \tensor*[_I]{\vect{v}}{_x} \\ 
-  \tensor*[_I]{\vect{u}}{_y}& \tensor*[_I]{\vect{w}}{_y}& \tensor*[_I]{\vect{v}}{_y} \\ 
-  \tensor*[_I]{\vect{u}}{_z}& \tensor*[_I]{\vect{w}}{_z}& \tensor*[_I]{\vect{v}}{_z}
+  \tensor*[_I]{u}{_x}& \tensor*[_I]{w}{_x}& \tensor*[_I]{v}{_x} \\ 
+  \tensor*[_I]{u}{_y}& \tensor*[_I]{w}{_y}& \tensor*[_I]{v}{_y} \\ 
+  \tensor*[_I]{u}{_z}& \tensor*[_I]{w}{_z}& \tensor*[_I]{v}{_z}
   \end{pmatrix} \label{gl:kos_transfHomog_rots_rotMatrDef}
   \end{align}
-  zusammengefasst. Die Matrix $\matr{R}$ wird als Rotationsmatrix oder Drehmatrix bezeichnet. Sie gibt die relative Verdrehung von $\KOS{K}$ zu $\KOS{I}$ an. \hfill \newline 
-  Die Rotationsmatrix $\matr{R}$ kann auch durch Verwendung einer absoluten Angabe der Einheitsvektoren beider Koordinatensysteme angegeben werden. Bilden die Einheitsvektoren $\vect{e}_{1}, \vect{e}_{2}, \vect{e}_{3} \in \set{R}^{3}$ eine Basis von $\KOS{I}$ und die Vektoren $\vect{u}, \vect{w}, \vect{v}$ die Basis f\"ur $\KOS{K}$, so k\"onnen diese Spaltenvektoren geeignet als Matrizen angeordnet werden und die Rotationsmatrix, welche die Verdrehung von $\KOS{K}$ relativ zu $\KOS{I}$ angibt, wie folgt berechnet werden:
+  zusammengefasst. Die Matrix $\matr{R}$ wird als Rotationsmatrix oder Drehmatrix bezeichnet. Sie gibt die relative Verdrehung von $\KOS{K}$ zu $\KOS{I}$ an. Die Spaltenvektoren, welche zur Matrix $\matr{R}$ zusammengefasst werden, sind im Folgenden, wenn nicht explizit anderweitig angegeben, in der Basis des Inertialsystems angegeben. \hfill \newline 
+  Die Rotationsmatrix $\matr{R}$ kann auch durch Verwendung einer absoluten Angabe der Einheitsvektoren beider Koordinatensysteme angegeben werden. Bilden die Einheitsvektoren $\tensor*[_I]{\vect{e}}{_1}, \tensor*[_I]{\vect{e}}{_2}, \tensor*[_I]{\vect{e}}{_3} \in \set{R}^{3}$ eine Basis von $\KOS{I}$ und die Vektoren $\tensor*[_K]{\vect{u}}{}, \tensor*[_K]{\vect{w}}{}, \tensor*[_K]{\vect{v}}{}$ die Basis f\"ur $\KOS{K}$, so k\"onnen diese Spaltenvektoren geeignet als Matrizen angeordnet werden und die Rotationsmatrix, welche die Verdrehung von $\KOS{K}$ relativ zu $\KOS{I}$ angibt, wie folgt berechnet werden:
   \begin{align*}
   \matr{B}_{K}= \begin{bmatrix}
-  \vect{u}& \vect{w}& \vect{v} \end{bmatrix} &= \begin{bmatrix}
-  u_{x} & w_{x} & v_{x} \\ u_{y} & w_{y} & v_{y} \\ u_{z} & w_{z} & v_{z}
+  \tensor*[_K]{\vect{u}}{}& \tensor*[_K]{\vect{w}}{}& \tensor*[_K]{\vect{v}}{} \end{bmatrix} &= \begin{bmatrix}
+  \tensor*[_K]{u}{_x}& \tensor*[_K]{w}{_x}& \tensor*[_K]{v}{_x} \\ 
+  \tensor*[_K]{u}{_y}& \tensor*[_K]{w}{_y}& \tensor*[_K]{v}{_y} \\ 
+  \tensor*[_K]{u}{_z}& \tensor*[_K]{w}{_z}& \tensor*[_K]{v}{_z}
 \end{bmatrix}\\
   \matr{B}_{I}= \begin{bmatrix}
-  \vect{e}_{1}& \vect{e}_{2}& \vect{e}_{3} \end{bmatrix} &= \begin{bmatrix}
-  e_{1,x} & e_{2,x} & e_{3,x} \\ e_{1,y} & e_{2,y} & e_{3,y} \\ e_{1,z} & e_{2,z} & e_{3,z}
+  \tensor*[_I]{\vect{e}}{_1}& \tensor*[_I]{\vect{e}}{_2}& \tensor*[_I]{\vect{e}}{_3} \end{bmatrix} &= \begin{bmatrix}
+  \tensor*[_I]{e}{_{1,x}} & \tensor*[_I]{e}{_{2,x}} & \tensor*[_I]{e}{_{3,x}} \\ 
+  \tensor*[_I]{e}{_{1,y}} & \tensor*[_I]{e}{_{2,y}} & \tensor*[_I]{e}{_{3,y}} \\ 
+  \tensor*[_I]{e}{_{1,z}} & \tensor*[_I]{e}{_{2,z}} & \tensor*[_I]{e}{_{3,z}}
 \end{bmatrix} 
 \end{align*}
 \begin{align}
-  \matr{R}&= \inv{\matr{B}_{I}} \matr{B}_{K} \label{gl:transfHomog_rots_rotMatrAllg}
+  \tensor*[^K_I]{\matr{R}}{}&= \inv{\matr{B}_{I}} \matr{B}_{K} \label{gl:transfHomog_rots_rotMatrAllg}
   \end{align}
   Handelt es sich bei der Basis von $\KOS{I}$ um eine Standardbasis, wie sie im Beispiel \ref{exmp:sec:kos_rechtssys_stdBasis} angegeben ist, so vereinfacht sich  \eqnref{gl:transfHomog_rots_rotMatrAllg} zu \begin{align}
   \matr{R}&= \matr{B}_{K}.
@@ -70,12 +71,14 @@ Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen,
     \vect{u} & \vect{w}& \vect{v} 
 \end{pmatrix} \begin{pmatrix}
 \vect{u}\\ \vect{w}\\ \vect{v}  
-\end{pmatrix}     \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp} 
-    \intertext{und mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kos_orthosys}}
-    \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1 \label{gl:rotMatrDet}
+\end{pmatrix} =      \transp{\matr{R}}\matr{R} = \matr{I} \label{gl:rotMatrTransp}
+\intertext{was umgeformt werden kann zu}
+\transp{\matr{R}}&= \inv{\matr{R}}. \label{gl:kos_transfHomog_rots_eigensch_inv}
+    \intertext{Mit Hilfe der Regeln der linearen Algebra \cite[S. 100]{Papula2014} und \eqnref{gl:kos_orthosys} folgt aus \eqnref{gl:rotMatrTransp}}
+    \det{\matr{R}} &= \skalar{\vect{u}}{\vect{w}\times \vect{v}}= \skalar{\vect{u}}{\vect{u}} =  1. \label{gl:rotMatrDet}
 \end{align} Die Menge der orthogonalen $3 \times 3$ Matrizen mit der Determinante eins wird als $\set{SO}\of{3}$ bezeichnet \cite{Murray1994}. Allgemein wird definiert: \begin{align}
 \set{SO}\of{n} = \left \lbrace \matr{R}\in \R^{n\times n}: \matr{R}\transp{\matr{R}}=\matr{I}, \det{\matr{R}}=+1 \right \rbrace. \label{gl:mengeSoDef}
-\end{align} Die Menge $\set{SO}\of{3}\subset \R^{3\times 3}$ bildet mit der Abbildungsvorschrift \textit{Matrixmultiplikation} eine Gruppe entsprechend den im Abschnitt \ref{sec:mathGrundl_gruppen} geforderten Regeln. Die geforderten Eigenschaften werden wie folgt erf\"ullt:
+\end{align} Die Menge $\set{SO}\of{3}\subset \R^{3\times 3}$ bildet mit der Abbildungsvorschrift \textit{Matrixmultiplikation} eine Gruppe entsprechend den im Abschnitt \ref{sec:mathGrundl_gruppen} geforderten Regeln. Sie wird als \textit{spezielle orthogonale Gruppe} bezeichnet. Die Elemente dieser Gruppe erhalten die Rechtsh\"andigkeit von Koordinatensystemen. Die geforderten Eigenschaften eine Gruppe werden wie folgt erf\"ullt:
 \begin{itemize}
 \item Die Verkn\"upfung ist abgeschlossen. F\"ur $\matr{R}_1, \matr{R}_2 \in \set{SO}\of{3}$ gilt auch $\matr{R}_1 \matr{R}_2 \in \set{SO}\of{3}$, da \begin{align}
 \matr{R}_1 \matr{R}_2 \transp{\of{\matr{R}_1 \matr{R}_2}} &= \matr{R}_1 \matr{R}_2 \transp{\matr{R}_2} \transp{\matr{R}_1} = \matr{R}_1 \transp{\matr{R}_1} = \matr{I} \\ \label{gl:kos_transfHomog_rots_eigensch_abgeschl}
@@ -92,41 +95,47 @@ Im Folgenden wird, wenn nicht explizit anderweitig angegeben, davon ausgegangen,
 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1
 \end{pmatrix} \nonumber
 \end{align}
-\item Aus \eqnref{gl:rotMatrTransp} folgt, dass $\transp{\matr{R}}\in \set{SO}\of{3}$ das inverse Element von $\matr{R} \in \set{SO}\of{3}$ ist.
+\item Aus \eqnref{gl:rotMatrTransp} folgt, dass $\transp{\matr{R}}\in \set{SO}\of{3}$ das inverse Element von $\matr{R} \in \set{SO}\of{3}$ ist: \begin{align}
+\inv{\matr{R}}&= \transp{\matr{R}}.
+\end{align}
 \end{itemize}
-\begin{rem} Die Lage eines Starrk\"orpers, welcher sich frei im Raum drehen kann, kann zu jedem Zeitpunkt durch eine eindeutige Rotationsmatrix $\matr{R}\in \set{SO}\of{3}$ beschrieben werden. Die Menge der Rotationsmatrizen $\set{SO}\of{3}$ wird daher als der Konfigurationsraum des Systems bezeichnet. Eine Trajektorie des Systems wird durch die Kurve $\matr{R}\of{t} \in \set{SO}\of{3}$ f\"ur $t\in [0,T]$ abgebildet. Weiterhin dient die Matrix $\matr{R}$ zur Transformation von Punkten von einem k\"orperfesten, um eine beliebige Achse gedrehten, Koordinatensystem in ein Inertialsystem. Insbesondere ist die $3\times 3$ Einheitsmatrix nach \eqnref{gl:kos_transfHomog_rots_eigensch_neutrElem} das neutrale Element der Gruppe der Rotationsmatrizen. Eine Transformation mit dieser Matrix ist damit eine Transformation ohne Drehung. Die Transformation von Koordinatensystemen ist im Abschnitt \ref{ssec:kos_transfHomog_transf} genauer dargelegt.
+Differenziert man \eqnref{gl:rotMatrTransp} nach der Zeit und beachtet die Zeitabh\"angigkeit der Rotationsmatrizen, so erh\"alt man mit der Produktregel nach \eqnref{gl:mathGrundl_vektorraeume_matr_prodDiff} \begin{align} \label{gl:kos_transfHomog_rots_eigensch_winkelMatr} \begin{split}
+\frac{\d \matr{I}}{\d t}&=  \frac{\d {\matr{R}\of{t}\transp{\matr{R}}\of{t}}}{\d t}
+ \\
+\implies 0&= \dot{\matr{R}}\of{t}\transp{\matr{R}}\of{t} + \matr{R}\of{t}\transp{\dot{\matr{R}}}\of{t} 
+ \\
+\com{\dot{\matr{R}}\of{t}\transp{\matr{R}}\of{t}}{$:=\matr{\Omega}$} &= - \matr{R}\of{t}\transp{\dot{\matr{R}}}\of{t} 
+ \\
+\matr{\Omega} &= - \transp{\matr{\Omega}}  \end{split}
+\end{align}
+Die so definierte Matrix $\matr{\Omega}$ erf\"ullt also offensichtlich \eqnref{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp_transp} und ist daher schiefsymmetrisch. Die Bedeutung dieser Matrix wird im Abschnitt \ref{sec:mech_starrkoerperbewegung} erl\"autert.
+\begin{rem}[Eigenvektor von $\matr{R}$] Die Matrix $\matr{R}$ hat die besondere Eigenschaft, dass ihr Eigenvektor mit dem Eigenwert gleich eins der Drehachse entspricht, um welche die Rotation durchgef\"uhrt wird. 
+\end{rem}
+
+\begin{rem} Die Lage eines Starrk\"orpers, welcher sich frei im Raum drehen kann, kann zu jedem Zeitpunkt durch eine eindeutige Rotationsmatrix $\matr{R}\in \set{SO}\of{3}$ beschrieben werden. Die Menge der Rotationsmatrizen $\set{SO}\of{3}$ wird daher als der Konfigurationsraum des Systems bezeichnet. Eine Trajektorie des Systems wird durch die Kurve $\matr{R}\of{t} \in \set{SO}\of{3}$ f\"ur $t\in [0,T]$ abgebildet. Weiterhin dient die Matrix $\matr{R}$ zur Transformation von Punkten von einem k\"orperfesten, um eine beliebige Achse gedrehten, Koordinatensystem in ein Inertialsystem. Insbesondere ist die $3\times 3$ Einheitsmatrix nach \eqnref{gl:kos_transfHomog_rots_eigensch_neutrElem} das neutrale Element der Gruppe der Rotationsmatrizen. Eine Transformation mit dieser Matrix ist damit eine Transformation ohne Drehung. Die allgemeine Transformation von Koordinatensystemen ist im Abschnitt \ref{ssec:kos_transfHomog_transf} genauer dargelegt.
 \end{rem}
 \subsection{Homogene Koordinaten}\label{ssec:kos_transfHomog_homKoord}
   Die Darstellung von Bewegungen mit Hilfe homogener Koordinaten wie sie beispielsweise von D. W. Wloka in \cite[S. 72]{Wloka1992} eingef\"uhrt werden erm\"oglicht eine einheitliche kompakte Darstellung von Translationen und Rotationen eines K\"orpers durch Verwendung einer einzigen Transformationsmatrix. Dazu werden die Vektoren des $\set{R}^{3}$, mit denen der Anschauungsraum beschrieben wird, um eine vierte Komponente erweitert. Dieser \textit{Skalierungsfaktor} wird \"ublicherweise null oder eins gesetzt. Andere Skalierungsfaktoren werden bei der Arbeit mit Computergrafiken verwendet. \hfill \newline
   Transformiert man einen Richtungsvektor, wie er in Abschnitt \ref{ssec:mathGrundl_punkteVektoren_r3} beschrieben wird, so verwendet man die null als Skalierungsfaktor. F\"ur Punkte beziehungsweise Ortsvektoren wird die eins als Skalierungsfaktor benutzt. \hfill \newline
-  Gegeben sei ein Vektor $\vect{z}$, welcher zwei beliebige Punkte eines K\"orpers verbindet. Bewegt sich der K\"orper derart, dass dieser Vektor seine Orientierung nicht \"andert, so bezeichnet man diese Bewegung als \textit{Translation}. Die Translation f\"ur den Vektorraum $\set{R}^{3}$ mit dem Vektor $\vect{v}\in \set{R}^{3}$ ist definiert als \begin{align*}
-  f&: \vect{x} \longrightarrow \vect{x}+\vect{v} &\vect{x},\vect{v}&\in\set{R}^{3}.
+  Gegeben sei ein Vektor $\vect{z}$, welcher zwei beliebige Punkte eines K\"orpers verbindet. Bewegt sich der K\"orper derart, dass dieser Vektor seine Orientierung nicht \"andert, so bezeichnet man diese Bewegung als \textit{Translation}. Die Translation f\"ur den Vektorraum $\set{R}^{3}$ mit dem Vektor $\vect{q}\in \set{R}^{3}$ ist definiert als \begin{align*}
+  f&: \vect{r} \longrightarrow \vect{r}+\vect{q} &\vect{r},\vect{q}&\in\set{R}^{3}.
 \end{align*} Diese Abbildung ist nicht linear. Es gilt \begin{align*}
-f\of{\vect{x}+\vect{y}}&= \vect{x}+\vect{y}+\vect{v},
-\end{align*} wodurch \eqnref{gl:mathGrundl_abbildung_linAbb_add} nicht erf\"ullt wird. Die Translation l\"asst sich daher nicht als Matrix darstellen. Man kann aber zeigen, dass die Translation bijektiv ist. Es existiert also eine Umkehrabbildung f\"ur die Translation. K\"onnte man die Translation als Matrix darstellen, so w\"are die Zusammenfassung einer beliebigen Folge von Rotationen und Translationen in einer einzigen Matrix $\matr{A}$ m\"oglich. Jeder K\"orperunkt, der durch einen Ortsvektor $\vect{x}$ beschrieben werden kann,  lie\ss{}e sich dann nach einer beliebigen Anzahl und Reihenfolge von Verdrehungen und Verschiebungen durch eine einzige Matrix Vektor Multiplikation berechnen: $\vect{x}'= \matr{A}\vect{x}$.  Dies wird durch die Einf\"uhrung homogener Koordinaten erreicht.  \hfill \newline 
+f\of{\vect{r}+\vect{y}}&= \vect{r}+\vect{y}+\vect{q},
+\end{align*} wodurch \eqnref{gl:mathGrundl_abbildung_linAbb_add} nicht erf\"ullt wird. Die Translation l\"asst sich daher nicht als Matrix darstellen. Man kann aber zeigen, dass die Translation bijektiv ist. Es existiert also eine Umkehrabbildung f\"ur die Translation. K\"onnte man die Translation als Matrix darstellen, so w\"are die Zusammenfassung einer beliebigen Folge von Rotationen und Translationen in einer einzigen Matrix $\matr{A}$ m\"oglich. Jeder K\"orperunkt, der durch einen Ortsvektor $\vect{r}$ beschrieben werden kann,  lie\ss{}e sich dann nach einer beliebigen Anzahl und Reihenfolge von Verdrehungen und Verschiebungen durch eine einzige Matrix Vektor Multiplikation berechnen: $\vect{r}'= \matr{A}\vect{r}$.  Dies wird durch die Einf\"uhrung homogener Koordinaten erreicht.  \hfill \newline 
 
-  \"Ublicherweise notiert man die  Translation eines Vektors $\vect{q}=\transp{\of{x, y, z}}$ mit einem Vektor $\vect{v}=\transp{\of{a, b, c}}$ als\begin{align*}\vect{q}'&= \vect{q}+\vect{v}= \begin{bmatrix}
+  \"Ublicherweise notiert man die  Translation eines Vektors $\vect{r}=\transp{\of{x, y, z}}$ mit einem Vektor $\vect{q}=\transp{\of{a, b, c}}$ als\begin{align*}\vect{r}'&= \vect{r}+\vect{q}= \begin{bmatrix}
   x \\ y \\ z
   \end{bmatrix} + \begin{bmatrix}
   a \\ b\\c
   \end{bmatrix} = \begin{bmatrix}
   x+a \\ y+b \\ z+c
   \end{bmatrix}.
-  \end{align*} Die Translation entspricht einer additiven Verschiebung des Vektors $\vect{q}$. In homogenen Koordinaten ergibt sich die gleiche Rechnung wie folgt: \begin{align*}
-  \vect{q}' &=\begin{bmatrix}
-  x \\ y \\ z \\1
-  \end{bmatrix}+ \begin{bmatrix}
-  a \\ b \\ c \\1
-  \end{bmatrix} = \begin{bmatrix}
-  x+a \\ y+b \\ z+c \\ 1
-  \end{bmatrix}.
-  \end{align*}
-  Da die vierte Komponente ein Skalierungsfaktor ist, wird sie bei der Addition offensichtlich nicht ver\"andert. \hfill \newline
-  Mit Hilfe dieser erweiterten Darstellung kann die Translation als Matrix-Vektor Multiplikation dargestellt werden. Man erweitert dazu den Vektor der Translation um eine $3\times 3$ Einheitsmatrix in homogener Darstellung zu einer $4\times 4$ Matrix und notiert dann \begin{align*}
-  \vect{q}' &= \begin{bmatrix}
-  \matr{I}^{3\times 3} & \vect{v}\\
+  \end{align*} Die Translation entspricht einer additiven Verschiebung des Vektors $\vect{r}$.
+  Mit Hilfe einer erweiterten Darstellung kann die Translation als Matrix-Vektor Multiplikation dargestellt werden. Man erweitert dazu den in homogenen Koordinaten gegebenen Vektor $\vect{r}$ um eine $3\times 3$ Einheitsmatrix in homogener Darstellung zu einer $4\times 4$ Matrix und notiert dann \begin{align*}
+  \vect{r}' &= \begin{bmatrix}
+  \matr{I}^{3\times 3} & \vect{q}\\
   \vect{0} & 1
-  \end{bmatrix} \vect{q} \\
+  \end{bmatrix} \vect{r} \\
   &=\begin{bmatrix}
   1 & 0 & 0& a\\
   0 & 1 & 0& b\\
@@ -138,7 +147,7 @@ f\of{\vect{x}+\vect{y}}&= \vect{x}+\vect{y}+\vect{v},
   x+a \\ y+b \\ z+c \\ 1
   \end{bmatrix}.
   \end{align*}
-  Die Erweiterung zu einer Matrix erfolgt also mit dem nach \eqnref{gl:kos_transfHomog_rots_eigensch_neutrElem} gegebenen neutralen Element der Gruppe der Rotationsmatrizen $\set{SO}\of{3}$. \hfill \newline
+  Die Erweiterung zu einer Matrix erfolgt also mit dem nach \eqnref{gl:kos_transfHomog_rots_eigensch_neutrElem} gegebenen neutralen Element der speziellen orthogonalen Gruppe $\set{SO}\of{3}$. \hfill \newline
   Stellt man die Rotation eines K\"orpers mit Hilfe eines Koordinatensystems dar, welches sich mit dem K\"orper mit dreht, so kann die Rotationsmatrix durch die drei Basisvektoren $\vect{u}, \vect{w}, \vect{v}$ dieses Koordinatensystems beschrieben werden. Die Rotationsmatrix $\matr{R}$ schreibt man dann nach Gleichung \eqnref{gl:kos_transfHomog_rots_rotMatrDef} mit\begin{align*}
   \matr{R}&=  \begin{pmatrix}
   u_x & w_x & v_x \\ u_y & w_y & v_y \\ u_z & w_z & v_z
@@ -148,7 +157,7 @@ f\of{\vect{x}+\vect{y}}&= \vect{x}+\vect{y}+\vect{v},
   u_x & w_x & v_x \\ u_y & w_y & v_y \\ u_z & w_z & v_z \\ 0&0&0
   \end{pmatrix}.
   \end{align*}
-  Eine Transformationsmatrix $\matr{T}$, welche die komplette Bewegung eines K\"orpers beinhalten soll, setzt sich aus Rotation $\matr{R}$ und Translation $\vect{v}$ zusammen. Sie wird in homogenen Koordinaten beschrieben mit: \begin{align}
+  Eine Transformationsmatrix $\matr{T}$, welche die komplette Bewegung eines K\"orpers beinhalten soll, setzt sich aus Rotation $\matr{R}$ und Translation $\vect{q}$ zusammen. Sie wird in homogenen Koordinaten beschrieben mit: \begin{align}
   \matr{T}&= \begin{bmatrix}
   \matr{R} & \vect{q}\\ 
   \vect{0} & 1
@@ -162,27 +171,34 @@ f\of{\vect{x}+\vect{y}}&= \vect{x}+\vect{y}+\vect{v},
   \vect{0} & 1
   \end{bmatrix} \label{gl:kos_transfHomog_homKoord_transfoInv}
   \end{align}
-  In Folge dessen, dass die Transformationsmatrix $\matr{T}$ in homogenen Koordinaten invertierbar ist, wird die Transformation von Vektoren bedeutend vereinfacht. \hfill \newline
-  Soll die Matrix $\matr{T}$ abgeleitet werden, so muss das Ergebnis dem der enthomogenisierten Form entsprechen. Der Differentialoperator wird daher nicht auf die Skalierungsfaktoren angewendet. Die f\"ur die Beschreibung von Bewegungen besonders wichtige Ableitung nach der Zeit lautet damit in homogenen Koordinaten\begin{align}
+  In Folge dessen, dass die Transformationsmatrix $\matr{T}$ in homogenen Koordinaten invertierbar ist, wird die Transformation von Vektoren bedeutend vereinfacht.
+
+\begin{rem}[Gruppe der homogenen Transformationsmatrizen] Nach dem \textit{Chasles Theorem} kann jede homogene Transformation $\matr{T}$ aus einer Translation und einer Rotation um dieselbe Achse zusammengesetzt werden. Diese Bewegung wird als \textit{Schraubung} bezeichnet. Die Transformationsmatrizen bilden mit der Matrixmultiplikation die \textit{spezielle euklidische Gruppe} $\set{SE}\of{3}$: \begin{align}
+\set{SE}\of{3}&= \left \lbrace \begin{bmatrix}
+\matr{R} & \vect{q}\\ \vect{0}&1 \end{bmatrix}: \matr{R}\in \set{SO}\of{3}, \vect{q}\in \set{R}^{3} \right \rbrace \label{gl:kos_transfHomog_homKoord_SE3Def}
+\end{align}  
+\end{rem}
+
+  Soll die Matrix $\matr{T}$ nach der Zeit abgeleitet werden, so muss das Ergebnis dem der enthomogenisierten Form entsprechen. Dabei ist zu beachten, dass ein Geschwindigkeitsvektor offensichtlich nicht die Position eines Punktes beschreibt. Statt dessen wird durch einen Geschwindigkeitsvektor die Richtung und ein Gr\"o\ss{}enma\ss{} f\"ur die Bewegung angegeben. Daher ist der Skalierungsfaktor eines Vektors in homogener Darstellung, auf welchen der Differentialoperator angewandt wurde, gleich null. Die f\"ur die Beschreibung von Bewegungen besonders wichtige Ableitung nach der Zeit lautet damit in homogenen Koordinaten\begin{align}
   \frac{\d}{\d t} \begin{bmatrix}
-  \vect{q}\of{t} \\ 1
+  \vect{r}\of{t} \\ 0  
 \end{bmatrix}  &= \begin{bmatrix}
-\frac{\d\vect{q}\of{t}}{\d t} \\ 1
+\frac{\d\vect{q}\of{t}}{\d t} \\ 0
 \end{bmatrix}  
   \intertext{f\"ur einen Vektor und}
   \frac{\d\matr{T}\of{t}}{\d t}&= \begin{bmatrix}
   \frac{\d }{\d t}\matr{R}\of{t} & \frac{\d }{\d t}\vect{q}\of{t}\\ 
-  \vect{0} & 1
-  \end{bmatrix}
-  \intertext{f\"ur eine Matrix.}
-  \end{align} 
+  \vect{0} & 0
+  \end{bmatrix} \label{gl:kos_transfHomog_homKoord_ableitung}
+  \intertext{f\"ur eine Matrix.} \nonumber
+  \end{align} Die so berechnete Matrix $\dot{\matr{T}}$ ist demnach kein Element der speziellen euklidischen Gruppe, wie sie in \eqnref{gl:kos_transfHomog_homKoord_SE3Def} definiert wurde. 
   \subsection{Transformationen} \label{ssec:kos_transfHomog_transf}
-   Gegeben seien ein inertiales Koordinatensystem $\KOS{I}$ und zwei, um eine beliebige Achse in Relation zu $\KOS{I}$ gedrehte, Koordinatensysteme $\KOS{B},\KOS{C}$, welche den gleichen Ursprung wie $\KOS{I}$ besitzen. Weiterhin sei ein Punkt durch einen Ortsvektor $\vect{\tensor*[_B]{q}{}}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ im Koordinatensystem $\KOS{B}$ gegeben. Werden die Koordinatenachsen von $\KOS{B}$ durch die Einheitsvektoren $\vect{\tensor*[_I]{e}{_B_1}}, \vect{\tensor*[_I]{e}{_B_2}}, \vect{\tensor*[_I]{e}{_B_3}}$ im Inertialsystem $\KOS{I}$ beschrieben, so kann der Punkt von $\KOS{B}$ nach $\KOS{I}$ durch eine Transformation \"uberf\"uhrt werden: \begin{align*}
-  \vect{\tensor*[_I]{q}{}}&= \begin{pmatrix}
+   Gegeben seien ein inertiales Koordinatensystem $\KOS{I}$ und zwei, um eine beliebige Achse in Relation zu $\KOS{I}$ gedrehte, Koordinatensysteme $\KOS{B},\KOS{C}$, welche den gleichen Ursprung wie $\KOS{I}$ besitzen. Weiterhin sei ein Punkt durch einen Ortsvektor $\vect{\tensor*[_B]{r}{}}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ im Koordinatensystem $\KOS{B}$ gegeben. Werden die Koordinatenachsen von $\KOS{B}$ durch die Einheitsvektoren $\vect{\tensor*[_I]{e}{_B_1}}, \vect{\tensor*[_I]{e}{_B_2}}, \vect{\tensor*[_I]{e}{_B_3}}$ im Inertialsystem $\KOS{I}$ beschrieben, so kann der Punkt von $\KOS{B}$ nach $\KOS{I}$ durch eine Transformation \"uberf\"uhrt werden: \begin{align*}
+  \vect{\tensor*[_I]{r}{}}&= \begin{pmatrix}
  \vect{\tensor*[_I]{e}{_B_1}}& \vect{\tensor*[_I]{e}{_B_2}}& \vect{\tensor*[_I]{e}{_B_3}}
   \end{pmatrix} \begin{pmatrix}
   \tensor*[_B]{x}{}\\ \tensor*[_B]{y}{}\\ \tensor*[_B]{z}{}
-  \end{pmatrix} = \tensor*[_I^B]{\matr{R}}{}  \vect{\tensor*[_B]{q}{}}
+  \end{pmatrix} = \tensor*[_I^B]{\matr{R}}{}  \vect{\tensor*[_B]{r}{}}
 \end{align*}
   Der linksseitige tiefgestellte Index gibt das System an, in dem ein Vektor definiert wurde. Der rechtsseitige tiefgestellte Index dient der besseren Unterscheidbarkeit von definierten Gr\"o\ss{}en. Im Fall einer Transformationsmatrix $\tensor*[_I^B]{\matr{R}}{}$ gibt der linksseitige hochgestellte Index das Ursprungssystem und der linksseitige tiefgestellte Index das Zielsystem der Transformation an. \hfill \newline  
   Transformationen k\"onnen aneinandergereiht werden. Beschreibt die Transformationsmatrix $\tensor*[_B^C]{\matr{R}}{}$ die Verdrehung von $\KOS{C}$ relativ zu $\KOS{B}$, so erh\"alt man die Transformationsmatrix von $\KOS{C}$ nach $\KOS{I}$ durch eine Kombination der Transformation vom System $\KOS{C}$ in das System $\KOS{B}$ mit der Transformation vom System $\KOS{B}$ in das System $\KOS{I}$. Die Kombination erfolgt dabei durch linksseitige Matrixmultiplikation der jeweiligen Transformationsmatrizen in der angegebenen Reihenfolge. \begin{align*}
@@ -190,17 +206,17 @@ f\of{\vect{x}+\vect{y}}&= \vect{x}+\vect{y}+\vect{v},
   \end{align*}
    Da entsprechend \eqnref{gl:kos_transfHomog_rots_eigensch_abgeschl} die Menge der Rotationsmatrizen abgeschlossen ist, ist die durch Aneinanderreihung von Drehungen gewonnen Matrix $\tensor*[_I^C]{\matr{R}}{}$ ebenfalls eine Rotationsmatrix. \hfill \newline
 
-Sind die Koordinatensysteme $\KOS{B}$ und $\KOS{C}$ zum Inertialsystem nicht nur verdreht, sondern auch um Vektoren $\vect{v}_B, \vect{v}_C$ verschoben, so wird zur Transformation von Vektoren die Transformationsmatrix $\matr{T}$ nach \eqnref{gl:kos_transfHomog_homKoord_transfoKompl} ben\"otigt. Ein im System $\KOS{B}$ gegebener Vektor $\tensor*[_B]{\vect{q}}{}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ kann dann mit Hilfe der Matrix $\tensor*[^B_I]{\matr{T}}{}$ in das Inertialsystem \"ubertragen werden. Es gilt also \begin{align}
-\tensor*[_I]{\vect{q}}{}&= \tensor*[^B_I]{\matr{T}}{}\tensor*[_B]{\vect{q}}{}.
+Sind die Koordinatensysteme $\KOS{B}$ und $\KOS{C}$ zum Inertialsystem nicht nur verdreht, sondern auch um Vektoren $\vect{q}_B, \vect{q}_C$ verschoben, so wird zur Transformation von Vektoren die Transformationsmatrix $\matr{T}$ nach \eqnref{gl:kos_transfHomog_homKoord_transfoKompl} ben\"otigt. Ein im System $\KOS{B}$ gegebener Vektor $\tensor*[_B]{\vect{r}}{}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ kann dann mit Hilfe der Matrix $\tensor*[^B_I]{\matr{T}}{}$ in das Inertialsystem \"ubertragen werden. Es gilt also \begin{align}
+\tensor*[_I]{\vect{r}}{}&= \tensor*[^B_I]{\matr{T}}{}\tensor*[_B]{\vect{r}}{}. \label{gl:kos_transfHomog_transf_punktTransfo}
 \end{align} Diese Darstellung kann auf einfache Weise invertiert werden: \begin{align}
-\tensor*[_B]{\vect{q}}{}&= \com{\inv{\tensor*[^B_I]{\matr{T}}{}}}{$:=\tensor*[^I_B]{\matr{T}}{}$}\tensor*[_I]{\vect{q}}{}
+\tensor*[_B]{\vect{r}}{}&= \com{\inv{\tensor*[^B_I]{\matr{T}}{}}}{$:=\tensor*[^I_B]{\matr{T}}{}$}\tensor*[_I]{\vect{r}}{}
 \intertext{und mit \eqnref{gl:kos_transfHomog_homKoord_transfoInv} folgt}
-\vect{\tensor*[_B]{q}{}}&= \begin{bmatrix}
-  \transp{\tensor*[^B_I]{\matr{R}}{}} & - \transp{\tensor*[^B_I]{\matr{R}}{}}\vect{\tensor*[]{v}{}}_{B}\\ 
+\vect{\tensor*[_B]{r}{}}&= \begin{bmatrix}
+  \transp{\tensor*[^B_I]{\matr{R}}{}} & - \transp{\tensor*[^B_I]{\matr{R}}{}}\vect{\tensor*[]{q}{}}_{B}\\ 
   \vect{0} & 1
-  \end{bmatrix} \vect{\tensor*[_B]{q}{}}
-\end{align} Analog zur Aneinanderreihung von Rotationen k\"onnen auch allgemeine Transformationen hintereinander ausgef\"uhrt werden. So erh\"alt man den im System $\KOS{C}$ gegeben Vektor $\vect{\tensor*[_C]{q}{}}$ im Inertialsystem mit \begin{align}
-\vect{\tensor*[_I]{q}{}}&= \com{\tensor*[^B_I]{\matr{T}}{} \tensor*[^C_B]{\matr{T}}{}}{$:=\tensor*[^C_I]{\matr{T}}{}$}\vect{\tensor*[_C]{q}{}}.
+  \end{bmatrix} \vect{\tensor*[_B]{r}{}}
+\end{align} Analog zur Aneinanderreihung von Rotationen k\"onnen auch allgemeine Transformationen hintereinander ausgef\"uhrt werden. So erh\"alt man den im System $\KOS{C}$ gegeben Vektor $\vect{\tensor*[_C]{r}{}}$ im Inertialsystem mit \begin{align}
+\vect{\tensor*[_I]{r}{}}&= \com{\tensor*[^B_I]{\matr{T}}{} \tensor*[^C_B]{\matr{T}}{}}{$:=\tensor*[^C_I]{\matr{T}}{}$}\vect{\tensor*[_C]{r}{}}.
 \end{align}
 
 \section{Nat\"urliche Koordinaten}\label{sec:kos_natKoord}
@@ -232,4 +248,4 @@ Die Koordinatensysteme der einzelnen K\"orper werden zweckm\"a\ss{}igerweise so 
   Mit Minimalkoordinaten werden Parameter bezeichnet, welche linear unabh\"angig sind und deren Anzahl dem Freiheitsgrad des Systems entsprechen. L\"asst sich ein Mehrk\"orpersystem als offene Kette beziehungsweise in Baumstruktur modellieren, so l\"asst sich die Lage aller Elemente direkt mit den Minimalkoordinaten beschreiben. \cite[S.27 f.]{Bestle2012} Besitzt ein System kinematische Schleifen, so werden zu den Minimalkoordinaten weitere redundante Koordinaten ben\"otigt, um die Lage aller Teilk\"orper beschreiben zu k\"onnen. \cite[S.63]{Schramm2010} Sowohl f\"ur Systeme mit, als auch ohne geschlossene kinematische Schleifen wird der Begriff verallgemeinerte Koordinaten verwendet.  Es wird aber nicht unbedingt deutlich, ob mit verallgemeinerten Koordinaten lediglich die Minimalkoordinaten, oder aber der um redundante Koordinaten erweiterte Parametersatz gemeint ist. \cite[S.133]{Woernle2011} Da in dieser Arbeit mit dem Modellierungsansatz der nat\"urlichen Koordinaten gearbeitet wird und dieser redundante Parameter zur Folge hat (siehe Abschnitt \ref{sec:kos_natKoord}), wird mit verallgemeinerten Koordinaten kein minimaler Satz an Koordinaten gemeint. Statt dessen werden Minimalkoordinaten immer explizit als solche bezeichnet. \hfill \newline
   \paragraph*{Kinematische Ketten und weitere Konzepte zur Festlegung von Systemparametern}
   Die Begriffe der offenen und geschlossenen kinematischen Kette werden von D. Schramm et al. in \cite[S. 52 ff.]{Schramm2010} erl\"autert. \hfill \newline
-  Als alternativen Ansatz zur Modellparametrierung mit nat\"urlichen Koordinaten werden h\"aufig Relativkoordinaten verwendet. W. Schiehlen et al. geben in \cite{Schiehlen2014} eine Einf\"uhrung in diesen Ansatz. Verwendet man kinematische Ketten zur Modellbeschreibung, so k\"onnen die von R. L. Huston in \cite{Huston1986} eingef\"uhrten Topologie-Matrizen bei der Arbeit mit Relativkoordinaten n\"utzlich sein. Eine weitere Alternative zur Festlegung der Koordinaten ist das Verfahren nach Danavit und Hartenberg, welches von D. W. Wloka in \cite[S. 111 ff.]{Wloka1992} ausf\"uhrlich beschrieben wird.
+  Als alternativen Ansatz zur Modellparametrierung mit nat\"urlichen Koordinaten werden h\"aufig Relativkoordinaten verwendet. W. Schiehlen et al. geben in \cite{Schiehlen2014} eine Einf\"uhrung in diesen Ansatz. Verwendet man kinematische Ketten zur Modellbeschreibung, so k\"onnen die von R. L. Huston in \cite{Huston1986} eingef\"uhrten Topologie-Matrizen bei der Arbeit mit Relativkoordinaten n\"utzlich sein. Eine weitere Alternative zur Festlegung der Koordinaten ist das Verfahren nach Denavit und Hartenberg, welches von D. W. Wloka in \cite[S. 111 ff.]{Wloka1992} ausf\"uhrlich beschrieben wird.
