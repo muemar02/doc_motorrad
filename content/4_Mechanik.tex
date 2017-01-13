@@ -8,7 +8,7 @@ Die Bewegung eines Punktes $p$ im euklidischen Raum wird durch die Angabe seiner
 \end{defn}
 Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer \"Uberlagerung dieser Bewegungen bestehen. Wird ein K\"orper durch eine Teilmenge $\set{O} \in \R^{3}$ beschrieben, so kann seine Bewegung als eine kontinuierliche Zuordnung $g\of{t}: \set{O} \to R^{3}$ beschrieben werden. Die kontinuierliche Zuordnungsvorschrift $g\of{t}$ beschreibt, wie sich die einzelnen Punkte des K\"orpers relativ zu einem inertialen, festen Koordinatensystem mit Voranschreiten der Zeit $\acs{t}$ bewegen. Die Zuordnungsvorschrift $g$ darf dabei die Distanz zwischen Punkten des K\"orpers und die Orientierung von Vektoren, welche Punkte des K\"orpers verbinden, nicht ver\"andern. Damit ergibt sich die Definition einer Abbildung von Starrk\"orpern: 
 
-\begin{defn}[Abbildung eines Starrk\"orpers] \cite{Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau denn, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
+\begin{defn}[Abbildung eines Starrk\"orpers] \cite{Murray1994} Eine Zuordnungsvorschrift $g: \R^{3} \to \R^{3}$ ist die Abbildung eines Starrk\"orpers genau dann, wenn sie folgende Eigenschaften besitzt: \begin{enumerate}
 \item Distanzen bleiben unver\"andert: $\norm{g\of{\vect{p}}- g\of{\vect{q}}}=\norm{\vect{p}- \vect{q}}$ f\"ur alle Punkte $ \vect{p}, \vect{q} \in \R^{3}$
 \item Das Kreuzprodukt bleibt erhalten: $g\of{\vect{v}\times \vect{w}} = g\of{\vect{v}}\times g\of{\vect{w}}$ f\"ur alle Vektoren $\vect{v}, \vect{w} \in \R^{3}$.
 \end{enumerate}
@@ -20,7 +20,7 @@ Eine Starrk\"orperbewegung kann prinzipiell aus Rotation, Translation oder einer
 Ein orthonormales Rechtssystem wird durch die Abbildungsvorschrift $g$ demnach wieder in ein orthonormales Rechtssystem transformiert.
 \end{rem}
 Der Astronom und Mathematiker Giulio Mozzi zeigte bereits 1763, dass eine r\"aumliche Bewegung in eine Drehung und eine Verschiebung entlang der Drehachse zerlegt werden kann. Da sich die Teilchen eines Starrk\"orpers nicht relativ zueinander bewegen k\"onnen, kann die Bewegung eines Starrk\"orpers durch die relative Bewegung eines k\"orperfesten Koordinatensystems $\KOS{K}$ zu einem Inertialsystem $\KOS{I}$ beschrieben werden. Das Koordinatensystem $\KOS{K}$ erf\"ulle dabei die in Abschnitt \ref{sec:kos_rechtssys} genannten Eigenschaften. Das k\"orperfeste Koordinatensystem habe seinen Ursprung in einem beliebigen Punkt $Q$ des K\"orpers. Die Orientierung von $\KOS{K}$ beschreibt die Rotation des K\"orpers und die Lage des Ursprungs von $\KOS{K}$ relativ zum Inertialsystem beschreibt den translatorischen Anteil der Starrk\"orperbewegung. Hat $\KOS{K}$ die Einheitsvektoren $\vect{u}, \vect{w}, \vect{v}$, dann kann die Bewegung von $\KOS{K}$ durch die Abbildung $g$ beschrieben werden. Genauer gesagt liefert $g\of{\vect{u}}, g\of{\vect{w}}, g\of{\vect{v}}$ die Orientierung von $\KOS{K}$ und $g\of{\vect{p}}$ die Lage des Ursprungs nach einer Starrk\"orperbewegung. \newline
-Beschreibt man die Orientierung eines Starrk\"orpers mit Hilfe eines Ortsvektors $\vect{\tensor*[_I]{q}{}}$, welcher auf den Ursprung $Q$ des k\"orperfesten Koordinatensystem zeigt, einem Ortsvektor $\vect{\tensor*[_I]{p}{}}$, welcher auf einen beliebigen Punkt $P$ des K\"orpers mit $\vect{\tensor*[_I]{q}{}} \neq \vect{\tensor*[_I]{p}{}}$ zeigt und dem Richtungsvektor $\vect{\tensor*[_I]{s}{}}$, welcher die Punkte $Q$ und $P$ verbindet, dann erh\"alt man mit folgender Rechnung eine Formel zur Beschreibung der Bewegung in homogenen Koordinaten. \hfill \newline
+Beschreibt man die Orientierung eines Starrk\"orpers mit Hilfe eines Ortsvektors $\vect{\tensor*[_I]{q}{}}$, welcher auf den Ursprung $Q$ des k\"orperfesten Koordinatensystems zeigt, einem Ortsvektor $\vect{\tensor*[_I]{p}{}}$, welcher auf einen beliebigen Punkt $P$ des K\"orpers mit $\vect{\tensor*[_I]{q}{}} \neq \vect{\tensor*[_I]{p}{}}$ zeigt und dem Richtungsvektor $\vect{\tensor*[_I]{s}{}}$, welcher die Punkte $Q$ und $P$ verbindet, dann erh\"alt man mit folgender Rechnung eine Formel zur Beschreibung der Bewegung in homogenen Koordinaten. \hfill \newline
 Die Vektoren $\vectHomog{\tensor*[_I]{s}{}}$ und $\vectHomog{\tensor*[_K]{p}{}}$ beschreiben offensichtlich den gleichen k\"orperfesten Punkt $P$. Im ersten Fall in Relation zum Inertialsystem und im zweiten Fall relativ zum k\"orperfesten System. Es gilt \begin{align*}
 \vectHomog{\tensor*[_I]{s}{}}&=\vectHomog{\tensor*[_K]{p}{}}. 
 \end{align*}
@@ -126,7 +126,7 @@ Ersetzt man den Term $\vect{\tensor*[_I]{\omega}{}}\of{t} \times$ durch eine Mul
 \vect{\tensor*[_I]{\dot{p}}{}}\of{t} &= \vect{\tensor*[_I]{\dot{q}}{}}\of{t} + \tensor*[_I]{\matr{\Omega}}{} \vect{\tensor*[_I]{s}{}}\of{t},
 \end{align} was \eqnref{gl:mech_starrkoerperbewegung_bwgGlKart} entspricht. Diese Variante der Herleitung f\"ur die Bewegungsgleichung eines Starrk\"orpers ist also \"aquivalent zu der Herleitung mit Hilfe homogener Transformationsmatrizen. 
 
-\subsection{Vektor der Winkelgeschwindigkeit}
+%\subsection{Vektor der Winkelgeschwindigkeit}
 %\begin{align*}
 %\matr{\Omega}&= \dot{\matr{R}} \transp{\matr{R}} \\
 %&= \begin{pmatrix}
@@ -162,14 +162,14 @@ Ersetzt man den Term $\vect{\tensor*[_I]{\omega}{}}\of{t} \times$ durch eine Mul
 %\skalar{\dot{w}}{u}
 %\end{pmatrix}
 %\end{align*}
-\begin{align*}
-\intertext{Drall}
-\matr{L}_{P}&=\begin{pmatrix}
-A \omega_{x}  -F \omega_{y}  -E \omega_{z} \\
--F \omega_{x}  +B \omega_{y}  -D \omega_{z} \\
--E \omega_{x}  -D \omega_{y}  +C \omega_{z}
-\end{pmatrix} \\
-\end{align*}
+%\begin{align*}
+%\intertext{Drall}
+%\matr{L}_{P}&=\begin{pmatrix}
+%A \omega_{x}  -F \omega_{y}  -E \omega_{z} \\
+%-F \omega_{x}  +B \omega_{y}  -D \omega_{z} \\
+%-E \omega_{x}  -D \omega_{y}  +C \omega_{z}
+%\end{pmatrix} \\
+%\end{align*}
 %\begin{align*}
 %\intertext{Tr\"agheitstensor}
 %\matr{L}_{P}&=\matr{J}_{P} \vect{\omega} \\
@@ -187,9 +187,9 @@ A \omega_{x}  -F \omega_{y}  -E \omega_{z} \\
 % &\quad \frac{1}{2}\left( -D\dot{u}\dot{w}\com{u v}{=0}  -E\dot{v}\dot{w}\com{u w}{=0} - F\dot{u}\dot{v}\com{v w}{=0} \right)
 %\end{align*}
 \section{Lagrange Gleichung 2. Art}\label{sec:mech_lag2}
-Der Ansatz nach Lagrange ist eine M\"oglichkeit, um die Bewegung von Systemen mit Zwangsbedingungen zu beschreiben. Eine \"Ubersicht \"uber weitere Formalismen zur Beschreibung von Mehrk\"orpersystem ist im Werk von Schiehlen \cite[S. 131 ff.]{Schiehlen2014} zu finden. In Werk von Pfeiffer \cite[S.56 ff.]{Pfeiffer2014} Im Rahmen dieser Arbeit wird nur der Ansatz von Lagrange behandelt. Ein besonderes Augenmerk liegt dabei auf der Darstellungen der bekannten Gleichungen in den generalisierten Koordinaten, welche man bei Parametrierung eines Mehrk\"orpersystems mit nat\"urlichen Koordinaten erh\"alt. Das Ziel ist eine ausf\"uhrliche Herleitung der Ansatzgleichungen, wie sie in der Arbeit von Cossalter und Lot in \cite{Cossalter2002} verwendet werden.  
-\subsection{Erg\"anzungen}
-\cite[S.38]{Bestle2012}, \cite[S.90]{GeorgRill2014}, \cite[S.87]{Schramm2010}, \hfill \newline
+Der Ansatz nach Lagrange ist eine M\"oglichkeit, um die Bewegung von Systemen mit Zwangsbedingungen zu beschreiben. Ein fr\"uhes Werk zur Arbeit mit diesem Ansatz wurde von N. W. Akimoff \cite{Akimoff1917} verfasst. Eine \"Ubersicht \"uber weitere Formalismen zur Beschreibung von Mehrk\"orpersystemen ist im Werk von W. Schiehlen und P. Eberhard \cite[S. 131 ff.]{Schiehlen2014} zu finden. Im Buch von Pfeiffer \cite[S.56 ff.]{Pfeiffer2014} wird die Eignung verschiedener Verfahren bewertet. Im Rahmen dieser Arbeit wird nur der Ansatz von Lagrange behandelt. Ein besonderes Augenmerk liegt dabei auf der Darstellung der bekannten Gleichungen in den generalisierten Koordinaten, welche man bei Parametrierung eines Mehrk\"orpersystems mit nat\"urlichen Koordinaten erh\"alt. Das Ziel ist eine ausf\"uhrliche Herleitung der Ansatzgleichungen, wie sie in der Arbeit von V. Cossalter und R. Lot in \cite{Cossalter2002} verwendet werden. \hfill \newline 
+%\subsection{Erg\"anzungen}
+%\cite[S.38]{Bestle2012}, \cite[S.90]{GeorgRill2014}, \cite[S.87]{Schramm2010}, \hfill \newline
 %Lagrange sollte man nicht verwenden. Dies bedeutet, dass die direkte Auswertung der Lagrangeschen Gleichungen zweiter Art in ihrer ursprünglichen Form (4.61) auf
 %einen unnötigen Rechenaufwand führt. Bei der Aufstellung der Bewegungsgleichungen nach
 %dem d’Alembertschen Prinzip kommt man dagegen unmittelbar ans Ziel. Deshalb wird in den
@@ -198,10 +198,10 @@ Der Ansatz nach Lagrange ist eine M\"oglichkeit, um die Bewegung von Systemen mi
 %Unterräume für die freien bzw. gesperrten Bewegungsrichtungen zugrunde. Diese orthogonalen
 %Unterräume sind unter der Voraussetzung idealer Kräfte, wie sie z. B. in gewöhnlichen Mehrkörpersystemen auftreten, voneinander unabhängig, was auf ungekoppelte Bewegungs- und Reaktionsgleichungen führt. \cite[S. 96]{Schiehlen2014}  \hfill \newline
 
-\cite[S.42]{Pfeiffer2014} -> das k\"onnte wirklich noch mal helfen \hfill \newline
-\subsection{Richtiger Inhalt}
+%\cite[S.42]{Pfeiffer2014} -> das k\"onnte wirklich noch mal helfen \hfill \newline
+%\subsection{Richtiger Inhalt}
 %\paragraph{Hier fehl ein einf\"uhrungssatz, wo lagrange her kommt}
-Gegeben sei ein System, welches durch $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $, welche nicht notwendigerweise voneinander unabh\"angig sein m\"ussen, und $m$ holonomen Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$ charakterisiert wird. Die kinetische Energie $T$ und potentielle Energie $V$ sei durch $L=T-V$ verkn\"upft. Das gesamte System l\"asst sich nach \cite[S. 124]{Jalon1994} dann mit der \textit{Gleichung von Lagrange 2. Art} beschreiben, welche in \eqnref{gl:mech_lagrange2ArtDefAllg} angegeben ist.
+Gegeben sei ein System, welches durch $n$ generalisierten Koordinaten $\vect{q}= \transp{\of{ q_{1}, q_{2}, \dots,   q_{n}}} $, welche nicht notwendigerweise voneinander unabh\"angig sein m\"ussen, und $m$ holonomen \footnote{Holonome Zwangsbedingungen sind solche, die von der Position aber nicht von der Geschwindigkeit eines K\"orpers abh\"angen.} Zwangsbedingungen $\vect{\phi}=\transp{\of{\phi_{1} , \phi_{2} , \dots , \phi_{m}}}=\vect{0}$ charakterisiert wird. Die kinetische Energie $T$ und potentielle Energie $V$ sei durch $L=T-V$ verkn\"upft. Das gesamte System l\"asst sich nach \cite[S. 124]{Jalon1994} dann mit der \textit{Gleichung von Lagrange 2. Art} beschreiben, welche in \eqnref{gl:mech_lagrange2ArtDefAllg} angegeben ist.
 \begin{align}
 \int_{t_{1}}^{t_{2}}\left[ \com{\delta\transp{\vect{q}}}{$h\of{t}$} \com{\left(  \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}}} - \frac{\d L}{\d \vect{q}} + \transp{\matr{\Phi}}_{\vect{q}} \vect{\lambda} - \vect{Q}_{ex} \right)}{$g\of{t}$} \right] \td t &=\vect{0}, \label{gl:mech_lagrange2ArtDefAllg} 
 \end{align} 
@@ -222,7 +222,7 @@ F\"ur beliebige Variationen des Ortes $h\of{t}=\delta \transp{\vect{q}\of{t}}$ s
 gilt. Beachtet man nun, dass die Potentialkr\"afte $V$ wie in \cite[S. 190]{J.L.Humar2002} angegeben wird, nicht von den Geschwindigkeiten $\dot{\vect{q}}$ abh\"angen, so kann man \eqnref{gl:mech_lagrange2ArtDef} derart umformen, dass die generalisierten Kr\"afte $\vect{Q}$, welche sich aus der virtuellen Arbeit ergeben, explizit auftreten. \begin{align}
 \ddt{}\of{\frac{\d (T-V)}{\d \dot{\vect{q}}}} - \frac{\d (T-V)}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} &=\vect{0} \nonumber \\
 \ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}} - \frac{\d T}{\d \vect{q}} + \frac{\d V}{\d \vect{q}}+ \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} &=\vect{0} \nonumber \\
-\ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}} - \frac{\d T}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q} &=\vect{0} \label{gl:mech_lagrange2ArtDefCossalter}\\
+\ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}} - \frac{\d T}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q} &=\vect{0} \label{gl:mech_lagrange2ArtDefCossalter}
 \end{align}
 Diese Gleichung der Dimension $n$ bildet gemeinsam mit den $m$ Zwangsbedingungen $\vect{\phi}=\vect{0}$ ein System von $\left( n + m\right)$ differential-algebraischen Gleichungen. \hfill \newline
 Lassen sich die Zwangsbedingungen derart umformen, dass die generalisierten Koordinaten $\vect{q}$ auf einen Satz von Minimalkoordinaten $\vect{q}_{min}\in R^{n-m}$ umformbar sind und k\"onnen au\ss{}erdem alle generalisierten Kr\"afte durch Ableitung der potentiellen Energie $V$ beschrieben werden,  so vereinfacht sich \eqnref{gl:mech_lagrange2ArtDef} zu
@@ -233,10 +233,12 @@ Die Umformung auf Minimalkoordinaten f\"uhrt aber zu sehr komplexen Darstellunge
   \subsection{Kinetische Energie}\label{ssec:mech_lag2_kinEn}
   Die kinetische Energie $K$ eines Starrk\"orpers wird durch die Geschwindigkeit eines beliebigen Punktes $P$ mit dem Ortsvektor $\vect{p}$, welcher ein Element des K\"orpers ist, und seiner Massenverteilung nach \eqnref{gl:kinEnergieAllgDef} beschrieben. Besteht ein System aus mehreren Teilk\"orpern, so wird \eqnref{gl:kinEnergieAllgDef} f\"ur jeden K\"orper einzeln betrachet. \cite[S. 206 ff.]{KurtMagnus2005} \begin{align}
   K&=\frac{1}{2} \int_{m} \dot{\vect{p}}^{2} \td m \label{gl:kinEnergieAllgDef}
-  \end{align} Der Punkt $\vect{p}$ kann in den Koordinaten des k\"orperfesten Koordinatensystems angegeben werden. Dazu sind der Ursprung $\vect{q}$ und die Orientierung des k\"orperfesten Systems $\KOS{K}$ notwendig. Die Orientierung wird durch die Rotationsmatrix $\matr{R}$ nach \eqnref{gl:kos_transfHomog_rots_rotMatrDef} angegeben. Die Transformation von k\"orperfesten in inertiale Koordinaten geschieht dann nach \eqnref{gl:kos_transfHomog_transf_punktTransfo} mit Hilfe der von der Zeit abh\"angigen Transformationsmatrix $\matr{T}\of{t}=\begin{bmatrix}  \matr{R}\of{t} & \vect{q}\of{t}\\ \vect{0} & 1 \end{bmatrix} $. Die Zeitabh\"angigkeit wird im Folgenden nicht mehr explizit angegeben.\hfill \newline
+  \end{align} Der Punkt $\vect{p}$ kann in den Koordinaten des k\"orperfesten Koordinatensystems angegeben werden. Dazu sind der Ursprung $\vect{q}$ und die Orientierung des k\"orperfesten Systems $\KOS{K}$ notwendig. Die Orientierung wird durch die Rotationsmatrix $\matr{R}$ nach \eqnref{gl:kos_transfHomog_rots_rotMatrDef} angegeben. Die Transformation von k\"orperfesten in inertiale Koordinaten geschieht dann nach \eqnref{gl:kos_transfHomog_transf_punktTransfo} mit Hilfe der von der Zeit abh\"angigen Transformationsmatrix \begin{align*}
+  {T}\of{t}=\begin{bmatrix}  \matr{R}\of{t} & \vect{q}\of{t}\\ \vect{0} & 1 \end{bmatrix}.
+  \end{align*} Die Zeitabh\"angigkeit wird im Folgenden nicht mehr explizit angegeben.\hfill \newline
  Seien die Koordinaten von $\vect{p}$ im Koordinatensystem $\KOS{K}$ in homogener Darstellung gegeben mit $\vect{\tensor*[_K]{p}{}}=\left(x, y, z, 1\right)^{T}$, so l\"asst sich die Bestimmungsgleichung der kinetischen Energie wie folgt umformen: \begin{align*}
   K&= \frac{1}{2}\int_{m} \left(\frac{\td}{\td t}\of{ \matr{T} \vect{\tensor*[_K]{p}{}}}\right)^{2} \td m
-  \intertext{unter der Beachtung, dass $\vect{\tensor*[_K]{p}{}}$ zeitlich konstant ist folgt}
+  \intertext{unter der Beachtung, dass $\vect{\tensor*[_K]{p}{}}$ zeitlich konstant ist, folgt}
   K &= \frac{1}{2}\int_{m} \of{x, y, z, 1} \transp{\dot{\matr{T}}} \dot{\matr{T}} \transp{\of{x, y, ,z, 1}} \td m
    \\
   &= \frac{1}{2}\int_{m} \of{x, y, z, 1} \begin{bmatrix}
@@ -256,7 +258,7 @@ Die Umformung auf Minimalkoordinaten f\"uhrt aber zu sehr komplexen Darstellunge
 &+\skalar{{\dot{\vect{u}}}}{\dot{\vect{q}}} \int_{m} x \td m +
 \skalar{{\dot{\vect{w}}}}{\dot{\vect{q}}} \int_{m} y \td m +
 \skalar{{\dot{\vect{v}}}}{\dot{\vect{q}}} \int_{m} z \td m
-\intertext{und mit Hilfe des schiefsymmetrischen Tr\"agheitstensors $\matr{I}$, wie er beispielsweise in \cite[S. 199]{KurtMagnus2005} definiert wird}
+\intertext{und mit Hilfe des symmetrischen Tr\"agheitstensors $\matr{I}$, wie er beispielsweise in \cite[S. 199]{KurtMagnus2005} definiert wird}
 \matr{I}&= \begin{bmatrix}
 I_{xx} & -C_{xy} & -C_{xz}\\
 -C_{xy} & I_{yy} & -C_{yz}\\
@@ -285,7 +287,7 @@ K&=\frac{1}{2}m  \dot{\vect{q}}^{2}
 &+ \frac{1}{4} I_{zz} \left( \dot{\vect{u}}^{2} + \dot{\vect{w}}^{2} - \dot{\vect{v}}^{2} \right) 
 \\
 &+ C_{xz} \skalar{{\dot{\vect{u}}}}{\dot{\vect{v}}} + C_{xy} \skalar{{\dot{\vect{u}}}}{\dot{\vect{w}}} + C_{yz} \skalar{{\dot{\vect{w}}}}{\dot{\vect{v}}}. \end{split}
-\end{align}
+\end{align} Diese Herleitung entspricht den Ausf\"uhrungen in \cite{Cossalter2002}. \hfill \newline
   Ist der gew\"ahlte Ursprung $\vect{q}$ des k\"orperfesten Koordinatensystems nicht der Schwerpunkt $S$ des K\"orpers, so muss $\dot{\vect{q}}^{2}$ in \eqnref{gl:mech_lag2_kinEn_kinEnHomog} durch den transformierten Schwerpunkt ersetzt werden. In einem bewegten Mehrk\"orpersystem ist die Angabe des Schwerpunktes eines Teilk\"orpers in Relation zum Inertialsystem nicht sinnvoll, da der zugeh\"orige Ortsvektor von der Bewegung abh\"angig w\"are. Es wird daher davon ausgegangen, dass der Schwerpunkt $S$ des betrachteten K\"orpers relativ zum k\"orperfesten Koordinatensystem $\KOS{K}$ dieses K\"orpers bekannt ist und durch den Vektor $\vect{\tensor*[_K]{S}{}}$ notiert wird. Der Term $\dot{\vect{q}}^{2}$ wird dann ersetzt durch $\left(\ddt{\matr{T}\vect{\tensor*[_K]{S}{}}}\right)^{2} = \left(\dot{\matr{T}}\vect{\tensor*[_K]{S}{}}\right)^{2} $ und \eqnref{gl:mech_lag2_kinEn_kinEnHomog} lautet damit \begin{align}
   \label{gl:mech_lag2_kinEn_kinEnHomogAllg} \begin{split}
   K&=\frac{1}{2}m  \left(\dot{\matr{T}}\vect{\tensor*[_K]{S}{}}\right)^{2} 
@@ -306,10 +308,10 @@ K&=\frac{1}{2}m  \dot{\vect{q}}^{2}
   Bei der Arbeit mit virtuellen Verschiebungen gelten die gleichen Gesetze wie bei Anwendung des Differentialoperators bez\"uglich Summen, Produkten und Verkettungen. Au\ss{}erdem kann der Variationsoperator virtuelle Verschiebung mit dem Differential- und Integraloperator vertauscht werden.  
   
   \begin{exmp}[Virtuelle Verschiebungen]\label{ex:virtuelleVerschiebung} Gegeben sei eine Funktion $g\of{\vect{q},t}\in \R$, welche von $n$ generalisierten Koordinaten $\vect{q}=\transp{\begin{bmatrix}
-  q_{1} & q_{2} & \dots & q_{n} \end{bmatrix}}$ und au\ss{}erdem explizit von der Zeit $t$ abh\"angt. Diese Funktion k\"onnte Beispielsweise die Position eines K\"orpers beschreiben. Die virtuelle Verschiebung dieser Funktion berechnet sich nach folgendem Schema: \begin{align*}
-  \delta g\of{\vect{q},t}& = \begin{bmatrix}
+  q_{1} & q_{2} & \dots & q_{n} \end{bmatrix}}$ und au\ss{}erdem explizit von der Zeit $t$ abh\"angt. Diese Funktion k\"onnte beispielsweise die Position eines K\"orpers beschreiben. Die virtuelle Verschiebung dieser Funktion berechnet sich nach folgendem Schema: \begin{align*}
+  \delta g\of{\vect{q},t}& = \com{\begin{bmatrix}
   \frac{\d }{\d q_{1}}g\of{\vect{q},t} & \frac{\d}{\d q_{2}}g\of{\vect{q},t} & \dots & \frac{\d}{\d q_{n}}g\of{\vect{q},t}
-\end{bmatrix} \begin{bmatrix}
+\end{bmatrix}}{$:=\transp{\frac{\d g\of{\vect{q},t}}{\d \vect{q}}}$} \begin{bmatrix}
 \delta q_{1} \\
 \delta q_{2} \\ 
 \vdots \\
@@ -320,66 +322,102 @@ K&=\frac{1}{2}m  \dot{\vect{q}}^{2}
   \end{exmp}    
   
 Die virtuelle Arbeit $\delta W_{i}$, welche durch eine Krafteinwirkung $\vect{F}_{i}$ eine virtuelle Verschiebung $\delta$ eines Punktes $\vect{r}_{i}$ erzeugt, ist definiert durch:\begin{align*}
-  \delta W_{i}&=\transp{\vect{F}_{i}} \delta \vect{r}_{i}.
-\end{align*}Die virtuelle Arbeit $\delta W_{k}$, welche durch ein Moment $\vect{M}_{k}$ entsteht, ist definiert durch: \begin{align*}
-\delta W_{k}&=\transp{\vect{M}_{k}} \delta \vect{\varphi}_{k}.
+  \delta W_{i}&=\skalar{\vect{F}_{i}}{\delta \vect{r}_{i}}.
+\end{align*}Die virtuelle Arbeit $\delta W_{j}$, welche durch ein Moment $\vect{M}_{j}$ entsteht, ist definiert durch: \begin{align*}
+\delta W_{j}&=\skalar{\vect{M}_{j}}{\delta \vect{\phi}_{j}}.
 \end{align*} \newline
-Ein System befindet sich dann im Kr\"aftegleichgewicht, wenn die virtuelle Arbeit f\"ur beliebige virtuelle Verschiebungen verschwindet. F\"ur ein System, auf das $n$ Kr\"afte und $m$ Momente wirken, muss daher \eqnref{gl:virtWFuM} erf\"ullt sein. \begin{align}
-\delta W &= \sum_{i=1}^{n} \transp{\vect{F}_{i}} \delta \vect{r}_{i} + \sum_{k=1}^{m} \transp{\vect{M}_{k}} \delta \vect{\varphi}_{k} = 0 \label{gl:virtWFuM}
+Ein System befindet sich dann im Kr\"aftegleichgewicht, wenn die virtuelle Arbeit f\"ur beliebige virtuelle Verschiebungen verschwindet. F\"ur ein System, auf das $k$ Kr\"afte und $l$ Momente wirken, muss daher \eqnref{gl:virtWFuM} erf\"ullt sein. \begin{align}
+\delta W &= \sum_{i=1}^{k} \skalar{\vect{F}_{i}}{\delta \vect{r}_{i}} + \sum_{k=1}^{l} \skalar{\vect{M}_{j}}{ \delta \vect{\phi}_{j}} = 0 \label{gl:virtWFuM}
+\end{align}
+Die virtuelle Verschiebung der kartesischen Ortsvektoren $\delta \vect{r}_{i}\in\set{R}^{3}$ h\"angt von den $n$ generalisierten Koordinaten $\vect{q}\in \set{R}^{n}$ ab und l\"asst sich daher umformen zu \begin{align}
+\delta \vect{r}_{i}&= \com{\frac{\d \vect{r}_{i}\of{\vect{q}}}{\d \vect{q}}}{$\in \set{R}^{3\times n}$} \com{\delta \vect{q}}{$\in \set{R}^{n}$}. \label{gl:mech_lag2_virtArbeit_genVersch}
+\end{align}
+Die virtuellen Rotationen $\delta \vect{\phi}_{k}\in\set{R}^{3}$ unterliegen der gleichen Beziehung. Es gilt \begin{align}
+\delta \vect{\phi_{j}}&= \com{\frac{\d \vect{\phi}_{j}\of{\vect{q}}}{\d \vect{q}}}{$\in \set{R}^{3\times n}$} \com{\delta \vect{q}}{$\in \set{R}^{n}$}. \label{gl:mech_lag2_virtArbeit_genRot}
 \end{align}
 
-  Die gesamte virtuelle Arbeit eines Systems kann auch als Summe der generalisierten Kr\"afte des Systems interpretiert werden. \eqnref{gl:virtWgenF} zeigt diesen Zusammenhang. Mit Hilfe der generalisierten Koordinaten $\vect{q}$ l\"asst sich \eqnref{gl:virtWgenF} derart umformen, dass man den zur L\"osung von \eqref{gl:mech_lagrange2ArtDefCossalter} ben\"otigten Ausdruck f\"ur $\vect{Q}$ erh\"alt. 
+  Die gesamte virtuelle Arbeit eines Systems kann auch als Summe der generalisierten Kr\"afte $Q_{i}$ des Systems interpretiert werden. Die generalisierten Kr\"afte lassen sich dann zu einem Vektor $\vect{Q}$ zusammenfassen. \eqnref{gl:mech_lag2_virtArbeit_genKraft} zeigt diesen Zusammenhang. Mit Hilfe der virtuellen Verschiebung der generalisierten Koordinaten $\delta \vect{q}$ l\"asst sich die virtuelle Arbeit als Produkt aus $\delta \vect{q}$ und dem Vektor der generalisierten Kr\"afte darstellen. Der so erhaltene Ausdruck ist in \eqnref{gl:virtWgenF} dargestellt. Zusammen mit dem in \eqnref{gl:mech_lag2_kinEn_kinEnHomogAllg} angegebenen Ausdruck zur Bestimmung der kinetischen Energie kann damit der in \eqref{gl:mech_lagrange2ArtDefCossalter} definierte Ausdruck der Gleichung von Lagrange zweiter Art aufgestellt werden. 
   
-  \begin{align}
-  \delta W &= \sum_{i=1}^{n} Q_{i} \delta \vect{r}_{i} \label{gl:virtWgenF}
+  \begin{align} \label{gl:mech_lag2_virtArbeit_genKraft}\begin{split}
+  \delta W &= \sum_{i=1}^{k} \skalar{\vect{F}_{i}}{\frac{\d \vect{r}_{i}\of{\vect{q}}}{\d \vect{q}}\delta \vect{q}} + \sum_{k=1}^{l} \skalar{\vect{M}_{j}}{\frac{\d \vect{\phi}_{j}\of{\vect{q}}}{\d \vect{q}}\delta \vect{q}}
+  \\
+  &= \delta \transp{\vect{q}} \sum_{i=1}^{k} \transp{\left( \frac{\d \vect{r}_{i}\of{\vect{q}}}{\d \vect{q}} \right)}\vect{F}_{i} + \delta \transp{\vect{q}} \sum_{i=1}^{l} \transp{\left( \frac{\d \vect{\phi}_{j}\of{\vect{q}}}{\d \vect{q}} \right)}\vect{M}_{j}
+  \\
+  &= \com{\delta \transp{\vect{q}}}{$\in \set{R}^{1\times n}$} \com{\left(
+   \sum_{i=1}^{k} \com{\transp{\left( \frac{\d \vect{r}_{i}\of{\vect{q}}}{\d \vect{q}} \right)}}{$\in \set{R}^{n \times 3}$}
+   \com{\vect{F}_{i}}{$\in \set{R}^{3\times 1}$} + 
+   \sum_{i=1}^{l} \com{\transp{\left( \frac{\d \vect{\phi}_{j}\of{\vect{q}}}{\d \vect{q}} 
+   \right)}}{$\in \set{R}^{n \times 3}$}
+   \com{\vect{M}_{j}}{$\in \set{R}^{3\times 1}$} \right)}{$=: \vect{Q} \in \set{R}^{n \times 1}$}
+  \end{split}   \\ 
+  \delta W&=\delta \transp{\vect{q}} \vect{Q}\label{gl:virtWgenF}
   \end{align}
-\paragraph*{Hier fehlt jetzt der Einschub zur Berechnung der virtuellen Arbeit/ gen. Kraft.}
- In einem System mit $n$ generalisierten Koordinaten an welchem $k$ Kr\"afte angreifen, wird die virtuelle Arbeit durch \eqnref{gl:virtWgenF} beschrieben. \begin{align}
-  &= \transp{\begin{bmatrix}
-  \frac{\d W_{1}}{\d q_{1}} + \frac{\d W_{2}}{\d q_{1}} + \dots + \frac{\d W_{k}}{\d q_{1}}\\
-  \frac{\d W_{1}}{\d q_{2}} + \frac{\d W_{2}}{\d q_{2}} + \dots + \frac{\d W_{k}}{\d q_{2}}\\
-  \vdots \\
-  \frac{\d W_{1}}{\d q_{n}} + \frac{\d W_{2}}{\d q_{n}} + \dots + \frac{\d W_{k}}{\d q_{n}}\\
-\end{bmatrix}} \begin{bmatrix}
-\delta q_{1} \\
-\delta q_{2} \\ 
-\vdots \\
-\delta q_{n}
-\end{bmatrix}   \nonumber
-  \end{align}
-Betrachtet man einen Punkt $P_{l}$ in einem lokalen, k\"orperfesten Koordinatensystem, so l\"asst sich dieser Punkt beschreiben durch \begin{align*}
-P&=\begin{bmatrix}
-x_{l}\of{t} \\ y_{1}\of{t}\\ z_{1}\of{t} \\ 1
-\end{bmatrix} \\
-\matr{T}&= \begin{bmatrix}
-  \matr{R} & \vect{q}\\ 
-  \vect{0} & 1
-  \end{bmatrix} = \begin{bmatrix}
-  u_{x}\of{t} & w_{x}\of{t} & v_{x}\of{t} & q_{1}\of{t} \\
-  u_{y}\of{t} & w_{y}\of{t} & v_{y}\of{t} & q_{2}\of{t} \\
-  u_{z}\of{t} & w_{z}\of{t} & v_{z}\of{t} & q_{3}\of{t} \\
-  0&0&0&1
-  \end{bmatrix}
-\end{align*}
+  
+%\paragraph*{Hier fehlt jetzt der Einschub zur Berechnung der virtuellen Arbeit/ gen. Kraft.}
+% In einem System mit $n$ generalisierten Koordinaten an welchem $k$ Kr\"afte angreifen, wird die virtuelle Arbeit durch \eqnref{gl:virtWgenF} beschrieben. \begin{align}
+%  &= \transp{\begin{bmatrix}
+%  \frac{\d W_{1}}{\d q_{1}} + \frac{\d W_{2}}{\d q_{1}} + \dots + \frac{\d W_{k}}{\d q_{1}}\\
+%  \frac{\d W_{1}}{\d q_{2}} + \frac{\d W_{2}}{\d q_{2}} + \dots + \frac{\d W_{k}}{\d q_{2}}\\
+%  \vdots \\
+%  \frac{\d W_{1}}{\d q_{n}} + \frac{\d W_{2}}{\d q_{n}} + \dots + \frac{\d W_{k}}{\d q_{n}}\\
+%\end{bmatrix}} \begin{bmatrix}
+%\delta q_{1} \\
+%\delta q_{2} \\ 
+%\vdots \\
+%\delta q_{n}
+%\end{bmatrix}   \nonumber
+%  \end{align}
+%Betrachtet man einen Punkt $P_{l}$ in einem lokalen, k\"orperfesten Koordinatensystem, so l\"asst sich dieser Punkt beschreiben durch \begin{align*}
+%P&=\begin{bmatrix}
+%x_{l}\of{t} \\ y_{1}\of{t}\\ z_{1}\of{t} \\ 1
+%\end{bmatrix} \\
+%\matr{T}&= \begin{bmatrix}
+%  \matr{R} & \vect{q}\\ 
+%  \vect{0} & 1
+%  \end{bmatrix} = \begin{bmatrix}
+%  u_{x}\of{t} & w_{x}\of{t} & v_{x}\of{t} & q_{1}\of{t} \\
+%  u_{y}\of{t} & w_{y}\of{t} & v_{y}\of{t} & q_{2}\of{t} \\
+%  u_{z}\of{t} & w_{z}\of{t} & v_{z}\of{t} & q_{3}\of{t} \\
+%  0&0&0&1
+%  \end{bmatrix}
+%\end{align*}
+%
+%
+%\begin{align*}
+%\intertext{Allgemeine Punktbeschreibung}
+%\vect{r}^{g}&=  \vect{r}_{0}^{g} +  \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+%\intertext{Virtuelle Verschiebung = virtuelle Translation und virt. Rotation}
+%\delta \vect{r}^{g}&= \delta \vect{r}_{0}^{g} + \delta \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+%\intertext{Kreuzprodukt durch Matrixprodukt ersetzen}
+%&= \delta \vect{r}_{0}^{g} + \delta \matr{\Theta} \cdot \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
+%\intertext{Formulierug mit Rotationsmatrix und lokalem Vektor}
+%&= \delta \vect{r}_{0}^{g} + \delta \left(\matr{R} \vect{z}^{l} \right)\\
+%\intertext{Lokaler Vektor ist konstant, daher hat Operator $\delta$ keinen Einfluss}
+%&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \vect{z}^{l} \\
+%\intertext{\"Ubergang zu globalem Vektor mit $\inv{\matr{R}}=\transp{\matr{R}}$}
+%&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \transp{\matr{R}} \vect{z}^{g}\\
+%\intertext{Hier steht Text}
+%\end{align*}
 
-
+Entsprechend dem Ansatz der nat\"urlichen Koordinaten wird jedem Starrk\"orper ein mitbewegtes Koordinatensystem $\KOS{K}$ angeheftet. Dieses Koordinatensystem wird durch vier Vektoren $\vect{u}, \vect{w}, \vect{v}, \vect{q}$ beschrieben. Die Komponenten dieser Vektoren bilden zusammen die generalisierten Koordinaten ${\vect{g}=\left( \transp{\vect{q}}, \transp{\vect{u}}, \transp{\vect{w}}, \transp{\vect{v}} \right)^{T}}$. Dies wurde im Abschnitt \ref{sec:kos_natKoord} dargelegt. An dieser Stelle werden die generalisierten Koordinaten durch $\vect{g}$ anstelle von $\vect{q}$ bezeichnet, um eine Verwechselung mit dem Ortsvektor des Ursprungs von $\KOS{K}$ zu vermeiden. \hfill \newline
+Zur Aufstellung von \eqnref{gl:virtWgenF} sollen jetzt Ausdr\"ucke f\"ur die virtuellen Verr\"uckungen entsprechend \eqnref{gl:mech_lag2_virtArbeit_genVersch} und die virtuellen Rotationen nach \eqnref{gl:mech_lag2_virtArbeit_genRot} in Abh\"angigkeit der zw\"olf generalisierten Koordinaten eines Starrk\"orpers entwickelt werden. \hfill \newline
+Die virtuelle Verschiebung eines Punktes $P$ mit dem Ortsvektor $\vect{\tensor*[_I]{p}{}}$ kann direkt nach \eqnref{gl:mech_lag2_virtArbeit_genVersch} mit Hilfe der Regeln der partiellen Ableitung berechnet werden. Der Ortsvektor muss dabei in Abh\"angigkeit von den generalisierten Koordinaten beschrieben werden. Durch die Verwendung nat\"urlicher Koordinaten ist die Beschreibung von Punkten sehr einfach, da geometrische Beziehungen durch simple Gleichungen ausgedr\"uckt werden k\"onnen. Soll beispielsweise die virtuelle Verschiebung des Ursprungs von $\KOS{K}$ beschrieben werden, so kann diese wie folgt berechnet werden. 
 \begin{align*}
-\intertext{Allgemeine Punktbeschreibung}
-\vect{r}^{g}&=  \vect{r}_{0}^{g} +  \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
-\intertext{Virtuelle Verschiebung = virtuelle Translation und virt. Rotation}
-\delta \vect{r}^{g}&= \delta \vect{r}_{0}^{g} + \delta \vect{\varphi}^{g} \times \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
-\intertext{Kreuzprodukt durch Matrixprodukt ersetzen}
-&= \delta \vect{r}_{0}^{g} + \delta \matr{\Theta} \cdot \left( \vect{r}^{g}- \vect{r}_{0}^{g}\right)\\
-\intertext{Formulierug mit Rotationsmatrix und lokalem Vektor}
-&= \delta \vect{r}_{0}^{g} + \delta \left(\matr{R} \vect{z}^{l} \right)\\
-\intertext{Lokaler Vektor ist konstant, daher hat Operator $\delta$ keinen Einfluss}
-&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \vect{z}^{l} \\
-\intertext{\"Ubergang zu globalem Vektor mit $\inv{\matr{R}}=\transp{\matr{R}}$}
-&= \delta \vect{r}_{0}^{g} + \delta \matr{R} \cdot  \transp{\matr{R}} \vect{z}^{g}\\
-\intertext{Hier steht Text}
-\end{align*}
-
-\paragraph*{Matrix f\"ur virtuelle Rotationen}
+\vect{p}&= \vect{q} =  {\left( q_{x}, q_{y}, q_{z} \right)}^{T} 
+\\
+\vect{g}&= \transp{ \left( \transp{\vect{q}}, \transp{\vect{u}}, \transp{\vect{w}}, \transp{\vect{v}} \right)} 
+\\
+&= \transp{\begin{pmatrix}
+q_{x} & q_{y} & q_{z} & u_{x} & u_{y} & u_{z} & w_{x} & w_{y} & w_{z} & v_{x} & v_{y} & v_{z}
+\end{pmatrix}}
+\\
+\delta \vect{p} &= \frac{\d \vect{p}}{\d \vect{g}} \delta \vect{g} \\
+&= \begin{pmatrix}
+1&0&0&0&0&0&0&0&0&0&0&0 \\ 
+0&1&0&0&0&0&0&0&0&0&0&0 \\ 
+0&0&1&0&0&0&0&0&0&0&0&0
+\end{pmatrix} \delta \vect{g}
+\end{align*} 
 Im Abschnitt \ref{sssec:kos_transfHomog_rots_eigensch} wurde \eqnref{gl:rotMatrTransp} bereits partiell nach der Zeit abgeleitet und damit eine schiefsymmetrische Matrix $\matr{\Omega}$ in \eqnref{gl:kos_transfHomog_rots_eigensch_winkelMatr}  hergeleitet. Im Abschnitt \ref{sec:mech_starrkoerperbewegung} wurde dargelegt, dass $\matr{\Omega}$ die Komponenten des Vektors der Winkelgeschwindigkeit enth\"alt. Auf \"ahnliche Weise soll jetzt ein Operator f\"ur den Vektor der virtuellen Rotationen $\delta \tensor*[_K]{\vect{\phi}}{}=\left( \delta \tensor*[_K]{\phi}{_{x}}, \delta \tensor*[_K]{\phi}{_{y}}, \delta  \tensor*[_K]{\phi}{_{z}} \right)^{T}$ hergeleitet werden. Durch Anwendung des Variationsparameter $\delta$ auf \eqnref{gl:rotMatrTransp} ergibt sich \begin{align*}
 \delta \of{\matr{I}} &= \delta\of{\transp{\matr{R}}\matr{R}}
  \\
@@ -387,9 +425,9 @@ Im Abschnitt \ref{sssec:kos_transfHomog_rots_eigensch} wurde \eqnref{gl:rotMatrT
  \\
 \com{\transp{\matr{R}}\delta\of{\matr{R}}}{$:=\delta \tensor*[_K]{\matr{\Omega}}{}$} &= - \delta\of{\transp{\matr{R}}}\matr{R}
  \\ 
-\delta \tensor*[_K]{\matr{\Omega}}{} &= - \transp{\delta \tensor*[_K]{\matr{\Omega}}{}}
+\delta \tensor*[_K]{\matr{\Omega}}{} &= - \transp{\delta \tensor*[_K]{\matr{\Omega}}{}}.
 \end{align*}
-Die so eingef\"uhrte Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ erf\"ullt also \eqnref{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp_transp} und ist damit schiefsymmetrisch. Wendet man den Operator der virtuellen Verschiebung auf die Komponenten der Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ an, so erh\"alt man eine kompakte Darstellung f\"ur die Elemente von $\delta \tensor*[_K]{\vect{\phi}}{}$. Diese ist in \eqnref{gl:mech_lag2_virtArbeit_virtRotVekt} dargestellt. \begin{align}
+Die so eingef\"uhrte Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ erf\"ullt also \eqnref{gl:SdT_mathGrundl_punkteVektoren_kreuzProdOp_transp} und ist damit schiefsymmetrisch. Wendet man den Operator der virtuellen Verschiebung auf die Komponenten der Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ an, so erh\"alt man eine kompakte Darstellung f\"ur die Elemente von $\delta \tensor*[_K]{\vect{\phi}}{}$. Sie ist in \eqnref{gl:mech_lag2_virtArbeit_virtRotVekt} dargestellt. \begin{align}
 \delta \tensor*[_K]{\matr{\Omega}}{}&= \transp{\matr{R}}\delta\of{\matr{R}} \label{gl:mech_lag2_virtArbeit_virtRotMatr}
 \\
 &= \begin{bmatrix} \vect{u}\\ \vect{w}\\ \vect{v} \end{bmatrix} 
@@ -405,7 +443,7 @@ Die so eingef\"uhrte Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ erf\"ullt als
 \skalar{\vect{v}}{\delta \vect{u}} & \skalar{\vect{v}}{\delta \vect{w}}& \skalar{\vect{v}}{\delta \vect{v}}
 \end{bmatrix} 
 \nonumber \\
-\implies \delta \vect{\phi}&= \begin{bmatrix}
+\implies \delta \vect{\tensor*[_K]{\phi}{}}&= \begin{bmatrix}
 \delta \tensor*[_K]{\phi}{_{x}} \\ \delta \tensor*[_K]{\phi}{_{y}} \\ \delta \tensor*[_K]{\phi}{_{z}}
 \end{bmatrix} = \begin{bmatrix}
 \skalar{\vect{v}}{\delta \vect{w}} \\
@@ -415,8 +453,29 @@ Die so eingef\"uhrte Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ erf\"ullt als
 \end{align} 
 \begin{rem}[virtuelle Rotationen] Die Definition der virtuellen Rotation nach \eqnref{gl:mech_lag2_virtArbeit_virtRotVekt} suggeriert einen Vektor, der in Relation zu einem k\"orperfesten Koordinatensystem angegeben ist. Dies wird gesondert durch den linksseitig tiefgestellten Index $\tensor*[_K]{}{}$ hervorgehoben. Diese Darstellung hat den Vorteil, dass sie die Basisvektoren des rotierten Koordinatensystems direkt verwendet. Will man die virtuelle Rotation global angeben, so ist dies mit Hilfe der Transformationsregeln f\"ur Tensoren zweiter  Stufe nach \eqnref{gl:mech_lag2_virtArbeit_virtRotTransfo} m\"oglich. \begin{align}
 \delta \tensor*[_I]{\matr{\Omega}}{}&= \matr{R} \delta \tensor*[_K]{\matr{\Omega}}{} \transp{\matr{R}} \label{gl:mech_lag2_virtArbeit_virtRotTransfo}
-\end{align} Die in \eqnref{gl:mech_lag2_virtArbeit_virtRotTransfo} verwendete lineare Transformation ist eine \"Ahnlichkeitstransformation. Daher werden die Eigenwerte von $\delta \tensor*[_K]{\matr{\Omega}}{}$ dadurch nicht ver\"andert. Die Eigenvektoren werden hingegen ist das Inertialsystem transformiert.
+\end{align} Die in \eqnref{gl:mech_lag2_virtArbeit_virtRotTransfo} verwendete lineare Transformation ist eine \"Ahnlichkeitstransformation. Daher werden die Eigenwerte von $\delta \tensor*[_K]{\matr{\Omega}}{}$ dadurch nicht ver\"andert. Die Eigenvektoren werden hingegen in das Inertialsystem transformiert.
 \end{rem}
-\subsection{Bewegung in homog. Koords}
-\cite[S. 160]{Wloka1992}, \cite[S. 237]{Wloka1992} 
-\section{L\"osung der Differentialgleichungen}
+%\subsection{Bewegung in homog. Koords}
+%\cite[S. 160]{Wloka1992}, \cite[S. 237]{Wloka1992} 
+\section{Differential-Algebraische Gleichungen}
+Hinweis: Under Construction, weiter mit dem n\"achsten Kapitel. \hfill \newline
+
+
+Der Ansatz von Lagrange f\"uhrt auf Differential Algebraische Gleichungen (DAE) vom Index 2. 
+Indexdefinition muss hier hin. 
+Differentieller Grad ist auch gleich 2. 
+Definition vom Diff. Grad!
+Der Index muss reduziert werden. Zur Reduktion des Index muss eine Indexreduktion angewandt werden. Dazu gibt es verschiedene Verfahren...Hinweise auf Literatur, Verfahren von Baumgarte, Bestimmung der Parameter, evlt. Hinweis auf Probleme bei der Bestimmung der Parameter
+Diff. Grad muss reduziert werden um solver verwenden zu k\"onnen. Einf\"uhrung neuer Variablen $\dot{\vect{q}}=\vect{v}$ reduziert den diff. Grad auf 1. 
+Hat das System diff. Index 1 oder 0? und Alg. Index 1 kann es gel\"ost werden. Dazu ist die Bestimmung von konsistenten Startwerten notwendig. Das ist eine nicht triviale Aufgabe. Hinweise zur Literatur. 
+Dann kann Simuliert werden. Dabei muss die DAE stabilisert werden um Drift zu vermeiden. Hier auch noch mal Hinweis auf Literatur.
+
+Einf\"uhrung in Berechnung von DAE: \cite{Fuehrer1990}
+Stabilisierung von DGL: \begin{itemize}
+\item \cite{Baumgarte1972} Stab. nach Baumgarte -> Wahl der Parameter: \cite{Flores}, \cite{Flores2011}
+\item \cite{Cline2003} Weitere Stabilisierungsverfahren
+\item \cite{Neto2003} Stabilisierungsmethode fuer DAE
+\item \cite{Park1988} Stabilisierungsmethode fuer DAE
+\item \cite{Haug1991} Integrationsmethoden f\"ur mechanische Systeme
+\item \cite{ErnstHairer2010} prinzipielle L\"osung von gew\"ohnlichen DGL 
+\end{itemize}

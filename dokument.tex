@@ -33,6 +33,7 @@
 \input{latex_base/thesis/preambel/preambel}
 
 \addbibresource{bib/quellen.bib}
+\renewcommand*{\labelalphaothers}{}
 
 \input{latex_base/general/preambel/Fonts}
 %
@@ -92,14 +93,14 @@
 \input{content/2_MathGrundl}
 \input{content/3_Kos}
 \input{content/4_Mechanik}
-%\input{content/5_Modell}
+\input{content/5_Modell}
 %\input{content/6_Implementierung}
 %
 % Anhang (Bibliographie darf im deutschen nicht in den Anhang!)
 %\bibliography{bib/quellen}
 
 \nocite{*}%alle Elemente im Literaturverzeichnis werden aufgelistet, auch die nicht-zitierten
-\printbibliography[title={Literaturverzeichnis}]
+\printbibliography%[title={Literaturverzeichnis}]
 \pagenumbering{Roman} %neue Seitenzahlen
 \stepcounter{chapter}
 \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}{Literaturverzeichnis}}

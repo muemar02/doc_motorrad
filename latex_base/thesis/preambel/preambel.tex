@@ -100,6 +100,7 @@
    fleqn,     % Position equations at a fixed indent from the left margin
    			  % rather than centered in the text column.
 ]{amsmath} %
+\setcounter{MaxMatrixCols}{20} %Matrizen mit bis zu 20 Spalten
 % eqnarray nicht zusammen mit amsmath benutzen, siehe l2tabu.pdf f�r
 % Hintergruende.
 
@@ -647,7 +648,10 @@
 
 % other BibTeX styles: http://www.cs.stir.ac.uk/~kjt/software/latex/showbst.html
 
-\usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[backend=biber,
+style=alphabetic,
+citestyle=alphabetic,
+maxalphanames=4,minalphanames=4]{biblatex}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % figures and placement
