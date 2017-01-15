@@ -41,6 +41,8 @@
 \input{latex_base/thesis/macros/newcommands}
 \input{latex_base/general/macros/TableCommands}
 
+%%% zulaessige Worttrennung
+\input{latex_base/general/silbentrennung}
 %% Dokument Beginn
 %% Gliederung:
 %%		Deckblatt
@@ -98,11 +100,11 @@
 %
 % Anhang (Bibliographie darf im deutschen nicht in den Anhang!)
 %\bibliography{bib/quellen}
-
+\clearpage
+\pagenumbering{roman} %neue Seitenzahlen
+\stepcounter{chapter}
 \nocite{*}%alle Elemente im Literaturverzeichnis werden aufgelistet, auch die nicht-zitierten
 \printbibliography%[title={Literaturverzeichnis}]
-\pagenumbering{Roman} %neue Seitenzahlen
-\stepcounter{chapter}
 \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}{Literaturverzeichnis}}
 \cleardoublepage
 %

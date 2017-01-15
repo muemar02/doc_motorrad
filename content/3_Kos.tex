@@ -219,6 +219,18 @@ Sind die Koordinatensysteme $\KOS{B}$ und $\KOS{C}$ zum Inertialsystem nicht nur
 \vect{\tensor*[_I]{r}{}}&= \com{\tensor*[^B_I]{\matr{T}}{} \tensor*[^C_B]{\matr{T}}{}}{$:=\tensor*[^C_I]{\matr{T}}{}$}\vect{\tensor*[_C]{r}{}}.
 \end{align}
 
+\begin{rem}[Reihenfolge von Transformationen] Die Reihenfolge, in welcher Transformationsmatrizen miteinander multipliziert werden ist von fundamentaler Bedeutung, da die Matrizenmultiplikation nicht kommutativ ist. Anschaulich l\"asst sich folgende Regel formulieren: \hfill \newline
+Soll ein Objekt $\vect{x}$ durch eine Reihe von Transformationen $\matr{T}_{1}, \dots, \matr{T}_{n}$ in das System $N$ \"uberf\"uhrt werden und beziehen sich alle Transformationen \textit{auf das Inertialsystem}, so errechnet man die Gesamttransformation durch linksseitige Multiplikation der Transformationsmatrizen in der Reihenfolge, in welcher die Transformationen ausgef\"uhrt werden sollen. Es ergibt sich \begin{align}
+\tensor*[^I_N]{\matr{T}}{}&= \tensor*[_I]{\matr{T}}{_n} \tensor*[_I]{\matr{T}}{_{n-1}} \dots \tensor*[_I]{\matr{T}}{_1}
+\intertext{und es folgt f\"ur $\vect{x}$}
+\tensor*[_N]{\vect{x}}{}&= \tensor*[^I_N]{\matr{T}}{}\tensor*[_I]{\vect{x}}{}.
+\end{align} 
+Bezieht sich bei einer Reihe an Transformationen jede Transformation \textit{auf das aktuelle System}, so werden einzelne Transformationen rechtsseitig aneinander gereiht. Es gilt \begin{align*}
+\tensor*[^I_N]{\matr{T}}{}&=\tensor*[^I_1]{\matr{T}}{} \tensor*[^1_2]{\matr{T}}{}\dots \tensor*[^{N-1}_N]{\matr{T}}{}
+\intertext{und es folgt f\"ur $\vect{x}$}
+\tensor*[_N]{\vect{x}}{}&= \tensor*[^I_N]{\matr{T}}{}\tensor*[_I]{\vect{x}}{}.
+\end{align*}
+\end{rem}
 \section{Nat\"urliche Koordinaten}\label{sec:kos_natKoord}
   Der erste Schritt bei der Modellbildung f\"ur ein mechanisches System ist die Festlegung geeigneter Parameter, mit Hilfe derer die kinematischen Gr\"o\ss{}en Position, Geschwindigkeit und Beschleunigung des Systems zu jedem Zeitpunkt beschrieben werden k\"onnen. L\"asst sich ein System in mehrere Subsysteme einteilen, so m\"ussen die Parameter die Kinematik dieser Subsysteme abbilden. Die Wahl der Parameter geschieht mit Hilfe der Vorgabe von Koordinaten. Ein System aus zwei Punktmassen k\"onnte man beispielsweise durch die Koordinaten $x_{1}, y_{1}, z_{1}, x_{2}, y_{2}, z_{2}$ beschreiben. Die Wahl der Koordinaten bietet sehr viele Freiheiten. Die \"Ublichsten Koordinatenarten  sind \textit{relative Koordinaten}, \textit{Referenzpunktkoordinaten} und \textit{absolute Koordinaten}. Eine besondere Form der absoluten Koordinaten sind die \textit{nat\"urlichen Koordinaten} \footnote{die englischen Bezeichnungen f\"ur nat\"urliche Koordinaten im Sinne dieser Arbeit sind \textit{natural coordinates} und \textit{fully cartesian coordinates}}. \hfill \newline
   

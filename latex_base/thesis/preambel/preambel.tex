@@ -652,6 +652,13 @@
 style=alphabetic,
 citestyle=alphabetic,
 maxalphanames=4,minalphanames=4]{biblatex}
+%gesonderte Einstellungen, ob Felder gezielt ausgelassen werden sollen
+\ExecuteBibliographyOptions{%
+isbn=false, url=false, doi=false, eprint=false%
+}%
+%Keine Angabe von Monat/Tag
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % figures and placement

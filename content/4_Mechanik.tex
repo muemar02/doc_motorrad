@@ -224,7 +224,7 @@ gilt. Beachtet man nun, dass die Potentialkr\"afte $V$ wie in \cite[S. 190]{J.L.
 \ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}} - \frac{\d T}{\d \vect{q}} + \frac{\d V}{\d \vect{q}}+ \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q}_{ex} &=\vect{0} \nonumber \\
 \ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}} - \frac{\d T}{\d \vect{q}} + \transp{\matr{\Phi}}_{q} \vect{\lambda} - \vect{Q} &=\vect{0} \label{gl:mech_lagrange2ArtDefCossalter}
 \end{align}
-Diese Gleichung der Dimension $n$ bildet gemeinsam mit den $m$ Zwangsbedingungen $\vect{\phi}=\vect{0}$ ein System von $\left( n + m\right)$ differential-algebraischen Gleichungen. \hfill \newline
+Diese Gleichung der Dimension $n$ bildet gemeinsam mit den $m$ Zwangsbedingungen $\vect{\phi}=\vect{0}$ ein System von $\left( n + m\right)$ \acp{dae}. \hfill \newline
 Lassen sich die Zwangsbedingungen derart umformen, dass die generalisierten Koordinaten $\vect{q}$ auf einen Satz von Minimalkoordinaten $\vect{q}_{min}\in R^{n-m}$ umformbar sind und k\"onnen au\ss{}erdem alle generalisierten Kr\"afte durch Ableitung der potentiellen Energie $V$ beschrieben werden,  so vereinfacht sich \eqnref{gl:mech_lagrange2ArtDef} zu
 \begin{align}
 \ddt{}\of{\frac{\d L}{\d \dot{\vect{q}}_{min}}} - \frac{\d L}{\d \vect{q}_{min}} &=0 \label{gl:lagrange2ArtDefMin} 
@@ -457,25 +457,47 @@ Die so eingef\"uhrte Matrix $\delta \tensor*[_K]{\matr{\Omega}}{}$ erf\"ullt als
 \end{rem}
 %\subsection{Bewegung in homog. Koords}
 %\cite[S. 160]{Wloka1992}, \cite[S. 237]{Wloka1992} 
-\section{Differential-Algebraische Gleichungen}
-Hinweis: Under Construction, weiter mit dem n\"achsten Kapitel. \hfill \newline
 
+\section{Differential-algebraische Gleichungen}\label{sec:mech_dae}
+Gegeben sei ein Mehrk\"orpersystem, welches mit $n$ generalisierten Koordinaten ${\vect{q}=\transp{\left(q_{1}, \dots, q_{n}\right)}}$ und $m$ holonomen Zwangsbedingungen ${\vect{\phi}=\transp{\left(\phi_{1}, \dots, \phi_{m}\right)}}$ beschrieben wird. Weiterhin sei das System mit der Gleichung von Lagrange \mbox{2. Art} nach \eqnref{gl:mech_lagrange2ArtDefCossalter} modelliert. Das zur Beschreibung der Bewegung des Mehrk\"orpersystems zu l\"osende Gleichungssystem bildet dann ein System von \acp{dae} ${F\of{\dot{\vect{x}}, \vect{x}, t}=0}$. Eine \ac{dae} ist dadurch charakterisiert, dass sie von einer abh\"angigen Zustandsvariable $\vect{x}$, einer unabh\"angigen Variable und Ableitungen der Zustandsvariable nach dieser unabh\"angigen Variablen abh\"angt. Bei mechanischen Systemen ist die unabh\"angige Variable in der Regel die Zeit $t$ und eine Beschreibung der Form ${F\of{\dot{\vect{x}}, \vect{x}, t}=0}$ ist daher gerechtfertigt. \hfill \newline
 
-Der Ansatz von Lagrange f\"uhrt auf Differential Algebraische Gleichungen (DAE) vom Index 2. 
-Indexdefinition muss hier hin. 
-Differentieller Grad ist auch gleich 2. 
-Definition vom Diff. Grad!
-Der Index muss reduziert werden. Zur Reduktion des Index muss eine Indexreduktion angewandt werden. Dazu gibt es verschiedene Verfahren...Hinweise auf Literatur, Verfahren von Baumgarte, Bestimmung der Parameter, evlt. Hinweis auf Probleme bei der Bestimmung der Parameter
-Diff. Grad muss reduziert werden um solver verwenden zu k\"onnen. Einf\"uhrung neuer Variablen $\dot{\vect{q}}=\vect{v}$ reduziert den diff. Grad auf 1. 
-Hat das System diff. Index 1 oder 0? und Alg. Index 1 kann es gel\"ost werden. Dazu ist die Bestimmung von konsistenten Startwerten notwendig. Das ist eine nicht triviale Aufgabe. Hinweise zur Literatur. 
-Dann kann Simuliert werden. Dabei muss die DAE stabilisert werden um Drift zu vermeiden. Hier auch noch mal Hinweis auf Literatur.
+F\"ur die Charakterisierung von \acp{dae} sind die Begriffe \textit{differentieller Grad der \ac{dae}} und \textit{differentieller Index der \ac{dae}} besonders wichtig.\hfill \newline
+Unter dem differentiellen Grad versteht man den h\"ochsten im System vorkommenden Grad einer Ableitung von $\vect{x}$ nach der unabh\"angigen Variablen. In \eqnref{gl:mech_lagrange2ArtDefCossalter} ist die unabh\"angige Variable die Zeit $t$. Der h\"ochste Grad einer Ableitung nach der Zeit ist offensichtlich im Term \begin{align*}
+\ddt{}\of{\frac{\d T}{\d \dot{\vect{q}}}}
+\end{align*} enthalten. Die h\"ochste Ableitung ist $\ddot{\vect{q}}$, womit sich ein differentieller Grad von zwei ergibt. Die meisten mechanischen Systeme sind beschleunigungsabh\"angig. Da die Zustandsvariable im einfachsten Fall den Ort abbildet und die zweite Ableitung des Ortes nach der Zeit der Beschleunigung entspricht, ist der h\"ochste Grad einer Ableitung der Zustandsvariable gleich zwei und Systeme dieser Art haben einen differentiellen Grad von zwei. 
+Der differentielle Grad eines Systems l\"asst sich reduzieren, indem f\"ur die Ableitung der generalisierten Koordinaten $\dot{\vect{q}}$ mit ${\vect{v}=\dot{\vect{q}}}$ neue Variablen eingef\"uhrt werden. Die generalisierten Koordinaten $\vect{q}$ werden dann mit den neu eingef\"uhrten Variablen $\vect{v}$ und den Langrange-Multiplikatoren $\vect{\lambda}$ zum Zustandsvektor $\vect{x}$ zusammengefasst. Die Terme in \eqnref{gl:mech_lagrange2ArtDefCossalter} werden entsprechend ihrer Abh\"angigkeit von der Zustandsvariable neu sortiert und das System l\"asst sich durch 
+\begin{align}
+\label{gl:mech_dae_daeSys}
+\begin{split}
+\dot{\vect{q}}&=\vect{v}\\
+\matr{M}\of{\vect{q}}\dot{\vect{v}} &= \vect{f}\of{\vect{q}, \vect{v}} - \transp{\matr{\Phi}}_{\vect{q}} \vect{\lambda} \\
+\vect{0}&=\vect{\phi}
+\end{split}
+\intertext{beschreiben, was in Kurzform notiert}
+F\of{\dot{\vect{x}}, \vect{x}, t}=0 \label{gl:mech_dae_daeSysKompakt}
+\end{align} entspricht. \cite[S. 22]{Fuehrer1990}
+\hfill \newline
+Der differentielle Index wird nach \cite{Gear1988} im Folgenden definiert. 
+\begin{defn}[Index einer \ac{dae}] Der Index einer \ac{dae} der Form ${F\of{\dot{\vect{x}}, \vect{x}, t}=0}$ wird definiert als \begin{align}
+k&=0,  &\text{ wenn } &\frac{\d F}{\d \vect{x}} \text{ nicht singul\"ar ist}.
+\end{align}
+Andernfalls ist $k>0$. Den Index bestimmt man dann anhand der kleinsten Zahl $s$, f\"ur die das Gleichungssystem \eqref{gl:mech_dae_daeIndex} f\"ur $\dot{\vect{x}}\of{\vect{x},t}$ gel\"ost werden kann.
+\begin{align} \label{gl:mech_dae_daeIndex} \begin{split}
+F\of{\dot{\vect{x}}, \vect{x}, t}&=0 \\
+\ddt{}F\of{\dot{\vect{x}}, \vect{x}, t}=\frac{\d }{\d \dot{\vect{x}}} F\of{\dot{\vect{x}}, \vect{x}, t} \com{\frac{\d \dot{\vect{x}}}{\d t}}{$=:\vect{x}^{(2)}$} + \dots &=0 \\
+\vdots & \\
+\frac{\td^{s}}{\td t^{s}}F\of{\dot{\vect{x}}, \vect{x}, t}= \frac{\d }{\d \dot{\vect{x}}} F\of{\dot{\vect{x}}, \vect{x}, t} \vect{x}^{(s)} + \dots &=0 \end{split}
+\end{align}
+\end{defn}
 
-Einf\"uhrung in Berechnung von DAE: \cite{Fuehrer1990}
-Stabilisierung von DGL: \begin{itemize}
-\item \cite{Baumgarte1972} Stab. nach Baumgarte -> Wahl der Parameter: \cite{Flores}, \cite{Flores2011}
-\item \cite{Cline2003} Weitere Stabilisierungsverfahren
-\item \cite{Neto2003} Stabilisierungsmethode fuer DAE
-\item \cite{Park1988} Stabilisierungsmethode fuer DAE
-\item \cite{Haug1991} Integrationsmethoden f\"ur mechanische Systeme
-\item \cite{ErnstHairer2010} prinzipielle L\"osung von gew\"ohnlichen DGL 
-\end{itemize}
+Der Index von Systemen, welche nach \eqnref{gl:mech_dae_daeSys} beschrieben werden, ist gleich drei. \cite[S. 22 f.]{Fuehrer1990} \hfill \newline
+Die L\"osung von Systemen nach \eqnref{gl:mech_dae_daeSys} ist ein Themenkomplex aktueller Forschung. Eine \"Ubersicht zu den verschiedenen Problemstellungen und deren L\"osungsans\"atzen bei der Berechnung von \acp{dae} ist in \cite{Haug1991} und \cite{Fuehrer1990} enthalten. Eine Sammlung verschiedener Ver\"offentlichungen zu dieser Thematik ist in der aktuellen von A. Illmann und T. Reis editierten Buchreihe \cite{Ilchmann2013}, \cite{Ilchmann2015} und \cite{Ilchmann2015a} ver\"offentlicht.  \hfill \newline
+
+Spezielle Probleme sind unter anderem die Reduktion des Index auf eins und die dadurch notwendige Stabilisierung der nach der Indexreduktion verbleibenden Gleichungen. Eine Indexreduktion ist notwendig, weil die verbreiteten numerischen Integrationsalgorithmen f\"ur \acp{dae} einen Index von eins voraussetzen.\hfill \newline
+Ein verh\"altnism\"a\ss{}ig simpler Ansatz wurde von J. W. Baumgarte in \cite{Baumgarte1972} vorgestellt und in \cite{Baumgarte1983} weiterentwickelt. Nach diesem Verfahren werden die Zwangsbedingungen $\vect{\phi}$ in \eqnref{gl:mech_dae_daeSys} durch eine parametrisierte Ableitung von $\vect{\phi}$ ersetzt. Es gilt dann 
+\begin{align}
+\vect{\phi}' &= \ddot{\vect{\phi}} + 2 \alpha \dot{\vect{\phi}} + \beta^{2} \vect{\phi}, &\alpha&>0. \label{gl:mech_dae_baumgarteStab}
+\end{align}
+Bei einer Indexreduktion von drei auf eins k\"onnte man einfach ${\vect{\phi}' = \ddot{\vect{\phi}}}$ setzten. Wird statt dessen aber \eqnref{gl:mech_dae_baumgarteStab} verwendet, so wird die Gleichung f\"ur $\vect{\phi}' $ asymptotisch stabil und die numerische Integration von \eqnref{gl:mech_dae_daeSys} so stabilisiert. Die konkrete Wahl der Parameter $\alpha, \beta$ ist aber je nach System unterschiedlich durchzuf\"uhren und bleibt bisher ohne allgemeine L\"osung. Die Ver\"offentlichungen \cite{Flores} und \cite{Flores2011} sind Arbeiten, welche sich der L\"osung dieses Problems widmen. \hfill \newline
+Alternative Ans\"atze zur Stabilisierung der Bewegungsgleichung sind unter anderem in \cite{Gear1988}, \cite{Park1988}, \cite{Ascher1995}, \cite{Fabian2001}, \cite{Cline2003} und \cite{Neto2003} zu finden. \hfill \newline
+Im Anschluss an die Reduktion des differentiellen Grades auf eins, die Indexreduktion auf eins und die Wahl eines Stabilisierungsverfahrens verbleibt zur L\"osung von \eqnref{gl:mech_dae_daeSys} noch die Wahl eines geeigneten Integrationsverfahrens. Der Solver \textit{DASSL}, welcher in \cite{Brenan1995} ausf\"uhrlich vorgestellt wird, und dessen Weiterentwicklungen, sind probate Wahlm\"oglichkeiten. Alle Integrationsverfahren ben\"otigen als Eingabewerte Anfangswerte $\vect{x}\of{t=0}, \dot{\vect{x}}\of{t=0}$, welche mit den Zwangsbedingungen konsistent sind. Die Berechnung dieser Werte ist ein nicht-triviales Problem. M\"ogliche L\"osungsans\"atze werden in \cite{Brenan1995} und \cite{Brown1998} aufgezeigt. Mit besonderem Fokus auf Problemstellungen der Fahrzeugtechnik wird au\ss{}erdem in \cite{Fuehrer1990} diese Problemstellung behandelt. 
