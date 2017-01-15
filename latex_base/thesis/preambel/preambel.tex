@@ -1814,26 +1814,24 @@ isbn=false, url=false, doi=false, eprint=false%
     {\usekomafont{title}\large \@title}
     \ifx\@subtitle\empty\else{\usekomafont{subtitle} \@subtitle}\\\fi
     \vfill
+  
     \begin{tabular}{rl}
         vorgelegt von: & \@author\\
         Matrikelnummer: & \@matrikelNr\\
         geboren am: & \@geburtsdatum{} in \@geburtsort{}
     \end{tabular}
     \vfill
+    \begin{flushleft}  
     \begin{tabular}{ll}
-        \ifx\@betreuer\empty\else Betreuer: \@betreuer\fi
-        Verantwortlicher Hochschullehrer: & Prof. Dr.-Ing. Oliver Michler\\
-        Tag der Einreichung: & \@date
-    \end{tabular}
+        \ifx\@betreuer\empty\else Betreuer: & \\
+         \@betreuer\fi
+       \multicolumn{2}{l}{Verantwortlicher Hochschullehrer:} \\
+        & Prof. Dr.-Ing. Oliver Michler\\
+        \multicolumn{2}{l}{Tag der Einreichung:}   \\    
+         & \@date
+    \end{tabular} \end{flushleft}
 \end{center}
 \end{titlepage}
-\newpage
-\thispagestyle{empty}
-\null\vfill
-\begin{center}
-	Bitte ersetzen Sie diese Seite vor dem Binden mit der Aufgabenstellung.
-\end{center}
-\vfill
 }%
 %------------------------------------------------------------------------
 % Selbstständigkeitserklärung

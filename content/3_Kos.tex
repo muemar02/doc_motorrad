@@ -206,7 +206,15 @@ f\of{\vect{r}+\vect{y}}&= \vect{r}+\vect{y}+\vect{q},
   \end{align*}
    Da entsprechend \eqnref{gl:kos_transfHomog_rots_eigensch_abgeschl} die Menge der Rotationsmatrizen abgeschlossen ist, ist die durch Aneinanderreihung von Drehungen gewonnen Matrix $\tensor*[_I^C]{\matr{R}}{}$ ebenfalls eine Rotationsmatrix. \hfill \newline
 
-Sind die Koordinatensysteme $\KOS{B}$ und $\KOS{C}$ zum Inertialsystem nicht nur verdreht, sondern auch um Vektoren $\vect{q}_B, \vect{q}_C$ verschoben, so wird zur Transformation von Vektoren die Transformationsmatrix $\matr{T}$ nach \eqnref{gl:kos_transfHomog_homKoord_transfoKompl} ben\"otigt. Ein im System $\KOS{B}$ gegebener Vektor $\tensor*[_B]{\vect{r}}{}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ kann dann mit Hilfe der Matrix $\tensor*[^B_I]{\matr{T}}{}$ in das Inertialsystem \"ubertragen werden. Es gilt also \begin{align}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{abbildungen/04_kosTransfo.png}
+\caption{Darstellung eines Vektors in verschiedenen Koordinatensystemen}
+\label{fig:kos_transfHomog_transf_punktTransfo}
+\end{center}
+\end{figure}
+
+Sind die Koordinatensysteme $\KOS{B}$ und $\KOS{C}$ zum Inertialsystem nicht nur verdreht, sondern auch um Vektoren $\vect{q}_B, \vect{q}_C$ verschoben, so wird zur Transformation von Vektoren die Transformationsmatrix $\matr{T}$ nach \eqnref{gl:kos_transfHomog_homKoord_transfoKompl} ben\"otigt. F\"ur zwei Systeme $\KOS{I}$ und $\KOS{B}$ ist diese Situation in \figureref{fig:kos_transfHomog_transf_punktTransfo} dargestellt. Ein im System $\KOS{B}$ gegebener Vektor $\tensor*[_B]{\vect{r}}{}= \transp{\left( \tensor*[_B]{x}{}, \tensor*[_B]{y}{}, \tensor*[_B]{z}{} \right) }$ kann dann mit Hilfe der Matrix $\tensor*[^B_I]{\matr{T}}{}$ in das Inertialsystem \"ubertragen werden. Es gilt also \begin{align}
 \tensor*[_I]{\vect{r}}{}&= \tensor*[^B_I]{\matr{T}}{}\tensor*[_B]{\vect{r}}{}. \label{gl:kos_transfHomog_transf_punktTransfo}
 \end{align} Diese Darstellung kann auf einfache Weise invertiert werden: \begin{align}
 \tensor*[_B]{\vect{r}}{}&= \com{\inv{\tensor*[^B_I]{\matr{T}}{}}}{$:=\tensor*[^I_B]{\matr{T}}{}$}\tensor*[_I]{\vect{r}}{}

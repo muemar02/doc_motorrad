@@ -2,11 +2,19 @@
 \section{Einf\"uhrung}\label{sec:mathGrundl_einfuehrung}
     Bei der Analyse von Problemen ist es in der Mathematik, ebenso wie in anderen Fachbereichen \"ublich, mit Hilfe von Modellen m\"oglichst einfache Grundstrukturen zu finden, welche f\"ur die L\"osung des zu untersuchenden Problems von Interesse sind. Dabei kann die gezielte Untersuchung einer solchen Grundstruktur losgel\"ost von der eigentlichen Problemstellung durchgef\"uhrt werden. Dadurch ist ein Modell in der Regel leichter \"uberschaubar, als das eigentliche Problem. \hfill \newline
     Als einf\"uhrendes Beispiel wird eine geeignete Beschreibung des dreidimensionalen Raumes entworfen. Dieses ist in weiten Teilen \cite{Bosch2014} nachempfunden. \hfill \newline
-    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen als Mengen mit einer inneren Abbildung  definiert. Im Abschnitt \ref{sec:mathGrundl_koerper} werden die Eigenschaften von Gruppen weiter eingeschr\"ankt, was auf den Begriff des K\"orper f\"uhrt. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe \ref{sec:mathGrundl_vektorraeume}). Wegen ihrer hohen Relevanz f\"ur diese Arbeit werden im Abschnitt \ref{sec:mathGrundl_punkteVektoren} die Rechenregeln von Vektoren und Matrizen eingef\"uhrt. Au\ss{}erdem wird der Unterschied zwischen Punkten und Vektoren aufgef\"uhrt. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind \cite{Bosch2014}, \cite{MatthiasPlaue2009}, \cite{Asser1975} und \cite{Modler2011d} entnommen. Die Eigenschaften von Vektoren sind \cite{Papula2014} entnommen. \newline
+    Die Beschreibung des dreidimensionalen Raumes baut auf einer Reihe von Grundstrukturen auf. Die Basis bilden Mengen, deren Elemente und Abbildungen (siehe Abschnitt \ref{sec:mathGrundl_mengen}). Darauf aufbauend werden im Abschnitt \ref{sec:mathGrundl_gruppen} Gruppen als Mengen mit einer inneren Abbildung  definiert. Im Abschnitt \ref{sec:mathGrundl_koerper} werden die Eigenschaften von Gruppen weiter eingeschr\"ankt, was auf den Begriff des K\"orper f\"uhrt. Anschlie\ss{}end k\"onnen Vektorr\"aume \"uber einem K\"orper und deren Elemente - die Vektoren - definiert werden (siehe Abschnitt \ref{sec:mathGrundl_vektorraeume}). Im Unterkapitel \ref{ssec:mathGrundl_vektorraeume_matrizen} werden Matrizen definiert und es wird auf einige Rechenregeln und Eigenschaften eingegangen.       Wegen ihrer hohen Relevanz f\"ur diese Arbeit werden im Abschnitt \ref{sec:mathGrundl_punkteVektoren} die Rechenregeln von Vektoren eingef\"uhrt. Au\ss{}erdem wird der Unterschied zwischen Punkten und Vektoren deutlich gemacht. Die Ausf\"uhrungen zu diesen Elementen der linearen Algebra sind \cite{Bosch2014}, \cite{MatthiasPlaue2009}, \cite{Asser1975} und \cite{Modler2011d} entnommen. Die Eigenschaften von Vektoren sind \cite{Papula2014} entnommen. \newline
     Der dreidimensionale Raum \footnote{der dreidimensionale Raum wird in dieser Arbeit als Anschauungsraum bezeichnet} wird auf Basis der so eingef\"uhrten Begriffe mit Hilfe einer geeigneten Basis als Vektorraum \"uber dem K\"orper der reellen Zahlen in Form eines Koordinatensystems im Kapitel \ref{ch:kos} eingef\"uhrt.   \newline
     Um die Position eines K\"orpers im Raum beschreiben zu k\"onnen, werden ferner f\"ur Vektoren und Matrizen unter anderem die Rechenregeln Addition und Multiplikation nach \cite{Papula2014} definiert. Im Kapitel \ref{ch:kos} werden die so eingef\"uhrten Gesetze verwendet, um die Handhabung von Koordinatensystemen im Detail zu beschreiben. \newline
     
-    Zur Beschreibung des dreidimensionalen Raumes sei eine Ebene E gegeben, welche beliebig im Anschauungsraum liegt. Weiterhin sei ein beliebiger Punkt dieser Ebene gegeben, welcher als Nullpunkt $O$ eines Koordinatensystems dienen soll. Zus\"atzlich seien drei Geraden $X, Y, \text{und }Z$ gegeben, welche als Koordinatenachsen dienen. Alle drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Au\ss{}erdem sollen keine zwei Geraden parallel zueinander sein. Ferner sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. \"Uberdies sei auf jeder Gerade ein spezieller Punkt definiert: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt habe vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man bezeichnet diesen Abstand als \textit{Einheitsl\"ange}. \newline
+    Zur Beschreibung des dreidimensionalen Raumes sei eine Ebene E gegeben, welche beliebig im Anschauungsraum liegt. Weiterhin sei ein beliebiger Punkt dieser Ebene gegeben, welcher als Nullpunkt $O$ eines Koordinatensystems dienen soll. Zus\"atzlich seien drei Geraden $X, Y, \text{und }Z$ gegeben, welche als Koordinatenachsen dienen. Alle drei Geraden sollen sich dabei im Punkt $O$ schneiden und die reellen Zahlen komplett durchlaufen. Au\ss{}erdem sollen keine zwei Geraden parallel zueinander sein. Ferner sollen die Geraden paarweise derart senkrecht aufeinander stehen, dass sie ein Rechtssystem bilden. Diese Anordnung ist in \figureref{fig:mathGrundl_einfuehrung_ebene} abgebildet. 
+\begin{figure}[h!tb]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{abbildungen/01_ebene.png}
+\caption{Ebene mit drei Geraden}
+\label{fig:mathGrundl_einfuehrung_ebene}
+\end{center}
+\end{figure}
+\"Uberdies sei auf jeder Gerade ein spezieller Punkt definiert: $I_{x}, I_{y}$ und $I_{z}$. Dieser Punkt habe vom Ursprung, entlang der jeweiligen Achse auf der er liegt, genau den Abstand 1. Man bezeichnet diesen Abstand als \textit{Einheitsl\"ange}. \newline
     Hinzukommend wird ein Vektor $\vect{e}_{x}$ definiert, welcher vom Ursprung aus auf den Punkt $I_{x}$ zeigt und damit zwangsl\"aufig auf der Geraden X liegt. Analog werden die Vektoren  $\vect{e}_{y}$ und $\vect{e}_{z}$ definiert. Diese Vektoren mit \textit{Einheitsl\"ange}, welche entlang der Koordinatenachsen liegen, werden \textit{Einheitsvektoren} genannt. Als Tripel notiert haben sie entlang der Achse, in welche  sie zeigen, eine 1 als Eintrag und sonst eine 0. Damit gilt $\vect{e}_{x}=\left( 1,0,0\right), \vect{e}_{y}=\left(0,1,0\right), \vect{e}_{z}=\left( 0,0,1\right)$. Durch die genannten Bedingungen ist es nicht m\"oglich einen der \textit{Einheitsvektoren} als \textit{Linearkombination} der anderen Beiden darzustellen. Damit bilden diese \textit{Einheitsvektoren} eine \textit{Basis} f\"ur einen \textit{Vektorraum} $V$. Da die \textit{Einheitsvektoren} genau drei unabh\"angige Vektoren sind, ist der von ihnen aufgespannte \textit{Vektorraum} gleich dem dreidimensionalen Raum. \newline
     Weiterhin sei ein Streckungsfaktor $\alpha \in \R$ definiert. Mit Hilfe von $\alpha \cdot I_{x}$ sei das Bild des Punktes $I_{x}$ beschrieben, welches sich durch Streckung mit Streckungszentrum im Ursprung $O$, entlang der x-Achse, um den Streckungsfaktor $\alpha$ ergibt. Die Zuordnung $\alpha \to \alpha \cdot I_{x}$ liefert damit eine eindeutige, umkehrbare Zuordnung der reellen Zahlen auf die Punkte der Geraden X. Dabei ist das Bild der Streckung des \textit{Einheitsvektors} $\vect{e}_{x}$ \"aquivalent mit dem Bild der Streckung des Punktes $I_{x}$. Zus\"atzlich seien f\"ur die Achsen Y und Z die Streckungsfaktoren $\beta$ und $\gamma$ nach dem gleichen Schema definiert. \newline
         
@@ -292,7 +300,8 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   Ein solches Erzeugendensystem wird als \textit{kanonische Basis} bezeichnet.
   \end{rem}
   
-  \begin{defn}[Lineare Unabh\"angigkeit] Eine Menge von Vektoren $\lbrace \vect{v}_{1},\dots,\vect{v}_{n} \rbrace$ eines $\set{K}-$Vektorraums $\set{V}$ hei\ss{}t \textbf{linear unabh\"angig}, wenn sich keiner der Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ als Linearkombination der \"Ubrigen darstellen l\"asst. Die Gleichung
+  \begin{defn}[Lineare Unabh\"angigkeit] Eine Menge von Vektoren \hfill \newline
+  $\lbrace \vect{v}_{1},\dots,\vect{v}_{n} \rbrace$ eines $\set{K}-$Vektorraums $\set{V}$ hei\ss{}t \textbf{linear unabh\"angig}, wenn sich keiner der Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ als Linearkombination der \"Ubrigen darstellen l\"asst. Die Gleichung
   \begin{align}
   \sum_{i=1}^{n} \lambda_{i}\vect{v}_{i}&=\vect{0} \label{gl:mathGrundl_vektorraeume_linUnabh}
   \end{align}
@@ -305,14 +314,14 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   Bei einer linear abh\"angigen Menge liegt wenigstens einer der Vektoren in der linearen H\"ulle der Anderen. Er kann daher weggelassen werden, ohne die H\"ulle zu verkleinern. 
 \end{rem}   
   
-  \begin{defn}[Basis]\label{def:mathGrundl_vektorraeume_basis} Ein System von Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ eines $\set{K}-$Vektorraumes $\set{V}$ wird als \textbf{Basis} von $\set{V}$ bezeichnet, wenn gilt: \begin{enumerate}
+  \begin{defn}[Basis]\label{def:mathGrundl_vektorraeume_basis} Gegeben sei ein $\set{K}-$Vektorraum $\set{V}$. Ein System von Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ von $\set{V}$ wird als \textbf{Basis} von $\set{V}$ bezeichnet, wenn gilt: \begin{enumerate}
   \item Die Vektoren $\vect{v}_{1},\dots,\vect{v}_{n}$ bilden ein Erzeugendensystem von $\set{V}$, es gilt also $\Span\lbrace \vect{v}_{1},\dots,\vect{v}_{n} \rbrace=\set{V}$.
   \item Das System $\vect{v}_{1},\dots,\vect{v}_{n}$ ist linear unabh\"angig. Die Basis ist daher unverk\"urzbar. 
 \end{enumerate}
   Die Anzahl der Elemente einer Basis eines Vektorraumes $\set{V}$ wird als \textbf{Dimension} des Vektorraumes bezeichnet: $\dim \set{V}$.
   \end{defn}
 
- \subsection{Matrizen}
+ \subsection{Matrizen}\label{ssec:mathGrundl_vektorraeume_matrizen}
   Es seien $m$ und $n$ nat\"urliche Zahlen. Eine $m\times n$ Matrix $\matr{A}$ \"uber dem K\"orper $\set{K}$ ist eine Abbildung \begin{align*}
   \matr{A}:& \begin{cases} \lbrace 1, \dots, m \rbrace \times \lbrace 1,\dots,n \rbrace \longrightarrow \set{K}, \\
   \left( i, j\right) \longmapsto a_{ij}.
@@ -400,7 +409,7 @@ Die Menge aller invertierbaren $n \times n$ Matrizen \"uber einem K\"orper mit M
   \end{align*}
   \end{defn}
   \begin{rem}[Ableitung von Matrizen] Sei $\matr{A}\in\set{K}^{m\times n}$ eine Matrix mit Komponenten $\left( a_{ij}\right)$, welche differenzierbare Funktionen der reellen Variablen $t$ seien. Dann hei\ss{}t die Matrix \begin{align}
-  \frac{\d \matr{A}}{\d t}&= \left( \frac{\d a_{ij}}{\d t}\right)\label{mathGrundl_vektorraeume_matr_diff}
+  \frac{\d \matr{A}}{\d t}&= \left( \frac{\d a_{ij}}{\d t}\right)\label{gl:mathGrundl_vektorraeume_matr_diff}
   \end{align}
   Ableitung von $\matr{A}$ nach $t$. Die Matrix wird also differenziert, indem jede Komponente einzeln differenziert wird. \hfill \newline
   Sei weiter eine Matrix $\matr{B}\in \set{K}^{n \times r}$ gegeben, deren Komponenten $\left( b_{ij}\right)$ ebenfalls differenzierbare Funktionen der reellen Variablen $t$ seien. F\"ur die Ableitung des Matrixprodukts gilt dann die Produktregel: \begin{align}
